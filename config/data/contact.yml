@@ -1,0 +1,21 @@
+#  The contact options.
+
+-
+  type: Github
+  icon: 'fab fa-github'
+  url: 'https://github.com/dvdmtw98/'
+  noblank: false
+-
+  type: Linkedin
+  icon: 'fab fa-linkedin'
+  url:  'https://www.linkedin.com/in/david-varghese/'
+  noblank: false
+-
+  type: Medium
+  icon: 'fab fa-medium'
+  url: 'https://david-varghese.medium.com/'
+  noblank: false
+-
+  type: rss
+  icon: 'fas fa-rss'
+  noblank: false

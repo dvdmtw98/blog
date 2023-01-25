@@ -1,0 +1,47 @@
+name: Source Code Builder
+author: David Varghese
+description: Action to build Jekyll based Blog using Markdown files
+
+runs:
+  using: composite
+  steps:
+    - name: Copy Configuration
+      id: copy-config
+      shell: bash
+      run: cp -a main/config/. chirpy
+    - name: Copy Scripts
+      id: copy-scripts
+      shell: bash
+      run: cp -a main/scripts chirpy
+    - name: Copy Markdown
+      id: copy-markdown
+      shell: bash
+      run: |
+        cp -a main/Post\ Vault/articles/. chirpy/_posts \
+        && rm chirpy/_posts/.placeholder
+    - name: Copy Images
+      id: copy-images
+      shell: bash
+      run: cp -a chirpy/_posts/images chirpy/assets
+    - name: Setup Python
+      id: setup-python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+    - name: Run Scripts
+      id: run-scripts
+      shell: bash
+      run: cd chirpy && python scripts/modify_links.py
+    - name: Setup Ruby
+      id: setup-ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0
+    - name: Install Dependencies
+      id: install-dependencies
+      shell: bash
+      run: cd chirpy && bundle install
+    - name: Build Blog
+      id: build-blog
+      shell: bash
+      run: cd chirpy && bundle exec jekyll build
