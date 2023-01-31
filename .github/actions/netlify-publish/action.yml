@@ -18,7 +18,8 @@ runs:
       shell: bash
       run: |
         cp -a main/Post\ Vault/articles/. chirpy/_posts \
-        && rm chirpy/_posts/.placeholder
+        && rm chirpy/_posts/.placeholder \
+        && rm chirpy/_tabs/about.md
     - name: Copy Images
       id: copy-images
       shell: bash
