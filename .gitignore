@@ -9,3 +9,5 @@
 
 # Development Files
 .vscode
+venv
+upload_list.txt

@@ -9,7 +9,7 @@ published: true
 img_path: /assets/
 ---
 
-![TryHackMe Bounty Hacker|550](images/thm-bounty-hacker/thm-bounty-hacker.jpeg)
+![TryHackMe Bounty Hacker Banner](images/thm-bounty-hacker/thm-bounty-hacker-banner.png)
 
 ### Task 1 : Living up to the title
 

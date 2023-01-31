@@ -1,0 +1,29 @@
+name: Publish New Posts to Medium
+run-name: Publish to Medium by @${{ github.actor }}
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  medium-publish:
+    name: Publish to Medium
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Medium Publisher
+        id: checkout-medium-publisher
+        uses: actions/checkout@v3
+        with:
+          repository: dvdmtw98/medium-publisher
+          path: medium
+      - name: Checkout Repository
+        id: checkout-repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          path: main
+      - name: Publish to Medium
+        id: publish-to-medium
+        uses: ./main/.github/actions/medium-publish
+        with:
+          MEDIUM_AUTH_TOKEN: ${{ secrets.MEDIUM_AUTH_TOKEN }}

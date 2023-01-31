@@ -8,7 +8,7 @@ published: true
 img_path: /assets/
 ---
 
-![TryHackMe Simple CTF](images/thm-simple-ctf/thm-simple-ctf.png)
+![TryHackMe Simple CTF](images/thm-simple-ctf/thm-simple-ctf-banner.png)
 
 ### Task 1 : Simple CTF
 

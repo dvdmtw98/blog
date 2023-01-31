@@ -30,10 +30,10 @@ toc: true
 comments:
   active: giscus
   giscus:
-    repo: dvdmtw98/blog-comments
-    repo_id: R_kgDOIvHtKw
+    repo: dvdmtw98/blog
+    repo_id: R_kgDOItAOGg
     category: Comments
-    category_id: DIC_kwDOIvHtK84CTdUa
+    category_id: DIC_kwDOItAOGs4CT6ao
     mapping: pathname
     input_position: bottom
     reactions_enabled: 1

@@ -7,7 +7,7 @@ published: true
 img_path: /assets/
 ---
 
-![Linux File Permissions Banner](images/linux-file-permission/linux-permissions-banner.webp)
+![Linux File Permissions Banner](images/linux-file-permission/linux-permissions-banner.png)
 
 File permissions is an important concept to understand for anyone working with Linux. Permissions are a set of attributes (along with ownership) which is used to control the level of access the users and system processes have on files. It is a security mechanism which ensures that only authorized users and processes can access certain files and directories.
 

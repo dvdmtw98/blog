@@ -27,7 +27,7 @@ runs:
       id: setup-python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.11
+        python-version: '3.11'
     - name: Run Scripts
       id: run-scripts
       shell: bash

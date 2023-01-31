@@ -1,10 +1,13 @@
 name: Deploy Source Code to Netlify
+run-name: Deploy to Netlify by @${{ github.actor }}
+
 on:
   push:
     branches: [ main ]
 
 jobs:
   source-code:
+    name: Source Code Deployment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Chirpy

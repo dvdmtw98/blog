@@ -1,0 +1,62 @@
+name: Medium Publisher
+author: David Varghese
+description: Action to publish new posts to Medium
+
+inputs:
+  MEDIUM_AUTH_TOKEN:
+    description: Token to authenticate with Medium REST API
+    required: true
+
+outputs:
+  rss-fetch:
+    description: Status of Fetch from Medium using RSS
+    value: ${{ steps.find-new-posts.outputs.rss_fetch }}
+  output-filepath:
+    description: Path to file containing Articles to Publish
+    value: ${{ steps.find-new-posts.outputs.output_filepath }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Python
+      id: setup-python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install Dependencies
+      id: install-dependencies
+      shell: bash
+      run: |
+        pip install -r main/.github/actions/medium-publish/requirements.txt \
+        && pip install -r medium/requirements.txt
+    - name: Setup Medium Token
+      id: setup-medium-token
+      shell: bash
+      run: echo "MEDIUM_AUTH_TOKEN='${{ inputs.MEDIUM_AUTH_TOKEN }}'" >> medium/config/token.config
+    - name: Find New Posts
+      id: find-new-posts
+      shell: bash
+      run: |
+        cd main/.github/actions/medium-publish \
+        && python medium_rss.py "${{ github.workspace }}/main/Post Vault/articles/**/*.md"
+    - name: Check Result
+      id: check-result
+      shell: bash
+      run: >-
+        if [[ "${{ steps.find-new-posts.outputs.rss_fetch }}" != "success" ]];
+        then
+          echo "Failed to Fetch Latest Post Details from Medium";
+          exit 1;
+        elif [[ "${{ steps.find-new-posts.outputs.output_filepath }}" == "" ]];
+        then
+          echo "No new Post(s) found to Upload";
+        else
+          echo "Found Post(s) to Upload";
+        fi
+    - name: Upload Posts
+      id: upload-posts
+      if: steps.find-new-posts.outputs.output_filepath != ''
+      shell: bash
+      run: |
+        cd medium \
+        && python publish.py -l "${{ steps.find-new-posts.outputs.output_filepath }}" -a
