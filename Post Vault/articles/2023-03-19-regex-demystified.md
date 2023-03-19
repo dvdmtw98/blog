@@ -27,7 +27,7 @@ Lets get started by learning the metacharacters that make up Regular Expressions
 
 The `^` and `$` characters are called anchor characters. They allow to match a pattern that occurs at the start or end of a string. Anchor characters are special as they does not consume any visible character instead they match on the invisible character that denotes the start or end a string. 
 
->**\^The**: Matches any string that starts with the word The  
+>**^The**: Matches any string that starts with the word The  
 >
 >**end$**: Matches any string that ends with the word end  
 >
@@ -55,7 +55,7 @@ The `^` and `$` characters are called anchor characters. They allow to match a p
 
 `|` and `[]` are used to create OR logic
 
->**ab(c|d)**: Matches a string that contains ab followed by c or d
+>**ab(c\|d)**: Matches a string that contains ab followed by c or d
 >
 >**ab[cd]**: Matches a string that contains ab followed by c or d
 
@@ -125,9 +125,9 @@ While `[]` can be used as an OR expression its main usage is to create custom ch
 >
 >**[a-fA-F0-9]**: Matches on characters that is in the range a-f, A-F and 0-9
 >
->**[\^a-zA-Z]**: Matches on characters that is not in the range a-z and A-Z
+>**[^a-zA-Z]**: Matches on characters that is not in the range a-z and A-Z
 >
->**[a-zA-Z\\^]**: Matches on character that is `^` or in the range a-z and A-Z
+>**[a-zA-Z^]**: Matches on character that is `^` or in the range a-z and A-Z
 
 #### Boundary Anchor
 
@@ -163,7 +163,7 @@ There are negative versions of lookahead and lookbehind that matches a string wh
 
 Backreferences are special constructs that allow to reference a capture group that was defined previous in the regex string. Since backreferences are based on capture groups we can have anonymous as well as named backreferences.
 
->**(ab|c)\\1**: Matches all occurrences of aa, bb and cc i.e. the character matched by the capture group repeated again
+>**(ab\|c)\\1**: Matches all occurrences of aa, bb and cc i.e. the character matched by the capture group repeated again
 >
 >**(?\<foo>a|b|c)\\k\<foo>**: The same as above but using a named capture group
 
