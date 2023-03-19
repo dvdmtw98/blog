@@ -15,7 +15,7 @@ Regexes has a broad range of real world applications such as user input validati
 
 To a user that comes across regex for the first time it will feel like they are trying to read incomprehensible garbled text, but once they start understanding the characters that make up the madness they will soon realize that they have just unlocked a super power that can literally save the day (no pun intended). This feeling is summed up perfectly by xkcd.
 
-![Regex Saves the Day|450](https://imgs.xkcd.com/comics/regular_expressions.png)
+![Regex Saves the Day|420](images/regex-demystified/regular_expression_xkcd.png)
 
 One really nice thing about regex is that once we learn its syntax we can pretty much use it in any programming language (Python, JavaScript, Perl, Rust, PowerShell, etc.) with little to no modification.
 
