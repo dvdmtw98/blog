@@ -8,7 +8,7 @@ published: true
 img_path: /assets/
 ---
 
-![TryHackeMe Blaster Banner|500](images/thm-blaster/thm-blaster-banner.png)
+![TryHackeMe Blaster Banner](images/thm-blaster/thm-blaster-banner.png)
 
 ### Task 1 : Mission Start!
 

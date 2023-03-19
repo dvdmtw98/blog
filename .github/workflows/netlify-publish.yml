@@ -15,7 +15,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: cotes2020/chirpy-starter
-          ref: 'v5.4.0'
           path: chirpy
       - name: Checkout Repository
         id: checkout-repository

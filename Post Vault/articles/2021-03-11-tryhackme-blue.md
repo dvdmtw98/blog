@@ -9,7 +9,7 @@ published: true
 img_path: /assets/
 ---
 
-![TryHackMe Blue Banner|300](images/thm-blue/thm-blue-banner.png)
+![TryHackMe Blue Banner](images/thm-blue/thm-blue-banner.png)
 
 ### Challenge
 
