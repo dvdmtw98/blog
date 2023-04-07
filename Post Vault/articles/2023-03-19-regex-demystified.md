@@ -9,23 +9,23 @@ img_path: /assets/
 
 ![Regex Demystified Banner](images/regex-demystified/regex-demystified-banner.png)
 
-Regex (also called Regular Expression or RegExp) is a sequence of characters that can be used to find or match patterns in text. Regexes are made up of special characters (metacharacters) that allow to define complex patterns in a terse and concise manner.
+Regex (also called Regular Expression or RegExp) is a sequence of characters that can be used to find or match patterns in text. Regexes are made up of special characters that enable us to define complex patterns in a terse and concise manner.
 
-Regexes has a broad range of real world applications such as user input validation, parsing long structured files for important information, web scrapping, transforming text from one format to another as well as for find and replace operations.
+Regular Expressions has a broad range of real-world applications such as user input validation, parsing long structured files for important information, web scrapping, transforming text from one format to another as well as find and replace operations.
 
-To a user that comes across regex for the first time it will feel like they are trying to read incomprehensible garbled text, but once they start understanding the characters that make up the madness they will soon realize that they have just unlocked a super power that can literally save the day (no pun intended). This feeling is summed up perfectly by xkcd.
+To a user that comes across regex for the first time, it will feel like they are trying to read incomprehensible garbled text, but once they start understanding the characters that make up the madness they will soon realize that they have just unlocked a superpower that can save the day. This feeling is summed up perfectly by xkcd.
 
 ![Regex Saves the Day|420](images/regex-demystified/regular_expression_xkcd.png)
 
-One really nice thing about regex is that once we learn its syntax we can pretty much use it in any programming language (Python, JavaScript, Perl, Rust, PowerShell, etc.) with little to no modification.
+One nice thing about regex is that once we learn its syntax we can pretty much use it in any programming language (Python, JavaScript, Perl, Rust, PowerShell, etc.) with little to no modification.
 
-Lets get started by learning the metacharacters that make up Regular Expressions. 
+Let's get started by learning the meta characters that make up Regular Expressions. 
 
 ### Basic Concepts
 
 #### Anchor Characters
 
-The `^` and `$` characters are called anchor characters. They allow to match a pattern that occurs at the start or end of a string. Anchor characters are special as they does not consume any visible character instead they match on the invisible character that denotes the start or end a string. 
+The `^` and `$` characters are called anchor characters. They allow matching a pattern that occurs at the start or end of a string. Anchor characters are special as they do not consume any visible character instead they match the invisible character that denotes the start or end of a string. 
 
 >**^The**: Matches any string that starts with the word The  
 >
@@ -63,7 +63,7 @@ The `()` in the above regex is a capture group, capture groups will be covered i
 
 #### Character Classes
 
-Character classes are shorthand notations to represent commonly used character sets. `\d`, `\w` and `\s` make up the mostly commonly used character classes.
+Character classes are shorthand notations to represent commonly used character sets. `\d`, `\w` and `\s` make up the most commonly used character classes.
 
 >**\\d**: Matches a single digit character
 >
@@ -71,7 +71,7 @@ Character classes are shorthand notations to represent commonly used character s
 >
 >**\\s**: Matches a single whitespace character including newline character and tab
 
-These character classes also have negated versions that match on the characters that are not matches by their positive counterpart
+These character classes also have negated versions that match the characters that are not matched by their positive counterpart
 
 >**\\D**: Matches on a single non-digit character
 >
@@ -79,11 +79,11 @@ These character classes also have negated versions that match on the characters 
 >
 >**\\S**: Matches on any non-whitespace character
 
-The `.` is an special character class that matches on all character leaving the new line character
+The `.` is a special character class that matches all characters leaving the new line character
 
 >**.** : Matches on all characters (leaving newline)
 
-There are also metacharacter to denote newlines and tabs
+There are also meta-characters to denote newlines and tabs
 
 >**\\n**: Matches on newline characters
 >
@@ -119,7 +119,7 @@ Capture Groups are created using `()`. They come in two variants: anonymous and 
 
 #### Bracket Expression
 
-While `[]` can be used as an OR expression its main usage is to create custom character classes. `^` when used inside an bracket expression as the first character negates the entire expression.  `-` that occur in-between characters are used to denote character ranges. 
+While `[]` can be used as an OR expression its main usage is to create custom character classes. `^` when used inside a bracket expression as the first character negates the entire expression. `-` that occur in-between characters are used to denote character ranges. 
 
 >**[a-zA-Z]**: Matches on characters that is in the range a-z and A-Z
 >
@@ -131,7 +131,7 @@ While `[]` can be used as an OR expression its main usage is to create custom ch
 
 #### Boundary Anchor
 
-Word Boundary or `\b` is a special type of anchor that makes on a invisible character called word boundary. A word boundary exists in the space between a word and a non-word character. There is also a negated version `\B` that matches on the invisible character that is present in the space between two word characters.
+Word Boundary or `\b` is a special type of anchor that makes on an invisible character called word boundary. A word boundary exists in the space between a word and a non-word character. There is also a negated version `\B` that matches the invisible character that is present in the space between two-word characters.
 
 >**\\babc\\b**: Matches all occurrence of abc that is surrounded by a non-word characters
 >
@@ -149,7 +149,7 @@ The quantifies (`*`, `+`, `{}`) are evaluated greedily by the regex engines i.e.
 
 Lookahead and Lookbehind expressions are used to match a string that is followed or preceded by a specific pattern. The pattern that follows or precedes the string we want to match is not included in the regex match.
 
-There are negative versions of lookahead and lookbehind that matches a string when it is not followed or preceded by a specific pattern.
+There are negative versions of lookahead and look-behind that match a string when it is not followed or preceded by a specific pattern.
 
 >**a(?=b)**: Matches all occurrences of a that are followed by b
 >
@@ -161,7 +161,7 @@ There are negative versions of lookahead and lookbehind that matches a string wh
 
 #### Backreference
 
-Backreferences are special constructs that allow to reference a capture group that was defined previous in the regex string. Since backreferences are based on capture groups we can have anonymous as well as named backreferences.
+Backreferences are special constructs that allow referencing of a capture group that was defined previously in the regex string. Since backreferences are based on capture groups we can have anonymous as well as named backreferences.
 
 >**(ab\|c)\\1**: Matches all occurrences of aa, bb and cc i.e. the character matched by the capture group repeated again
 >
@@ -169,11 +169,11 @@ Backreferences are special constructs that allow to reference a capture group th
 
 ### Examples
 
-Now lets solve some examples to put to use everything that we have already learned
+Now let's solve some examples to put to use everything that we have already learned
 
 #### Email Id Validation
 
-Lets imagine that we have been provided with a list of email ids and we have been tasked with splitting the emails into three segments. The first part should contain everything before the `@` sign, the second part should contain the name of the email id provider and everything else after that should be captured in group 3.
+Let's imagine that we have been provided with a list of email ids and we have been tasked with splitting the emails into three segments. The first part should contain everything before the `@` sign, the second part should contain the name of the email id provider and everything else after that should be captured in Group 3.
 
 [Email Id Validation Regex - regex101](https://regex101.com/r/CMS40h/1)
 
@@ -192,24 +192,24 @@ for email_id in email_id_list:
 	print(regex_result)
 
 # Output
-('David.Varghese', 'gmail', '.com')
-('johnsnow123', 'yahoo', '.co.uk')
-('thepirateking', 'rediff-mail', '.com')
+# ('David.Varghese', 'gmail', '.com')
+# ('johnsnow123', 'yahoo', '.co.uk')
+# ('thepirateking', 'rediff-mail', '.com')
 ```
 
 Since we want the email as three separate segments we need to use three capture groups
 
-`[\w.-]+`: One or more occurrence of word character, period or hyphen  
+`[\w.-]+`: One or more occurrences of word character, period or hyphen  
 
 `@` : The `@` character
 
-`[a-zA-Z-]+`: One or more occurrence of uppercase, lowercase characters and hyphen
+`[a-zA-Z-]+`: One or more occurrences of uppercase, lowercase characters and hyphen
 
 `\..+`: The period character followed by any character one or more time
 
 #### Username Validation
 
-This time lets imagine we are a frontend developer and our website has a input field for the user to enter a username we need to ensure that the username is 5 to 30 characters long. It must contain at least one uppercase character cannot end in hyphen or period and can only have alphanumeric characters, period and hyphen.
+This time let's imagine we are a frontend developer and our website has an input field for the user to enter a username we need to ensure that the username is 5 to 30 characters long. It must contain at least one uppercase character cannot end in a hyphen or period and can only have alphanumeric characters, period and hyphen.
 
 [Username Validation Regex - regex101](https://regex101.com/r/ZK2cXl/1)
 
@@ -230,25 +230,25 @@ for username in username_list:
 		print(f"{username} -> Fail")
 
 # Output
-David Varghese -> Fail
-JohnDoe-123 -> Pass
-Jane123Smith -> Pass
-JamesGrey. -> Fail
+# David Varghese -> Fail
+# JohnDoe-123 -> Pass
+# Jane123Smith -> Pass
+# JamesGrey. -> Fail
 ```
 
-`^` : Match pattern from start of string
+`^` : Match the pattern from the start of the string
 
-`(?=[A-Z]+)`: Lookahead and match if one or more uppercase character found
+`(?=[A-Z]+)`: Lookahead and match if one or more uppercase characters are found
 
-`[a-z0-9A-Z-.]{5,30}`: Check if username contains only valid characters and is of the required length
+`[a-z0-9A-Z-.]{5,30}`: Check if the username contains only valid characters and is of the required length
 
-`(?<![-.])`: Negative lookbehind to not match if input ends with `-` or `.`
+`(?<![-.])`: Negative look-behind to not match if the input ends with `-` or `.`
 
-`$`: Match pattern till end of string
+`$`: Match pattern till the end of the string
 
 #### Password Validation
 
-We are working on the frontend of the same application from the last exercise this time we want to validate a password and by company policy we need to ensure that the password is at least 12 characters long can contain alphanumeric characters along with a few special symbols (can assume any 4-5 special characters). Additionally it is mandatory that at least on uppercase, lowercase, digit and special character is used. 
+We are working on the frontend of the same application from the last exercise this time we want to validate a password and following company policy, we need to ensure that the password is at least 12 characters long and can contain alphanumeric characters along with a few special symbols (can assume any 4-5 special characters). Additionally, at least one uppercase, lowercase, digit and special character must be used. 
 
 [Password Validation Regex - regex101](https://regex101.com/r/7lnV3N/1)
 
@@ -268,22 +268,22 @@ for password in password_list:
 		print(f"{password} -> Fail")
 
 # Output
-mypassword@123 -> Fail
-superSecretPa$$word123 -> Pass
-sUp@rPa$$12 -> Fail
+# mypassword@123 -> Fail
+# superSecretPa$$word123 -> Pass
+# sUp@rPa$$12 -> Fail
 ```
 
 `^`: Match from the start of the string
 
 `(?=.*[a-z])`: Lookahead to check if there is a lowercase character
 
-`(?=.*[A-Z])`: Lookahead to check if there is a uppercase character
+`(?=.*[A-Z])`: Lookahead to check if there is an uppercase character
 
 `(?=.*\d)`: Lookahead to check if there is a digit
 
 `(?=.*[@$!%*?&])`: Lookahead to check if there is a special character
 
-`[A-Za-z\d@$!%*?&]{12,}`: Check if input contains only the allowed characters and has a length of at least 12
+`[A-Za-z\d@$!%*?&]{12,}`: Check if the input contains only the allowed characters and has a length of at least 12
 
 `$`: Match till the end of the string
 
@@ -294,4 +294,4 @@ sUp@rPa$$12 -> Fail
 - [Regex tutorial - A quick cheatsheet by examples \| by Jonny Fox \| Factory Mind \| Medium](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
 - [Regular Expressions Clearly Explained with Examples \| by Jason Chong \| Towards Data Science](https://towardsdatascience.com/regular-expressions-clearly-explained-with-examples-822d76b037b4)
 - [Regular Expressions (Regex) Tutorial: How to Match Any Pattern of Text - YouTube](https://www.youtube.com/watch?v=sa-TUpSx1JA)
-- [Novice to Advanced RegEx in Less-than 30 Minutes + Python - YouTube](https://www.youtube.com/watch?v=GyJtxd14DTc)
+- [Novice to Advanced RegEx in Less than 30 Minutes + Python - YouTube](https://www.youtube.com/watch?v=GyJtxd14DTc)

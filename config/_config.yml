@@ -38,6 +38,12 @@ comments:
     input_position: bottom
     reactions_enabled: 1
 
+google_analytics:
+  id: G-XXXXXXXXXX
+  pv:
+    proxy_endpoint:
+    cache_path:
+
 pwa:
   enabled: true
 
