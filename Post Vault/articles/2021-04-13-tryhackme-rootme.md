@@ -10,6 +10,8 @@ img_path: /assets/
 
 ![TryHackMe RootMe Banner](images/thm-rootme/thm-rootme-banner.png)
 
+<a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
+
 ### Task 1 : Deploy the machine
 
 Connect to TryHackMe network and deploy the machine. If you don't know how to do this, complete the [OpenVPN room](https://tryhackme.com/room/openvpn) first.

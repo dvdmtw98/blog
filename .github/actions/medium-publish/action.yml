@@ -59,4 +59,4 @@ runs:
       shell: bash
       run: |
         cd medium \
-        && python publish.py -l "${{ steps.find-new-posts.outputs.output_filepath }}" -a
+        && python publish.py -l "${{ steps.find-new-posts.outputs.output_filepath }}"

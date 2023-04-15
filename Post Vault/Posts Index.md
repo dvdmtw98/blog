@@ -2,7 +2,7 @@
 cssClasses: wide-page
 ---
 
-## Draft Posts
+### Draft Posts
 
 ```dataview
 TABLE WITHOUT ID
@@ -18,7 +18,7 @@ WHERE published = false
 SORT date DESC
 ```
 
-## Published Posts
+### Published Posts
 
 ```dataview
 TABLE WITHOUT ID

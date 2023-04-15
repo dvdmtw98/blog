@@ -11,6 +11,8 @@ img_path: /assets/
 
 ![TryHackMe Ice Banner](images/thm-ice/thm-ice-banner.png)
 
+<a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
+
 ### Task 1 : Connect
 
 Connect to our network using OpenVPN. Here is a mini walkthrough of connecting:

@@ -12,6 +12,8 @@ img_path: /assets/
 
 ![TryHackMe Linux PrivEsc Banner](images/thm-linux-privesc/thm-linux-privesc-banner.png)
 
+<a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
+
 ### Task 1 : Deploy the Vulnerable Debian VM
 
 1. **Deploy the machine and login to the "user" account using SSH.**

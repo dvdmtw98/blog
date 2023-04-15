@@ -10,6 +10,8 @@ img_path: /assets/
 
 ![TryHackMe Pickle Rick Banner](images/thm-pickle-rick/thm-pickle-rick-banner.png)
 
+<a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
+
 ### Challenge
 
 This Rick and Morty themed challenge requires you to exploit a webserver to find 3 ingredients that will help Rick make his potion to transform himself back into a human from a pickle.
