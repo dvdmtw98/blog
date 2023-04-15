@@ -42,7 +42,7 @@ find (1)        - search for files in a directory hierarchy
 
 ### Helpful Reading Material
 
-[linux - How to open a "-" dashed filename using terminal? - Stack Overflow](https://stackoverflow.com/questions/42187323/how-to-open-a-dashed-filename-using-terminal)
+[Linux - How to open a "-" dashed filename using terminal? - Stack Overflow](https://stackoverflow.com/questions/42187323/how-to-open-a-dashed-filename-using-terminal)
 
 [Input Output & Error Redirection in Linux [Beginner's Guide]](https://linuxhandbook.com/redirection-linux/)
 
@@ -55,9 +55,9 @@ bandit1@bandit:~$ ls
 -
 ```
 
-We can view the content of file named `-` using the `cat` command
+We can view the content of the file named `-` using the `cat` command
 
-**Note:** Directly specifying the filename as shown in the previous level is not going to work as `-` in Linux refers to Standard Input/ Standard Output (STDIN/ STDOUT). We have to use the concept of redirection or specify the absolute path to the file to access it.
+**Note:** Directly specifying the filename as shown in the previous level is not going to work as `-` is a special character on Linux that is used to denote Standard Input/ Standard Output (STDIN/ STDOUT). We have to use the concept of redirection or specify the absolute path to the file to access it.
 
 ```
 bandit1@bandit:~$ cat < -  
@@ -69,9 +69,9 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
 We have found the password for the next level !!
 
-To access next level logout of the current session. This can be done by typing `exit` or use `Ctrl + D`
+To access the next level log out of the current session. This can be done by typing `exit` or using `Ctrl + D`
 
-Use password found above of user bandit2 to access next level
+Use the password found above of user bandit2 to access the next level
 
 ```
 > ssh bandit2@bandit.labs.overthewire.org -p 2220  

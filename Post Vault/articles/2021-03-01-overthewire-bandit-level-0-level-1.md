@@ -58,7 +58,7 @@ bandit0@bandit:~$ ls
 readme
 ```
 
-We see there is an file named `readme` to view the contents of this file we can use the `cat` command.
+We see there is a file named `readme` to view the contents of this file we can use the `cat` command.
 
 ```
 bandit0@bandit:~$ cat readme   
@@ -67,9 +67,8 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 We have found the password for the next level !!
 
-To access next level logout of the current session. This can be done by typing `exit` or use `Ctrl + D`
 
-Use password found above to login as bandit1 and access next level
+Use the password found above to log in as bandit1 and access the next level
 
 ```
 > ssh bandit1@bandit.labs.overthewire.org -p 2220  

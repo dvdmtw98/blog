@@ -40,13 +40,13 @@ ssh (1) - OpenSSH remote login client
 
 Open Terminal (On Windows use PowerShell)
 
-To login into Level 0 we have to use SSH command
+To login into Level 0 we have to use the SSH command
 
 SSH Command: `ssh <username>@<hostname> -p <port>`
 
 **Note:** If asked to accept any fingerprint type "yes" and press Enter
 
-When asked for password enter **bandit0** and press Enter
+When asked for a password type **bandit0** and press Enter
 
 ```
 > ssh bandit0@bandit.labs.overthewire.org -p 2220   
@@ -55,7 +55,7 @@ This is a OverTheWire game server. More information on http://www.overthewire.or
 bandit0@bandit.labs.overthewire.org's password: bandit0
 ```
 
-If login was successful you will see an banner that looks as follows:
+If the login was successful you will see a banner that looks as follows:
 
 ![Logged into Level 0|360](images/bandit-0/level-0-login.png)
 
