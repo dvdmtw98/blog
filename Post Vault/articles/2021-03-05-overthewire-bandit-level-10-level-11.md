@@ -56,7 +56,7 @@ xxd (1)              - make a hexdump or do the reverse.
 
 [Base64 - Wikipedia](https://en.wikipedia.org/wiki/Base64)
 
-[Bash base64 encode and decode](https://linuxhint.com/bash_base64_encode_decode/)
+[Bash base64 encoding and decoding](https://linuxhint.com/bash_base64_encode_decode/)
 
 ### Solution
 
@@ -74,9 +74,9 @@ bandit10@bandit:~$ cat data.txt
 VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
 ```
 
-Looking at the content it looks like an string of random characters but from the question we know that the data is base64 encoded. We can decode this data using the `base64` command that is present on Unix systems. The `-d` flag is used to decode the data
+Looking at the content it looks like a string of random characters but from the question we know that the data is base64 encoded. We can decode this data using the `base64` command that is present on Unix systems. The `-d` flag is used to decode the data
 
-_(For detailed information on base64 encoding refer the attached article)_
+_(For detailed information on base64 encoding refer to the attached article)_
 
 ```
 bandit10@bandit:~$ cat data.txt | base64 -d  
@@ -85,7 +85,7 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit11 to access next level
+Logout of the current session and use the password of user bandit11 to access the next level
 
 ```
 > ssh bandit11@bandit.labs.overthewire.org -p 2220  

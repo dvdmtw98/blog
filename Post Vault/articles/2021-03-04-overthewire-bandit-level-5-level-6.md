@@ -80,7 +80,7 @@ maybehere14  maybehere17
 
 To search for the file that we require using the properties that are specified in the question we can make use of the `find` command.
 
-(Refer `man pages` to read more on the various options that can be used along with the find command)
+(Refer to `man pages` to read more on the various options that can be used along with the find command)
 
 ```
 bandit5@bandit:~/inhere$ find . -type f -size 1033c -not -executable -exec file {} + | grep ASCII  
@@ -89,21 +89,21 @@ bandit5@bandit:~/inhere$ find . -type f -size 1033c -not -executable -exec file 
 
 ### Command Explanation
 
-*   **. :** Search the current working directory only
-*   **-type f :** Look for files only (Exclude Directories)
-*   **-size 1033c :** Look for files that are exactly 1033 bytes in size (Find uses "c" to represent bytes)
-*   **-not -executable :** Find only non executable files
-*   **-exec file {} + :** Execute the `file` command on all the results returns by find
+* `.`: Search the current working directory only
+* `-type f`: Look for files only (Exclude Directories)
+* `-size 1033c`: Look for files that are exactly 1033 bytes in size (Find uses "c" to represent bytes)
+* `-not -executable`: Find only non-executable files
+* `-exec file {} +`: Execute the "file" command on all the results returns by find
 
-**Note:** {} is an placeholder for the location where the names of the files found by find is going to be substituted. The "+" sign is used to terminate the statement
+**Note:** {} is a placeholder for the location where the names of the files found by find are going to be substituted. The "+" sign is used to terminate the statement
 
-From the previous level we know that file command will return value "ASCII Text" for human readable files. So by using grep we are filtering the output to only show results with that contain that string
+From the previous level, we know that the file command will return the value "ASCII Text" for human-readable files. So by using grep we are filtering the output to only show results that contain that string
 
-**Note :** Grep is an command that is used to find patterns in string and is very helpful when trying to find files. For more examples refer the attached resources
+**Note:** Grep is a command that is used to find patterns in strings and is very helpful when trying to find files. For more examples refer to the attached resources
 
-The pipe `|` operator is used to pass the output of one command as the input of another command
+The pipe `|` operator is used for sending the output of one command as the input of another command
 
-Not that we have found the file lets view its contents
+Not that we have found the file let's view its contents
 
 ```
 cat ./maybehere07/.file2  
@@ -112,7 +112,7 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit6 to access next level
+Logout of the current session and use the password of user bandit6 to access the next level
 
 ```
 > ssh bandit6@bandit.labs.overthewire.org -p 2220  

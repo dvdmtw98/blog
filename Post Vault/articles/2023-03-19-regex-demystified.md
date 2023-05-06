@@ -119,7 +119,7 @@ Capture Groups are created using `()`. They come in two variants: anonymous and 
 
 #### Bracket Expression
 
-While `[]` can be used as an OR expression its main usage is to create custom character classes. `^` when used inside a bracket expression as the first character negates the entire expression. `-` that occur in-between characters are used to denote character ranges. 
+While `[]` can be used as an OR expression its main usage is to create custom character classes. When `^` is used inside a bracket expression as the first character it negates the entire expression. `-` that occur in-between characters are used to denote character ranges. 
 
 >**[a-zA-Z]**: Matches on characters that is in the range a-z and A-Z
 >
@@ -139,7 +139,7 @@ Word Boundary or `\b` is a special type of anchor that makes on an invisible cha
 
 #### Greedy & Lazy Match
 
-The quantifies (`*`, `+`, `{}`) are evaluated greedily by the regex engines i.e. they try to find the largest string that matches the provided regex. Sometimes this is not what we want, in these cases we can tell the engine to evaluate the quantifiers lazily i.e. find the smallest match. This is done by using the `?` character right after the quantifier that should be evaluated lazily.
+The quantifies (`*`, `+`, `{}`) are evaluated greedily by the regex engines i.e. they try to find the largest string that matches the provided regex. Sometimes this is not what we want, in these cases, we can tell the engine to evaluate the quantifiers lazily i.e. find the smallest match. This is done by using the `?` character right after the quantifier that should be evaluated lazily.
 
 >**<.+?>**: Match on `<` followed by any character until `>` is found in a lazy manner i.e. smallest match
 
@@ -236,7 +236,7 @@ for username in username_list:
 # JamesGrey. -> Fail
 ```
 
-`^` : Match the pattern from the start of the string
+`^`: Match the pattern from the start of the string
 
 `(?=[A-Z]+)`: Lookahead and match if one or more uppercase characters are found
 
@@ -248,7 +248,7 @@ for username in username_list:
 
 #### Password Validation
 
-We are working on the frontend of the same application from the last exercise this time we want to validate a password and following company policy, we need to ensure that the password is at least 12 characters long and can contain alphanumeric characters along with a few special symbols (can assume any 4-5 special characters). Additionally, at least one uppercase, lowercase, digit and special character must be used. 
+We are working on the front end of the same application from the last exercise this time we want to validate a password and following company policy, we need to ensure that the password is at least 12 characters long and can contain alphanumeric characters along with a few special symbols (can assume any 4-5 special characters). Additionally, at least one uppercase, lowercase, digit and special character must be used. 
 
 [Password Validation Regex - regex101](https://regex101.com/r/7lnV3N/1)
 

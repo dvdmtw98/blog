@@ -19,7 +19,7 @@ Scan and learn what exploit this machine is vulnerable to. Please note that this
 
 **This room is not meant to be a boot2root CTF, rather, this is an educational series for complete beginners. Professionals will likely get very little out of this room beyond basic practice as the process here is meant to be beginner-focused.**
 
-### Task 1 : Recon
+### Task 1: Recon
 
 1. **Scan the machine**
 
@@ -27,11 +27,11 @@ Scan and learn what exploit this machine is vulnerable to. Please note that this
 
 #### Scan Options
 
-*   **-sS :** Stealth Scan
-*   **-sV :** Service Versioning
-*   **-T4 :** Timing Template (Aggressive)
-*   **-p- :** Scan all the ports
-*   **-vv :** Double verbose output
+* `-sS`: Stealth Scan
+* `-sV`: Service Versioning
+* `-T4`: Timing Template (Aggressive)
+* `-p-`: Scan all the ports
+* `-vv`: Double verbose output
 
 ![Nmap Scan Results](images/thm-blue/nmap-scan-results.png)
 
@@ -41,9 +41,9 @@ By looking at the scan results we see that ports 135, 139 and 445 are the only p
 
 > 3
 
-3. **What is this machine vulnerable to? (Answer in the form of: ms??-???, ex: ms08–067)**
+3. **What is this machine vulnerable to? (Answer in the form of ms??-???, ex: ms08–067)**
 
-To find the vulnerability that the machine is affected by we can run nmap with the option `--script vuln` to find known vulnerabilities for the services that are found on the system
+To find the vulnerability that the machine is affected by we can run Nmap with the option `--script vuln` to find known vulnerabilities for the services that are found on the system
 
 ```bash
 sudo nmap -sS -sV -T4 --script=vuln -p 135,139,445 10.10.136.254 -vv
@@ -51,11 +51,11 @@ sudo nmap -sS -sV -T4 --script=vuln -p 135,139,445 10.10.136.254 -vv
 
 ![Nmap Scan Results|550](images/thm-blue/nmap-scan-results-2.png)
 
-We can see the SMB service on the target has an vulnerability (ms17–010)
+We can see the SMB service on the target has a vulnerability (ms17–010)
 
 > ms17–010
 
-### Task 2 : Gain Access
+### Task 2: Gain Access
 
 1. **Start Metasploit**
 
@@ -67,7 +67,7 @@ Since we know that the vulnerability is present in SBMv1 searching for that in M
 
 ![Metasploit SMB Modules](images/thm-blue/metasploit-smb-modules.png)
 
-As we can see there is only vulnerability know from that version known as **"Eternal Blue"**.
+As we can see there is only one vulnerability known from that version known as **"Eternal Blue"**.
 
 > exploit/windows/smb/ms17_010_eternalblue
 
@@ -75,7 +75,7 @@ As we can see there is only vulnerability know from that version known as **"Ete
 
 ![Metasploit Exploit Options](images/thm-blue/metasploit-exploit-options.png)
 
-Looking at the output we can see that the RHOSTS field is empty that we need to enter the value for that field
+Looking at the output we can see that the RHOSTS field is empty, we need to enter the value for that field
 
 ![Setting RHOSTS value|460](images/thm-blue/set-exploit-rhosts-value.png)
 
@@ -85,7 +85,7 @@ Looking at the output we can see that the RHOSTS field is empty that we need to 
 
 > RHOSTS
 
-4. **Usually it would be fine to run this exploit as is; however, for the sake of learning, you should do one more thing before exploiting the target. Enter the following command and press enter:**
+4. **Usually, it would be fine to run this exploit as is; however, for the sake of learning, you should do one more thing before exploiting the target. Enter the following command and press enter:**
 
 ```
 set payload windows/x64/shell/reverse_tcp
@@ -97,13 +97,13 @@ set payload windows/x64/shell/reverse_tcp
 
 ![Executing SMB Exploit on Target](images/thm-blue/executing-exploit.png)
 
-**Note:** When we run the exploit it might fail on the first try but it should be able to connect automatically on the second try. If the exploit runs successfully we should be an shell session
+**Note:** When we run the exploit it might fail on the first try but it should be able to connect automatically on the second try. If the exploit runs successfully we should be in a shell session
 
 ![Remote Access to Target System Gained](images/thm-blue/remote-access-gained.png)
 
-### Task 3 : Escalation
+### Task 3: Escalation
 
-1. **If you haven't already, background the previously gained shell (CTRL + Z). Research online how to convert a shell to meterpreter shell in metasploit. What is the name of the post module we will use? (Exact path, similar to the exploit we previously selected)**
+1. **If you haven't already, background the previously gained shell (CTRL + Z). Research online how to convert a shell to meterpreter shell in Metasploit. What is the name of the post module we will use? (Exact path, similar to the exploit we previously selected)**
 
 > post/multi/manage/shell_to_meterpreter
 
@@ -127,7 +127,7 @@ Looking at the options we can see there are two options that we need to set the 
 
 > No answer required
 
-**Note:** Sometimes this session might fail in that cause we need to establish the session from the start
+**Note:** Sometimes this session might fail in that case we need to establish the session from the start
 
 5. **Once the meterpreter shell conversion completes, select that session for use.**
 
@@ -135,7 +135,7 @@ Looking at the options we can see there are two options that we need to set the 
 
 ![Meterpreter Session Established](images/thm-blue/session-established.png)
 
-6. **Verify that we have escalated to NT AUTHORITY\SYSTEM. Run getsystem to confirm this. Feel free to open a dos shell via the command 'shell' and run 'whoami'. This should return that we are indeed system. Background this shell afterwards and select our meterpreter session for usage again.**
+6. **Verify that we have escalated to NT AUTHORITY\SYSTEM. Run getsystem to confirm this. Feel free to open a dos shell via the command 'shell' and run 'whoami'. This should return that we are indeed system. Background this shell afterward and select our meterpreter session for usage again.**
 
 > No answer required
 
@@ -151,11 +151,11 @@ Looking at the options we can see there are two options that we need to set the 
 
 > No answer required
 
-There are multiple services that we can use to migrate our current session. Lets try using the "cmd.exe" process which has an PID of 3064 and see if we have any luck
+There are multiple services that we can use to migrate our current session. Let's try using the "cmd.exe" process which has a PID of 3064 and see if we have any luck
 
 ![Migrating Meterpreter|280](images/thm-blue/migrating-meterpreter.png)
 
-### Task 4 : Cracking
+### Task 4: Cracking
 
 1. **Within our elevated meterpreter shell, run the command 'hashdump'. This will dump all of the passwords on the machine as long as we have the correct privileges to do so. What is the name of the non-default user?**
 
@@ -165,7 +165,7 @@ There are multiple services that we can use to migrate our current session. Lets
 
 2. **Copy this password hash to a file and research how to crack it. What is the cracked password?**
 
-Lets save the hash of jon into an file and then use John the Ripper to try and crack the hash
+Let's save the hash of Jon into a file and then use John the Ripper to try and crack the hash
 
 ```
 > echo "Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::" > windowshash
@@ -184,16 +184,16 @@ Session completed
 
 #### Command Options
 
-*   **--format :** Specify the type of the hash
-*   **--wordlist :** The wordlist that is going to be used to brute force the hash
+* `--format`: Specify the type of the hash
+* `--wordlist`: The wordlist that is going to be used to brute force the hash
 
 > alqfna22
 
-### Task 5 : Find flags!
+### Task 5: Find flags!
 
 1. **Flag1? _This flag can be found at the system root._**
 
-The root of the system on windows is the C drive
+The root of the system on Windows is the C drive
 
 ![Collecting Target Information|540](images/thm-blue/target-osint-3.png)
 
@@ -211,7 +211,7 @@ On searching online we find the passwords on Windows are saved in the `C:\Window
 
 3. **flag3? _This flag can be found in an excellent location to loot. After all, Administrators usually have pretty interesting things saved._**
 
-The user files on windows is saved in `C:\Windows\Users\<username>\`. Lets see if the flag can be found in any folder in that location.
+The user files on Windows are saved in `C:\Windows\Users\<username>\`. Let's see if the flag can be found in any folder in that location.
 
 ![Finding Flag on System 3|450](images/thm-blue/target-osint-6.png)
 

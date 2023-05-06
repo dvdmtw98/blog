@@ -70,9 +70,9 @@ bandit4@bandit:~/inhere$ ls
 -file08  -file09
 ```
 
-We know we have to find file who's content is in Human Readable format. This check can be performed using the `file` command. File command returns the type of data that is found in the file
+We know we have to find a file whose content is in Human Readable format. This check can be performed using the `file` command. File command returns the type of data that is found in the file
 
-```
+```bash
 bandit4@bandit:~/inhere$ file ./*  
 ./-file00: data  
 ./-file01: data  
@@ -86,9 +86,9 @@ bandit4@bandit:~/inhere$ file ./*
 ./-file09: data
 ```
 
-**Note :** The `*` here means search all files in the directory. For more information on file globbing refer the attached reference resources
+**Note:** The `*` here means to look for all files in the directory. For more information on globbing refer to the attached reference resources
 
-View the content of `-file07` file using the `cat` command
+View the content of `-file07` using the `cat` command
 
 ```
 bandit4@bandit:~/inhere$ cat ./-file07  
@@ -97,7 +97,7 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit5 to access next level
+Logout of the current session and use the password of user bandit5 to access the next level
 
 ```
 > ssh bandit5@bandit.labs.overthewire.org -p 2220  

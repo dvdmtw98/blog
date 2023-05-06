@@ -33,19 +33,19 @@ sh (1)               - command interpreter (shell)
 
 ### Solution
 
-As soon as well login into this level we notice that we not in a bash shell instead we in a shell called as "uppercase shell"
+As soon as we login into this level we notice that we are not in a bash shell instead we are in a shell called "uppercase shell"
 
 ![Uppercase Shell|240](images/bandit-32-33/uppercase-shell.png)
 
-When we try to run any command we see that the command is getting converted to uppercase and so we get error saying "Command not found"
+When we try to run any command we see that the command is getting converted to uppercase and so we get an error saying "Command not found"
 
-What we need to understand here is that this shell that we see is nothing but an binary file that takes whatever we enter convert it into uppercase and then have bash/sh shell execute the command.
+What we need to understand here is that this shell that we see is nothing but a binary file that takes whatever we enter converts it into uppercase and then has the bash/sh shell execute the command.
 
 ```
 sh -c "<user-input>"
 ```
 
-Another thing that we should know about is the variable "$0". This variable holds the name of the file/ script that is being executed. Lets have a look at this using an example.
+Another thing that we should know about is the variable "$0". This variable holds the name of the file/ script that is being executed. Let us have a look at this using an example.
 
 ![Shell Name Variable|160](images/bandit-32-33/shell-name.png)
 
@@ -53,13 +53,13 @@ But if we type `echo $0` directly in the terminal we see that we get the name of
 
 ![View Shell Name|160](images/bandit-32-33/shell-name-2.png)
 
-Now that you understand this lets get back to the question at hand. So since we have understood that the input that we enter is converted to uppercase and then being executed by the bash/sh shell. We can use the logic that we saw in the above example. Pass `$0` to the shell and we should spawn a new shell. This will internally (in the binary) look as follows:
+Now that you understand this let us get back to the question at hand. So since we have understood that the input that we enter is converted to uppercase and then executed by the bash/sh shell. We can use the logic that we saw in the above example. Pass `$0` to the shell and we should spawn a new shell. This will internally (in the binary) look as follows:
 
 ```
 sh -c "$0"
 ```
 
-This is exactly what we did when we typed `$0` directly into our terminal. So lets now try this and see if we are able to spawn a shell.
+This is exactly what we did when we typed `$0` directly into our terminal. So let's now try this and see if we can spawn a shell.
 
 ```
 >> $0  
@@ -67,7 +67,7 @@ $ echo $0
 sh
 ```
 
-As we expected we have got an proper shell now. Lets have a look at the binary for uppercase shell.
+As we expected we have got a proper shell now. Let us have a look at the binary for the uppercase shell.
 
 ```
 $ ls -la                       
@@ -92,9 +92,9 @@ $ id
 uid=11033(bandit33) gid=11032(bandit32) groups=11032(bandit32)
 ```
 
-From the above we can confirm that we indeed have currently are bandit33.
+From the above, we can confirm that we indeed have currently are bandit33.
 
-Lets cat the password file to get the password for bandit33
+Let us cat the password file to get the password for bandit33
 
 ```
 $ cat /etc/bandit_pass/bandit33  

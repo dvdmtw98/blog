@@ -1,5 +1,6 @@
 ---
-title: 'DNS: The What, Why and How Explained'
+title: 'Domain Name System (DNS): The What, Why and How Explained'
+description: Exploring DNS the phonebook of the internet
 date: '2023-04-15 10:00:00 +0530'
 categories: [Networking, Protocol]
 tags: [networking, protocol, internet, dns]

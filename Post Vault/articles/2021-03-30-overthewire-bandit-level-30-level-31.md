@@ -35,7 +35,7 @@ git (1)          - the stupid content tracker
 
 ### Solution
 
-From the question we understand that in this level we are going to be working with Git. Before we clone the repository lets make an folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
+From the question, we understand that at this level we are going to be working with Git. Before we clone the repository let's make a folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
 
 ```
 bandit30@bandit:~$ cd /tmp/
@@ -47,7 +47,7 @@ bandit30@bandit:/tmp$ cd git_level30
 bandit30@bandit:/tmp/git_level30$
 ```
 
-Now that we have created our working directory lets clone the repository.
+Now that we have created our working directory let's clone the repository.
 
 ![Clone Git Repository](images/bandit-30-31/clone-git-repo.png)
 
@@ -57,11 +57,11 @@ The password for the repository is the same as bandit30
 Password: 5b90576bedb2cc04c86a9e924ce42faf
 ```
 
-Now that we the repository cloned to our machine. Lets see what are the files that are present in the repository.
+Now that we have the repository cloned to our machine. Let us see what files are present in the repository.
 
 ![View File Content|380](images/bandit-30-31/view-file-content.png)
 
-We see that there is a file called as "README.md" in the folder. Lets have a look at the contents of this file.
+We see that there is a file called "README.md" in the folder. Let us have a look at the contents of this file.
 
 **Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
 
@@ -70,7 +70,7 @@ bandit30@bandit:/tmp/git_level30/repo$ cat README.md
 just an epmty file... muahaha
 ```
 
-Looks like the file is empty and we are not given any clue this time. Lets see if there are branches that are available in this repository.
+Looks like the file is empty and we are not given any clue this time. Let us see if there are branches that are available in this repository.
 
 ```
 bandit30@bandit:/tmp/git_level30/repo$ git branch -a  
@@ -81,23 +81,23 @@ bandit30@bandit:/tmp/git_level30/repo$ git branch -a
 
 Looking at the branches we again don't find anything useful.
 
-Git has another feature called as tags. They are used to mark specific points in the version history of the repository that are important. Lets see if we can find any clue looking at them.
+Git has another feature called tags. They are used to mark specific points in the version history of the repository that is important. Let us see if we can find any clues looking at them.
 
 ```
 bandit30@bandit:/tmp/git_level30/repo$ git tag  
 secret
 ```
 
-We see that we have an tag that is called "secret" lets view its contents
+We see that we have a tag that is called "secret". Let us view its contents
 
 ```
 bandit30@bandit:/tmp/git_level30/repo$ git show secret  
 47e603bb428404d265f59c42920d81e5
 ```
 
-And there we go we have found the password for next level !!!
+And there we go we have found the password for the next level !!!
 
-Logout of current session and login as bandit31 to start the next level
+Logout of the current session and log in as bandit31 to start the next level
 
 ```
 > ssh bandit31@bandit.labs.overthewire.org -p 2220

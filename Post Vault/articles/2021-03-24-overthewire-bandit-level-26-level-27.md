@@ -29,9 +29,9 @@ ls (1)               - list directory contents
 
 ### Solution
 
-If at the end of the last level you logged out perform the same steps as last level to login back as bandit26 but this time from our system.
+If at the end of the last level you logged out perform the same steps as the last level to login back as bandit26 but this time from our system.
 
-Make the terminal height wise short so that the more command will enter interactive mode
+Make the terminal height-wise short so that the more command will enter interactive mode
 
 ```
 > ssh bandit26@bandit.labs.overthewire.org -p 2220
@@ -49,11 +49,11 @@ Press "v" to open the file in a text editor (Default vim) then enter the command
 ![Launch Shell](images/bandit-26-27/start-default-shell.png)
 ![Access Bandit26](images/bandit-26-27/access-bandit26.png)
 
-If the above steps where performed properly you should have an bash shell and be logged in as bandit26.
+If the above steps were performed properly you should have a bash shell and be logged in as bandit26.
 
-**Note:** If the above steps do not make sense refer my previous article where I have explained the process in detail.
+**Note:** If the above steps did not make sense refer to my previous article where I have explained the process in detail.
 
-Lets see if there are any file in the current working directory
+Let's see if there are any files in the current working directory
 
 ```
 bandit26@bandit:~$ ls  
@@ -65,9 +65,9 @@ total 12
 -rw-r----- 1 bandit26 bandit26  258 May  7  2020 text.txt
 ```
 
-We see an binary file called "bandit27-do". If we look at its properties we see that the file is owned by bandit27 and the SUID bit of the file is set as well. Which means that using the binary if we run any other command that command will have the same permissions as the owner of the binary (in this case the commands will have bandit27 permissions)
+We see a binary file called "bandit27-do". If we look at its properties we see that the file is owned by bandit27 and the SUID bit of the file is set as well. This means that using the binary if we run any other command that command will have the same permissions as the owner of the binary (in this case the commands will have bandit27 permissions)
 
-So lets try to cat the content of the password file of bandit27 using the binary.
+So let us try to cat the content of the password file of bandit27 using the binary.
 
 ```
 bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27  

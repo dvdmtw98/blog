@@ -38,7 +38,7 @@ crontab (5)      - tables for driving cron
 
 ### Solution
 
-Since we know there is an task that is being executed by cron lets have an look at all the cron jobs on the system
+Since we know there is a task that is being executed by cron let's have a look at all the cron jobs on the system
 
 ```
 bandit22@bandit:~$ ls /etc/cron.d/  
@@ -54,11 +54,11 @@ bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
 * * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
 ```
 
-When we look at the cron job for bandit23 we see that there is an shell script that is being executed every second
+When we look at the cron job for bandit23 we see that there is a shell script that is being executed every second
 
-_(For detailed information on the syntax of cron jobs refer the attached resources)_
+_(For detailed information on the syntax of cron jobs refer to the attached resources)_
 
-Lets have a look at the contents of the script and try to understand what is it trying to perform
+Let's have a look at the contents of the script and try to understand what is it trying to perform
 
 ```
 bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
@@ -72,21 +72,21 @@ echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
 ```
 
-Lets break down the script line by line
+Let's break down the script line by line
 
 *   The output of `whoami` command is getting saved in a variable called `myname` (Since this script is being executed for bandit23 the output of `whoami` will be `bandit23` which is saved in the `myname` variable)
-*   Next the sentence "I am user bandit23" is passed to the `md5sum` command which will calculate the md5sum of the given string and lastly using `cut` command the first field from the output of the `md5sum` command is selected and saved in the variable `mytarget`
-*   Then an file is being created in the /tmp directory with the name of the file being same as the value of "mytarget"
-*   And finally the password of bandit23 is being saved into that file
+*   Next the sentence "I am user bandit23" is passed to the `md5sum` command which will calculate the md5sum of the given string. Lastly using the `cut` command the first field from the output of the `md5sum` command is selected and saved in the variable `mytarget`
+*   Then a file is created in the /tmp directory with the name of the file being the same as the value of "mytarget"
+*   And finally, the password of bandit23 is saved into that file
 
-So looking at this script we can say that our goal is to find the value of "mytarget". Since we know that the value of "myname" is bandit23 lets see if we can able to generate the value of "mytarget".
+So looking at this script we can say that our goal is to find the value of "mytarget". Since we know that the value of "myname" is bandit23 let's see if we can able to generate the value of "mytarget".
 
 ```
 bandit22@bandit:~$ echo "I am user bandit23" | md5sum | cut -d ' ' -f 1  
 8ca319486bfbbc3663ea0fbe81326349
 ```
 
-We have got the value of "mytarget" that the script creates for bandit23. Now that we have the value lets get the password for bandit23
+We have got the value of "mytarget" that the script creates for bandit23. Now that we have the value let's get the password for bandit23
 
 View the content of the file `8ca319486bfbbc3663ea0fbe81326349` that is present in the `/tmp` directory
 
@@ -97,7 +97,7 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
 And there we go we have the password for the next level !!!
 
-Logout of the current session and start next level as bandit23
+Logout of the current session and start the next level as bandit23
 
 ```
 > ssh bandit23@bandit.labs.overthewire.org -p 2220

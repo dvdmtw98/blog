@@ -74,9 +74,9 @@ bandit11@bandit:~$ cat data.txt
 Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
 ```
 
-We know that the characters in the data are rotated by 13 characters. We can get the characters to its original order using the `tr` command. The `tr` command is used to translate/ transform data from one form to another.
+We know that the characters in the data are rotated by 13 characters. We can get the characters to their original order using the `tr` command. The `tr` command is used to translate/ transform data from one form to another.
 
-_(Refer the attached resources for more information on the tr command)_
+_(Refer to the attached resources for more information on the tr command)_
 
 ```
 bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'  
@@ -85,7 +85,7 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit12 to access next level
+Logout of the current session and use the password of user bandit12 to access the next level
 
 ```
 > ssh bandit12@bandit.labs.overthewire.org -p 2220  

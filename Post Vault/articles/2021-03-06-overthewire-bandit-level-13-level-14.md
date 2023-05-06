@@ -33,13 +33,13 @@ bandit13@bandit:~$ ls
 sshkey.private
 ```
 
-We have an SSH private key. We can use the SSH command with the `-i` flag to use the private key
+We have an SSH private key. We can use the SSH command with the "-i" flag to use the private key
 
 ```
 bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
 ```
 
-(If asked for fingerprint confirmation types "yes")
+(If asked for fingerprint confirmation type "yes")
 
 ![Login to Level 14|460](images/bandit-13-14/level-14-accessed.png)
 
@@ -58,7 +58,7 @@ bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
 
 We have found the password for bandit14 !!
 
-Logout of current (bandit14) session then logout of the bandit13 session and use password of user bandit14 to access next level
+Logout of the current (bandit14) session then log out of the bandit13 session and use the password of user bandit14 to access the next level
 
 ```
 > ssh bandit14@bandit.labs.overthewire.org -p 2220  

@@ -81,13 +81,13 @@ bandit9@bandit:~$ head -n 4 data.txt�L�lω;��ßOܛ��ǤX��NdT$�
                                                      ���'��:��uP�ע���������g�
 ```
 
-(The -n flag allows us to specify how many lines to print from start of the file. We can use the `tail` command to look at the last n lines of a file)
+(The -n flag allows us to specify how many lines to print from the start of the file. We can use the `tail` command to look at the last n lines of a file)
 
-Human readable string in an file can be found using the `strings` command. The `-e` flag is used to specify the character encoding. We are assuming the human readable line is ASCII text so we use "s" for the encoding type 
+Human-readable strings in a file can be found using the `strings` command. The `-e` flag is used to specify the character encoding. We are assuming the human-readable line is ASCII text so we use "s" for the encoding type 
 
-*(Refer attached resources for more information)*
+*(Refer to attached resources for more information)*
 
-We also know that the line with the password starts with a few "=" characters. We can look for this pattern in the file using the `grep` command. We can combine all these commands into an single line using the `|` (pipe) operator
+We also know that the line with the password starts with a few "=" characters. We can look for this pattern in the file using the `grep` command. We can combine all these commands into a single line using the `|` (pipe) operator
 
 ```
 bandit9@bandit:~$ cat data.txt | strings -e s | grep ==
@@ -97,11 +97,11 @@ Z)========== is
 &========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 ```
 
-**Note:** The `cat` command is used to read the data from the file which is then passed as input to the next command in line using pipes
-
+**Note:** The `cat` command is used to read the data from the file which is then passed as input to the next command in the line using pipes
+ 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit10 to access next level
+Logout of the current session and use the password of user bandit10 to access the next level
 
 ```
 > ssh bandit10@bandit.labs.overthewire.org -p 2220

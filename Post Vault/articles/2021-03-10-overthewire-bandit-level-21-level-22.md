@@ -37,7 +37,7 @@ crontab (5)      - tables for driving cron
 
 ### Solution
 
-Since we know there is an task that is being executed by cron lets have an look at all the cron jobs on the system
+Since we know there is a task that is being executed by cron let's have a look at all the cron jobs on the system
 
 ```
 bandit21@bandit:~$ ls /etc/cron.d/  
@@ -53,11 +53,11 @@ bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
 * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 ```
 
-When we look at the cron job for bandit22 we see that there is an shell script that is being executed every second
+When we look at the cron job for bandit22 we see that there is a shell script that is being executed every second
 
-_(For detailed information on the syntax of cron jobs refer the attached resources)_
+_(For detailed information on the syntax of cron jobs refer to the attached resources)_
 
-Lets have a look at the contents of the script and try to understand what is it trying to perform
+Let's have a look at the contents of the script and try to understand what is it trying to perform
 
 ```
 bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
@@ -66,9 +66,9 @@ chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 ```
 
-When we look at the script we see that it is creating an file called `t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv` in the `/tmp` directory and then saving the password for the next level into that file.
+When we look at the script we see that it is creating a file called `t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv` in the `/tmp` directory and then saving the password for the next level into that file.
 
-Lets view the content of the file that is created by the script
+Let's view the content of the file that is created by the script
 
 ```
 bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv  

@@ -50,11 +50,11 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 ### Solution
 
-We know there that the service that we need is running in the range 31,000–32,000. We can find all services in that range using `nmap` command.
+We know there that the service that we need is running in the range of 31,000–32,000. We can find all services in that range using Nmap.
 
 The -T4 flag is used to increase the speed of the scan while the -p flag is used to specify the ports and the -sV flag is used to identify the versions of the services.
 
-_(For more information on the various flags provided by nmap refer to the attached resources)_
+_(For more information on the various flags provided by Nmap refer to the attached resources)_
 
 ```
 bandit16@bandit:~$ nmap -sV -T4 -p 31000-32000 localhost
@@ -93,11 +93,11 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 89.88 seconds
 ```
 
-From our scan results we can see that there are multiple services that are running in that range but if we look at the results more closely we see that on port 31790 there is an service that returns an message "Enter correct password". As we need to find an service to send password we can conclude that this is the service that we are need.
+From our scan results, we can see that multiple services are running in that range but if we look at the results more closely we see that on port 31790 there is a service that returns the message "Enter correct password". As we need to find a service to send passwords we can conclude that this is the service that we need.
 
-We now that the service uses SSL encryption. So we need to use the `openssl` and `s_client` command to connect to the port and pass the password of the current user
+We know that the service uses SSL encryption. So we need to use the `openssl` and `s_client` commands to connect to the port and pass the password of the current user
 
-_(Refer the previous level if not sure on how to use these commands)_
+_(Refer to the previous level if not sure how to use these commands)_
 
 ```
 bandit16@bandit:~$ cat /etc/bandit_pass/bandit16  
@@ -138,7 +138,7 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----closed
 ```
 
-We did not get any password but an got an RSA Key that can be used with SSH to access the next level. We need to save the key in an file to be used with SSH. As we don't have permission in the current working directory to make a file. We create an folder in the `/tmp` directory and work from there.
+We did not get any password but got an RSA Key that can be used with SSH to access the next level. We need to save the key in a file to be used with SSH. As we don't have permission in the current working directory to make a file. We create a folder in the `/tmp` directory and work from there.
 
 ```
 bandit16@bandit:~$ mkdir /tmp/random_sshkey
@@ -150,19 +150,19 @@ bandit16@bandit:/tmp/random_sshkey$ touch private.key
 bandit16@bandit:/tmp/random_sshkey$ vim private.key
 ```
 
-**Note:** We can use any text editor to save the key in the file but here we are using the vim editor
+**Note:** We can use any text editor to save the key in the file but here we are using the Vim editor
 
-*   Once vim opens Press "i" to enter insert mode
+*   Once Vim opens Press "i" to enter insert mode
 *   Then use Ctrl + Shift + V to paste the copied key
 
 ![SSH RSA Key|500](images/bandit-16-17/ssh-rsa-key.png)
 
-*   Press "Esc" key to return to normal mode
-*   Then type `:wq` to save and exit the file
+*   Press the "Esc" key to return to normal mode
+*   Then type `:wq` to save and exit the file
 
 Change the permissions of the file so that other users cannot access the file
 
-_(This step is required as when we try to use the key without changing the permission we are going to get error preventing us from using the key)_
+_(This step is required as when we try to use the key without changing the permission we are going to get an error preventing us from using the key)_
 
 ```
 bandit16@bandit:/tmp/random_sshkey$ chmod 400 private.keybandit16@bandit:/tmp/random_sshkey$ ls -l  
@@ -177,7 +177,7 @@ bandit16@bandit:/tmp/random_sshkey$ ssh -i private.key
 bandit17@localhost
 ```
 
-_(If asked to accept an fingerprint enter "yes")_
+_(If asked to accept a fingerprint enter "yes")_
 
 ```
 Linux bandit.otw.local 5.4.8 x86_64 GNU/Linux      
@@ -204,14 +204,14 @@ bandit17@bandit:~$
 
 We have gained access to the next level
 
-Lets capture the password of the current level so we can login later if required
+Let us capture the password of the current level so we can log in later if required
 
 ```
 bandit17@bandit:~$ cat /etc/bandit_pass/bandit17  
 xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ```
 
-We have found the password of the current level !!!
+We have found the password for the current level !!!
 
 Logout of the current session (bandit17) and the previous session (bandit16) and use the password of bandit17 to access the next level
 

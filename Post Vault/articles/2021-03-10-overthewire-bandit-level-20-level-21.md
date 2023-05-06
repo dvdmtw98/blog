@@ -49,9 +49,9 @@ tmux (1)             - terminal multiplexer
 
 ### Solution
 
-We have an binary file that makes connection to user specified port and reads a line of text. If the text is same as the last level password we get next level password.
+We have a binary file that can request a reads a line of text from a user-specified port. If the text is the same as the last level's password we get the next level's password.
 
-So the first task that we need to do is setup an listener on any port on the system that will return the previous level password if we connect to that port using the binary file. We can setup an listener using the `netcat` command.
+So the first task that we need to do is set up a listener on any port on the system that will return the previous level password if we connect to that port using the binary file. We can set up a listener using the Netcat command.
 
 _(The password for the previous level is stored in_ `/etc/bandit_pass/bandit19` _which we found in the previous level)_
 
@@ -60,7 +60,7 @@ bandit20@bandit:~$ echo "GbKksEFF4yrVs6il55v6gwY5aVje5f0j" | netcat -lp 1234 &
 [1] 14333
 ```
 
-The -l flag is used to setup an listener and the -p flag is used to specify the port the the listener should listen on. As we have not specified IP Address the listener is going to run on localhost.
+The -l flag is used to set up a listener and the -p flag is used to specify the port the listener should listen on. As we have not specified the IP Address the listener is going to run on localhost.
 
 The "&" at the end of the command is used to specify that we want the command to run in the background. The `jobs` command can be used to view all the processes/ jobs on the system
 
@@ -85,7 +85,7 @@ gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
 As soon as we connect the password of the previous level was compared with the text that we had specified on port 1234 and since they matched we got the password for the next level
 
-Logout of the current session and start next level as bandit21
+Logout of the current session and start the next level as bandit21
 
 ```
 > ssh bandit21@bandit.labs.overthewire.org -p 2220

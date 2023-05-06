@@ -33,7 +33,7 @@ git (1)          - the stupid content tracker
 
 ### Solution
 
-From the question we understand that in this level we are going to be working with Git. Before we clone the repository lets make an folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
+From the question, we understand that at this level we are going to be working with Git. Before we clone the repository let's make a folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
 
 ```
 bandit29@bandit:~$ cd /tmp/
@@ -45,7 +45,7 @@ bandit29@bandit:/tmp$ cd git_level29
 bandit29@bandit:/tmp/git_level29$
 ```
 
-Now that we have created our working directory lets clone the repository.
+Now that we have created our working directory let's clone the repository.
 
 ![Clone Git Repository](images/bandit-29-30/clone-git-repo.png)
 
@@ -55,11 +55,11 @@ The password for the repository is the same as bandit29
 Password: bbc96594b4e001778eee9975372716b2
 ```
 
-Now that we the repository cloned to our machine. Lets see what are the files that are present in the repository.
+Now that we have the repository cloned to our machine. Let us see what files are present in the repository.
 
 ![View Repo Content|380](images/bandit-29-30/view-repo-content.png)
 
-We see that there is a file called as "README.md" in the folder. Lets have a look at the contents of this file.
+We see that there is a file called "README.md" in the folder. Let us have a look at the contents of this file.
 
 **Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
 
@@ -74,19 +74,19 @@ Some notes for bandit30 of bandit.
 - password: <no passwords in production!>
 ```
 
-Similar to last time looks like we do not find a password in the file. If we look closely at the message "No passwords in Production" we understand that we are given a clue as to where to look for the password. Git has the ability of creating branches. So if production is an branch there might be another branch for development purposes that has the password.
+Similar to last time looks like we do not find a password in the file. If we look closely at the message "No passwords in Production" we understand that we are given a clue as to where to look for the password. Git can create branches. So if production is a branch there might be another branch for development purposes that has the password.
 
 We can view all the branches present in git using the `branch -a` option.
 
 ![View Repo Branches|380](images/bandit-29-30/view-repo-branches.png)
 
-We see that there is an branch called "dev" lets have a look at this branch and see if we can find the password.
+We see that there is a branch called "dev". Let us have a look at this branch and see if we can find the password.
 
 ![Checkout Dev Branch|540](images/bandit-29-30/checkout-branch.png)
 
 And there we go we have found the password for the next level !!!
 
-Logout of the current session and login as bandit30 to start the next level
+Logout of the current session and log in as bandit30 to start the next level
 
 ```
 > ssh bandit30@bandit.labs.overthewire.org -p 2220

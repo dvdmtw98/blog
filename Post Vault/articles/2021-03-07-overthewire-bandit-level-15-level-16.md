@@ -51,7 +51,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 ### Solution
 
-We know that we have to connect to an service on port 30,001 using SSL encryption. The simplest way to achieve this is using the `openssl` command along with `s_client` which allows to connect to services on our machine using SSL.
+We know that we have to connect to a service on port 30,001 using SSL encryption. The simplest way to achieve this is using the `openssl` command along with `s_client` which allows us to connect to services on our machine using SSL.
 
 ```
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
@@ -79,9 +79,9 @@ Wrong! Please enter the correct current password
 closed
 ```
 
-When we provide the password as "Password" as get an error saying wrong password
+When we provide the password as "Password" as get an error saying the provided the wrong password
 
-Lets provide the correct password as see if we get the password for the next level. The password for the current level can be found at `/etc/bandit_pass/bandit15`
+Let's provide the correct password and see if we get the password for the next level. The password for the current level can be found at `/etc/bandit_pass/bandit15`
 
 ```
 bandit15@bandit:~$ cat /etc/bandit_pass/bandit15  
@@ -95,9 +95,9 @@ cluFn7wTiGryunymYOu4RcffSxQluehd
 
 We have found the password for the next level !!!
 
-**Note:** We can achieve same same result using the `ncat` command which is an advanced version of `netcat` that is developed by the creators of `nmap` . If using ncat make use of the same command as the previous level and add the `--ssl` flag
+**Note:** We can achieve the same result using the `ncat` command which is an advanced version of `netcat` that is developed by the creators of Nmap. If using ncat make use of the same command as the previous level and add the `--ssl` flag
 
-Logout of the current session and start the next level using bandit16 password
+Logout of the current session and start the next level using the bandit16 password
 
 ```
 > ssh bandit16@bandit.labs.overthewire.org -p 2220

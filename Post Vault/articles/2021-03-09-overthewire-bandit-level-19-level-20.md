@@ -22,7 +22,7 @@ img_path: /assets/
 
 ### Solution
 
-We have been told there is an binary file that is present in the home directory which somehow can help us to access the password of bandit20. Lets have a look at the binary
+We have been told there is a binary file that is present in the home directory which somehow can help us to access the password of bandit20. Let's have a look at the binary
 
 ```
 bandit19@bandit:~$ ls  
@@ -43,7 +43,7 @@ Run a command as another user.
   Example: ./bandit20-do id
 ```
 
-The file tells us that it allows us to run a command as another user. Lets see an example of running an command as another user using the id command
+The help menu of the binary tells us that it can be executed as another user. Let's view an example of running a command as another user using the id command
 
 ```
 bandit19@bandit:~$ id  
@@ -53,9 +53,9 @@ bandit19@bandit:~$ ./bandit20-do id
 uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
 ```
 
-We observe that when we use the binary file we are assigned the uid for bandit20 as well which means we can run commands as if we are bandit20
+We observe that when we use the binary file we are assigned the UID for bandit20 as well which means we can run commands as if we are bandit20
 
-Now that we know we can run commands as bandit20 so lets use the binary to access the password of user bandit20
+Now that we know we can run commands as bandit20 so let's use the binary to access the password of user bandit20
 
 ```
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20  
@@ -64,7 +64,7 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 We have found the password for the next level !!!
 
-Logout of the current session and start the next level using the password of bandit20
+Logout of the current session and start the next level using bandit20's password
 
 ```
 > ssh bandit20@bandit.labs.overthewire.org -p 2220

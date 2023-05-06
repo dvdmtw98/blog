@@ -39,7 +39,7 @@ runs:
       shell: bash
       run: cd chirpy && python scripts/modify_links.py
     - name: Setup Google Analytics
-      uses: microsoft/variable-substitution@v1
+      uses: TomaszKandula/variable-substitution@v1.0.1
       with:
         files: 'chirpy/_config.yml'
       env:

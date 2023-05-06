@@ -68,7 +68,7 @@ bandit3@bandit:~/inhere$ ls -a
 .  ..  .hidden
 ```
 
-View the content of `.hidden` file using the `cat` command
+View the content of the `.hidden` file using the `cat` command
 
 ```
 bandit3@bandit:~/inhere$ cat .hidden  
@@ -77,7 +77,7 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit4 to access next level
+Logout of the current session and use the password of user bandit4 to access the next level
 
 ```
 > ssh bandit4@bandit.labs.overthewire.org -p 2220  

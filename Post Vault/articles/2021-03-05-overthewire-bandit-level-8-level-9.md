@@ -83,24 +83,24 @@ TThRArdF2ZEXMO47TIYkyPPLtvzzLcDf
 cIPbot7oYveUPNxDMhv1hiri50CqpkTG
 ```
 
-(The -n flag allows us to specify how many lines to print from start of the file. We can use the `tail` command to look at the last n lines of a file)
+(The -n flag allows us to specify how many lines to print from the start of the file. We can use the `tail` command to look at the last n lines of a file)
 
-Since we know there are repeating lines in the file. We can use `uniq` command with the `-u` flag to print the unique line. Uniq command expects the repeating (similar) lines to be next to each other (adjacent) so we need to sort our data before we can find the unique line.
+Since we know there are repeating lines in the file. We can use the `uniq` command with the `-u` flag to print the unique line. Uniq command expects the repeating (similar) lines to be next to each other (adjacent) so we need to sort our data before we can find the unique line.
 
-For sorting we can use the `sort` command which will sort the data in the file line wise. Finally we can combine all these commands together into an one liner using the `|` (pipe) operator
+For sorting we can use the `sort` command which will sort the data in the file line-wise. Finally, we can combine all these commands into a one-liner using the `|` (pipe) operator
 
-(For more reference on these commands refer the attached websites)
+(For more reference on these commands refer to the attached websites)
 
 ```
 bandit8@bandit:~$ cat data.txt | sort | uniq -u  
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
 
-**Note:** The `cat` command is used to read the data from the file which is then passed as input to the next command in line using pipes
+**Note:** The `cat` command is used to read the data from the file which is then passed as input to the next command in the line using pipes
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit9 to access next level
+Logout of the current session and use the password of user bandit9 to access the next level
 
 ```
 > ssh bandit9@bandit.labs.overthewire.org -p 2220  

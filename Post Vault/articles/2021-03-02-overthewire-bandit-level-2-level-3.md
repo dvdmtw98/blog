@@ -57,9 +57,9 @@ spaces in this filename
 
 View the content of the file named `spaces in this filename` using the `cat` command
 
-**Note:** We command directly open this file as there are spaces in the filename. The spaces in the name can be escaped using `\` , another approach is to enclosing the filename in `".."` (quotes)
+**Note:** We command directly open this file as there are spaces in the filename. The spaces in the name can be escaped using `\`, another approach is to enclose the filename in `".."` (quotes)
 
-**Note:** The name of any file on the system can be auto completed using the `Tab` key.
+**Note:** The name of any file on the system can be auto-completed using the `Tab` key.
 
 ```
 bandit2@bandit:~$ cat spaces\ in\ this\ filename  
@@ -71,7 +71,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit3 to access next level
+Logout of the current session and use the password of user bandit3 to access the next level
 
 ```
 > ssh bandit3@bandit.labs.overthewire.org -p 2220  

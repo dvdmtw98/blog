@@ -41,7 +41,7 @@ crontab (5)      - tables for driving cron
 
 ### Solution
 
-Since we know there is an task that is being executed by cron lets have an look at all the cron jobs on the system
+Since we know there is a task that is being executed by cron let's have a look at all the cron jobs on the system
 
 ```
 bandit23@bandit:~$ ls /etc/cron.d/  
@@ -56,11 +56,11 @@ bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
 * * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
 ```
 
-When we look at the contents of the file we see that there is an script that is executed on the system every minute. We can also see that bandit24 is the owner of the file.
+When we look at the contents of the file we see that there is a script that is executed on the system every minute. We can also see that bandit24 is the owner of the file.
 
-**Note:** The @reboot is an special keyword that is used by cron to run a job when the system is rebooted.
+**Note:** The @reboot is a special keyword that is used by Cron to run a job when the system is rebooted.
 
-Lets have a look at the contents of the script and try to understand what is it trying to perform
+Let's have a look at the contents of the script and try to understand what is it trying to perform
 
 ```
 bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
@@ -82,19 +82,19 @@ do
 done
 ```
 
-Lets break down the script line by line:
+Let's break down the script line by line:
 
 *   The output of `whoami` command is getting saved in a variable called `myname` (Since this script is being executed by bandit24 the output of `whoami` will be `bandit24` which is saved in the `myname` variable)
-*   A folder called `bandit24` exist in the `/var/spool` directory. The working directory is changed to this folder.
+*   A folder called `bandit24` exists in the `/var/spool` directory. The working directory is changed to this folder.
 *   Then a statement saying all the scripts that are present in the folder `/var/spool/bandit24` is being deleted is printed.
-*   For loop is used to iterating through all the files in the directory (.\* : All files in current working directory)
-*   A check is made to see if the current selected file is called `.` or `..` if not then the rest of the code is executed. ("." means current directory (bandit24) and ".." means the parent directory (spool))
-*   The name of the current selected file is printed and then the information about the owner of the file is saved in the variable "owner".
-*   An check is made to check if the owner of the current selected file is "bandit23". If it is then the current selected file is executed and sent the KILL signal after waiting for 60 seconds and then deleted (-s flag in timeout command is used to specify the signal to send to the command "9" is an alias for the KILL command)
+*   For loop is used to iterate through all the files in the directory (.\* : All files in current working directory)
+*   A check is made to see if the currently selected file is called `.` or `..` if not then the rest of the code is executed. ("." means the current directory (bandit24) and ".." means the parent directory (spool))
+*   The name of the currently selected file is printed and then the information about the owner of the file is saved in the variable "owner".
+*   A check is made to check if the owner of the currently selected file is "bandit23". If it is then the currently selected file is executed and sent the KILL signal after waiting for 60 seconds and then deleted (-s flag in timeout command is used to specify the signal to send to the command "9" is an alias for the KILL command)
 
-So from this we understand that whatever file is saved in the folder "bandit24" gets executed and if the file was created by "bandit23" then after 60 seconds of execution the file is deleted. If we want the password for "bandit24" we need to write a script that will be executed from the bandit24 folder. The script that we write should get the password and save in a location that we can access (`/tmp` directory)
+So from this, we understand that whatever file is saved in the folder "bandit24" gets executed and if the file was created by "bandit23" then after 60 seconds of execution the file is deleted. If we want the password for "bandit24" we need to write a script that will be executed from the bandit24 folder. The script that we write should get the password and save it in a location that we can access (`/tmp` directory)
 
-Lets make a folder in the `/tmp` directory and use that as the base location for all the operations here on out.
+Let's make a folder in the `/tmp` directory and use that as the base location for all the operations from here on out.
 
 ```
 bandit23@bandit:~$ mkdir /tmp/rand
@@ -102,26 +102,26 @@ bandit23@bandit:~$ mkdir /tmp/rand
 bandit23@bandit:~$ cd /tmp/rand
 ```
 
-Create a file called `script.sh` using vim or any other editor on the system and write the following code in the file.
+Create a file called `script.sh` using Vim or any other editor on the system and write the following code in the file.
 
 ```
 #!/bin/bash  
 cat /etc/bandit_pass/bandit24 > /tmp/rand/password
 ```
 
-Since the output of the script is going to be saved in a file called `password` lets create a file with that name as well.
+Since the output of the script is going to be saved in a file called `password` let's create a file with that name as well.
 
 ```
 touch password
 ```
 
-The cron job is executed by user bandit24 so when the job executes our script it is also going to have the permission of bandit24 which is not the same permission as we have because of this when the script tries to write output to the file called "password" it will fail so lets change the permission of all the files in the current folder so that any user can access them.
+The cron job is executed by user bandit24 so when the job executes our script it is also going to have the permission of bandit24 which is not the same permission as we have because of this when the script tries to write output to the file called "password" it will fail so let's change the permission of all the files in the current folder so that any user can access them.
 
 ```
 chmod 777 -R /tmp/rand
 ```
 
-Finally lets copy the script in the `bandit24` folder from where the cron job should execute our file.
+Finally, let's copy the script in the `bandit24` folder from where the cron job should execute our file.
 
 ```
 cp script.sh /var/spool/bandit24
@@ -129,7 +129,7 @@ cp script.sh /var/spool/bandit24
 
 ![Ls Command|420](images/bandit-23-24/ls-command.png)
 
-After waiting for about an minute we should see that some data has been written into the password file. Lets view the content of this file.
+After waiting for about a minute we should see that some data has been written into the password file. Let's view the content of this file.
 
 ```
 bandit23@bandit:/tmp/rand$ cat password   

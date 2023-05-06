@@ -48,7 +48,7 @@ bandit17@bandit:~$ ls
 passwords.new  passwords.old
 ```
 
-We know that both the files differ in only one line and that line consist of the password that we require. We can view the changes that have been made in files using the `diff` command
+We know that both the files differ in only one line and that line consists of the password that we require. We can view the changes that have been made in files using the `diff` command
 
 ```
 bandit17@bandit:~$ diff passwords.old passwords.new  
@@ -76,4 +76,4 @@ Byebye !
 Connection to bandit.labs.overthewire.org closed.
 ```
 
-**Note:** When we try to login we are going to get kicked out saying "Byebye!". This is normal, this is part of the challenge for the next level
+**Note:** When we try to log in we are going to get kicked out saying "Bye-bye!". This is normal, this is part of the challenge for the next level

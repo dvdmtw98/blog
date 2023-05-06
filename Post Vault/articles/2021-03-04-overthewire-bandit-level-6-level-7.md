@@ -61,15 +61,15 @@ bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c
 
 ### Command Explanation
 
-*   **/ :** Search the entire server (/ is the root directory on Linux similar to the C:/ Drive on Windows)
-*   **-type f :** Search only for files (Exclude Directories)
-*   **-user bandit7 :** Search for files which are owned by user bandit7
-*   **-group bandit6 :** Search for files that belongs to the group bandit6
-*   **-size 33c :** Look for files that are exactly 33 bytes in size (Find uses "c" to represent size in bytes)
+* `/`: Search the entire server (/ is the root directory on Linux similar to the C:/ Drive on Windows)
+* `-type f`: Search only for files (Exclude Directories)
+* `-user bandit7`: Search for files that are owned by user bandit7
+* `-group bandit6`: Search for files that belongs to the group bandit6
+* `-size 33c`: Look for files that are exactly 33 bytes in size (Find uses "c" to represent the size in bytes)
 
-This command alone is sufficient to get the result that we are looking for but since we are scanning the entire server we are going to encounter files what we do not have permission to access and which are going to show errors.
+This command alone is sufficient to get the result that we are looking for but since we are scanning the entire server we are going to encounter files that we do not have permission to access and which are going to show errors.
 
-```
+```bash
 bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c  
 find: '/root': Permission denied  
 find: '/home/bandit28-git': Permission denied  
@@ -86,16 +86,16 @@ find: '/etc/lvm/backup': Permission denied
 find: '/sys/fs/pstore': Permission denied
 ```
 
-These errors can be filtered out by sending the error stream denoted by number 2 to `/dev/null` . NULL is a special device on Linux which destroys all that data that is send to it.
+These errors can be filtered out by sending the error stream denoted by number 2 to `/dev/null`. NULL is a special device on Linux that destroys all the data that is sent to it.
 
 ```
 bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c 2> /dev/null  
 /var/lib/dpkg/info/bandit7.password
 ```
 
-(For additional information on these concepts refer the attached resources)
+(For additional information on these concepts refer to the attached resources)
 
-Not that we have found the file lets view its contents
+Not that we have found the file let's view its contents
 
 ```
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password  
@@ -104,7 +104,7 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit7 to access next level
+Logout of the current session and use the password of user bandit7 to access the next level
 
 ```
 > ssh bandit7@bandit.labs.overthewire.org -p 2220  

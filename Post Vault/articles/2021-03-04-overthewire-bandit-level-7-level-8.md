@@ -83,7 +83,7 @@ bolt's 726RB3lt2RmeCtbWEQ8lhUAxVBJfepy0
 Klondikes wVh3ILxQAsKg8WNnFHp8GxtnSu213GbR
 ```
 
-(The -n flag allows us to specify how many lines to print from start of the file. We can use the `tail` command to look at the last n lines of a file)
+(The -n flag allows us to specify how many lines to print from the start of the file. We can use the `tail` command to look at the last n lines of a file)
 
 We know the password is next to the word "millionth" in the file. We can look for this pattern by using the `grep` command
 
@@ -94,7 +94,7 @@ millionth cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit8 to access next level
+Logout of the current session and use the password of user bandit8 to access the next level
 
 ```
 > ssh bandit8@bandit.labs.overthewire.org -p 2220  

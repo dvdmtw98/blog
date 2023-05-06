@@ -74,7 +74,7 @@ file (1)             - determine file type
 
 [How to Compress and Decompress .bz2 files in Linux Using bzip2 Command – The Geek Diary](https://www.thegeekdiary.com/how-to-compress-and-decompress-bz2-files-in-linux-using-bzip2-command/)
 
-[xxd(1): make hexdump/do reverse - Linux man page](https://linux.die.net/man/1/xxd)
+[xxd(1): make hex dump/do reverse - Linux man page](https://linux.die.net/man/1/xxd)
 
 ### Solution
 
@@ -101,9 +101,9 @@ bandit12@bandit:~$ head data.txt
 00000090: 69ea 6800 0f50 68f2 4d00 680d 06ca 0190  i.h..Ph.M.h.....
 ```
 
-Looking at the data we see that the file consist of hexadecimal data. We have to convert this hexdecimal data to binary to get back the actual file. We can make use of the `xxd` command that allows us to manipulate hexadecimal data. The `-r` flag is used to tell xxd to reverse the operation (hex to binary)
+Looking at the data we see that the file consists of hexadecimal data. We have to convert this hexadecimal data to binary to get back the actual file. We can make use of the `xxd` command that allows us to manipulate hexadecimal data. The `-r` flag is used to tell xxd to reverse the operation (hex to binary)
 
-But before we do any of this we first need to create an temporary working directory in the `/tmp` directory as we do not have permission to create new files in the current location. We can do this using the `mkdir`command. To move into the new directory we can use the `cd` command
+But before we do any of this we first need to create a temporary working directory in the `/tmp` directory as we do not have permission to create new files in the current location. We can do this using the `mkdir` command. To move into the new directory we can use the `cd` command
 
 ```
 bandit12@bandit:~$ mkdir /tmp/random_dir
@@ -113,7 +113,7 @@ bandit12@bandit:~$ cd /tmp/random_dir
 bandit12@bandit:/tmp/random_dir$
 ```
 
-We now need to move `data.txt` to this new location. We can do this using the `cp`command. And then we rename the file to remove the `.txt` extension as we know the file is not an text file
+We now need to move `data.txt` to this new location. We can do this using the `cp` command. And then we rename the file to remove the `.txt` extension as we know the file is not a text file
 
 ```
 bandit12@bandit:/tmp/random_dir$ cp ~/data.txt .
@@ -127,7 +127,7 @@ bandit12@bandit:/tmp/random_dir$ ls
 data
 ```
 
-Now that the data is an the new directory we can now use xxd to convert the data into its binary equivalent
+Now that the data is in the new directory we can now use xxd to convert the data into its binary equivalent
 
 ```
 bandit12@bandit:/tmp/random_dir$ xxd -r data > binary
@@ -145,9 +145,9 @@ binary: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:3
 
 #### Gzip Decompression
 
-We can see that the file was compressed using qzip so we can decompress the data using the `gunzip` command. When trying to decompress an gzip file it is important that the file has the correct extension.
+We can see that the file was compressed using gzip so we can decompress the data using the `gunzip` command. When trying to decompress a gzip file the file must have the correct extension.
 
-**Note:** Gunzip is an shorthand for `gzip -d` command
+**Note:** Gunzip is shorthand for `gzip -d`
 
 ```
 bandit12@bandit:/tmp/random_dir$ mv binary binary.gz
@@ -160,14 +160,14 @@ binary  data
 
 #### Bzip Decompression
 
-Using the `file` command we can again look at the type of the data that is stored in the file
+Using the `file` command we can again look at the type of data that is stored in the file
 
 ```
 bandit12@bandit:/tmp/random_dir$ file binary  
 binary: bzip2 compressed data, block size = 900k
 ```
 
-We see that the data is compressed using bzip2. For decompressing an bzip2 file we can use the `bunzip2` command
+We see that the data is compressed using bzip2. For decompressing a bzip2 file we can use the `bunzip2` command
 
 ```
 bandit12@bandit:/tmp/random_dir$ bunzip2 binary  
@@ -181,14 +181,14 @@ binary.out  data
 
 #### Gzip Decompression (Again)
 
-Using the `file` command we can look at the type of the data that is stored in the file
+Using the `file` command we can look at the type of data that is stored in the file
 
 ```
 bandit12@bandit:/tmp/random_dir$ file binary.out  
 binary.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
 ```
 
-We see that its once more gzip compressed file we use the same procedure as Step 5 to decompress the file
+We see that it is once more gzip compressed file we use the same procedure as Step 5 to decompress the file
 
 **Note:** Remember to rename the file with the `.gz` extension for the file to be decompressed properly
 
@@ -210,7 +210,7 @@ bandit12@bandit:/tmp/random_dir$ file binary
 binary: POSIX tar archive (GNU)
 ```
 
-We see that the data is saved in an tar archive. For extracting an tar file we use the `tar` command. The `-r` flag is used to specify that we what to extract the data and `-f` flag is used to specify the filename
+We see that the data is saved in a tar archive. For extracting a tar file we use the `tar` command. The `-r` flag is used to specify that we what to extract the data and the `-f` flag is used for specifying the filename
 
 ```
 bandit12@bandit:/tmp/random_dir$ tar -xf binary
@@ -219,7 +219,7 @@ bandit12@bandit:/tmp/random_dir$ ls
 binary  data  data5.bin
 ```
 
-We use the `file` command to see the file type and we see that the data is again in an tar archive.
+We use the `file` command to see the file type and we see that the data is again in a tar archive.
 
 It looks like the password file has recursively been compressed using "tar", "gzip" and "bzip2". We keep repeating the above steps tell we get the password file
 
@@ -274,7 +274,7 @@ The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
 We have found the password for the next level !!
 
-Logout of current session and use password of user bandit13 to access next level
+Logout of the current session and use the password of user bandit13 to access the next level
 
 ```
 > ssh bandit13@bandit.labs.overthewire.org -p 2220  

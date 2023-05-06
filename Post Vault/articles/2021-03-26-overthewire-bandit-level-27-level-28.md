@@ -33,7 +33,7 @@ git (1)          - the stupid content tracker
 
 ### Solution
 
-From the question we understand that in this level we are going to be working with Git. Before we clone the repository lets make an folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
+From the question, we understand that at this level we are going to be working with Git. Before we clone the repository let's make a folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
 
 ```
 bandit27@bandit:~$ cd /tmp/
@@ -45,7 +45,7 @@ bandit27@bandit:/tmp$ cd git_level27
 bandit27@bandit:/tmp/git_level27$
 ```
 
-Now that we have created our working directory lets clone the repository.
+Now that we have created our working directory let's clone the repository.
 
 ![Clone Git Repository](images/bandit-27-28/clone-git-repo.png)
 
@@ -55,11 +55,11 @@ The password for the repository is the same as bandit27
 Password: 3ba3118a22e93127a4ed485be72ef5ea
 ```
 
-Now that we have the repository cloned to our machine. Lets see what are the files that are present in the repository.
+Now that we have the repository cloned to our machine. Let us see what files are present in the repository.
 
 ![View Repo Content|360](images/bandit-27-28/view-content.png)
 
-We see that there is a file called as "README" in the folder. Lets have a look at the contents of this file.
+We see that there is a file called "README" in the folder. Let us have a look at the contents of this file.
 
 **Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
 
@@ -70,7 +70,7 @@ The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 
 And there we go we have the password for the next level !!!
 
-Logout of the current session and login as bandit28 to start the next level
+Logout of the current session and log in as bandit28 to start the next level
 
 ```
 ssh bandit28@bandit.labs.overthewire.org -p 2220

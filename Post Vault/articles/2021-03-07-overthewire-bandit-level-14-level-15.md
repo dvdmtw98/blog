@@ -54,11 +54,11 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 ### Solution
 
-From the question we know that there is an service that is running on port 30,000. We can try to connect to the service using `netcat` command
+From the question, we know that there is a service that is running on port 30,000. We can try to connect to the service using Netcat
 
-_(For the syntax of netcat and additional usage refer the attached resources)_
+_(For the syntax of netcat and additional usage refer to the attached resources)_
 
-**Note :** `nc` is an alias for the `netcat` command and can be used interchangeably
+**Note:** `nc` is an alias for `netcat` and can be used interchangeably
 
 ```
 bandit14@bandit:~$ netcat localhost 30000  
@@ -66,9 +66,9 @@ Password
 Wrong! Please enter the correct current password
 ```
 
-When we enter an random value we see that we get an message saying the pasword is incorrect
+When we enter a random value we see that we get a message saying the password is incorrect
 
-We know that the current level password is stored in `/etc/band_pass/bandit14` we can try to provide that as an value to the service and see if we get the password for the next level
+We know that the current level password is stored in `/etc/band_pass/bandit14` we can try to provide that as a value to the service and see if we get the password for the next level
 
 ```
 bandit14@bandit:~$ cat /etc/bandit_pass/bandit14  
@@ -82,7 +82,7 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 
 We have found the password for the next level !!!
 
-Logout of the current session and login into the next level using bandit15 password
+Logout of the current session and login into the next level using the bandit15 password
 
 ```
 > ssh bandit15@bandit.labs.overthewire.org -p 2220
