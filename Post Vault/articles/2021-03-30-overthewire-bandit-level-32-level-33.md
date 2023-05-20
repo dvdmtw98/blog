@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > After all this `git` stuff its time for another escape. Good luck!
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > sh, man
 
@@ -27,7 +26,7 @@ man (1)              - an interface to the system reference manuals
 sh (1)               - command interpreter (shell)
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [How to Use SUID, SGID, and Sticky Bits on Linux](https://www.howtogeek.com/656646/how-to-use-suid-sgid-and-sticky-bits-on-linux/)
 
@@ -101,8 +100,8 @@ $ cat /etc/bandit_pass/bandit33
 c9c3199ddf4121b10cf581a98d51caee
 ```
 
-And there we go we have the password for the next level !!!
+And there we go we have the password for the next level !!!
 
 This is the end of the Bandit series. If new levels are added in the future they will be updated as and when possible.
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

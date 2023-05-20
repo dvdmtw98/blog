@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The password for the next level is stored in a file called **spaces in this filename** located in the home directory
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -40,7 +39,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [How to Read a Filename with Spaces in Linux](https://linoxide.com/linux-command/how-to-read-filename-with-spaces-in-linux/)
 
@@ -69,7 +68,7 @@ bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 
-We have found the password for the next level !!
+We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit3 to access the next level
 

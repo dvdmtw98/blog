@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The password for the next level is stored in the file **data.txt**, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file
 
@@ -64,7 +63,7 @@ file (1)             - determine file type
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Hex dump - Wikipedia](https://en.wikipedia.org/wiki/Hex_dump)
 
@@ -72,7 +71,7 @@ file (1)             - determine file type
 
 [Tar Command in Linux (Create and Extract Archives) \| Linuxize](https://linuxize.com/post/how-to-create-and-extract-archives-using-the-tar-command-in-linux/)
 
-[How to Compress and Decompress .bz2 files in Linux Using bzip2 Command – The Geek Diary](https://www.thegeekdiary.com/how-to-compress-and-decompress-bz2-files-in-linux-using-bzip2-command/)
+[How to Compress and Decompress .bz2 files in Linux Using bzip2 Command - The Geek Diary](https://www.thegeekdiary.com/how-to-compress-and-decompress-bz2-files-in-linux-using-bzip2-command/)
 
 [xxd(1): make hex dump/do reverse - Linux man page](https://linux.die.net/man/1/xxd)
 
@@ -113,7 +112,7 @@ bandit12@bandit:~$ cd /tmp/random_dir
 bandit12@bandit:/tmp/random_dir$
 ```
 
-We now need to move `data.txt` to this new location. We can do this using the `cp` command. And then we rename the file to remove the `.txt` extension as we know the file is not a text file
+We now need to move `data.txt` to this new location. We can do this using the `cp` command. And then we rename the file to remove the `.txt` extension as we know the file is not a text file
 
 ```
 bandit12@bandit:/tmp/random_dir$ cp ~/data.txt .
@@ -190,7 +189,7 @@ binary.out: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:
 
 We see that it is once more gzip compressed file we use the same procedure as Step 5 to decompress the file
 
-**Note:** Remember to rename the file with the `.gz` extension for the file to be decompressed properly
+**Note:** Remember to rename the file with the `.gz` extension for the file to be decompressed properly
 
 ```
 bandit12@bandit:/tmp/random_dir$ mv binary.out binary.gz
@@ -272,7 +271,7 @@ bandit12@bandit:/tmp/random_dir$ cat data8
 The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 ```
 
-We have found the password for the next level !!
+We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit13 to access the next level
 

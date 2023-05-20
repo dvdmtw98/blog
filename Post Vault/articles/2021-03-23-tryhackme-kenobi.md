@@ -8,9 +8,8 @@ categories: [Security, TryHackMe]
 tags: [tryhackme, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/thm-kenobi/thm-kenobi-banner.png
 ---
-
-![TryHackMe Kenobi Banner](images/thm-kenobi/thm-kenobi-banner.png)
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
@@ -50,7 +49,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 > 7
 
-### Task 2: Enumerating Samba for shares
+### Task 2: Enumerating Samba for shares
 
 From the scan results, we can see that we have SMB running on the system (Ports 129, 445). The SMB ports are generally not secured properly and if anonymous login is enabled it allows anyone to view the shares without authentication. Since we know there is a high probability of finding an issue with SMB we should start our attack by looking at the SMB service.
 
@@ -58,7 +57,7 @@ From the scan results, we can see that we have SMB running on the system (Ports 
 
 Nmap provides scripts to enumerate SMB Shares so let's use them to see if we can collect any information about the target.
 
-> nmap -p 445 — script=smb-enum-shares,smb-enum-users 10.10.130.183
+> nmap -p 445 -script=smb-enum-shares,smb-enum-users 10.10.130.183
 
 1. **Using the Nmap command above, how many shares have been found?**
 
@@ -100,7 +99,7 @@ Going through the log file we were able to see some interesting information. An 
 
 We have enumerated the SMB service and found some data. Next, we can have a look at NFS to see if anything useful about that target can be found. Nmap provides scripts for enumerating NFS so let's use them.
 
-> nmap -p 111 — script=nfs-ls,nfs-statfs,nfs-showmount 10.10.130.183
+> nmap -p 111 -script=nfs-ls,nfs-statfs,nfs-showmount 10.10.130.183
 
 ![Nmap NFS Enumeration|500](images/thm-kenobi/nmap-service-enumeration.png)
 
@@ -108,13 +107,13 @@ From the results, we can see that the /var directory of the target machine is be
 
 **Note:** Observe how to enumerate NFS we are scanning the rpcbind server (Port 111) instead of the NFS Server. This is done because the rpcbind server holds the information about the NFS Server.
 
-[9.9. NFS and rpcbind Red Hat Enterprise Linux 6 \| Red Hat Customer Portal](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/s2-nfs-methodology-portmap)
+[9.9. NFS and rpcbind Red Hat Enterprise Linux 6 \| Red Hat Customer Portal](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/s2-nfs-methodology-portmap)
 
 4. **What mount can we see?**
 
 > /var
 
-### Task 3: Gain initial access with ProFtpd
+### Task 3: Gain initial access with ProFtpd
 
 From our initial Nmap scan, we know that an FTP server is running on the target and it is using ProFtpd version 1.3.5. We can confirm this by using Netcat and connecting to the port to capture the banner.
 
@@ -219,4 +218,4 @@ By creating a file called curl and then adding the location to our file at the s
 
 > 177b3cd8562289f37382721c28381f02
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

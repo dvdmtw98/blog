@@ -6,10 +6,9 @@ categories: [Networking, Protocol]
 tags: [networking, protocol, internet, nat]
 published: true
 img_path: /assets/
+image: images/nat-explained/nat-explained-banner.png
 math: true
 ---
-
-![nat-explained-banner](images/nat-explained/nat-explained-banner.png)
 
 ### What is NAT?
 
@@ -29,7 +28,7 @@ When the internet was initially created, the intention was to assign every host 
 
 Since back in the day there weren't many devices that accessed the internet it was assumed that this address space would be sufficient for connecting all the hosts that would ever exist on the Internet. As the internet grew in popularity the industry soon realized that this address space would not be sufficient.
 
-The permanent long-term solution for this issue was to create a larger address space, this led to the creation of IPv6 addresses. IPv6 addresses are made up of 128 bytes (16 bits) which gives us $2^{128}$ or approximately $3.4 \times 10^{38}$ (340 trillion trillion trillion) IP addresses. This address space is so astronomically large that even if we assign trillions of addresses to each human being on the planet we would still have leftover IP addresses. However, the migration to IPv6 proved to be a difficult, complicated and slow process so a short-term solution needed to be created. This interim solution gave us NAT as well as the concept of public and private IP addresses.
+The permanent long-term solution for this issue was to create a larger address space, this led to the creation of IPv6 addresses. IPv6 addresses are made up of 128 bytes (16 bits) which gives us $2^{128}$ or ~$3.4 \times 10^{38}$ (340 trillion trillion trillion) IP addresses. This address space is so astronomically large that even if we assign trillions of addresses to each human being on the planet we would still have leftover IP addresses. However, the migration to IPv6 proved to be a difficult, complicated and slow process so a short-term solution needed to be created. This interim solution gave us NAT as well as the concept of public and private IP addresses.
 
 [TCP/IP Guide - IPv6 Address Size and Address Space](http://www.tcpipguide.com/free/t_IPv6AddressSizeandAddressSpace-2.htm)
 

@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The credentials for the next level can be retrieved by submitting the password of the current level to **a port on localhost in the range 31000 to 32000**. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don't. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ssh, telnet, nc, openssl, s_client, nmap
 
@@ -40,7 +39,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Nmap Commands - 17 Basic Commands for Linux Network](https://phoenixnap.com/kb/nmap-command-linux-examples)
 
@@ -50,7 +49,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 ### Solution
 
-We know there that the service that we need is running in the range of 31,000–32,000. We can find all services in that range using Nmap.
+We know there that the service that we need is running in the range of 31,000-32,000. We can find all services in that range using Nmap.
 
 The -T4 flag is used to increase the speed of the scan while the -p flag is used to specify the ports and the -sV flag is used to identify the versions of the services.
 
@@ -211,7 +210,7 @@ bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
 xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ```
 
-We have found the password for the current level !!!
+We have found the password for the current level !!!
 
 Logout of the current session (bandit17) and the previous session (bandit16) and use the password of bandit17 to access the next level
 

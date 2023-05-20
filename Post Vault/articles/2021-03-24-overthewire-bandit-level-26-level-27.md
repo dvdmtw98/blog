@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > Good job getting a shell! Now hurry and grab the password for bandit27!
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ls
 
@@ -23,7 +22,7 @@ img_path: /assets/
 ls (1)               - list directory contents
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [How to Use SUID, SGID, and Sticky Bits on Linux](https://www.howtogeek.com/656646/how-to-use-suid-sgid-and-sticky-bits-on-linux/)
 
@@ -74,7 +73,7 @@ bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
 3ba3118a22e93127a4ed485be72ef5ea
 ```
 
-There we go we have the password for the next level !!!
+There we go we have the password for the next level !!!
 
 Logout of the current session and login into the next level as banddit27
 

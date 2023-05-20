@@ -47,7 +47,7 @@ google_analytics:
 pwa:
   enabled: true
 
-paginate: 10
+paginate: 15
 
 # ------------ The following options are not recommended to be modified ------------------
 

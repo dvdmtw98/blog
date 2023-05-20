@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The goal of this level is for you to log into the game using SSH. The host to which you need to connect is **bandit.labs.overthewire.org**, on port 2220. The username is **bandit0** and the password is **bandit0**. Once logged in, go to the Level 1 page to find out how to beat Level 1
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ssh
 
@@ -23,7 +22,7 @@ img_path: /assets/
 ssh (1) - OpenSSH remote login client
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Secure Shell - Wikipedia](https://en.wikipedia.org/wiki/SSH_(Secure_Shell))
 

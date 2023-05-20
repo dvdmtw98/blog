@@ -6,16 +6,15 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > There is a git repository at `ssh://bandit30-git@localhost/home/bandit30-git/repo`. The password for the user `bandit30-git` is the same as for the user `bandit30`.  
 > Clone the repository and find the password for the next level.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > git
 
@@ -25,7 +24,7 @@ Git (3pm)        - Perl interface to the Git version control system
 git (1)          - the stupid content tracker
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Version Control (Git) · the missing semester of your cs education](https://missing.csail.mit.edu/2020/version-control/)
 
@@ -63,7 +62,7 @@ Now that we have the repository cloned to our machine. Let us see what files are
 
 We see that there is a file called "README.md" in the folder. Let us have a look at the contents of this file.
 
-**Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
+**Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
 
 ```
 bandit30@bandit:/tmp/git_level30/repo$ cat README.md   
@@ -95,7 +94,7 @@ bandit30@bandit:/tmp/git_level30/repo$ git show secret
 47e603bb428404d265f59c42920d81e5
 ```
 
-And there we go we have found the password for the next level !!!
+And there we go we have found the password for the next level !!!
 
 Logout of the current session and log in as bandit31 to start the next level
 

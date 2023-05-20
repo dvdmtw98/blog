@@ -6,15 +6,14 @@ categories: [Security, TryHackMe]
 tags: [tryhackme, ctf, security, windows]
 published: true
 img_path: /assets/
+image: images/thm-blaster/thm-blaster-banner.png
 ---
-
-![TryHackeMe Blaster Banner](images/thm-blaster/thm-blaster-banner.png)
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Mission Start!
+### Task 1: Mission Start!
 
-1. **Deploy the machine! This is a Windows box so give it a few minutes (3–5 at max) to come online**
+1. **Deploy the machine! This is a Windows box so give it a few minutes (3-5 at max) to come online**
 
 > No answer required
 
@@ -68,13 +67,13 @@ xfreerdp +clipboard /u:wade /p:parzival /v:<machine-ip>
 
 > THM{HACK_PLAYER_ONE}
 
-### Task 3: Breaching the Control Room
+### Task 3: Breaching the Control Room
 
 1. **When enumerating a machine, it's often useful to look at what the user was last doing. Look around the machine and see if you can find the CVE which was researched on this server. What CVE was it?**
 
 ![Browser History](images/thm-blaster/browser-history.png)
 
-> CVE-2019–1388
+> CVE-2019-1388
 
 **Note:** As of 14/03/2021 there is a bug in the machine due to which the history in the browser is missing. The workaround, for now, is just to google for the vulnerability and continue with the rest of the challenge
 
@@ -148,4 +147,4 @@ On searching online we come across two links that show us how we can use the exe
 
 > No answer required
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

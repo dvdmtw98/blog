@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > A program is running automatically at regular intervals from **cron**, the time-based job scheduler. Look in **/etc/cron.d/** for the configuration and see what command is being executed.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > cron, crontab, crontab(5) (use "man 5 crontab" to access this)
 
@@ -27,7 +26,7 @@ crontab (1)      - maintain crontab files for individual users (Vixie Cron)
 crontab (5)      - tables for driving cron
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab - YouTube](https://www.youtube.com/watch?v=QZJ1drMQz1A)
 
@@ -75,7 +74,7 @@ bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ```
 
-And there we go we have the password for the next level !!!
+And there we go we have the password for the next level !!!
 
 Logout of the current session and start the next level as bandit22
 

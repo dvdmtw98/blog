@@ -6,18 +6,17 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).  
 > **NOTE:** Try connecting to your own network daemon to see if it works as you think
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
-> ssh, nc, cat, bash, screen, tmux, Unix 'job control' (bg, fg, jobs, &, CTRL-Z, …)
+> ssh, nc, cat, bash, screen, tmux, Unix 'job control' (bg, fg, jobs, &, CTRL-Z, …)
 
 ```
 > whatis ssh  
@@ -41,11 +40,11 @@ tmux (1)             - terminal multiplexer
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Netcat (nc) Command with Examples \| Linuxize](https://linuxize.com/post/netcat-nc-command-with-examples/)
 
-[Understanding the job control commands in Linux – bg, fg and CTRL+Z – The Geek Diary](https://www.thegeekdiary.com/understanding-the-job-control-commands-in-linux-bg-fg-and-ctrlz/)
+[Understanding the job control commands in Linux - bg, fg and CTRL+Z - The Geek Diary](https://www.thegeekdiary.com/understanding-the-job-control-commands-in-linux-bg-fg-and-ctrlz/)
 
 ### Solution
 

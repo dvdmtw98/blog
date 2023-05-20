@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The password for the next level is stored in the file **data.txt** and is the only line of text that occurs only once
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
@@ -52,7 +51,7 @@ xxd (1)              - make a hexdump or do the reverse.
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Learn Piping and Redirection - Linux Tutorial](https://ryanstutorials.net/linuxtutorial/piping.php)
 
@@ -98,7 +97,7 @@ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 **Note:** The `cat` command is used to read the data from the file which is then passed as input to the next command in the line using pipes
 
-We have found the password for the next level !!
+We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit9 to access the next level
 

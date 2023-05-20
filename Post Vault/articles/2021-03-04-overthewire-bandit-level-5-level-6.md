@@ -6,9 +6,8 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
@@ -17,7 +16,7 @@ img_path: /assets/
 > 1033 bytes in size  
 > not executable  
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -43,7 +42,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [35 Practical Examples of Linux Find Command](https://www.tecmint.com/35-practical-examples-of-linux-find-command/)
 
@@ -110,7 +109,7 @@ cat ./maybehere07/.file2
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 
-We have found the password for the next level !!
+We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit6 to access the next level
 

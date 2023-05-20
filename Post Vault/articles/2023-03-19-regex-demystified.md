@@ -5,9 +5,8 @@ categories: [Programming, Python]
 tags: [programming, regex, python, software-development]
 published: true
 img_path: /assets/
+image: images/regex-demystified/regex-demystified-banner.png
 ---
-
-![Regex Demystified Banner](images/regex-demystified/regex-demystified-banner.png)
 
 Regex (also called Regular Expression or RegExp) is a sequence of characters that can be used to find or match patterns in text. Regexes are made up of special characters that enable us to define complex patterns in a terse and concise manner.
 

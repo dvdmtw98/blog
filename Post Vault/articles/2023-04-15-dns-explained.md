@@ -6,9 +6,8 @@ categories: [Networking, Protocol]
 tags: [networking, protocol, internet, dns]
 published: true
 img_path: /assets/
+image: images/dns-explained/dns-explained-banner.png
 ---
-
-![DNS Explained Banner](images/dns-explained/dns-explained-banner.png)
 
 <a href="https://www.freepik.com/free-vector/tiny-business-people-with-digital-devices-big-globe-surfing-internet_11669276.htm#page=2&query=domain%20name%20system&position=2&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Banner graphic by Vectorjuice</a> on Freepik
 
@@ -26,7 +25,7 @@ Back in the day when the internet was still called ARPAnet, each computer mainta
 
 ### What are DNS Servers?
 
-Before we can look at how DNS works we must first understand what is a DNS Server. A server is a computer that provides a service/resource to computer programs and its users using the internet. Servers that are in charge of translating domain names to IP Addresses are called DNS Servers. Four types of DNS Servers are involved in process of obtaining the IP Address from the domain name.
+Before we can look at how DNS works we must first understand what is a DNS Server. A server is a computer that provides a service/resource to computer programs and its users using the internet. Servers that are in charge of translating domain names to IP Addresses are called DNS Servers. Four types of DNS Servers are involved in the process of obtaining the IP Address from the domain name.
 
 #### DNS Recursive Resolver
 

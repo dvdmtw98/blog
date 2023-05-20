@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
-> The password for the next level is stored in a file **readme** in the homedirectory. Unfortunately, someone has modified **.bashrc** to log you out when you log in with SSH.
+> The password for the next level is stored in a file **readme** in the homedirectory. Unfortunately, someone has modified **.bashrc** to log you out when you log in with SSH.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ssh, ls, cat
 
@@ -76,7 +75,7 @@ $ cat readme
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ```
 
-We have got the password for the next level !!!
+We have got the password for the next level !!!
 
 Logout of the current session and login into the next level using the password for bandit19
 

@@ -5,15 +5,14 @@ categories: [Programming, Python]
 tags: [programming, python, software-development]
 published: true
 img_path: /assets/
+image: images/python-name-main/python-name-main-banner.png
 ---
-
-![Python Name Main Banner](images/python-name-main/python-name-main-banner.png)
 
 Before we can dive into the question at hand let's look at a few examples to understand what Python does when we run code. When a Python script is executed the **Python interpreter** behind the scenes **sets some global environment variables** and then **executes all the code** that is **present in the file**. This is even true for modules that are imported into the script.
 
 One of the environment variables set by the Python interpreter at the execution of code is **`__name__`**. All the special variables start and end with double underscores and are called **Dunder** or **Magic** variables.
 
-> If anyone is wonder why they are called Dunder its because Dunder is short for **D**ouble **Under**scores :)
+> If anyone is wonder why they are called Dunder its because Dunder is short for **D**ouble **Under**scores :)
 
 ### Example 1
 

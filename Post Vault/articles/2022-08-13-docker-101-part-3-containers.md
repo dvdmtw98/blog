@@ -5,9 +5,8 @@ categories: [DevOps, Docker]
 tags: [devops, docker, technology, software-development]
 published: true
 img_path: /assets/
+image: images/docker-container/docker-101-banner.png
 ---
-
-![Docker 101 Banner](images/docker-container/docker-101-banner.png)
 
 So far, we have looked at the basics related to containers and the various Docker commands for managing Images. In this article, we are going a dive deeper and look at Containers (finally) and their associated commands.
 
@@ -15,7 +14,7 @@ So far, we have looked at the basics related to containers and the various Docke
 
 There are 5 states in which a container can exist during its entire lifetime. These states are illustrated in the figure below.
 
-In this article, we will be covering the 3 main states that we need to know in order to work with containers - Running, Stopped, and Removed
+In this article, we will be covering the 3 main states that we need to know to work with containers - Running, Stopped, and Removed
 
 ![Docker Container Lifecycle](images/docker-container/docker-container-lifecycle.png)
 
@@ -44,13 +43,13 @@ docker container run hello-world
 
 ![Docker Container Run|550](images/docker-container/docker-container-run.png)
 
-As you can see the container **started** running a **command** and then **exited**. It is important to note that in Non Interactive foreground mode, as the name implies we cannot interact with the running container.
+As you can see the container **started** running a **command** and then **exited**. It is important to note that in Non-Interactive foreground mode, as the name implies we cannot interact with the running container.
 
 **How did the container know what to execute when it was started?**
 
 The command to run at startup is determined by the Dockerfile which is used to build the image (We will look at this in detail in a future article). There is a command called CMD specified in the Dockerfile, which determines the command to execute when a container is run.
 
-There are multiple ways to find out the command that will be executed at the start of the container. One way to check is to use "image inspect" command
+There are multiple ways to find out the command that will be executed at the start of the container. One way to check is to use the "image inspect" command
 
 ```
 docker image inspect hello-world
@@ -68,7 +67,7 @@ The last line CMD is what we are looking for, and it matches the results that we
 
 #### Foreground Mode (Interactive)
 
-To run an container in Interactive mode, some additional parameters need to be passed to "container run" command
+To run a container in Interactive mode, some additional parameters need to be passed to the "container run" command
 
 ```
 docker container run --name alpine -it alpine /bin/sh
@@ -96,13 +95,13 @@ If the `-a` flag is not used, then only the running containers will be shown.
 
 ![Docker Container List](images/docker-container/docker-container-list.png)
 
-In the above image the status of all the containers show as Exited which means they are all in the Stopped State.
+In the above image, the status of all the containers show as Exited which means they are all in the Stopped State.
 
 > For anyone wondering the names assigned automatically to containers is always an **adjective** followed by the name of an **scientist** :)
 
 ### Removing Containers
 
-Once an container has finished executing it will enter the exited (Stopped) state. The rm command is used to clean such containers.
+Once a container has finished executing it will enter the exited (Stopped) state. The rm command is used to clean such containers.
 
 ```
 docker container rm <container-name>
@@ -122,7 +121,7 @@ As we can observe this time once the container has finished executing we do not 
 
 ### Detached/ Daemon Mode
 
-Containers that are started in detached mode start in the background and do not attach themselves to our terminal. Lets try this using the [MySQL](https://hub.docker.com/_/mysql) image.
+Containers that are started in detached mode start in the background and do not attach themselves to our terminal. Let us try this using the [MySQL](https://hub.docker.com/_/mysql) image.
 
 ```
 docker image pull mysql
@@ -132,19 +131,19 @@ docker container run --name mysql -d -e MYSQL_ROOT_PASSWORD=password -e MYSQL_RO
 
 ![Docker Container Run Command](images/docker-container/docker-container-run-5.png)
 
-Some Docker images allow to define environment variables that are used to configure some of the parameters used by the image. We can set these parameters using the `-e` flag.
+Some Docker images allow defining environment variables that are used to configure some of the parameters used by the image. We can set these parameters using the `-e` flag.
 
-The list of parameters that can be set on a image can be found by looking at the [page](https://hub.docker.com/_/mysql) of the image on Docker Hub.
+The list of parameters that can be set on an image can be found by looking at the [page](https://hub.docker.com/_/mysql) of the image on Docker Hub.
 
 ![Docker Container Environment Variables](images/docker-container/docker-container-envs.png)
 
-The ports column from the above image will be covered in detail in the next article. But in brief Docker allows us to expose some ports on the container which allow us to connect to the container and interact with the service running within it.
+The ports column from the above image will be covered in detail in the next article. But in brief, Docker allows us to expose some ports on the container which allow us to connect to the container and interact with the service running within it.
 
 What's important to observe is that this time the container is running in the background and is not attached to your terminal.
 
 ### Stopping Container
 
-Unlike interactive containers, detached containers need to be stopped explicitly by the user (unless they crash in which case they enter stopped stopped automatically)
+Unlike interactive containers, detached containers need to be stopped explicitly by the user (unless they crash in which case they automatically go to the stopped state)
 
 ![Stop Docker Container](images/docker-container/docker-container-stop.png)
 
@@ -154,13 +153,13 @@ So once we are done using a container we need to stop it using the "container st
 docker container stop <container-name>
 ```
 
-Alternatively, we can skip the stop command and pass the `-f` flag to rm command to forcefully remove the running container.
+Alternatively, we can skip the stop command and pass the `-f` flag to the rm command to forcefully remove the running container.
 
 ```
 docker container rm -f <container-name>
 ```
 
-Another way to stop a container is to use the "container kill" command, while the end result achieved by both the commands is the same (stop the container) they go about it in a different manner.
+Another way to stop a container is to use the "container kill" command, while the result achieved by both commands is the same (stop the container) they go about it differently.
 
 ```
 docker container kill <container-name>
@@ -168,13 +167,13 @@ docker container kill <container-name>
 
 > The _docker_ **_stop_** commands issues the **SIGTERM** signal, whereas the _docker_ **_kill_** commands sends the **SIGKILL** signal
 
-SIGTERM and SIGKILL are Linux signals used to denote the occurrence of an event to processes. The key thing to understand is that SIGTERM is a tamer operation that SIGKILL. Stop command causes the container processes to be terminated gratefully (gives the process in the container few seconds to close properly) unlike the the kill command that ends it immediately.
+SIGTERM and SIGKILL are Linux signals used to denote the occurrence of an event to processes. The key thing to understand is that SIGTERM is a tamer operation than SIGKILL. The stop command causes the container processes to be terminated gratefully (gives the process in the container few seconds to close properly) unlike the kill command that ends it immediately.
 
-For normal day to day Docker usage it is also better to stick to the "container stop" command unless there is some special reason to use the kill command. I have attached references on this topic which can be refereed for additional details.
+For normal day-to-day Docker usage, it is also better to stick to the "container stop" command unless there is some special reason to use the kill command. I have attached references on this topic which can be refereed for additional details.
 
 ### Containers Logs
 
-Some Docker Containers have logging enabled for easy debugging and finding errors that could have occurred using the lifetime of the container. These logs can he accessed using the "container logs" command.
+Some Docker Containers have logging enabled for easy debugging and finding errors that could have occurred using the lifetime of the container. These logs can be accessed using the "container logs" command.
 
 ```
 docker container logs <container-name>
@@ -182,7 +181,7 @@ docker container logs <container-name>
 
 ![Docker Container Logs](images/docker-container/docker-container-logs.png)
 
-The `-f` flag can be passed to above command to follow the logs that is generated by the container in real time.
+The `-f` flag can be passed to the above command to follow the logs as they are generated.
 
 ### Starting Stopped Containers
 
@@ -190,9 +189,9 @@ Suppose we have a stopped container and we want to start it up again then we can
 
 ![Docker Container Run 6](images/docker-container/docker-container-run-6.png)
 
-From the above image we can see that the mysql container was started in detached mode, after sometime the container was stopped and then later the stopped container was started again.
+From the above image, we can see that the mysql container was started in detached mode, after some time the container was stopped and then later the stopped container was started again.
 
-By default containers will restart in the mode they where created in using the "container run" command. To restart a detached mode container in interactive mode the `-ai` flag can be used.
+By default, containers will restart in the mode they were created in using the "container run" command. To restart a detached mode container in interactive mode the `-ai` flag can be used.
 
 ```
 docker container start -ai <container-name>
@@ -204,17 +203,17 @@ Say we have a running container and we want to quickly run a command on it or we
 
 ![Listing Docker Containers](images/docker-container/docker-container-list-2.png)
 
-In the above image we can see that the MySQL container was started in detached mode and then using the exec command we have printed out the name of the current user.
+In the above image we can see that the MySQL container was started in detached mode and then using the exec command we printed out the name of the current user.
 
 Unlike the "container run" command even after we execute a command on the container the entry point was not overwritten and the container continued to run normally.
 
-The exec command can also be used to connect to the container in interactive mode by using the `-it` flag. The `-u` flag is used to be specify the username id of the user to run the container.
+The exec command can also be used to connect to the container in interactive mode by using the `-it` flag. The `-u` flag is used to specify the username id of the user to run the container.
 
 > **Note:** An interactive container can be converted into an detached/ daemon container using the `Ctrl + P + Q` shortcut this even works for containers that are started in interactive mode using the "start" and "run" commands.
 
 ### Container Statistics
 
-We can view all the process that are running inside the container using the "container top" command.
+We can view all the processes that are running inside the container using the "container top" command.
 
 ```
 docker container top <container-name>
@@ -242,5 +241,5 @@ docker container inspect <container-name>
 
 *   [Difference Between docker stop and docker kill Commands \| Baeldung](https://www.baeldung.com/ops/docker-stop-vs-kill)
 *   [what's the difference between `docker stop` and `docker kill`? - Super User](https://superuser.com/questions/756999/whats-the-difference-between-docker-stop-and-docker-kill)
-*   [Which one should i use? docker kill or docker stop? - Stack Overflow](https://stackoverflow.com/questions/28339469/which-one-should-i-use-docker-kill-or-docker-stop)
+*   [Which one should I use? docker kill or docker stop? - Stack Overflow](https://stackoverflow.com/questions/28339469/which-one-should-i-use-docker-kill-or-docker-stop)
 *   [Docker Container Lifecycle Management \| Docker create run stop remove](https://k21academy.com/docker-kubernetes/docker-container-lifecycle-management/)

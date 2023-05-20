@@ -6,16 +6,15 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
-> The password for the next level is stored in the only human-readable file in the **inhere** directory.   
+> The password for the next level is stored in the only human-readable file in the **inhere** directory.   
 > Tip: if your terminal is messed up, try the "reset" command.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -41,7 +40,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Linux File Command - javatpoint](https://www.javatpoint.com/linux-file)
 
@@ -95,7 +94,7 @@ bandit4@bandit:~/inhere$ cat ./-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 
-We have found the password for the next level !!
+We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit5 to access the next level
 

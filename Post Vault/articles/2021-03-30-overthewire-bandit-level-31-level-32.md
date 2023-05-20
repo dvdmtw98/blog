@@ -6,16 +6,15 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > There is a git repository at `ssh://bandit31-git@localhost/home/bandit31-git/repo`. The password for the user `bandit31-git` is the same as for the user `bandit31`.  
 > Clone the repository and find the password for the next level.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > git
 
@@ -25,7 +24,7 @@ Git (3pm)        - Perl interface to the Git version control system
 git (1)          - the stupid content tracker
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Version Control (Git) · the missing semester of your cs education](https://missing.csail.mit.edu/2020/version-control/)
 
@@ -63,7 +62,7 @@ We see that there is a file called "README.md" in the folder. Let us have a look
 
 There is a file called ".gitignore" as well. This file is used to tell git which files should not be added to the repository. This will come in handy later so keep this in mind.
 
-**Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
+**Note:** The `.git` directory found in the repository is created by git that consists of files that are required for the proper functioning of the features that are provided by git.
 
 ![View the content of File|450](images/bandit-31-32/cat_file_content.png)
 

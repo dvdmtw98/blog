@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The password for the next level can be retrieved by submitting the password of the current level to **port 30000 on localhost**.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ssh, telnet, nc, openssl, s_client, nmap
 
@@ -40,7 +39,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [IP address - Wikipedia](https://en.wikipedia.org/wiki/IP_address)
 
@@ -80,7 +79,7 @@ Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 ```
 
-We have found the password for the next level !!!
+We have found the password for the next level !!!
 
 Logout of the current session and login into the next level using the bandit15 password
 

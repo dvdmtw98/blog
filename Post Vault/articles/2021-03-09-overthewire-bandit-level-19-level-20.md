@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Setuid - Wikipedia](https://en.wikipedia.org/wiki/Setuid)
 
@@ -35,7 +34,7 @@ total 8
 
 We can see that the file is called `bandit20-do` and when we list the details of the file we can see that the binary file can be executed by the current user (bandit19) and it is owned by bandit20
 
-To run an executable file we just need to specify its name along with the location. The file is in the current working directory so we can use `./<filename>` to access the file
+To run an executable file we just need to specify its name along with the location. The file is in the current working directory so we can use `./<filename>` to access the file
 
 ```
 bandit19@bandit:~$ ./bandit20-do  
@@ -62,7 +61,7 @@ bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ```
 
-We have found the password for the next level !!!
+We have found the password for the next level !!!
 
 Logout of the current session and start the next level using bandit20's password
 

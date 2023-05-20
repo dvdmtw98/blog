@@ -7,9 +7,8 @@ categories: [Security, TryHackMe]
 tags: [tryhackme, ctf, security, windows]
 published: true
 img_path: /assets/
+image: images/thm-blue/thm-blue-banner.png
 ---
-
-![TryHackMe Blue Banner](images/thm-blue/thm-blue-banner.png)
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
@@ -19,7 +18,7 @@ Scan and learn what exploit this machine is vulnerable to. Please note that this
 
 **This room is not meant to be a boot2root CTF, rather, this is an educational series for complete beginners. Professionals will likely get very little out of this room beyond basic practice as the process here is meant to be beginner-focused.**
 
-### Task 1: Recon
+### Task 1: Recon
 
 1. **Scan the machine**
 
@@ -41,7 +40,7 @@ By looking at the scan results we see that ports 135, 139 and 445 are the only p
 
 > 3
 
-3. **What is this machine vulnerable to? (Answer in the form of ms??-???, ex: ms08–067)**
+3. **What is this machine vulnerable to? (Answer in the form of ms??-???, ex: ms08-067)**
 
 To find the vulnerability that the machine is affected by we can run Nmap with the option `--script vuln` to find known vulnerabilities for the services that are found on the system
 
@@ -51,11 +50,11 @@ sudo nmap -sS -sV -T4 --script=vuln -p 135,139,445 10.10.136.254 -vv
 
 ![Nmap Scan Results|550](images/thm-blue/nmap-scan-results-2.png)
 
-We can see the SMB service on the target has a vulnerability (ms17–010)
+We can see the SMB service on the target has a vulnerability (ms17-010)
 
-> ms17–010
+> ms17-010
 
-### Task 2: Gain Access
+### Task 2: Gain Access
 
 1. **Start Metasploit**
 
@@ -155,7 +154,7 @@ There are multiple services that we can use to migrate our current session. Let'
 
 ![Migrating Meterpreter|280](images/thm-blue/migrating-meterpreter.png)
 
-### Task 4: Cracking
+### Task 4: Cracking
 
 1. **Within our elevated meterpreter shell, run the command 'hashdump'. This will dump all of the passwords on the machine as long as we have the correct privileges to do so. What is the name of the non-default user?**
 
@@ -189,7 +188,7 @@ Session completed
 
 > alqfna22
 
-### Task 5: Find flags!
+### Task 5: Find flags!
 
 1. **Flag1? _This flag can be found at the system root._**
 
@@ -217,4 +216,4 @@ The user files on Windows are saved in `C:\Windows\Users\<username>\`. Let's see
 
 > flag{admin_documents_can_be_valuable}
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

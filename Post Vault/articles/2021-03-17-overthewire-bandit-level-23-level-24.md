@@ -6,9 +6,8 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
@@ -16,7 +15,7 @@ img_path: /assets/
 > **NOTE:** This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!  
 > **NOTE 2:** Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > cron, crontab, crontab(5) (use "man 5 crontab" to access this)
 
@@ -29,11 +28,11 @@ crontab (1)      - maintain crontab files for individual users (Vixie Cron)
 crontab (5)      - tables for driving cron
 ```
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab - YouTube](https://www.youtube.com/watch?v=QZJ1drMQz1A)
 
-[shellmagic.xyz - This website is for sale! - shellmagic Resources and Information.](https://shellmagic.xyz/)
+[shellmagic.xyz - This website is for sale! - shellmagic Resources and Information.](https://shellmagic.xyz/)
 
 [Classic SysAdmin: Understanding Linux File Permissions - Linux Foundation](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/)
 
@@ -87,8 +86,8 @@ Let's break down the script line by line:
 *   The output of `whoami` command is getting saved in a variable called `myname` (Since this script is being executed by bandit24 the output of `whoami` will be `bandit24` which is saved in the `myname` variable)
 *   A folder called `bandit24` exists in the `/var/spool` directory. The working directory is changed to this folder.
 *   Then a statement saying all the scripts that are present in the folder `/var/spool/bandit24` is being deleted is printed.
-*   For loop is used to iterate through all the files in the directory (.\* : All files in current working directory)
-*   A check is made to see if the currently selected file is called `.` or `..` if not then the rest of the code is executed. ("." means the current directory (bandit24) and ".." means the parent directory (spool))
+*   For loop is used to iterate through all the files in the directory (.\* : All files in current working directory)
+*   A check is made to see if the currently selected file is called `.` or `..` if not then the rest of the code is executed. ("." means the current directory (bandit24) and ".." means the parent directory (spool))
 *   The name of the currently selected file is printed and then the information about the owner of the file is saved in the variable "owner".
 *   A check is made to check if the owner of the currently selected file is "bandit23". If it is then the currently selected file is executed and sent the KILL signal after waiting for 60 seconds and then deleted (-s flag in timeout command is used to specify the signal to send to the command "9" is an alias for the KILL command)
 
@@ -136,7 +135,7 @@ bandit23@bandit:/tmp/rand$ cat password
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ```
 
-We have found the password !!
+We have found the password !!
 
 Logout of the current session and login into the next level as bandit24
 

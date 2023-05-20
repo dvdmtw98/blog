@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The password for the next level is stored in a hidden file in the **inhere** directory.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -40,7 +39,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [15 Basic 'ls' Command Examples for Linux Beginners](https://www.tecmint.com/15-basic-ls-command-examples-in-linux/)
 
@@ -68,14 +67,14 @@ bandit3@bandit:~/inhere$ ls -a
 .  ..  .hidden
 ```
 
-View the content of the `.hidden` file using the `cat` command
+View the content of the `.hidden` file using the `cat` command
 
 ```
 bandit3@bandit:~/inhere$ cat .hidden  
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
 
-We have found the password for the next level !!
+We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit4 to access the next level
 

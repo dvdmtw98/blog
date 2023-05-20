@@ -8,13 +8,12 @@ categories: [Security, TryHackMe]
 tags: [tryhackme, tutorial, security, linux]
 published: true
 img_path: /assets/
+image: images/thm-linux-privesc/thm-linux-privesc-banner.png
 ---
-
-![TryHackMe Linux PrivEsc Banner](images/thm-linux-privesc/thm-linux-privesc-banner.png)
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Deploy the Vulnerable Debian VM
+### Task 1: Deploy the Vulnerable Debian VM
 
 1. **Deploy the machine and log in to the "user" account using SSH.**
 
@@ -30,7 +29,7 @@ img_path: /assets/
 
 > uid=1000(user) gid=1000(user) groups=1000(user),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev)
 
-### Task 2: Service Exploits
+### Task 2: Service Exploits
 
 In this task, we are going to exploit the MySQL server which does not have a root password and use SQL functions to get root privileges on the system.
 
@@ -70,7 +69,7 @@ The list of all the users on Linux is saved in the "/etc/passwd' file and the pa
 
 The shadow file in this system is readable and writable by anyone which is an issue. Now let's see how we can use this to our advantage to gain root access.
 
-Save the hashed password of the root user (Everything between the 1st and 2nd ":" sign) in a file in your Kali System. Let's see what hash was used for hashing the file.
+Save the hashed password of the root user (Everything between the 1st and 2nd ":" sign) in a file in your Kali System. Let's see what hash was used for hashing the file.
 
 ![Checking the type of Hash used](images/thm-linux-privesc/hash-type.png)
 
@@ -94,7 +93,7 @@ We have found the password for the root user "password123".
 
 > password123
 
-### Task 4: Weak File Permissions — Writable /etc/shadow
+### Task 4: Weak File Permission-Writable /etc/shadow
 
 As we saw in the previous task the shadow file on the system is readable and writable by anyone. So instead of cracking the password we could just make a new password and replace the old one.
 
@@ -114,7 +113,7 @@ Once we change the hash in the file we can log in as the root user using the new
 
 > No answer required
 
-### Task 5: Weak File Permissions — Writable /etc/passwd
+### Task 5: Weak File Permission-Writable /etc/passwd
 
 The "/etc/passwd" file on Linux consists of information regarding the various users on the system. On some (old) systems we are allowed to save the password hash in this file as well. If the file is not write-protected for all users we can exploit this misconfiguration to access the root user account.
 
@@ -122,7 +121,7 @@ Let's create a new password using the "openssl" command
 
 ![Password File Permissions](images/thm-linux-privesc/password-file.png)
 
-Now let's create a new entry in the "/etc/passwd" file that is the same as the line for the root user and replace the name "root" with "newroot". Finally, in place of the "x" (The "x" that is present between the 1st and 2nd ":" sign) let's use the hash that we just generated.
+Now let's create a new entry in the "/etc/passwd" file that is the same as the line for the root user and replace the name "root" with "newroot". Finally, in place of the "x" (The "x" that is present between the 1st and 2nd ":" sign) let's use the hash that we just generated.
 
 ![Saving Hash directly in the Password File](images/thm-linux-privesc/write-hash-to-password-file.png)
 
@@ -282,7 +281,7 @@ And as we can see we have managed to set up a reverse shell (the connection shou
 
 > No answer required
 
-### Task 11: SUID / SGID Executables - Known Exploits
+### Task 11: SUID / SGID Executables - Known Exploits
 
 We can view all the executable files on the system that can set UID/GID using the following command:
 
@@ -296,7 +295,7 @@ find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 
 [What are Sticky Bit, SUID and SGID in Linux - TecAdmin](https://tecadmin.net/understanding-sticky-bit-suid-and-sgid-in-linux/)
 
-There is a service called "exim-4.84–3" that appears in the vulnerable list let's look in searchsploit on our Kali Machine if there are any exploits available.
+There is a service called "exim-4.84-3" that appears in the vulnerable list let's look in searchsploit on our Kali Machine if there are any exploits available.
 
 ![Searching for Exploit|400](images/thm-linux-privesc/finding-exploit.png)
 
@@ -346,13 +345,13 @@ We can see that towards the end there is a line where using service the apache2 
 
 > No answer required
 
-### Task 14: SUID / SGID Executables - Abusing Shell Features (#1)
+### Task 14: SUID / SGID Executables - Abusing Shell Features (#1)
 
 We have a service "/usr/local/bin/suid-env2" that works the same as the one used in the previous task but instead of just using the executable name the entire path to the file service executable has been used. We can verify this by using the strings command.
 
 ![Checking Shell Version|460](images/thm-linux-privesc/shell-version.png)
 
-In Bash versions less than "4.2–048" it's possible to define functions that have names that look like paths on the system. We can use this to create a malicious function that will spawn a root shell for us.
+In Bash versions less than "4.2-048" it's possible to define functions that have names that look like paths on the system. We can use this to create a malicious function that will spawn a root shell for us.
 
 ![Exploiting Shell Path Bug|400](images/thm-linux-privesc/exploiting-shell.png)
 
@@ -360,7 +359,7 @@ In Bash versions less than "4.2–048" it's possible to define functions that ha
 
 > No answer required
 
-### Task 15: SUID / SGID Executables - Abusing Shell Features (#2)
+### Task 15: SUID / SGID Executables - Abusing Shell Features (#2)
 
 This exploit does not work on "**Bash version 4.4 and above**".
 
@@ -376,7 +375,7 @@ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootba
 
 > No answer required
 
-### Task 16: Passwords & Keys - History Files
+### Task 16: Passwords & Keys - History Files
 
 If a user accidentally types their password on the command line instead of into a password prompt, it may get recorded in a history file. The content of the history file can be viewed using the following command:
 
@@ -394,7 +393,7 @@ And as we can see the password for the root user is present in plain text in the
 
 > mysql -h somehost.local -uroot -ppassword123
 
-### Task 17: Passwords & Keys - Config Files
+### Task 17: Passwords & Keys - Config Files
 
 Config files often contain passwords in plaintext or other reversible formats.
 
@@ -410,7 +409,7 @@ When we view the contents of that file we see that the password and username are
 
 > /etc/openvpn/auth.txt
 
-### Task 18: Passwords & Keys - SSH Keys
+### Task 18: Passwords & Keys - SSH Keys
 
 Sometimes users make backups of important files but fail to secure them with the correct permissions. Let's have a look at the hidden files in the root directory.
 
@@ -430,7 +429,7 @@ Copy the content of the file and on our Kali system let's make a file called "ro
 
 > No answer required
 
-### Task 19: NFS
+### Task 19: NFS
 
 Files created via NFS inherit the **remote** user's ID. If the user is a root, and root squashing is enabled, the ID will instead be set to the "nobody" user. The configuration for the NFS user is present in the `/etc/exports` file.
 
@@ -450,7 +449,7 @@ Now from the target machine when we execute the file we can see that we gave got
 
 > no_root_squash
 
-### Task 20: Kernel Exploits
+### Task 20: Kernel Exploits
 
 Kernel exploits can leave the system in an unstable state, which is why you should only run them as a last resort. Run the **Linux Exploit Suggester 2** tool to identify potential kernel exploits on the current system:
 
@@ -516,4 +515,4 @@ As we can see LinPEAS was able to find the vulnerabilities that were discussed i
 
 > No answer required
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

@@ -6,16 +6,15 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > The password for the next level can be retrieved by submitting the password of the current level to **port 30001 on localhost** using SSL encryption.  
 > **Helpful note: Getting "HEARTBEATING" and "Read R BLOCK"? Use -ign_eof and read the "CONNECTED COMMANDS" section in the manpage. Next to 'R' and 'Q', the 'B' command also works in this version of that command…**
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ssh, telnet, nc, openssl, s_client, nmap
 
@@ -41,7 +40,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [Transport Layer Security - Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 
@@ -93,7 +92,7 @@ Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
 ```
 
-We have found the password for the next level !!!
+We have found the password for the next level !!!
 
 **Note:** We can achieve the same result using the `ncat` command which is an advanced version of `netcat` that is developed by the creators of Nmap. If using ncat make use of the same command as the previous level and add the `--ssl` flag
 

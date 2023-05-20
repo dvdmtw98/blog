@@ -6,13 +6,12 @@ categories: [Security, TryHackMe]
 tags: [tryhackme, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/thm-vulnversity/thm-vulnversity-banner.png
 ---
-
-![TryHackMe vulversity Banner](images/thm-vulnversity/thm-vulnversity-banner.png)
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Deploy the machine
+### Task 1: Deploy the machine
 
 Connect to our network and deploy this machine. If you are unsure of how to get connected, complete the [OpenVPN room](https://tryhackme.com/room/openvpn) first.
 
@@ -57,7 +56,7 @@ Looking at the output from the scan the version is 3.5.12
 
 * **-p-:** All Ports
 * **-p 21,22:** Scan ports 21 and 22
-* **-p10–100:** Scan ports from 10 to 100
+* **-p10-100:** Scan ports from 10 to 100
 * **-p1000-:** Scan all ports starting from 1000
 
 From the above logic, we can say that -p-400 would mean all ports till 400 (i.e. 1 to 400)
@@ -92,7 +91,7 @@ From the scan results we see on port 3333, there is a service (Apache httpd) tha
 
 > No answer required
 
-### Task 3: Locating directories using GoBuster
+### Task 3: Locating directories using GoBuster
 
 Since we know that there is a web server running on the system let's open the link in the browser and see what we get.
 
@@ -140,7 +139,7 @@ If we have to set up a reverse shell using the upload field then we should be ab
 
 > .php
 
-We see that even PHP files are not allowed. PHP code can be saved with various file extensions like (.php3, .php4, .phtml etc.) so we could try and see if any of them can pass the filter used on the upload function.
+We see that even PHP files are not allowed. PHP code can be saved with various file extensions like (.php3, .php4, .phtml etc.) so we could try and see if any of them can pass the filter used on the upload function.
 
 Doing this testing manually is going to be a tedious process so for automating the process we can make use of `Burpsuite` which is a tool that lets us capture web requests and manipulate their values.
 
@@ -166,21 +165,21 @@ In the Payloads tabs under Payload Options upload the file that we created that 
 
 ![Burpsuite Intruder Results](images/thm-vulnversity/burpsuite-intruder-results.png)
 
-When we look at the output of the Intruder attack we see the length of the response for the .phtml extension is smaller than the other so let's select that request and have a look at the response we see that we were able to successfully upload the file with ".phtml" extension.
+When we look at the output of the Intruder attack we see the length of the response for the .phtml extension is smaller than the other so let's select that request and have a look at the response we see that we were able to successfully upload the file with ".phtml" extension.
 
 3. **Run this attack, what extension is allowed?**
 
 > .phtml
 
-Now that we know what we can upload PHP files let's upload a PHP reverse shell script. The reverse shell script can be downloaded from the following link :
+Now that we know what we can upload PHP files let's upload a PHP reverse shell script. The reverse shell script can be downloaded from the following link :
 
 [php-reverse-shell/php-reverse-shell.php at master · pentestmonkey/php-reverse-shell · GitHub](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
 
-Download the .php script and edit the line in the file where we need to specify the IP Address of our (attacker) device and the Port Number.
+Download the .php script and edit the line in the file where we need to specify the IP Address of our (attacker) device and the Port Number.
 
 ![PHP Exploit Settings|300](images/thm-vulnversity/php-exploit-settings.png)
 
-Save the script with the .phtml extension and upload the file on the Upload page.
+Save the script with the .phtml extension and upload the file on the Upload page.
 
 ![Upload PHTML File|350](images/thm-vulnversity/upload-php-file-2.png)
 
@@ -248,11 +247,11 @@ When we look at the systemctl binary file we can see there are instructions on h
 
 #### Code Explained
 
-* Create a file with the extension .service
+* Create a file with the extension .service
 * Add the information that is required to create a basic service file (Service files are files that are used by systemctl for executing various tasks on the system)
 * Execute the new service file we created by using the "link" and "enable" commands provided by "systemctl"
 
-When we look at the contents that are written into the .service file we see that there is a line called **ExecStart** that specifies what command to run when the service is started. So we can change this line to read the contents of the /root/root.txt file and save it into a file in the current working directory.
+When we look at the contents that are written into the .service file we see that there is a line called **ExecStart** that specifies what command to run when the service is started. So we can change this line to read the contents of the /root/root.txt file and save it into a file in the current working directory.
 
 [How to create systemd service unit in Linux - Linux Tutorials - Learn Linux Configuration](https://linuxconfig.org/how-to-create-systemd-service-unit-in-linux)
 
@@ -288,4 +287,4 @@ And we could run the service file using the following commands:
 /bin/systemctl enable /var/tmp/root.service/bin/systemctl start root
 ```
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

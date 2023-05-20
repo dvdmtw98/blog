@@ -6,9 +6,8 @@ categories: [Security, TryHackMe]
 tags: [tryhackme, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/thm-pickle-rick/thm-pickle-rick-banner.png
 ---
-
-![TryHackMe Pickle Rick Banner](images/thm-pickle-rick/thm-pickle-rick-banner.png)
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
@@ -147,7 +146,7 @@ Now that we know how to evade the filtering let's access the portal.php file and
 
 Well, no credentials were found but we were able to see the list of commands that are getting blocked by the web server.
 
-### Approach 1: Using Reverse Shell
+### Approach 1: Using Reverse Shell
 
 The next logic process that we can try is to set up a reverse shell. So that we can access the other directories that are present on the server. For all the different types of reverse shells that can be setup checkout the amazing resource provided by "PayloadAllThings"
 
@@ -208,7 +207,7 @@ snap
 
 And there we go we have found the 3rd ingredient as well.
 
-### Approach 2: Using commands from the Portal
+### Approach 2: Using commands from the Portal
 
 By looking at "portal.php" we saw the commands that were blocked from being used. If we look closely at the list we see that the "less" command is not blocked so we can use that to view the files.
 
@@ -248,4 +247,4 @@ sudo less /root/3rd.txt
 
 ![Web App Control Panel Results](images/thm-pickle-rick/webapp-control-panel-8.png)
 
-That's all. Happy Hacking :)
+That's all. Happy Hacking :)

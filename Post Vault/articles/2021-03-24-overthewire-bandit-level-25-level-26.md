@@ -6,15 +6,14 @@ categories: [Security, OverTheWire]
 tags: [overthewire, ctf, security, linux]
 published: true
 img_path: /assets/
+image: images/overthewire-banner.png
 ---
-
-![OverTheWire Banner](images/overthewire-banner.png)
 
 ### Level Goal
 
 > Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not **/bin/bash**, but something else. Find out what it is, how it works and how to break out of it.
 
-### Commands you may need to solve this level
+### Commands you may need to solve this level
 
 > ssh, cat, more, vi, ls, id, pwd
 
@@ -43,7 +42,7 @@ pwd (1)              - print name of current/working directory
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+### Helpful Reading Material
 
 [more(1) - Linux manual page](https://man7.org/linux/man-pages/man1/more.1.html)
 
@@ -90,7 +89,7 @@ Looking at this script we can understand that the reason that we were getting lo
 
 From my previous experience with the "more" command, I know that if the amount of content that needs to be displayed on the terminal is more than the size of the terminal the more tool goes into interactive mode the command does not quit till we don't view all the contents in the file or we don't exit manually the program.
 
-There is an example where I tried to view the content of the .bashrc file using the more command.
+There is an example where I tried to view the content of the .bashrc file using the more command.
 
 ```
 more .bashrc
