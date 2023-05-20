@@ -32,7 +32,10 @@ runs:
     - name: Setup Medium Token
       id: setup-medium-token
       shell: bash
-      run: echo "MEDIUM_AUTH_TOKEN='${{ inputs.MEDIUM_AUTH_TOKEN }}'" >> medium/config/token.config
+      run: |
+        mkdir -p medium/config \
+        && touch medium/config/token.config \
+        && echo "MEDIUM_AUTH_TOKEN='${{ inputs.MEDIUM_AUTH_TOKEN }}'" >> medium/config/token.config
     - name: Find New Posts
       id: find-new-posts
       shell: bash
