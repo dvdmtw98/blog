@@ -1,6 +1,7 @@
-img {
+img, 
+iframe {
 	display: block !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	border-radius: 10px;
+	border-radius: 4px;
 }

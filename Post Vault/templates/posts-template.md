@@ -6,4 +6,5 @@ categories: []
 tags: []
 published: false
 img_path: /assets/
+image: ''
 ---
