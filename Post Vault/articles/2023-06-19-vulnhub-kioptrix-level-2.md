@@ -4,7 +4,7 @@ description: 'Learn the basic tools and techniques used in vulnerability assessm
 date: '2023-06-19 21:45:00 +0530'
 categories: [Security, VulnHub]
 tags: [security, vulnhub, ctf, linux]
-published: false
+published: true
 img_path: /assets/
 image: images/vulnhub-kioptrix-lvl1/kioptrix-level-2-banner.png
 ---
