@@ -3,7 +3,7 @@ title: 'OverTheWire: Bandit Level 0'
 description: 'https://overthewire.org/wargames/bandit/bandit0.html'
 date: '2021-03-01 10:04:29 +0530'
 categories: [Security, OverTheWire]
-tags: [overthewire, ctf, security, linux]
+tags: [overthewire, bandit, ctf, security, linux]
 published: true
 img_path: /assets/
 image: images/overthewire-banner.png

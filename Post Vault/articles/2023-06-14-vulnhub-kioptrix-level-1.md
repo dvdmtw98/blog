@@ -1,5 +1,6 @@
 ---
-title: 'VulnHub - Kioptrix Level 1 (#1)'
+title: 'VulnHub: Kioptrix Level 1 (#1)'
+description: 'Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner'
 date: '2023-06-14 21:15:00 +0530'
 categories: [Security, VulnHub]
 tags: [security, vulnhub, ctf, linux]

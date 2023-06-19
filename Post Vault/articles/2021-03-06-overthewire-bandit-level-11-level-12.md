@@ -3,7 +3,7 @@ title: 'OverTheWire: Bandit Level 11 → Level 12'
 description: 'https://overthewire.org/wargames/bandit/bandit12.html'
 date: '2021-03-06 09:14:17 +0530'
 categories: [Security, OverTheWire]
-tags: [overthewire, ctf, security, linux]
+tags: [overthewire, bandit, ctf, security, linux]
 published: true
 img_path: /assets/
 image: images/overthewire-banner.png
