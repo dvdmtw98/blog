@@ -6,7 +6,7 @@ categories: [Security, VulnHub]
 tags: [security, vulnhub, ctf, linux]
 published: true
 img_path: /assets/
-image: images/vulnhub-kioptrix-lvl1/kioptrix-level-2-banner.png
+image: images/vulnhub-kioptrix-lvl2/kioptrix-level-2-banner.png
 ---
 
 Cover Image by <a href="https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm#&position=0&from_view=search&track=ais">vector_corp</a> on Freepik
