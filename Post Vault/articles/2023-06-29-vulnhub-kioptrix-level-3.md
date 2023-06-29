@@ -1,7 +1,7 @@
 ---
 title: 'VulnHub - Kioptrix: Level 3 (1.2) (#3)'
 description: >-
- 'Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner'
+ Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner
 date: '2023-06-29 12:40:00 +0530'
 categories: [Security, VulnHub]
 tags: [security, vulnhub, ctf, linux]
@@ -85,6 +85,8 @@ Port 22 has SSH running. It is using `OpenSSH 4.7p1`
 
 Port 80 is used by the Apache web server. The system has Apache `2.2.8` installed. The target OS is Ubuntu. The web application utilizes PHP 5.2.4 and the OS is using kernel `2.6.x`.
 
+[Rustscan Results · dvdmtw98/ctf-resources · GitHub](https://github.com/dvdmtw98/ctf-resources/blob/main/vulnhub/kioptrix_lvl3/rustscan.txt)
+
 ### Web App Enumeration
 
 ```bash
@@ -96,6 +98,8 @@ nikto -h http://kioptrix3.com/ -o nikto.txt
 
 `nikto` scan shows that the web application has an `/phpmyadmin` directory which implies the application uses a MySQL database.
 
+[Nikto Scan Results · dvdmtw98/ctf-resources · GitHub](https://github.com/dvdmtw98/ctf-resources/blob/main/vulnhub/kioptrix_lvl3/nikto.txt)
+
 ```bash
 # Feroxbuster Scan
 feroxbuster -u http://kioptrix3.com/ -x php,html -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 200 -d 2 -f -C 404 --no-state -o feroxbuster.txt
@@ -106,6 +110,8 @@ feroxbuster -u http://kioptrix3.com/ -x php,html -w /usr/share/wordlists/seclist
 ![Feroxbuster|600](images/vulnhub-kioptrix-lvl3/feroxbuster.png)
 
 The directory scan also found the `/phpmyadmin` directory. Additionally, the directories `/modules`, `/cache` and `/gallery` were found.
+
+[Feroxbuster Scan Results · dvdmtw98/ctf-resources · GitHub](https://github.com/dvdmtw98/ctf-resources/blob/main/vulnhub/kioptrix_lvl3/feroxbuster.txt)
 
 ## Gaining Access
 
@@ -301,6 +307,8 @@ sqlmap -u "http://kioptrix3.com/gallery/gallery.php?id=1&sort=photoid#photos" --
 ![SQL Injection|600](images/vulnhub-kioptrix-lvl3/sql-injection-5.png)
 
 The `gallarific_users` table contains the password of an admin user in plain text.
+
+[Sqlmap Results · dvdmtw98/ctf-resources · GitHub](https://github.com/dvdmtw98/ctf-resources/blob/main/vulnhub/kioptrix_lvl3/sqlmap/kioptrix3.com/log)
 
 Using SSH access to the target system should now be possible.
 

@@ -4,10 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-## Hi there! 👋 Welcome to Source Code
-
-### About me
-
 - 🏢 I am currently employed as a Software Developer/ Cloud Engineer
 - 🌱 Interested in learning about Cloud, Networking and Information Security
 - 🌍 In my free time I enjoy watching movies, reading books and learning about different cultures
@@ -21,6 +17,3 @@ order: 4
 ### Socials
 
 - 🤝 You can connect with me on [LinkedIn](https://www.linkedin.com/in/david-varghese/), [GitHub](https://github.com/dvdmtw98)
-
-
-
