@@ -10,7 +10,7 @@ image: images/docker-container/docker-101-banner.png
 
 So far, we have looked at the basics related to containers and the various Docker commands for managing Images. In this article, we are going a dive deeper and look at Containers (finally) and their associated commands.
 
-### Container Lifecycle
+## Container Lifecycle
 
 There are 5 states in which a container can exist during its entire lifetime. These states are illustrated in the figure below.
 
@@ -20,7 +20,7 @@ In this article, we will be covering the 3 main states that we need to know to w
 
 > **Note:** In the Docker CLI a container in the Running state is shown as **Up** and a container in the Stopped state is shown as **Exited.**
 
-### Container Run Modes
+## Container Run Modes
 
 There are two main modes in which images can be run:
 
@@ -29,7 +29,7 @@ There are two main modes in which images can be run:
 
 Foreground mode is further classified into two types Interactive and Non-Interactive
 
-#### Foreground Mode (Non-Interactive)
+### Foreground Mode (Non-Interactive)
 
 Containers can be started using the "container run" command.
 
@@ -65,7 +65,7 @@ Another way to get this information is to look at the Dockerfile directly this c
 
 The last line CMD is what we are looking for, and it matches the results that we saw from the "image inspect" command
 
-#### Foreground Mode (Interactive)
+### Foreground Mode (Interactive)
 
 To run a container in Interactive mode, some additional parameters need to be passed to the "container run" command
 
@@ -83,7 +83,7 @@ Whatever command we specify after the name of the image will override the CMD st
 
 > **Note:** When we use the run command to start a container Docker internally first runs the **create** command which creates a instance of the image with an modifiable layer added on top of it. At this point the container is still not started by its in a ready state i.e. the configurations to start are container are complete. After this Docker actually starts the container.
 
-### Listing Containers
+## Listing Containers
 
 As discussed earlier in the Lifecycle section, a Docker container can be in multiple states during its lifetime. To view **all** the containers irrespective of their state, we can use the "container ls -a" command.
 
@@ -99,7 +99,7 @@ In the above image, the status of all the containers show as Exited which means 
 
 > For anyone wondering the names assigned automatically to containers is always an **adjective** followed by the name of an **scientist** :)
 
-### Removing Containers
+## Removing Containers
 
 Once a container has finished executing it will enter the exited (Stopped) state. The rm command is used to clean such containers.
 
@@ -119,7 +119,7 @@ docker container run --rm hello-world
 
 As we can observe this time once the container has finished executing we do not see the container in an exited state in the container list.
 
-### Detached/ Daemon Mode
+## Detached/ Daemon Mode
 
 Containers that are started in detached mode start in the background and do not attach themselves to our terminal. Let us try this using the [MySQL](https://hub.docker.com/_/mysql) image.
 
@@ -141,7 +141,7 @@ The ports column from the above image will be covered in detail in the next arti
 
 What's important to observe is that this time the container is running in the background and is not attached to your terminal.
 
-### Stopping Container
+## Stopping Container
 
 Unlike interactive containers, detached containers need to be stopped explicitly by the user (unless they crash in which case they automatically go to the stopped state)
 
@@ -171,7 +171,7 @@ SIGTERM and SIGKILL are Linux signals used to denote the occurrence of an event 
 
 For normal day-to-day Docker usage, it is also better to stick to the "container stop" command unless there is some special reason to use the kill command. I have attached references on this topic which can be refereed for additional details.
 
-### Containers Logs
+## Containers Logs
 
 Some Docker Containers have logging enabled for easy debugging and finding errors that could have occurred using the lifetime of the container. These logs can be accessed using the "container logs" command.
 
@@ -183,7 +183,7 @@ docker container logs <container-name>
 
 The `-f` flag can be passed to the above command to follow the logs as they are generated.
 
-### Starting Stopped Containers
+## Starting Stopped Containers
 
 Suppose we have a stopped container and we want to start it up again then we can use the "container start" command.
 
@@ -197,7 +197,7 @@ By default, containers will restart in the mode they were created in using the "
 docker container start -ai <container-name>
 ```
 
-### Execute Commands on Container
+## Execute Commands on Container
 
 Say we have a running container and we want to quickly run a command on it or we want to debug some error that is occurring in the container for these cases we can make use of the "container exec" command.
 
@@ -211,7 +211,7 @@ The exec command can also be used to connect to the container in interactive mod
 
 > **Note:** An interactive container can be converted into an detached/ daemon container using the `Ctrl + P + Q` shortcut this even works for containers that are started in interactive mode using the "start" and "run" commands.
 
-### Container Statistics
+## Container Statistics
 
 We can view all the processes that are running inside the container using the "container top" command.
 
@@ -237,7 +237,7 @@ docker container inspect <container-name>
 
 ![Docker Container Details](images/docker-container/docker-container-details-2.png)
 
-### References
+## References
 
 *   [Difference Between docker stop and docker kill Commands \| Baeldung](https://www.baeldung.com/ops/docker-stop-vs-kill)
 *   [what's the difference between `docker stop` and `docker kill`? - Super User](https://superuser.com/questions/756999/whats-the-difference-between-docker-stop-and-docker-kill)

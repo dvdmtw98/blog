@@ -13,7 +13,7 @@ image: images/thm-kenobi/thm-kenobi-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Deploy the vulnerable machine
+## Task 1: Deploy the vulnerable machine
 
 1. **Make sure you're connected to our network and deploy the machine**
 
@@ -25,7 +25,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 ![RustScan Results](images/thm-kenobi/rustscan-results.png)
 
-#### Command Options
+### Command Options
 
 *   **-a:** Target IP Address
 *   **-b:** Batch Size (No. of ports to scan in one second)
@@ -35,7 +35,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 **Note:** All the flags after the `--` along with the ports found by RustScan are going to be passed to Nmap for processing
 
-#### Nmap Equivalent
+### Nmap Equivalent
 
 > nmap -vvv -p- -Pn -sV -oN nmap_output.txt 10.10.130.183
 
@@ -49,7 +49,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 > 7
 
-### Task 2: Enumerating Samba for shares
+## Task 2: Enumerating Samba for shares
 
 From the scan results, we can see that we have SMB running on the system (Ports 129, 445). The SMB ports are generally not secured properly and if anonymous login is enabled it allows anyone to view the shares without authentication. Since we know there is a high probability of finding an issue with SMB we should start our attack by looking at the SMB service.
 
@@ -113,7 +113,7 @@ From the results, we can see that the /var directory of the target machine is be
 
 > /var
 
-### Task 3: Gain initial access with ProFtpd
+## Task 3: Gain initial access with ProFtpd
 
 From our initial Nmap scan, we know that an FTP server is running on the target and it is using ProFtpd version 1.3.5. We can confirm this by using Netcat and connecting to the port to capture the banner.
 
@@ -167,7 +167,7 @@ Now that we have copied the SSH key onto our system let's use SSH and login into
 
 > d0b0f3f53b6caa532a83915e19224899
 
-### Task 4: Privilege Escalation with Path Variable Manipulation
+## Task 4: Privilege Escalation with Path Variable Manipulation
 
 Now that we have a foothold on the system our next goal is to elevate privileges. One of the ways to do this is to exploit binaries on the system that have the SUID bit set. The SUID bit gives the executor of the binary the same privileges as the owner of the binary. So if there is a binary that is owned by root and it has the SUID bit set we could theoretically use this binary to elevate our permissions. Another important thing to note is that files that are called/accessed by a process have the same permissions as the calling process.
 
@@ -177,7 +177,7 @@ Let's find all the binary files that are present on the system that is owned by 
 
 ![Finding Misconfigured Files|550](images/thm-kenobi/find-misconfigured-files.png)
 
-#### Command Options
+### Command Options
 
 *   **/:** Scan the entire device
 *   **-type f:** Look only for files (No directories)

@@ -20,9 +20,9 @@ One nice thing about regex is that once we learn its syntax we can pretty much u
 
 Let's get started by learning the meta characters that make up Regular Expressions. 
 
-### Basic Concepts
+## Basic Concepts
 
-#### Anchor Characters
+### Anchor Characters
 
 The `^` and `$` characters are called anchor characters. They allow matching a pattern that occurs at the start or end of a string. Anchor characters are special as they do not consume any visible character instead they match the invisible character that denotes the start or end of a string. 
 
@@ -34,7 +34,7 @@ The `^` and `$` characters are called anchor characters. They allow matching a p
 >
 >**dog**: Matches any string that contains the word dog (Does not have to be at the start or end)
 
-#### Qualifiers
+### Qualifiers
 
  `*`, `?`, `+` and `{}` are collectively called qualifiers. These characters are used to control the number of times a certain character should be matched by the regex engine.
 
@@ -50,7 +50,7 @@ The `^` and `$` characters are called anchor characters. They allow matching a p
 >
 >**abc{2,5}**: Matches a string that contains ab followed by c at least 2 times up to a max of 5 times
 
-#### OR Operator
+### OR Operator
 
 `|` and `[]` are used to create OR logic
 
@@ -60,7 +60,7 @@ The `^` and `$` characters are called anchor characters. They allow matching a p
 
 The `()` in the above regex is a capture group, capture groups will be covered in the intermediate concepts section.
 
-#### Character Classes
+### Character Classes
 
 Character classes are shorthand notations to represent commonly used character sets. `\d`, `\w` and `\s` make up the most commonly used character classes.
 
@@ -92,7 +92,7 @@ There are other more advanced character classes as well which are useful to matc
 
 [Regex Tutorial - Unicode Characters and Properties](https://www.regular-expressions.info/unicode.html)
 
-#### Regex Flags
+### Regex Flags
 
 Flags are toggles used to tell the regex engine to evaluate the input string in a certain way. Depending on the programming language being used there can be additional flags.
 
@@ -102,9 +102,9 @@ Flags are toggles used to tell the regex engine to evaluate the input string in 
 >
 >**m** : Multiline Flag (Makes the `^` and `$` anchor tags match the start and end of each line instead of the start and end of the string)
  
-### Intermediate Concepts
+## Intermediate Concepts
 
-#### Capture Groups
+### Capture Groups
 
 Groups are a very powerful feature of regex which allows us to find and store the pattern that matches the group so that it can be used later.
 
@@ -116,7 +116,7 @@ Capture Groups are created using `()`. They come in two variants: anonymous and 
 >
 >**ab(?:bc)**: Creates an non-capturing group (i.e. bc will not be stored for later access)
 
-#### Bracket Expression
+### Bracket Expression
 
 While `[]` can be used as an OR expression its main usage is to create custom character classes. When `^` is used inside a bracket expression as the first character it negates the entire expression. `-` that occur in-between characters are used to denote character ranges. 
 
@@ -128,7 +128,7 @@ While `[]` can be used as an OR expression its main usage is to create custom ch
 >
 >**[a-zA-Z^]**: Matches on character that is `^` or in the range a-z and A-Z
 
-#### Boundary Anchor
+### Boundary Anchor
 
 Word Boundary or `\b` is a special type of anchor that makes on an invisible character called word boundary. A word boundary exists in the space between a word and a non-word character. There is also a negated version `\B` that matches the invisible character that is present in the space between two-word characters.
 
@@ -136,15 +136,15 @@ Word Boundary or `\b` is a special type of anchor that makes on an invisible cha
 >
 >**\\Babc\\B**: Matches all occurrences of abc that are surrounded by word characters (i.e. abc is contained inside a word)
 
-#### Greedy & Lazy Match
+### Greedy & Lazy Match
 
 The quantifies (`*`, `+`, `{}`) are evaluated greedily by the regex engines i.e. they try to find the largest string that matches the provided regex. Sometimes this is not what we want, in these cases, we can tell the engine to evaluate the quantifiers lazily i.e. find the smallest match. This is done by using the `?` character right after the quantifier that should be evaluated lazily.
 
 >**<.+?>**: Match on `<` followed by any character until `>` is found in a lazy manner i.e. smallest match
 
-### Advanced Concepts
+## Advanced Concepts
 
-#### Lookahead and Lookbehind
+### Lookahead and Lookbehind
 
 Lookahead and Lookbehind expressions are used to match a string that is followed or preceded by a specific pattern. The pattern that follows or precedes the string we want to match is not included in the regex match.
 
@@ -158,7 +158,7 @@ There are negative versions of lookahead and look-behind that match a string whe
 >
 >**(?<!a)b**: Matches all occurrences of b that are not preceded by a
 
-#### Backreference
+### Backreference
 
 Backreferences are special constructs that allow referencing of a capture group that was defined previously in the regex string. Since backreferences are based on capture groups we can have anonymous as well as named backreferences.
 
@@ -166,11 +166,11 @@ Backreferences are special constructs that allow referencing of a capture group 
 >
 >**(?\<foo>a|b|c)\\k\<foo>**: The same as above but using a named capture group
 
-### Examples
+## Examples
 
 Now let's solve some examples to put to use everything that we have already learned
 
-#### Email Id Validation
+### Email Id Validation
 
 Let's imagine that we have been provided with a list of email ids and we have been tasked with splitting the emails into three segments. The first part should contain everything before the `@` sign, the second part should contain the name of the email id provider and everything else after that should be captured in Group 3.
 
@@ -206,7 +206,7 @@ Since we want the email as three separate segments we need to use three capture 
 
 `\..+`: The period character followed by any character one or more time
 
-#### Username Validation
+### Username Validation
 
 This time let's imagine we are a frontend developer and our website has an input field for the user to enter a username we need to ensure that the username is 5 to 30 characters long. It must contain at least one uppercase character cannot end in a hyphen or period and can only have alphanumeric characters, period and hyphen.
 
@@ -245,7 +245,7 @@ for username in username_list:
 
 `$`: Match pattern till the end of the string
 
-#### Password Validation
+### Password Validation
 
 We are working on the front end of the same application from the last exercise this time we want to validate a password and following company policy, we need to ensure that the password is at least 12 characters long and can contain alphanumeric characters along with a few special symbols (can assume any 4-5 special characters). Additionally, at least one uppercase, lowercase, digit and special character must be used. 
 
@@ -286,7 +286,7 @@ for password in password_list:
 
 `$`: Match till the end of the string
 
-### References
+## References
 
 - [Learn Regex: A Beginner's Guide - SitePoint](https://www.sitepoint.com/learn-regex/)
 - [Regular Expression Tutorial Table of Contents](https://www.regular-expressions.info/tutorialcnt.html)

@@ -9,12 +9,12 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > There is a git repository at `ssh://bandit29-git@localhost/home/bandit29-git/repo`. The password for the user `bandit29-git` is the same as for the user `bandit29`.  
 > Clone the repository and find the password for the next level.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > git
 
@@ -24,13 +24,13 @@ Git (3pm)        - Perl interface to the Git version control system
 git (1)          - the stupid content tracker
 ```
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Version Control (Git) · the missing semester of your cs education](https://missing.csail.mit.edu/2020/version-control/)
 
 [About Git - GitHub Docs](https://guides.github.com/introduction/git-handbook/)
 
-### Solution
+## Solution
 
 From the question, we understand that at this level we are going to be working with Git. Before we clone the repository let's make a folder in the `/tmp` directory as from some of the previous levels we know we only have proper permissions to save files in the `/tmp` folder.
 

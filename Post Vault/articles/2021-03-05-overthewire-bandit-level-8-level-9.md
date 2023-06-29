@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in the file **data.txt** and is the only line of text that occurs only once
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
@@ -51,13 +51,13 @@ xxd (1)              - make a hexdump or do the reverse.
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Learn Piping and Redirection - Linux Tutorial](https://ryanstutorials.net/linuxtutorial/piping.php)
 
 [Back to Basics: Sort and Uniq \| Linux Journal](https://www.linuxjournal.com/content/back-basics-sort-and-uniq)
 
-### Solution
+## Solution
 
 View the contents of the current working directory
 

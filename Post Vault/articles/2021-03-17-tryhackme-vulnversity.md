@@ -11,7 +11,7 @@ image: images/thm-vulnversity/thm-vulnversity-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Deploy the machine
+## Task 1: Deploy the machine
 
 Connect to our network and deploy this machine. If you are unsure of how to get connected, complete the [OpenVPN room](https://tryhackme.com/room/openvpn) first.
 
@@ -19,7 +19,7 @@ Connect to our network and deploy this machine. If you are unsure of how to get 
 
 > No answer required
 
-### Task 2: Reconnaissance
+## Task 2: Reconnaissance
 
 Our first task is to scan the machine and find services that are running on various ports. For this, we make use of Nmap
 
@@ -33,7 +33,7 @@ Follow the write-up on "[Vulnversity](https://tryhackme.com/room/vulnversity)" f
 
 ![Nmap Scan Results](images/thm-vulnversity/nmap-scan-results.png)
 
-#### Command Options
+### Command Options
 
 * **-sS:** Stealth Scan (SYN Scan)
 * **-sV:** Service Versioning
@@ -91,7 +91,7 @@ From the scan results we see on port 3333, there is a service (Apache httpd) tha
 
 > No answer required
 
-### Task 3: Locating directories using GoBuster
+## Task 3: Locating directories using GoBuster
 
 Since we know that there is a web server running on the system let's open the link in the browser and see what we get.
 
@@ -105,7 +105,7 @@ Read the write-up on the "[Vulnversity](https://tryhackme.com/room/vulnversity)"
 
 ![Gobuster Results](images/thm-vulnversity/gobuster-results.png)
 
-#### Command Options
+### Command Options
 
 * **dir:** Brute Force Directories and Pages
 * **-u:** Target URL
@@ -125,7 +125,7 @@ Looking at the scan results we see that a directory called "internal" was found.
 
 > /internal/
 
-### Task 4: Compromise the webserver
+## Task 4: Compromise the webserver
 
 Let's try uploading files of various formats to see if any of them are blocked. On uploading a TXT file we get the message "Extension not allowed".
 
@@ -213,7 +213,7 @@ If done correctly we should get access to the system
 
 > 8bd7992fbe8a6ad22a63361004cfcedb
 
-### Task 5: Privilege Escalation
+## Task 5: Privilege Escalation
 
 Now you have compromised this machine, we are going to escalate our privileges and become the superuser (root).
 
@@ -225,7 +225,7 @@ One of the methods to achieve this is to exploit the files on the system that ha
 
 ![Searching for Exploitable Files|580](images/thm-vulnversity/finding-exploitable-files.png)
 
-#### Command Options
+### Command Options
 
 * **-type f:** Look only for files
 * **-user root:** The owner of the file should be the root user
@@ -245,7 +245,7 @@ When we look at the systemctl binary file we can see there are instructions on h
 
 ![GTFOBins Exploit](images/thm-vulnversity/gtfobins-exploit.png)
 
-#### Code Explained
+### Code Explained
 
 * Create a file with the extension .service
 * Add the information that is required to create a basic service file (Service files are files that are used by systemctl for executing various tasks on the system)

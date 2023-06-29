@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in a file called-located in the home directory
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -39,13 +39,13 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Linux - How to open a "-" dashed filename using terminal? - Stack Overflow](https://stackoverflow.com/questions/42187323/how-to-open-a-dashed-filename-using-terminal)
 
 [Input Output & Error Redirection in Linux [Beginner's Guide]](https://linuxhandbook.com/redirection-linux/)
 
-### Solution
+## Solution
 
 View the files that are present in the current working directory using the `ls` command
 

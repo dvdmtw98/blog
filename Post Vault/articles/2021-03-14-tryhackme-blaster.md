@@ -11,13 +11,13 @@ image: images/thm-blaster/thm-blaster-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Mission Start!
+## Task 1: Mission Start!
 
 1. **Deploy the machine! This is a Windows box so give it a few minutes (3-5 at max) to come online**
 
 > No answer required
 
-### Task 2: Activate Forward Scanners and Launch Proton Torpedoes
+## Task 2: Activate Forward Scanners and Launch Proton Torpedoes
 
 1. **How many ports are open on our target system?**
 
@@ -35,7 +35,7 @@ image: images/thm-blaster/thm-blaster-banner.png
 
 ![Gobuster Results](images/thm-blaster/gobuster-results.png)
 
-#### Command Options
+### Command Options
 
 * **dir:** Enumerate directories and files
 * **u:** Target URL
@@ -67,7 +67,7 @@ xfreerdp +clipboard /u:wade /p:parzival /v:<machine-ip>
 
 > THM{HACK_PLAYER_ONE}
 
-### Task 3: Breaching the Control Room
+## Task 3: Breaching the Control Room
 
 1. **When enumerating a machine, it's often useful to look at what the user was last doing. Look around the machine and see if you can find the CVE which was researched on this server. What CVE was it?**
 
@@ -103,7 +103,7 @@ On searching online we come across two links that show us how we can use the exe
 
 > THM{COIN_OPERATED_EXPLOITATION}
 
-### Task 4: Adoption into the Collective
+## Task 4: Adoption into the Collective
 
 1. **Return to your attacker machine for this next bit. Since we know our victim machine is running Windows Defender, let's go ahead and try a different method of payload delivery! For this, we'll be using the script web delivery exploit within Metasploit. Launch Metasploit now and select 'exploit/multi/script/web_delivery' for use.**
 

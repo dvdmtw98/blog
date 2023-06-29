@@ -12,7 +12,7 @@ In this post we will be looking at Docker **Networks** with its types and how to
 
 Docker network helps to facilitate communication between containers and other non-containerized services. That's right not only can a container communicate with other containers, it can even communicate with other services and processes that are not containerized. And the best part all this is possible with minimal configuration and platform-agnostic steps.
 
-### Docker Network Types (Default)
+## Docker Network Types (Default)
 
 To view the networks present in Docker run the following command
 
@@ -26,7 +26,7 @@ Three networks are present by default in all Docker Installations - **Bridge**, 
 
 There are additional network drivers (types) that can be downloaded and used in Docker as well. Some of these are provided by Docker while some are provided by third-party vendors. Docker Networks are designed to be plug-and-play so once downloaded without any setup they can be used. Behind the scenes, Docker uses platform-specific features like iptables, port forwarding, and virtual network devices to implement the different network types. This is considered an implementation detail and should be left to Docker to manage. 
 
-#### Bridge Driver
+### Bridge Driver
 
 ![Container Bridge Network|600](images/docker-networks/docker-bridge-network.png)
 
@@ -46,7 +46,7 @@ While it's true that all custom bridge networks have their own DNS server, this 
 
 More details about the differences between the default bridge network and the user-defined bridge network can be found in link (5) in the references section.
 
-#### Host Driver
+### Host Driver
 
 ![Docker Host Network|600](images/docker-networks/docker-host-network.png)
 
@@ -58,15 +58,15 @@ The host network is supposed to be faster than bridge mode as there is no need f
 
 Host driver only works on Linux and is **not supported on Windows and MacOS**
 
-#### None Driver
+### None Driver
 
 ![Docker None Driver|550](images/docker-networks/docker-none-driver.png)
 
 The none driver is used when we want to run containers in complete isolation from each other and the outside world. Containers created in this mode do not have a network stack they only contain a loopback interface. There is no way for the container to connect to the host systems network interface or access the internet.
 
-### Docker Network Commands
+## Docker Network Commands
 
-#### Inspect Network
+### Inspect Network
 
 To view the configuration details of a network like a network name, id, subnet information and connected containers the `network inspect` command is used. A network can be inspected using its name or its id
 
@@ -77,7 +77,7 @@ docker network inspect bridge
 
 ![Inspect Docker Network Configuration|550](images/docker-networks/docker-network-inspect.png)
 
-#### Creating New Networks
+### Creating New Networks
 
 A new network can be created using the `network create` command. The `-d` flag is used to specify the driver to use to create the network (default: bridge)
 
@@ -92,7 +92,7 @@ When creating a custom network there are other parameters related to the network
 
 ![Docker Network Create Help Menu|520](images/docker-networks/docker-network-create-help.png)
 
-#### Adding Container to Network
+### Adding Container to Network
 
 A container can be attached to a network using the `--net` option in the `container run` command.
 
@@ -120,7 +120,7 @@ Under the "NetworkSettings" section we can see the details related to the networ
 
 ![Docker Container Configuration|580](images/docker-networks/docker-container-inspect.png)
 
-#### Exposing Port on Container
+### Exposing Port on Container
 
 We can expose ports on the container to be accessible from the host system using the `-p` flag in the `container run` command. Using this option we can access services that are running within the container.
 
@@ -143,7 +143,7 @@ As discussed in the Host Driver Section Docker behind the scenes uses system-spe
 
 The ports that are exposable on a container will always be provided on the details page of the image on the Container Registries website. The same detail can be also found by using the `image inspect` command and consulting the `Dockerfile` used to build the image.
 
-#### Inter-Container Communication 
+### Inter-Container Communication 
 
 Containers that are on the same network can communicate with each other using their hostname. By default the hostname is the name that is assigned to the container when its created, by using the `--network-alias` flag a custom hostname that is different from the name of the container can be defined.
 
@@ -186,7 +186,7 @@ ping alpine1 -c 4
 > 
 > For more details on the same refer link (6) provided in the reference section
 
-#### Host Mode Communication
+### Host Mode Communication
 
 As discussed earlier containers running in host mode the ports do not have to be exposed explicitly (in fact we will get a warning if we use the `-p` flag) as the containers are directly connected to the interface of the host system.
 
@@ -200,7 +200,7 @@ docker container run --rm --name nginx \
 
 Now nginx will be accessible on port 80 on the host system at `http://localhost:80`
 
-#### Add Running Container to Network
+### Add Running Container to Network
 
 It is possible to connect and disconnect a container from a network using the `network connect` and `network disconnect` commands
 
@@ -212,7 +212,7 @@ docker network connect <network-name> <container-name>
 docker network disconnect <network-name> <container-name>
 ```
 
-#### Delete a Network
+### Delete a Network
 
 Once we are done using a network it can be deleted using the `network delete` command
 
@@ -222,9 +222,9 @@ docker network rm docker-101
 
 ![Deleting Docker Network|320](images/docker-networks/docker-network-remove.png)
 
-### Docker Network Types (Others)
+## Docker Network Types (Others)
 
-#### MACVLAN Driver
+### MACVLAN Driver
 
 The MACVLAN driver makes Docker containers appear as if they are directly connected to the physical network (The container would appear like it is a physical device connected to the router/switch in the network).
 
@@ -232,7 +232,7 @@ Each container's network interface gets an IP Address and MAC Address which are 
 
 This network mode has some special requirements which need to be supported by the host system and the network gateway for it to work properly. For more details on this driver refer to link (7) provided in the references section.
 
-#### IPVLAN Driver
+### IPVLAN Driver
 
 The IPVLAN driver allows assigning containers to different networks which all appear to be connected to the host device (To the networks created by Docker the host system will appear like the router of the network).
 
@@ -240,7 +240,7 @@ In this mode, the containers are not assigned their own MAC Addresses but they s
 
 For more details on this network mode and its features and limitations refer to link (8) provided in the reference section.
 
-#### Overlay Driver
+### Overlay Driver
 
 The Overlay driver is used by default in Docker Swarm a mode that allows Docker to run and manage containers on multiple devices as if they are all part of the same network (Distributed System). 
 
@@ -248,7 +248,7 @@ Overlay mode allows the connection of multiple Docker daemons (Docker Hosts) tog
 
 For more details on overlay networks refer to link (9) provided in the reference section.
 
-### References
+## References
 
 1.  [Networking Overview \| Docker Documentation](https://docs.docker.com/network/)
 2.  [Use bridge networks \| Docker Documentation](https://docs.docker.com/network/bridge/)

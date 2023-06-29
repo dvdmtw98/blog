@@ -10,13 +10,13 @@ image: images/docker-basics/docker-101-banner.png
 
 In this post, we will be looking at some basic concepts that are important in understanding Docker and have a discussion along the way on how Virtual Machines differ from Containers.
 
-### What does it mean to Containerize software and What is a Container?
+## What does it mean to Containerize software and What is a Container?
 
 *   The process of packaging software along with all of its components is called **containerization**. Components can be anything ranging from external libraries, frameworks, drivers and other dependencies that are essential for the functioning of the software.
 *   **Containers** are lightweight, standalone, executable packages of software that contain **everything** needed to run an application. Since a container consists of everything necessary to run the software they are **platform agnostic** and can be run on any system.
 *   The above properties of containers also make them **secure**** as they don't have to rely on any software that is outside the container.
 
-### Virtual Machines vs. Containers
+## Virtual Machines vs. Containers
 
 ![VM vs Docker Comparison](images/docker-basics/vm-vs-docker.png)
 
@@ -40,7 +40,7 @@ As eluded to before an operating system consists of two main parts **the Kernel*
 
 Another way to look at this is that VM allows us to **isolate environments** (OS + Software) while Containers move this abstraction one layer higher and allows us to **isolate applications****.
 
-### How to Build a Container?
+## How to Build a Container?
 
 ![Container Build Steps](images/docker-basics/container-build-steps.png)
 
@@ -52,7 +52,7 @@ Once we build an Image we can distribute this image to other people by uploading
 
 This is one of the key areas where Containers shine unlike VMs we do not have to go through **complex steps** to get our software up and running. As long as the Host OS has a Container Runtime installed we can run containers on that system and the functioning of the software is going to be **the same**** as it was on our system. So no more **"But it worked on my Machine don't know why it is not working on yours"** :)
 
-### Advantages of Containers
+## Advantages of Containers
 
 *   **Portable**: Containers are platform agnostic and are isolated and hence can be installed on any system
 *   **Resource Efficient**: As each container does not bundle its kernel the complete software package footprint is very lean.
@@ -65,7 +65,7 @@ I how I was able to at least clear to come extent of mystery around containers a
 
 In closing, we looked at what is a **container** and how does it mean to **containerize** an application. We **compared VMs** and **containers** to see how they differ from each other. We covered the steps that are involved in **building** a container and finally saw what are the **advantages** of using containers.
 
-### References
+## References
 
 *   [What is a Container? \| Docker](https://www.docker.com/resources/what-container/)
 *   [What is containerization?](https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization)

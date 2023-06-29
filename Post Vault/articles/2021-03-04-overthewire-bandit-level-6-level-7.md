@@ -9,14 +9,14 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored **somewhere on the server** and has all of the following properties:  
 > owned by user bandit7  
 > owned by group bandit6  
 > 33 bytes in size  
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find, grep
 
@@ -42,7 +42,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [35 Practical Examples of Linux Find Command](https://www.tecmint.com/35-practical-examples-of-linux-find-command/)
 
@@ -50,7 +50,7 @@ find (1)        - search for files in a directory hierarchy
 
 [Site Unreachable](https://linuxhint.com/what_is_dev_null/)
 
-### Solution
+## Solution
 
 Since we don't know where the file is we will have to search the entire server. We know some properties about the file that we can use to try and locate the file. Similar to the previous level we can use the `find` command for this task
 
@@ -58,7 +58,7 @@ Since we don't know where the file is we will have to search the entire server. 
 bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c
 ```
 
-### Command Explanation
+## Command Explanation
 
 * `/`: Search the entire server (/ is the root directory on Linux similar to the C:/ Drive on Windows)
 * `-type f`: Search only for files (Exclude Directories)

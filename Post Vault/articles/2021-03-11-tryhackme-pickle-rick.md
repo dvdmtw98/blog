@@ -11,11 +11,11 @@ image: images/thm-pickle-rick/thm-pickle-rick-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Challenge
+## Challenge
 
 This Rick and Morty-themed challenge requires you to exploit a web server to find 3 ingredients that will help Rick make his potion to transform himself back into a human from a pickle.
 
-### Solution
+## Solution
 
 Since we don't have any information about our target let's run a Nmap scan to see if we can find any interesting service that is running on the machine that we can be exploited.
 
@@ -36,7 +36,7 @@ PORT   STATE SERVICE VERSION
 |_http-title: Rick is sup4r cool
 ```
 
-#### Command Options
+### Command Options
 
 * **-sS:** Stealth Scan
 * **-A:** Aggressive Scan (OS Detection, Service Versioning and Some Scripts)
@@ -85,7 +85,7 @@ gobuster dir -u http://10.10.79.123 -x txt,php,html -w /usr/share/wordlists/dirb
 /login.php (Status: 200)
 ```
 
-#### Command Options
+### Command Options
 
 * **-u:** URL of the target
 * **-x:** File extensions to search will brute forcing
@@ -146,7 +146,7 @@ Now that we know how to evade the filtering let's access the portal.php file and
 
 Well, no credentials were found but we were able to see the list of commands that are getting blocked by the web server.
 
-### Approach 1: Using Reverse Shell
+## Approach 1: Using Reverse Shell
 
 The next logic process that we can try is to set up a reverse shell. So that we can access the other directories that are present on the server. For all the different types of reverse shells that can be setup checkout the amazing resource provided by "PayloadAllThings"
 
@@ -207,7 +207,7 @@ snap
 
 And there we go we have found the 3rd ingredient as well.
 
-### Approach 2: Using commands from the Portal
+## Approach 2: Using commands from the Portal
 
 By looking at "portal.php" we saw the commands that were blocked from being used. If we look closely at the list we see that the "less" command is not blocked so we can use that to view the files.
 

@@ -12,7 +12,7 @@ image: images/thm-ice/thm-ice-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Connect
+## Task 1: Connect
 
 Connect to our network using OpenVPN. Here is a mini walkthrough of connecting:
 
@@ -48,7 +48,7 @@ You should see a green tick next to Connected. It will also show you your intern
 
 > No answer required
 
-### Task 2: Recon
+## Task 2: Recon
 
 1. **Deploy the machine! This may take up to three minutes to start.**
 
@@ -60,7 +60,7 @@ You should see a green tick next to Connected. It will also show you your intern
 nmap -Pn -sS -A -T4 -p- -vv -oN ice_nmapscan 10.10.2.67
 ```
 
-#### Command Options
+### Command Options
 
 * **-Pn:** No ping (Consider the machine is online)
 * **-sS:** Stealth Scan (SYN Scan)
@@ -94,7 +94,7 @@ nmap -Pn -sS -A -T4 — script=vuln -p- -vv -oN ice_nmapscan1 10.10.2.67
 
 > DARK-PC
 
-### Task 3: Gain Access
+## Task 3: Gain Access
 
 1.  **Now that we've identified some interesting services running on our target machine, let's do a little bit of research into one of the weirder services identified: Icecast. Icecast, or well at least this version running on our target, is heavily flawed and has a high-level vulnerability with a score of 7.5 (7.4 depending on where you view it). What type of vulnerability is it? Use** [**https://www.cvedetails.com**](https://www.cvedetails.com) **for this question and the next.**
 
@@ -140,7 +140,7 @@ Search for Icecast and look for CVE that has a Metasploit module
 
 ![Running Exploit on Target](images/thm-ice/running-exploit.png)
 
-### Task 4: Escalate
+## Task 4: Escalate
 
 1. **Woohoo! We've gained a foothold in our victim machine! What's the name of the shell we have now?**
 
@@ -212,7 +212,7 @@ Search for Icecast and look for CVE that has a Metasploit module
 
 > SeTakeOwnershipPrivilege
 
-### Step 5: Looting
+## Step 5: Looting
 
 1. **Before further action, we need to move to a process that has the permissions that we need to interact with the lsass service, the service responsible for authentication within Windows. First, let's list the processes using the command `ps`. Note, we can see processes being run by `NT AUTHORITY\SYSTEM` as we have escalated permissions (even though our process doesn't).**
 
@@ -258,7 +258,7 @@ Mentioned within this question is the term 'living in' a process. Often when we 
 
 > Password01!
 
-### Task 6: Post-Exploitation
+## Task 6: Post-Exploitation
 
 1. **Before we start our post-exploitation, let's revisit the help menu one last time in the meterpreter shell. We'll answer the following questions using that menu.**
 
@@ -308,7 +308,7 @@ sudo apt install remmina
 
 > No answer required
 
-### Task 7: Extra Credit
+## Task 7: Extra Credit
 
 **As you advance in your pentesting skills, you will be faced eventually with exploitation without the usage of Metasploit. Provided above is the link to one of the exploits found on Exploit DB for hijacking Icecast for remote code execution. While not required by the room, it's recommended to attempt exploitation via the provided code or another similar exploit to further hone your skills.**
 

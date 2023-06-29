@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in a file **readme** in the homedirectory. Unfortunately, someone has modified **.bashrc** to log you out when you log in with SSH.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ssh, ls, cat
 
@@ -30,7 +30,7 @@ cat (1)              - concatenate files and print on the standard output
 
 **Note:** Not all commands are required to complete the level
 
-### Solution
+## Solution
 
 From reading the question we understand that we cannot log in directly as the default shell "Bash" has been modified to not allow any login using SSH. So we need to use a shell other than bash to access the system.
 

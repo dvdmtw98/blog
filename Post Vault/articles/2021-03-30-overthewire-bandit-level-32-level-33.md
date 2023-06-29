@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > After all this `git` stuff its time for another escape. Good luck!
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > sh, man
 
@@ -26,11 +26,11 @@ man (1)              - an interface to the system reference manuals
 sh (1)               - command interpreter (shell)
 ```
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [How to Use SUID, SGID, and Sticky Bits on Linux](https://www.howtogeek.com/656646/how-to-use-suid-sgid-and-sticky-bits-on-linux/)
 
-### Solution
+## Solution
 
 As soon as we login into this level we notice that we are not in a bash shell instead we are in a shell called "uppercase shell"
 

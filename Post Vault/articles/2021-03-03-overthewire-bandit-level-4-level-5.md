@@ -9,12 +9,12 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in the only human-readable file in the **inhere** directory.   
 > Tip: if your terminal is messed up, try the "reset" command.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -40,13 +40,13 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Linux File Command - javatpoint](https://www.javatpoint.com/linux-file)
 
 [Linux File Globbing - javatpoint](https://www.javatpoint.com/linux-file-globbing)
 
-### Solution
+## Solution
 
 View the files that are present in the current working directory using the `ls` command
 

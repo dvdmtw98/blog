@@ -9,17 +9,17 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Setuid - Wikipedia](https://en.wikipedia.org/wiki/Setuid)
 
 [So you want to know what "ls -l" does… \| by Jenn Ogden \| Medium](https://medium.com/@jennogden95/so-you-want-to-know-what-ls-c-does-864bd4708be8)
 
-### Solution
+## Solution
 
 We have been told there is a binary file that is present in the home directory which somehow can help us to access the password of bandit20. Let's have a look at the binary
 

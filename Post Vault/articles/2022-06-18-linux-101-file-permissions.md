@@ -10,7 +10,7 @@ image: images/linux-file-permission/linux-permissions-banner.png
 
 File permissions are an important concept to understand for anyone working with Linux. Permissions are a set of attributes (along with ownership) which is used to control the level of access the users and system processes have to files. It is a security mechanism that ensures that only authorized users and processes can access certain files and directories.
 
-### Permission Groups
+## Permission Groups
 
 All files and directories in Linux have three permission groups assigned to them. Each of these groups can be assigned a different access level. The three groups are as follows:
 
@@ -18,7 +18,7 @@ All files and directories in Linux have three permission groups assigned to them
 *   **Group**: A group is nothing but a group of users. A Linux system can have multiple users and say that these users need to be assigned the permissions, instead of setting permissions for them one at a time we can add them all into a group. The permissions applied at the group level are propagated to all the users in that group. So, the permission assigned here applies to all the users that belong to the same group as the file or directory.
 *   **Others**: The permissions specified to this group apply to everyone on the system that isn't the file owner and does not belong to the file or directory owner group.
 
-### File Ownership
+## File Ownership
 
 Before we get into permission sets let's have a quick look at file ownership. Every file and directory in Linux belongs to a user and group. We can view this information using the **ls** command
 
@@ -32,7 +32,7 @@ To view the groups that we are part of we can make use of the **id** or **groups
 
 Notice the numeric values that are outputted by the id command this is the numeric values that are assigned for each user and group on the system. It is also perfectly valid for a user to belong to multiple groups which can be seen in the output of the id and groups command. The value shown as UID (User ID) is the name of the user of the system while the value shown as GID (Group ID) is the **primary group** of the user. When a user creates any file or directory it is by default going to be owned by this group.
 
-### Permission Sets
+## Permission Sets
 
 Three permissions can be assigned to each file or directory. These permissions are Read, Write and Execute.
 
@@ -71,11 +71,11 @@ Permissions can be also represented in numerical form: Read (4), Write (2), Exec
 |   6    | Read & Write          |      rw-       |
 |   7    | Read, Write & Execute |      rwx       |
 
-### Granting & Revoking Permissions
+## Granting & Revoking Permissions
 
 The permissions on files can be changed using the **chmod** (Change Mode) command. There are two methods to set the permission of a file-symbolic method and the numeric method.
 
-#### Symbolic Method
+### Symbolic Method
 
 This approach requires us to explicitly and verbosely specify the permissions that need to be applied to the file. It has the following general form:
 
@@ -101,7 +101,7 @@ sudo chmod u=rwx,o=rwx test-file.txt
 
 The plus (+) and minus (-) signs can be used if we want certain permissions to be added or removed. The equal (=) sign sets the permissions exactly to the value specified by the user.
 
-#### Numeric Method
+### Numeric Method
 
 In this approach, we make use of the numeric representation of the permissions that were discussed earlier. We need to specify three numbers the first represents the permission of the owner, the second one represents the permission of the owner group and the third represents the permission that is assigned to all the other users.
 
@@ -121,7 +121,7 @@ As we can see with this approach we can quite quickly and elegantly set the perm
 
 In closing, permissions are an important part of the Linux system and are very critical to understand to work with Linux effectively. We looked into what are permissions groups and permissions sets. Then we took a small detour to understand groups and file ownership. Then we explored the two methods that can be used to change the permissions of files and directories: symbolic and numeric.
 
-### References
+## References
 
 *   [Understanding Linux File Permissions \| Linuxize](https://linuxize.com/post/understanding-linux-file-permissions/)
 *   [Understanding Basic File Permissions and Ownership in Linux - The Geek Diary](https://www.thegeekdiary.com/understanding-basic-file-permissions-and-ownership-in-linux/)

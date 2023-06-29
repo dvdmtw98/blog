@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > Good job getting a shell! Now hurry and grab the password for bandit27!
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls
 
@@ -22,11 +22,11 @@ image: images/overthewire-banner.png
 ls (1)               - list directory contents
 ```
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [How to Use SUID, SGID, and Sticky Bits on Linux](https://www.howtogeek.com/656646/how-to-use-suid-sgid-and-sticky-bits-on-linux/)
 
-### Solution
+## Solution
 
 If at the end of the last level you logged out perform the same steps as the last level to login back as bandit26 but this time from our system.
 

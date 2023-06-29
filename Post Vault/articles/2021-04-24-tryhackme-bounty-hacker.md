@@ -12,7 +12,7 @@ image: images/thm-bounty-hacker/thm-bounty-hacker-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Living up to the title
+## Task 1: Living up to the title
 
 1. **Deploy the machine.**
 
@@ -24,7 +24,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 ![RustScan Results|550](images/thm-bounty-hacker/rustscan-results.png)
 
-#### Command Options
+### Command Options
 
 *   **-a:** Target IP Address
 *   **-u:** Number of parallel connections to the target
@@ -34,7 +34,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 **Note:** All the flags after the `--` along with the ports found by RustScan are going to be passed to Nmap for processing
 
-#### Nmap Equivalent
+### Nmap Equivalent
 
 > nmap -vvv -p- -Pn -sV -A -oN nmap_output.txt 10.10.70.196
 
@@ -84,7 +84,7 @@ One of the best tools to try and brute force passwords for online services is TH
 
 ![Hydra Password Cracking](images/thm-bounty-hacker/hydra-password-cracking.png)
 
-#### Command Options
+### Command Options
 
 *   -**l:** Username
 *   **-P:** List of passwords to use for brute-forcing

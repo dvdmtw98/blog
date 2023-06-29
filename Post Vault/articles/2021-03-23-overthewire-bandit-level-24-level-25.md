@@ -9,17 +9,17 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [shellmagic.xyz - This website is for sale! - shellmagic Resources and Information.](https://shellmagic.xyz/)
 
 [Bash For Loop \| Linuxize](https://linuxize.com/post/bash-for-loop/)
 
-### Solution
+## Solution
 
 From the question, we understand that there is a service running on port 30002 and that it's using a 4-digit PIN for authentication. If we can authenticate ourselves and submit to the service the password for bandit24 we will be given the password for bandit25.
 

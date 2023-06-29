@@ -14,7 +14,7 @@ One of the environment variables set by the Python interpreter at the execution 
 
 > If anyone is wonder why they are called Dunder its because Dunder is short for **D**ouble **Under**scores :)
 
-### Example 1
+## Example 1
 
 When we execute a script the value of the **`__name__`** variable is set to **`__main__`** For imported modules the value of **`__name__`** variable is set to the **name of the module**. Let's see this in action.
 
@@ -31,7 +31,7 @@ Hello from Function 1
 File name : __main__
 ```
 
-### Example 2
+## Example 2
 
 Let's create a module and import that module into our main program and check the value of `__main__`
 
@@ -61,7 +61,7 @@ File Name : other
 
 As we can see for the imported module the value of the `__name__` variable is set to the name of the module and for the main script it is set to `__main__`. No surprises so far everything seems to be working exactly as we would expect.
 
-### Example 3
+## Example 3
 
 Now what happens if we leave a function call or any other global scope statements in the module that will be imported by our main program
 
@@ -97,7 +97,7 @@ If we recollect the discussion from the start of the article and look at the out
 
 Coming back to the main question at hand what is the **`__name__ == '__main__'`** construct found in almost all Python scripts? Simply put it is a **guard statement** and its main purpose is to prevent the above situation from occurring.
 
-### Example 4
+## Example 4
 
 Let's see know we can use the guard statement and the knowledge that we have collected so far to fix this issue
 
@@ -132,7 +132,7 @@ In this way, Python gives us the flexibility to run code as standalone scripts o
 
 > It is best practice to include the guard statement in our code even if we are not going to use it as an module. So always include a guard code your code especially now that we understand how it works.
 
-### References
+## References
 
 - [__main__ — Top-level code environment — Python 3.11.1 documentation](https://docs.python.org/3/library/__main__.html)
 - [python - What does if __name__ == "__main__": do? - Stack Overflow](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)

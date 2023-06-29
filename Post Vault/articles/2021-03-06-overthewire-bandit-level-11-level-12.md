@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in the file **data.txt**, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
@@ -51,13 +51,13 @@ xxd (1)              - make a hexdump or do the reverse.
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [ROT13 - Wikipedia](https://en.wikipedia.org/wiki/Rot13)
 
 [Tr Command in Linux with Examples \| Linuxize](https://linuxize.com/post/linux-tr-command/)
 
-### Solution
+## Solution
 
 View the contents of the current working directory
 

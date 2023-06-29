@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > A program is running automatically at regular intervals from **cron**, the time-based job scheduler. Look in **/etc/cron.d/** for the configuration and see what command is being executed.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > cron, crontab, crontab(5) (use "man 5 crontab" to access this)
 
@@ -26,7 +26,7 @@ crontab (1)      - maintain crontab files for individual users (Vixie Cron)
 crontab (5)      - tables for driving cron
 ```
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Linux/Mac Tutorial: Cron Jobs - How to Schedule Commands with crontab - YouTube](https://www.youtube.com/watch?v=QZJ1drMQz1A)
 
@@ -34,7 +34,7 @@ crontab (5)      - tables for driving cron
 
 [11 Cron Scheduling Task Examples in Linux](https://www.tecmint.com/11-cron-scheduling-task-examples-in-linux/)
 
-### Solution
+## Solution
 
 Since we know there is a task that is being executed by cron let's have a look at all the cron jobs on the system
 

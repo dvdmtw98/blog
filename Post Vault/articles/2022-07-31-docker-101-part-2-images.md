@@ -12,7 +12,7 @@ In the previous article, we looked at some of the basic concepts related to cont
 
 To follow along, Docker Engine needs to be installed on our system this can be achieved by following the instructions given on [Docker Docs](https://docs.docker.com/engine/install/)
 
-### Docker Images
+## Docker Images
 
 As discussed earlier, an Image is nothing but a package that contains a program along with its dependencies and metadata, which is required for the functioning of the image.
 
@@ -26,7 +26,7 @@ Due to this, if we spin up 5 instances of an Image, Docker does not make 5 copie
 
 This layered approach also helps with security, each layer is isolated and cannot see the content in the other layers. Only when UFS merges the layers do the different files that belong to the same directory appear like they are together.
 
-### Container Registry
+## Container Registry
 
 A container registry is a central place to store and manage container images. Think of it like Google Drive but for images. Along with storage registries generally provide some additional features like vulnerability analysis, image versioning, access control, and CI/CD integrations.
 
@@ -34,7 +34,7 @@ Several organizations provide container registries, some are public while others
 
 ![Docker Hub Overview](images/docker-images/docker-hub-overview.png)
 
-### Downloading Images
+## Downloading Images
 
 Now let us look at how to pull an image to our local system. On Docker Hub, let's find an image to download, I will be using the [Alpine](https://hub.docker.com/_/alpine) image for this example, but the process is the same for all the images. Once Docker is up and running, open a terminal and type the following command.
 
@@ -76,7 +76,7 @@ Now, if we list the images, we will see that two versions of Alpine are now loca
 
 ![Docker Image List 2|550](images/docker-images/docker-image-list-2.png)
 
-### Image Metadata
+## Image Metadata
 
 We can look at the various image-related metadata by looking at the "image history" and "image inspect" commands.
 
@@ -92,7 +92,7 @@ The "image inspect" command can be used to view all the metadata about the diffe
 
 Not everyone will understand all the information that is shown here and that is perfectly fine, what's important is to know that we can view the image-related metadata using the above commands.
 
-### Deleting Images
+## Deleting Images
 
 Once we are using an image, we can remove it from our system to free up space using the "image rm" command. Let's remove one of the two versions of Alpine from our system.
 
@@ -104,7 +104,7 @@ docker image rm <image-name>
 
 ![Docker Image Delete](images/docker-images/docker-image-delete.png)
 
-### Help Command
+## Help Command
 
 To view all the commands related to images that are provided by Docker, we can make use of the `--help` flag
 
@@ -114,7 +114,7 @@ docker image --help
 
 ![Docker Image Help|550](images/docker-images/docker-image-help.png)
 
-### References
+## References
 
 *   [filesystems - Why does Docker need a Union File System - Stack Overflow](https://stackoverflow.com/questions/32775594/why-does-docker-need-a-union-file-system)
 *   [UnionFS - Wikipedia](https://en.wikipedia.org/wiki/UnionFS)

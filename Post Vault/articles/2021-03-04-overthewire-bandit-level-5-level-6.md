@@ -9,14 +9,14 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in a file somewhere under the **inhere** directory and has all of the following properties:  
 > human-readable  
 > 1033 bytes in size  
 > not executable  
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -42,7 +42,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [35 Practical Examples of Linux Find Command](https://www.tecmint.com/35-practical-examples-of-linux-find-command/)
 
@@ -50,7 +50,7 @@ find (1)        - search for files in a directory hierarchy
 
 [What is a simple explanation for how pipes work in Bash? - Stack Overflow](https://stackoverflow.com/questions/9834086/what-is-a-simple-explanation-for-how-pipes-work-in-bash)
 
-### Solution
+## Solution
 
 View the files that are present in the current working directory
 
@@ -86,7 +86,7 @@ bandit5@bandit:~/inhere$ find . -type f -size 1033c -not -executable -exec file 
 ./maybehere07/.file2: ASCII text, with very long lines
 ```
 
-### Command Explanation
+## Command Explanation
 
 * `.`: Search the current working directory only
 * `-type f`: Look for files only (Exclude Directories)

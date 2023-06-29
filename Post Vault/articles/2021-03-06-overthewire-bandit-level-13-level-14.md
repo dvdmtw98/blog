@@ -9,21 +9,21 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in **/etc/bandit_pass/bandit14 and can only be read by user bandit14**. For this level, you don't get the next password, but you get a private SSH key that can be used to log into the next level. **Note:** **localhost** is a hostname that refers to the machine you are working on
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ssh, telnet, nc, openssl, s_client, nmap
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [SSH/OpenSSH/Keys - Community Help Wiki](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
 [How to use SSH keys for authentication - UpCloud](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/)
 
-### Solution
+## Solution
 
 View the contents of the current working directory
 

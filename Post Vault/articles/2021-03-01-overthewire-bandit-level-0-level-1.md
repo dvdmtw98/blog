@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in a file called **readme** located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -39,7 +39,7 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [13 Basic Cat Command Examples in Linux Terminal](https://www.tecmint.com/13-basic-cat-command-examples-in-linux/)
 
@@ -47,7 +47,7 @@ find (1)        - search for files in a directory hierarchy
 
 [15 'pwd' (Print Working Directory) Command Examples in Linux](https://www.tecmint.com/pwd-command-examples/)
 
-### Solution
+## Solution
 
 View the files that are present in the current working directory using the `ls` command  
 (The "pwd" command can be used to view the current working directory)

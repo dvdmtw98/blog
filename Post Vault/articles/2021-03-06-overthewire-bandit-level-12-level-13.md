@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in the file **data.txt**, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file
 
@@ -63,7 +63,7 @@ file (1)             - determine file type
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Hex dump - Wikipedia](https://en.wikipedia.org/wiki/Hex_dump)
 
@@ -75,7 +75,7 @@ file (1)             - determine file type
 
 [xxd(1): make hex dump/do reverse - Linux man page](https://linux.die.net/man/1/xxd)
 
-### Solution
+## Solution
 
 View the contents of the current working directory
 
@@ -142,7 +142,7 @@ bandit12@bandit:/tmp/random_dir$ file binary
 binary: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
 ```
 
-#### Gzip Decompression
+### Gzip Decompression
 
 We can see that the file was compressed using gzip so we can decompress the data using the `gunzip` command. When trying to decompress a gzip file the file must have the correct extension.
 
@@ -157,7 +157,7 @@ bandit12@bandit:/tmp/random_dir$ ls
 binary  data
 ```
 
-#### Bzip Decompression
+### Bzip Decompression
 
 Using the `file` command we can again look at the type of data that is stored in the file
 
@@ -178,7 +178,7 @@ binary.out  data
 
 **Note:** `bunzip2` is an shorthand for the `bzip2 -d` command
 
-#### Gzip Decompression (Again)
+### Gzip Decompression (Again)
 
 Using the `file` command we can look at the type of data that is stored in the file
 
@@ -200,7 +200,7 @@ bandit12@bandit:/tmp/random_dir$ ls
 binary  data
 ```
 
-#### Tar Archive
+### Tar Archive
 
 Using the `file` command we look at the type of data that is present in the file
 

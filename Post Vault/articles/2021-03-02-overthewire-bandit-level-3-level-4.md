@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in a hidden file in the **inhere** directory.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ls, cd, cat, file, du, find
 
@@ -39,11 +39,11 @@ find (1)        - search for files in a directory hierarchy
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [15 Basic 'ls' Command Examples for Linux Beginners](https://www.tecmint.com/15-basic-ls-command-examples-in-linux/)
 
-### Solution
+## Solution
 
 View the files that are present in the current working directory using the `ls` command
 

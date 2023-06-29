@@ -1,5 +1,5 @@
 ---
-title: 'VulnHub: Kioptrix Level 1 (#1)'
+title: 'VulnHub - Kioptrix: Level 1 (#1)'
 description: 'Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner'
 date: '2023-06-14 21:15:00 +0530'
 categories: [Security, VulnHub]
@@ -11,15 +11,15 @@ image: images/vulnhub-kioptrix-lvl1/kioptrix-level-1-banner.png
 
 Cover Image by <a href="https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm#&position=0&from_view=search&track=ais">vector_corp</a> on Freepik
 
-### Description
+## Description
 
 This Kioptrix VM Image is an easy challenge. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games is to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways than one to complete the challenges.
 
 [Kioptrix: Level 1 (#1) \~ VulnHub](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/)
 
-### Information Gathering
+## Information Gathering
 
-#### Identifying Target 
+### Identifying Target 
 
 Once Kioptrix is set up the first order of business is to find its IP address. Using the `ip` command the default gateway and IP Address of the attack machine can be discovered.
 
@@ -48,7 +48,7 @@ The last entry `.22` is the address of the Kioptrix machine.
 > The `.1` and `.2` IP addresses are two interfaces of the VirtualBox virtual router. The `.3` IP belongs to the DHCP server setup by VirtualBox for the network. 
 
 
-#### Port Scanning
+### Port Scanning
 
 With the target machine discovered the next step is to perform an Port Scan to find the open ports on the machine.
 
@@ -69,13 +69,13 @@ There is a web server that is using ports 80 (HTTP) and 443 (HTTPS). The web ser
 
 The Samba service is running on port 139. Port 111 is running `rpcbind` which is the port mapper service used by Samba to map calls from remote devices to local device ports.
 
-#### Enumeration OpenSSH
+### Enumeration OpenSSH
 
 The SSH service is generally not vulnerable to attacks. And the vulnerabilities that do exist require user authentication.
 
 After searching on Google and `searchsploit` as suspected there seem to be no exploits available for the version of SSH that is running on the target.
 
-#### Enumerating Apache
+### Enumerating Apache
 
 ![Webserver 5](images/vulnhub-kioptrix-lvl1/webserver-5.png)
 
@@ -123,7 +123,7 @@ The shows show that the SSL library that is used by the web server is vulnerable
 
 On searching on Google immediately multiple results for exploits targeting this version of `mod_ssl` can be found. `OpenFuck` seems to be a script that could be used to exploit this vulnerability.
 
-#### Enumerating Samba
+### Enumerating Samba
 
 Using `smbclient` the shares that are present on the target can be listed provided there is no authentication in place.
 
@@ -172,9 +172,9 @@ We find that the target is running `Samba 2.2.1a`.
 
 On searching Google we can see exploits are available for this version of Samba. There seems to be an exploit called `trans2open` that could be used on the target.
 
-### Exploitation
+## Exploitation
 
-#### Exploiting Apache
+### Exploiting Apache
 
 During the enumeration phase, an exploit called `OpenFuck` was discovered which could potentially exploit the vulnerability in the version of `mod_ssl` that is used by Apache. But on further digging it was found that this version of the exploit does not work anymore. In its place a newer version of the same exploit called `OpenLuck` is available.
 
@@ -215,7 +215,7 @@ By using the `0x6b` offset we can cause a  buffer overflow and gain root access 
 > **Note**:  
 > Metasploit also contains the `OpenFuck` exploit but similar to the code found online it does not work anymore.
 
-#### Exploiting Samba
+### Exploiting Samba
 
 For the version of Samba that is running on the target an exploit called `trans2open` was found. 
 

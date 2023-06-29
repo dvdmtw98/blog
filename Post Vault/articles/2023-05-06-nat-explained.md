@@ -10,7 +10,7 @@ image: images/nat-explained/nat-explained-banner.png
 math: true
 ---
 
-### What is NAT?
+## What is NAT?
 
 NAT stands for Network Address Translation. It is a protocol that is used to map a private IPv4 address to a public IPv4 address. The translation process is performed by a traffic-routing device like a router. NAT was a short-term solution that was introduced to solve the scarcity of IPv4 addresses by allowing multiple devices to share the same IP address.
 
@@ -22,7 +22,7 @@ NAT stands for Network Address Translation. It is a protocol that is used to map
     allowfullscreen>
 </iframe>
 
-### Why is NAT required?
+## Why is NAT required?
 
 When the internet was initially created, the intention was to assign every host a unique IP address. If we had a network consisting of 10 hosts then we would need 10 IP addresses for all of the hosts to be able to access the Internet. An IPv4 address is made up of 32 bytes (4 bits) which gives us a total of $2^{32}$ or ~4.2 billion unique IP addresses. 
 
@@ -45,29 +45,29 @@ Once the IPv4 address Space was separated into public and private addresses, a p
 > **Note:**  
 > While normally NAT is used for translating private a IPv4 address to public IPv4 address which is the usage of NAT this article will cover. However, in reality, it does not matter if the IP address is public or private. NAT can just as easily be used to translate a public IP address to another public IP address or private IP address to another private IP address. NAT can even be used to convert a IPv6 address to IPv4 address.
 
-### Types of NAT
+## Types of NAT
 
 NAT can be configured in different ways, the three main types of Network Address Translation are as follows:
 
-#### Static NAT (SNAT)
+### Static NAT (SNAT)
 
 SNAT is used to perform a one-to-one mapping of a private IP address to a public IP address. If there are multiple devices on the network then for each device a static private to public IP address mapping is provided. This type of NAT does not preserve any IP address and hence does not help solve the IPv4 address shortage. Static NAT is used to expose an internal server over the internet.
 
-#### Dynamic NAT (DNAT)
+### Dynamic NAT (DNAT)
 
 DNAT is used to perform a one-to-one mapping of a private IP address to a public IP address. But unlike SNAT, the public-to-private IP address mapping is not permanent, instead, public IP addresses are selected dynamically from a pool of reserved IP addresses as required.
 
-#### Port Address Translation (PAT)
+### Port Address Translation (PAT)
 
 PAT is used to perform a many-to-one mapping between private IP and public IP addresses. PAT is also known as NAT Overloading, Network & Port Translation (NAPT) and IP Masquerading. Since multiple private IP addresses are translated to a single public IP, it's possible to have devices that have services that are running on the same port. To resolve this issue PAT performs port translation along with IP translation. 
 
 This is the type of NAT that is used in home networks. PAT allows thousands of devices to access the Internet using a single IP address. Since PAT maps many private IPs to a single public IP using this form of NAT we can conserve public IP addresses.
 
-### How does NAT Work?
+## How does NAT Work?
 
 All routers have two interfaces - Public (External) and Private (Internal). Packets that originate on the internal network are always received on the private interface while packets that arrive from the internet are received on the public interface.
 
-#### Port Address Translation (PAT)
+### Port Address Translation (PAT)
 
 The private interface of the router in this example has the IP address 192.168.1.1 and the public interface of the router has the IP address 215.226.47.97. The router acts as the translation device, it converts IP addresses from the internal network (192.168.1.0/24) to the public IP address (15.226.47.97). The router stores the information related to the translation in its NAT table.
 
@@ -83,7 +83,7 @@ Once the router receives the response packet it looks at its NAT table to determ
 
 PAT is unidirectional which means packets that originate from the internet that do not have a mapping in the NAT table are dropped by the router. PAT only works when the initial request is sent by an internal Host.
 
-##### Why does PAT need to randomize the Source Port?
+#### Why does PAT need to randomize the Source Port?
 
 While 65,535 ports are available to be used by each Host, two devices on a network may end up using the same port for communicating with an external resource. If PAT did not perform the port translation, for the above network we can end up with the following mappings in the NAT table.
 
@@ -92,7 +92,7 @@ Host B - 192.168.1.3:400 (Internal) - 15.226.47.97:400 (External)
 
 The response that the router receives from the webserver for both Host A and Host B would have the destination set to 15.226.47.97:400, because of this the router will not be able to decide which mapping needs to be used to send the response to the correct Host. To prevent this problem, PAT translates the port along with the IP address.
 
-#### Dynamic NAT (DNAT)
+### Dynamic NAT (DNAT)
 
 The private interface of the router in this network has the IP address 192.168.1.1 and the public interface will have an IP assigned from a pool of reserved IP addresses. In this example, the router's public interface can use the following addresses (215.226.47.97, 215.226.47.98, 215.226.47.99). Similar to PAT the translation details for DNAT are stored in the NAT table of the router.
 
@@ -110,7 +110,7 @@ Since each device uses a different public IP address for accessing the internet 
 
 DNAT-based IP address mappings are non-deterministic as the same public IP address could be used by different Hosts on the internal network. DNAT is also bidirectional which means if a connection was initialized from the external network it would still be delivered to a Host on the private network but, since the Host using the public IP keeps changing there is no guarantee the packet will be received by the correct Host. Because of its non-deterministic nature, Dynamic NAT is very rarely used in real-world networks.
 
-#### Static NAT (SNAT)
+### Static NAT (SNAT)
 
 SNAT is used to make an internal Host accessible over the Internet. The private interface of the router in this network has the IP address 192.168.1.1. The public interface will have a static public IP address which is reserved specifically for the Host device that needs to be accessed over the internet. SNAT does not make use of a NAT table. It stores a static mapping that defines the private IP and public IP relation.
 
@@ -124,7 +124,7 @@ Once the router receives the response packet it looks at its mapping configurati
 
 Since each device requires a different public IP address for accessing the internet SNAT does not need to translate the ports. In the above network if we had 4 Hosts and all of them needed to be accessed from the internet we would require 4 public IP addresses. SNAT does not help in conserving IP addresses which was the primary reason NAT was introduced. SNAT is bidirectional which means if a connection was initialized from the external network it would still be delivered to the Host on the private network.
 
-### References
+## References
 
 - [Network address translation - Wikipedia](https://en.wikipedia.org/wiki/Network_address_translation)
 - [Why NAT? – NAT Series – Practical Networking](https://www.practicalnetworking.net/series/nat/why-nat/)

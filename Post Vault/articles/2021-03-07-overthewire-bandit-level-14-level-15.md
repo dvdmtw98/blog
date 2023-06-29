@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level can be retrieved by submitting the password of the current level to **port 30000 on localhost**.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ssh, telnet, nc, openssl, s_client, nmap
 
@@ -39,7 +39,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [IP address - Wikipedia](https://en.wikipedia.org/wiki/IP_address)
 
@@ -51,7 +51,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 [8 Netcat (nc) Command with Examples](https://www.tecmint.com/netcat-nc-command-examples/)
 
-### Solution
+## Solution
 
 From the question, we know that there is a service that is running on port 30,000. We can try to connect to the service using Netcat
 

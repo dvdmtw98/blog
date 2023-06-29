@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in the file **data.txt** next to the word **millionth**
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
@@ -51,13 +51,13 @@ xxd (1)              - make a hexdump or do the reverse.
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [How to Use Grep Command in Linux [12 Useful Examples]](https://www.tecmint.com/12-practical-examples-of-linux-grep-command/)
 
 [Head command in Linux with examples - GeeksforGeeks](https://www.geeksforgeeks.org/head-command-linux-examples/)
 
-### Solution
+## Solution
 
 View the contents of the current working directory
 

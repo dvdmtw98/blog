@@ -1,5 +1,5 @@
 ---
-title: 'VulnHub: Kioptrix Level 2 (1.1) (#2)'
+title: 'VulnHub - Kioptrix: Level 2 (1.1) (#2)'
 description: 'Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner'
 date: '2023-06-19 21:45:00 +0530'
 categories: [Security, VulnHub]
@@ -11,15 +11,15 @@ image: images/vulnhub-kioptrix-lvl2/kioptrix-level-2-banner.png
 
 Cover Image by <a href="https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm#&position=0&from_view=search&track=ais">vector_corp</a> on Freepik
 
-### Description
+## Description
 
 This Kioptrix VM Image is an easy challenge. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games is to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways than one to complete the challenges.
 
 [Kioptrix: Level 1.1 (#2) \~ VulnHub](https://www.vulnhub.com/entry/kioptrix-level-11-2,23/)
 
-### Information Gathering
+## Information Gathering
 
-#### Identifying Target
+### Identifying Target
 
 Once the Kioptrix VM is set up identify its IP address. Since the attack machine (Kali) is on the same network as the target, by scanning the subnet the target machine can be found.
 
@@ -49,7 +49,7 @@ Since there is no other device on the network the `.23` address has to be the Ki
 > **Note**:  
 > The `.1` and `.2` IP addresses belong to the virtual router of the network. The `.2` address can be used to interact with the host machine. The `.3` address is the DHCP server of the network.
 
-#### Port Scanning
+### Port Scanning
 
 Next, perform a port scan to enumerate the services that are running on the target machine.
 
@@ -73,9 +73,9 @@ Port 3306 is used by MySQL. The database is most likely used by the website host
 
 Port 111 and 846 are used for RPC.
 
-### Reconnaissance & Exploitation
+## Reconnaissance & Exploitation
 
-#### OpenSSH, CUPS and MySQL
+### OpenSSH, CUPS and MySQL
 
 SSH is generally not vulnerable to attacks. And the vulnerabilities that do exist require user authentication. After searching on Google and `searchsploit` as suspected there seem to be no exploits available for the version of SSH present on the target.
 
@@ -83,7 +83,7 @@ Some exploits exist for CUPS 1.1 but most of them are for DoS attacks. The RCE e
 
 Databases are exploited because of web server and application misconfigurations. Direct login would only be possible with login credentials. I tried to log in as `root` user but it did not work as anonymous login is disabled.
 
-#### Apache
+### Apache
 
 ![Web Application](images/vulnhub-kioptrix-lvl2/webapp.png)
 
@@ -176,7 +176,7 @@ nc -nvlp 9000
 
 This granted me access to the system. Next need to gain `root` access. 
 
-#### Gaining Root Access
+### Gaining Root Access
 
 I used the `find` command to look for files having the SUID bit set but got no results.
 

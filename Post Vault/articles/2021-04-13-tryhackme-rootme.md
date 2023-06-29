@@ -11,7 +11,7 @@ image: images/thm-rootme/thm-rootme-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Task 1: Deploy the machine
+## Task 1: Deploy the machine
 
 Connect to the TryHackMe network and deploy the machine. If you don't know how to do this, complete the [OpenVPN room](https://tryhackme.com/room/openvpn) first.
 
@@ -19,7 +19,7 @@ Connect to the TryHackMe network and deploy the machine. If you don't know how t
 
 > No answer required
 
-### Task 2: Reconnaissance
+## Task 2: Reconnaissance
 
 The first task that is performed when we are given a target to exploit is to find the services that are running on the target. To find services running on the machine I will be using "RustScan" which is a port scanner similar to Nmap but much faster (RustScan in ideal conditions can scan all the ports on the device in under 3 seconds). RustScan also integrates with Nmap so we can find open ports quickly with RustScan and then pipe the results to Nmap for using Nmap features.
 
@@ -27,7 +27,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 ![RustScan Results|550](images/thm-rootme/rustscan-results.png)
 
-#### Command Options
+### Command Options
 
 * **-a:** Target IP Address
 * **--ulimit:** Number of parallel connections to target
@@ -37,7 +37,7 @@ The first task that is performed when we are given a target to exploit is to fin
 
 **Note:** All the flags after the `--` along with the ports found by RustScan are going to be passed to Nmap for processing
 
-#### Nmap Equivalent
+### Nmap Equivalent
 
 > nmap -vvv -p- -Pn -sV -A -oN nmap_output.txt 10.10.167.116
 
@@ -63,7 +63,7 @@ We get a webpage. Let's try to brute force the website and see if we find any hi
 
 ![Gobuster Results](images/thm-rootme/gobuster-results.png)
 
-#### Command Options
+### Command Options
 
 *   **dir:** Perform directory brute forcing
 *   **-u:** URL of Target
@@ -83,7 +83,7 @@ From the above scan, we see there are two directories `/uploads` and `/panel` th
 
 > /panel
 
-### Task 3: Getting a shell
+## Task 3: Getting a shell
 
 Let us visit the `/panel` path and see what we can find
 
@@ -145,7 +145,7 @@ In the question on TryHackMe, we have been told to find a file called `user.txt`
 
 ![Searching for Flag|360](images/thm-rootme/finding-flag-file.png)
 
-#### Command Options
+### Command Options
 
 *   **/:** Search the entire server
 *   **-type f:** Search for files only (No directories)
@@ -159,7 +159,7 @@ We see that there is a file which the name "user.txt" in the `/var/www/` directo
 
 > THM{y0u_g0t_a_sh3ll}
 
-### Task 4: Privilege escalation
+## Task 4: Privilege escalation
 
 Now that we have found the user flag let's see how we can escalate our privileges and become root. Let us see if there are any files on the system whose SUID bit is set and it is owned by the root user. Files with the SUID bit set when executed are run with the permissions of the owner of the file. So if there is a binary that is owned by root and it has the SUID bit set we could theoretically use this binary to elevate our permissions.
 
@@ -167,7 +167,7 @@ Now that we have found the user flag let's see how we can escalate our privilege
 
 ![Finding Misconfigured Binary File](images/thm-rootme/finding-misconfigured-binary.png)
 
-#### Command Options
+### Command Options
 
 *   **/:** Scan the entire device
 *   **-type f:** Look only for files (No directories)

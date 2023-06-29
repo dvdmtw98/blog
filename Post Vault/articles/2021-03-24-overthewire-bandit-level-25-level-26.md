@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not **/bin/bash**, but something else. Find out what it is, how it works and how to break out of it.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ssh, cat, more, vi, ls, id, pwd
 
@@ -42,7 +42,7 @@ pwd (1)              - print name of current/working directory
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [more(1) - Linux manual page](https://man7.org/linux/man-pages/man1/more.1.html)
 
@@ -52,7 +52,7 @@ pwd (1)              - print name of current/working directory
 
 [more command in Linux with Examples - GeeksforGeeks](https://www.geeksforgeeks.org/more-command-in-linux-with-examples/)
 
-### Solution
+## Solution
 
 Let's view if there are any files in our current working directory.
 

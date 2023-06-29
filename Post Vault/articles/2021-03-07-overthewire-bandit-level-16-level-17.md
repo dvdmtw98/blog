@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The credentials for the next level can be retrieved by submitting the password of the current level to **a port on localhost in the range 31000 to 32000**. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don't. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > ssh, telnet, nc, openssl, s_client, nmap
 
@@ -39,7 +39,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 **Note:** Not all commands are required to complete the level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Nmap Commands - 17 Basic Commands for Linux Network](https://phoenixnap.com/kb/nmap-command-linux-examples)
 
@@ -47,7 +47,7 @@ nmap (1)             - Network exploration tool and security/ port scanner
 
 [How to use SSH keys for authentication - UpCloud](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/)
 
-### Solution
+## Solution
 
 We know there that the service that we need is running in the range of 31,000-32,000. We can find all services in that range using Nmap.
 

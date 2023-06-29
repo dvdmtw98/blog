@@ -9,11 +9,11 @@ img_path: /assets/
 image: images/overthewire-banner.png
 ---
 
-### Level Goal
+## Level Goal
 
 > The password for the next level is stored in the file **data.txt** in one of the few human-readable strings, preceded by several '=' characters.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
 
 > grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
@@ -51,7 +51,7 @@ xxd (1)              - make a hexdump or do the reverse.
 
 **Note:** All commands don't have to be used to complete level
 
-### Helpful Reading Material
+## Helpful Reading Material
 
 [Learn Piping and Redirection - Linux Tutorial](https://ryanstutorials.net/linuxtutorial/piping.php)
 
@@ -59,7 +59,7 @@ xxd (1)              - make a hexdump or do the reverse.
 
 [strings - Unix, Linux Command](https://www.tutorialspoint.com/unix_commands/strings.htm)
 
-### Solution
+## Solution
 
 View the contents of the current working directory
 
