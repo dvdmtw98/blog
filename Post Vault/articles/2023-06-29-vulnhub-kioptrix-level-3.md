@@ -3,7 +3,7 @@ title: 'VulnHub - Kioptrix: Level 3 (1.2) (#3)'
 description: >-
  'Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner'
 date: '2023-06-29 12:40:00 +0530'
-categories: [Security, Vulnhub]
+categories: [Security, VulnHub]
 tags: [security, vulnhub, ctf, linux]
 published: true
 img_path: /assets/
