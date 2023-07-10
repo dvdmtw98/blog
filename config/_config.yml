@@ -5,7 +5,7 @@ title: Source Code
 tagline: A blog by David Varghese
 description: >- 
   Source Code is your one stop destination to articles and discussions on varied subjects from across Information Technology
-url: "https://blog.davidvarghese.com"
+url: https://blog.davidvarghese.com
 
 social:
   name: David Varghese
@@ -47,7 +47,7 @@ google_analytics:
 pwa:
   enabled: true
 
-paginate: 10
+paginate: 20
 
 # ------------ The following options are not recommended to be modified ------------------
 
