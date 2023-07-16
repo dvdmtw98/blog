@@ -12,7 +12,7 @@ image: images/thm-snapped-phishing-line/thm-snaped-line-banner.png
 
 Cover Image Background by <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">BiZkettE1</a> on Freepik
 
-[TryHackMe | Snapped Phish-ing Line](https://tryhackme.com/room/snappedphishingline)
+[TryHackMe \| Snapped Phish-ing Line](https://tryhackme.com/room/snappedphishingline)
 
 ## Task 1: Challenge Scenario
 
