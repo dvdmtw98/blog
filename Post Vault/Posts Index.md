@@ -1,7 +1,6 @@
 ---
-cssClasses: wide-page
+cssclasses: wide-page
 ---
-
 ### Draft Posts
 
 ```dataview
