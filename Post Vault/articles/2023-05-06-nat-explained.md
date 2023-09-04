@@ -24,11 +24,11 @@ NAT stands for Network Address Translation. It is a protocol that is used to map
 
 ## Why is NAT required?
 
-When the internet was initially created, the intention was to assign every host a unique IP address. If we had a network consisting of 10 hosts then we would need 10 IP addresses for all of the hosts to be able to access the Internet. An IPv4 address is made up of 32 bytes (4 bits) which gives us a total of $2^{32}$ or ~4.2 billion unique IP addresses. 
+When the internet was initially created, the intention was to assign every host a unique IP address. If we had a network consisting of 10 hosts then we would need 10 IP addresses for all of the hosts to be able to access the Internet. An IPv4 address is made up of 32 bits (4 bytes) which gives us a total of $2^{32}$ or ~4.2 billion unique IP addresses. 
 
 Since back in the day there weren't many devices that accessed the internet it was assumed that this address space would be sufficient for connecting all the hosts that would ever exist on the Internet. As the internet grew in popularity the industry soon realized that this address space would not be sufficient.
 
-The permanent long-term solution for this issue was to create a larger address space, this led to the creation of IPv6 addresses. IPv6 addresses are made up of 128 bytes (16 bits) which gives us $2^{128}$ or ~$3.4 \times 10^{38}$ (340 trillion trillion trillion) IP addresses. This address space is so astronomically large that even if we assign trillions of addresses to each human being on the planet we would still have leftover IP addresses. However, the migration to IPv6 proved to be a difficult, complicated and slow process so a short-term solution needed to be created. This interim solution gave us NAT as well as the concept of public and private IP addresses.
+The permanent long-term solution for this issue was to create a larger address space, which led to the creation of IPv6 addresses. IPv6 addresses are made up of 128 bits (16 bytes) which gives us $2^{128}$ or ~$3.4 \times 10^{38}$ (340 trillion trillion trillion) IP addresses. This address space is so astronomically large that even if we assign trillions of addresses to each human being on the planet we would still have leftover IP addresses. However, the migration to IPv6 proved to be a difficult, complicated and slow process so a short-term solution needed to be created. This interim solution gave us NAT as well as the concept of public and private IP addresses.
 
 [TCP/IP Guide - IPv6 Address Size and Address Space](http://www.tcpipguide.com/free/t_IPv6AddressSizeandAddressSpace-2.htm)
 
@@ -59,7 +59,7 @@ DNAT is used to perform a one-to-one mapping of a private IP address to a public
 
 ### Port Address Translation (PAT)
 
-PAT is used to perform a many-to-one mapping between private IP and public IP addresses. PAT is also known as NAT Overloading, Network & Port Translation (NAPT) and IP Masquerading. Since multiple private IP addresses are translated to a single public IP, it's possible to have devices that have services that are running on the same port. To resolve this issue PAT performs port translation along with IP translation. 
+PAT is used to perform a many-to-one mapping between private IP and public IP addresses. PAT is also known as NAT Overloading, Network and Port Translation (NAPT) and IP Masquerading. Since multiple private IP addresses are translated to a single public IP, it's possible to have devices that have services that are running on the same port. To resolve this issue PAT performs port translation along with IP translation. 
 
 This is the type of NAT that is used in home networks. PAT allows thousands of devices to access the Internet using a single IP address. Since PAT maps many private IPs to a single public IP using this form of NAT we can conserve public IP addresses.
 

@@ -1,13 +1,12 @@
 ---
-# the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
 ---
 
-- 🏢 I am currently employed as a Software Developer/ Cloud Engineer
-- 🌱 Interested in learning about Cloud, Networking and Information Security
+- 🏫 Currently working towards my Masters degree in Cyber Security
+- 🌱 I am interested in learning about Cyber Security, Programming, Cloud and Networking
 - 🌍 In my free time I enjoy watching movies, reading books and learning about different cultures
-- 📝 I mainly write articles on Python, Linux, DevOps, Networks and Security
+- 📝 I mainly write articles on Security, Coding, Computer Networks, DevOps and Linux
 
 ### Websites
 
@@ -16,4 +15,4 @@ order: 4
 
 ### Socials
 
-- 🤝 You can connect with me on [LinkedIn](https://www.linkedin.com/in/david-varghese/), [GitHub](https://github.com/dvdmtw98)
+- 🤝 You can connect with me on [LinkedIn](https://www.linkedin.com/in/david-varghese/), [GitHub](https://github.com/dvdmtw98) and [Medium](https://david-varghese.medium.com/)
