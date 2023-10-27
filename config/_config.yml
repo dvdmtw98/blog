@@ -5,7 +5,7 @@ title: Source Code
 tagline: A blog by David Varghese
 description: >- 
   Source Code is your one stop destination to articles and discussions on varied subjects from across Information Technology
-url: https://blog.davidvarghese.com
+url: https://blog.davidvarghese.dev
 
 social:
   name: David Varghese
@@ -21,7 +21,7 @@ theme: jekyll-theme-chirpy
 baseurl: ""
 
 lang: en
-timezone: Asia/Kolkata
+timezone: America/Chicago
 
 avatar: assets/img/avatar.jpg
 
@@ -126,5 +126,5 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-    
+
 # ---------------------------------------------------------------------------
