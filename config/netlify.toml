@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://davidvarghese.dev"
+  to = "https://blog.davidvarghese.dev"
+  status = 301
+  force = true

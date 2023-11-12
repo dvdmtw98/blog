@@ -57,3 +57,7 @@ runs:
       id: build-blog
       shell: bash
       run: cd chirpy && JEKYLL_ENV=production bundle exec jekyll build
+    - name: Add Netlify Redirect
+      id: netlify-redirect
+      shell: bash
+      run: mv chirpy/netlify.toml _site
