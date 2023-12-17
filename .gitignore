@@ -4,7 +4,6 @@
 
 # Skip Obsidian Config Files
 **/.obsidian/*
-!**/.obsidian/snippets/
 !**/.obsidian/hotkeys.json
 
 # Development Files
