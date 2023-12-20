@@ -1,15 +1,19 @@
 ---
-cssclasses: wide-page
+cssclasses:
+  - wide-dataview
+  - numbered-rows
+  - wide-page
 ---
 ### Draft Posts
 
 ```dataview
 TABLE WITHOUT ID
+	"" AS "No.",
 	link(file.link, title) AS "Title",
 	dateformat(
 		date(replace(substring(date, 0, 19), " ", "T")), 
 		"MM/dd/yyyy hh:mm a"
-	) AS "Created Time",
+	) AS "Published Date",
 	categories AS Categories,
 	tags AS Tags
 FROM "articles"
@@ -21,11 +25,12 @@ SORT date DESC
 
 ```dataview
 TABLE WITHOUT ID
+	"" AS "No.",
 	link(file.link, title) AS "Title",
 	dateformat(
 		date(replace(substring(date, 0, 19), " ", "T")), 
 		"MM/dd/yyyy hh:mm a"
-	) AS "Published Time",
+	) AS "Published Date",
 	categories AS Categories,
 	tags AS Tags
 FROM "articles"

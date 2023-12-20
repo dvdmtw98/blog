@@ -1,7 +1,7 @@
 ---
 title: "Building Your Own Home Lab: Part 1 - Network Topology"
 description: A step-by-step guide to build your very own Cybersecurity Home Lab using VirtualBox
-date: 2023-12-31 17:45:00 -0600
+date: 2023-12-29 17:45:00 -0600
 categories:
   - Security
   - Home Lab
@@ -36,20 +36,20 @@ This guide has been heavy inspired by the following:
 - Security VMs (DFIR & SIEM)
 - Cyber Range (Subnet for Vulnerable VMs)
 
-![network-diagram|520](images/building-home-lab-part-1/network-diagram.svg)
+![network-diagram|560](images/building-home-lab-part-1/network-diagram.svg)
 
 > **Note**  
 > pfSense is the gateway and firewall for our lab. With it the other VMs in the lab will not be able to connect to a network. Hence, pfSense should always be the first VM that is booted when using the lab. Once pfSense has booted other VMs can be launched.
 
 ## System Requirements
 
-- Multi-threaded CPU (minimum 4 cores) with Virtualization Support
+- 64-bit multi-threaded CPU (minimum 4 cores) with Virtualization Support
 - 16GB RAM
 - 500GB Disk Space
 
 ## Enabling Virtualization
 
-To use VirtualBox our system has to support virtualization. On a Windows system to check if virtualization is enabled open Task Manager (Ctrl + Shift + Esc) and go to the Performance Tab. If like in the image below virtualization is shown as enabled then no changes need to be made. 
+To use VirtualBox our system has to support virtualization. On a Windows system to check if virtualization is supported and enabled open Task Manager (Ctrl + Shift + Esc) and go to the Performance Tab. If like in the image below virtualization is shown as enabled then no changes need to be made. 
 
 ![task-manager|640](images/building-home-lab-part-1/task-manager.png)
 
@@ -61,6 +61,6 @@ If virtualization is shown as disabled we need to enable it in the BIOS. The pro
 
 ## Installing VirtualBox
 
-To install VirtualBox follow the guide that is linked below. As of writing of this article the latest version of VirtualBox is `7.0.12`.
+Follow the guide that is linked below to install VirtualBox and VirtualBox Guest Addons. As of writing of this article the latest version of VirtualBox is `7.0.12`.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nwjZWHou8u0?si=mdoF4IC2u89sIEtz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

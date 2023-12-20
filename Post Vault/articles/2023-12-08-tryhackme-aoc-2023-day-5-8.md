@@ -42,7 +42,7 @@ The backup file is present in the root of the C drive. Using the `dir` command w
 
 The backup program is present in the `C:\Backup\Tools` directory.
 
-```cmd
+```batch
 cd TOOLS\BACKUP
 dir
 ```
@@ -51,7 +51,7 @@ dir
 
 Looking at the name of the program are not able to guess the full name of the application. There is a readme file in the directory on opening it using the `edit` command we get the name of the application.
 
-```cmd
+```batch
 edit README.TXT
 ```
 
@@ -63,7 +63,7 @@ edit README.TXT
 
 On trying to restore the corrupted system using the backup we find out that there is something wrong with our backup. The output instructs us to look at the readme file for troubleshooting steps.
 
-```cmd
+```batch
 BUMASTER.EXE C:\AC2023.BAK
 ```
 
@@ -71,7 +71,7 @@ BUMASTER.EXE C:\AC2023.BAK
 
 On opening the readme using the `edit` command and scrolling to the bottom we find the troubleshooting section. The section tells us that the first bytes of the backup file should start with characters `41 43`.
 
-```cmd
+```batch
 edit README.TXT
 ```
 
@@ -83,7 +83,7 @@ edit README.TXT
 
 On opening the backup using `edit` we see that the first bytes are `XX`. Not `41 43` as mentioned in the documentation.
 
-```cmd
+```batch
 cd C:\
 edit AC2023.BAK
 ```
