@@ -9,7 +9,7 @@ img_path: /assets/
 image: images/dns-explained/dns-explained-banner.png
 ---
 
-<a href="https://www.freepik.com/free-vector/tiny-business-people-with-digital-devices-big-globe-surfing-internet_11669276.htm#page=2&query=domain%20name%20system&position=2&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">Banner graphic by Vectorjuice</a> on Freepik
+Banner graphic by [Vectorjuice](https://www.freepik.com/free-vector/tiny-business-people-with-digital-devices-big-globe-surfing-internet_11669276.htm) on Freepik
 
 ## What is DNS?
 
@@ -69,6 +69,7 @@ The DNS resolver using the IP Address returned from the TLD name server queries 
 
 The DNS resolver caches the received IP Address and then returns the IP Address to the user's browser. The browser caches the IP Address and then sends an HTTP request to the IP Address of google.com. The server at the IP returns a webpage that is loaded by the browser.
 
+> [!NOTE]
 > For sites that are commonly visited, the domain to IP Address mapping will be found in either the browser, OS or DNS resolver cache so for these cases the entire DNS lookup process is not performed.  
 > All the mappings that are stored in the cache has a TTL (Time to Live) once the TTL time has expired the mapping is removed from the cache and a new request is made to fetch the IP Address. 
 
@@ -113,8 +114,6 @@ dig google.com @ns1.google.com
 ![Google IP Address|450](images/dns-explained/dns-lookup-result.png)
 
 Now if we enter this IP Address in our browser we should be taken to google.com's webpage
-
----
 
 ## References
 

@@ -42,7 +42,7 @@ The permanent long-term solution for this issue was to create a larger address s
 
 Once the IPv4 address Space was separated into public and private addresses, a protocol was required that would allow a device that is using a private IP address to access the internet using a public IP address. This is why NAT was created. NAT is responsible for mapping private IP addresses to public IP addresses. 
 
-> **Note:**  
+> [!NOTE]
 > While normally NAT is used for translating private a IPv4 address to public IPv4 address which is the usage of NAT this article will cover. However, in reality, it does not matter if the IP address is public or private. NAT can just as easily be used to translate a public IP address to another public IP address or private IP address to another private IP address. NAT can even be used to convert a IPv6 address to IPv4 address.
 
 ## Types of NAT

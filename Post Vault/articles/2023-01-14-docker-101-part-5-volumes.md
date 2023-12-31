@@ -24,7 +24,7 @@ When we create an instance of an image Docker takes the layers in the image and 
 
 In this mode, the data from the container is stored on the host system in a directory that is managed by Docker. We should **never manually modify** the data that is stored in this location. Use this mode when data needs to be persisted. Volumes are not destroyed when the container is removed. 
 
-> **Volume Storage Location**  
+> [!INFO] Volume Storage Location  
 > Linux: `/var/lib/docker/volumes/`  
 > Windows: `\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes`  
 
@@ -34,7 +34,7 @@ A volume can be mounted simultaneously to multiple containers. Similar to Docker
 
 Volumes are of two types **named** and **anonymous**. When a user does not provide a name for a volume an anonymous volume is created. It is assigned a random name that will be unique on the host system. Leaving the naming both volumes behave in the same manner.
 
-> **For which directories present in the container can we create Volumes ?**  
+> [!INFO] For which directories present in the container can we create Volumes ?  
 > Directories in the container where defined as volumes in the `Dockerfile` can only be persisted. Docker does not allow to persist data from arbitrary directories in the container.
 
 ### Bind Mounts
@@ -45,7 +45,7 @@ When blind mount is used the user-specified directory on the host system is atta
 
 VS Code has a feature called **Dev Containers** that allows to setup containers easily for development. It makes use of bind mounts automatically to make all the files that are present in the current working directory (on the host) available inside container [3]
 
-> **Which directories in container can be used as Bind Mounts ?**  
+> [!INFO] Which directories in container can be used as Bind Mounts ?  
 > Unlike Volumes we can bind any location inside the container to any location on the host. While bind mounts are flexible they can be used in a malicious manner.  
 > A user can bind a location in the container to an system directory on the host and modify the files which could lead to corruption of data.
 
@@ -63,6 +63,7 @@ To view the volumes that are present on Docker we use the following command
 docker volume ls
 ```
 
+> [!NOTE]
 > Docker does not provide any functionality to interface with Bind Mounts. All the Docker volumes listed here are volumes that are managed by Docker.
 
 ![List Docker Volumes|210](images/docker-volumes/docker-volume-ls-1.png)
@@ -125,7 +126,7 @@ docker container inspect mysql
 
 ![Inspect Container Configuration|640](images/docker-volumes/docker-container-inspect.png)
 
-> **How to know if container exposes Volume Mounts ?**  
+> [!INFO] How to know if container exposes Volume Mounts ?  
 > We can check the containers page on the container registry hosting the image where most of the times all the mounts that are exposed by the image will be listed.  
 > If they are not listed then we can inspect the configuration of the image we download it, we can even look at the `Dockerfile` that was used to create the container to get the same information.
 
@@ -141,6 +142,7 @@ After removing the container as we can see the volume is still present. As we ca
 
 ![Docker Volume List|250](images/docker-volumes/docker-volume-ls-4.png)
 
+> [!NOTE]
 > Anonymous Volumes behave exactly the same way as named volumes. We cannot see the previously created named volume as I have already deleted it.
 
 The same volume can be created using the newer `--mount` flag as follows
@@ -172,7 +174,7 @@ docker container run --name nginx -it --rm \
 
 ![Docker Container Run|600](images/docker-volumes/docker-container-run-4.png)
 
-> **Mounting Host System Directory**  
+> [!NOTE] Mounting Host System Directory  
 > The recommended approach to mount a source directory is using the `pwd` shell command which expands to the absolute path of the current directory. Manually providing the absolute path is also supported but Relative paths are not supported.  
 >   
 > The syntax for specifying the path will be a little different on Linux and Windows refer the documentation for more details on how to specify paths [3]
@@ -189,7 +191,7 @@ docker container run --name nginx -it --rm \
 	nginx bash
 ```
 
-> **What happens if the same files are present on the host and container ?**  
+> [!INFO] What happens if the same files are present on the host and container ?
 > Files on the host system has higher priority the same files in the container will be hidden. The conflicting files in the container is not deleted they are just obscured away. They will be available again once the bind mount is removed.
 
 ### Copying files into Volume

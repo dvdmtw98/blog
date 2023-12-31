@@ -119,9 +119,10 @@ In the Settings menu provide the Output Directory where the executable will be s
 
 A small adjustment has to be made in the code since the code references a config file whose state needs to be maintained and the One File option is used.
 
-> **Note**:  
+> [!NOTE]
 > The Python code also references HTML files, but since they are read using `render_template` the below change is not required.  
 > The change is required for all files that are read or written using the `open()` function and using libraries like `python_dotenv` and `configparser`.
+
 
 First, include the `relative_path()` function from the below Stack Overflow post. I have added the snippet in the `helper.py` file. 
 

@@ -1,6 +1,6 @@
 ---
-title: "Building Your Own Home Lab: Part 7 - Active Directory Lab Setup - Part 2"
-description: A step-by-step guide to build your very own Cybersecurity Home Lab using VirtualBox
+title: "Building a Virtual Security Home Lab: Part 7 - Active Directory Lab Setup - Part 2"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 date: 2024-01-12 19:15:00 -0600
 categories:
   - Security
@@ -15,8 +15,8 @@ img_path: /assets/
 image: images/building-home-lab-part-7/building-home-lab-part-7-banner.png
 ---
 
-Banner Background by <a href="https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm#query=simple%20backgrounds&position=28&from_view=search&track=ais&uuid=96e36b2e-64b3-42e2-8fd8-4fd18a6e1d5d">logturnal</a> on Freepik  
-Hacker Image by <a href="https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm#page=2&query=hacker&position=28&from_view=search&track=sph&uuid=070b0d8a-d045-434d-9a51-f239e46d5f17">catalyststuff</a> on Freepik
+Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
+Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 In the last module we had installed Windows Server 2019 and setup Active Directory as well as the DHCP and DNS servers. In this module we continue with the remaining configuration.
 
@@ -418,6 +418,20 @@ To verify that the clients VMs are indeed connected to the AD environment you ca
 Similarly we can use the DNS Manager to see that new entries with the name of the devices have been added.
 
 ![misc-2|600](images/building-home-lab-part-7/misc-2.png)
+
+### Taking VM Snapshots
+
+![misc-3|540](images/building-home-lab-part-7/misc-3.png)
+
+![misc-8|540](images/building-home-lab-part-7/misc-8.png)
+
+![misc-4|400](images/building-home-lab-part-7/misc-4.png)
+
+![misc-5|540](images/building-home-lab-part-7/misc-5.png)
+
+![misc-6|540](images/building-home-lab-part-7/misc-6.png)
+
+![misc-7|540](images/building-home-lab-part-7/misc-7.png)
 
 ### Alternative AD Setup
 

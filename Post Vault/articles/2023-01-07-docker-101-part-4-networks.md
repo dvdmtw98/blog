@@ -181,7 +181,7 @@ ping alpine1 -c 4
 
 ![Docker Container Communication|620](images/docker-networks/docker-container-ping.png)
 
-> **NOTE**:  
+> [!NOTE]
 > If we want to access a service that is running on the host system from the container we can use the special DNS name `host.docker.internal` which will resolve to the internal IP Address of the host. Similarly to get the IP of the host gateway the DNS name `gateway.docker.internal` can be used.
 > 
 > For more details on the same refer link (6) provided in the reference section
@@ -195,7 +195,7 @@ docker container run --rm --name nginx \
 	-it --net host nginx
 ```
 
-> **NOTE**:  
+> [!INFO]
 > This mode will not work on Docker for Windows and MacOS
 
 Now nginx will be accessible on port 80 on the host system at `http://localhost:80`

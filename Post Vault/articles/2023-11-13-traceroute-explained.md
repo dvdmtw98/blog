@@ -16,7 +16,7 @@ img_path: /assets/
 image: images/traceroute-explained/traceroute-banner.png
 ---
 
-Image by <a href="https://www.freepik.com/free-photo/business-network-background-connecting-dots-technology-design_21629645.htm#query=trace%20route%20network&position=44&from_view=search&track=ais">rawpixel.com</a> on Freepik
+Image by [rawpixel.com](https://www.freepik.com/free-photo/business-network-background-connecting-dots-technology-design_21629645.htm) on Freepik
 
 The Internet is a globally distributed network of interconnected devices. It is made up of a large number of independently operated networks. The internet is completely distributed and no one has central control over it. A network of such scale is bound to face issues from time to time. To troubleshoot the network troubleshooting utilities were created. In this post, we will be looking at one of the network utilities - traceroute.
 
@@ -42,8 +42,9 @@ Traceroute is a little different from the ping command. When we use the ping com
 
 ![Ping Command (Windows)|420](images/traceroute-explained/ping-command.png)
 
-> **Note**  
+> [!NOTE] Windows and Linux Difference
 > On Windows the ping command by default sends four data packets to the destination. On Linux by default the ping command sends data packets until the command is terminated by the user. 
+
 
 Traceroute provides us with more information than the ping command. Unlike the ping command traceroute will ping each of the routers along the path to the destination device. The round trip time from each of the routers on the path to the destination is also provided by the traceroute command. So while ping provides us details of the destination (last hop) traceroute provides us details of all the hops to the destination.
 

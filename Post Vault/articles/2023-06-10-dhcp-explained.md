@@ -10,7 +10,7 @@ img_path: /assets/
 image: images/dhcp-explained/dhcp-banner.png
 ---
 
-Banner graphic by <a href="https://www.freepik.com/free-vector/gradient-website-hosting-illustration_22112055.htm#query=dhcp%20server&position=3&from_view=search&track=ais">Freepik</a>
+Banner graphic by [Freepik](https://www.freepik.com/free-vector/gradient-website-hosting-illustration_22112055.htm)
 
 For a device to be able to communicate with other devices (on LAN and Internet) it needs to have an IP Address. IP addresses are unique numeric identifiers that are used to identify devices on a network.
 

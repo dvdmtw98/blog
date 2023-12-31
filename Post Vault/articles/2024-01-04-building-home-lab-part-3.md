@@ -1,6 +1,6 @@
 ---
-title: "Building Your Own Home Lab: Part 3 - Kali Linux Setup"
-description: A step-by-step guide to build your very own Cybersecurity Home Lab using VirtualBox
+title: "Building a Virtual Security Home Lab: Part 3 - Kali Linux Setup"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 date: 2024-01-04 18:15:00 -0600
 categories:
   - Security
@@ -15,110 +15,112 @@ img_path: /assets/
 image: images/building-home-lab-part-3/building-home-lab-part-3-banner.png
 ---
 
-Banner Background by <a href="https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm#query=simple%20backgrounds&position=28&from_view=search&track=ais&uuid=96e36b2e-64b3-42e2-8fd8-4fd18a6e1d5d">logturnal</a> on Freepik  
-Hacker Image by <a href="https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm#page=2&query=hacker&position=28&from_view=search&track=sph&uuid=070b0d8a-d045-434d-9a51-f239e46d5f17">catalyststuff</a> on Freepik
+Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
+Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
+
+In this module, we are going to install Kali Linux. We will use this VM in the next module also to complete the pfSense setup. 
 
 ## Download Kali Linux
 
 Go to the following link: [Get Kali \| Kali Linux](https://www.kali.org/get-kali/#kali-installer-images)
 
-From the Installer Image section download the 64-bit Recommended Installer. The image is ~4GB in size so it will take sometime to download.
+Download the <u>64-bit Recommended Installer</u>. The image is ~4GB in size so it will take some time to download.
+
+As of writing the latest version of Kali Linux is **`2023.4`**.
 
 ![kali-download-1|400](images/building-home-lab-part-3/kali-download-1.png)
 
-Once its downloaded we should have an `.iso` file. As of writing the latest version of Kali Linux is `2023.4`.
+Once it is downloaded we should have an **`.iso`** file. 
 
 ![kali-download-2|500](images/building-home-lab-part-3/kali-download-2.png)
 
 ## Kali Linux VM Creation
 
-Select Tools from the sidebar and then from the toolbar select New.
+Launch VirtualBox. Select **`Tools`** from the sidebar and then click on **`New`** from the toolbar.
 
 ![vbox-19|540](images/building-home-lab-part-3/vbox-19.png)
 
-For name enter the name to be give to the VM. Ensure Folder is set to the location where the Home Lab is going to be saved. Leave the ISO Image option empty. Ensure to select the correct option for Type and Version. Once everything looks right click Next. 
+Give the VM a <u>Name</u>. Set the <u>Folder</u> option to the location where the Home Lab VMs are going to be saved. Leave the <u>ISO Image</u> option empty. Select <u>Type</u> as **`Linux`** and <u>Version</u> as **`Debian (64-bit)`** then click on **`Next`**. 
 
 ![vbox-20|540](images/building-home-lab-part-3/vbox-20.png)
 
-On this page leave everything on its default values.
+Leave everything on its default values. Click on **`Next`**.
 
 ![vbox-21|540](images/building-home-lab-part-3/vbox-21.png)
 
-Increase the disk size to 80GB and ensure Pre-allocate Full Size is not selected.
+Increase the <u>Disk Size</u> to **`80GB`** and click on **`Next`**.
 
 ![vbox-22|540](images/building-home-lab-part-3/vbox-22.png)
 
-Confirm that all the settings look right and click on Finish.
+Ensure that all the settings look right and click on **`Finish`**.
 
 ![vbox-23|540](images/building-home-lab-part-3/vbox-23.png)
-
-The VM to install Kali Linux is ready.
 
 ![vbox-27|540](images/building-home-lab-part-3/vbox-27.png)
 
 ### Adding VM to Group
 
-Similar to the previous module this is an optional step but its highly recommended as its helps to keep the Home Lab VMs organized and grouped together. Right click on the Kali Linux VM from the menu select Move to Group option and then chose New.
+Right-click on the Kali Linux VM from the sidebar, select **`Move to Group -> [New]`**.
 
 ![vbox-24|400](images/building-home-lab-part-3/vbox-24.png)
 
-The VM will new be added to a Group called New Group. Right click on the group name and select Rename Group. Name the group Management.
+The VM will now be added to a <u>Group</u> called **`New Group`**. Right-click on the group name and select **`Rename Group`**. Name the group **`Management`**.
 
 ![vbox-8|240](images/building-home-lab-part-2/vbox-8.png)
 
-Select the Firewall and Management group (Ctrl + Click). Right click on the name of one of the group. From the menu select Move to Group and then chose New.
+Select the <u>Firewall</u> and <u>Management</u> group (**`Ctrl+Click`**). Right-click on the name of one of the groups. From the menu select **`Move to Group -> [New]`**.
 
 ![vbox-25|400](images/building-home-lab-part-3/vbox-25.png)
 
-Now both the groups should be nested inside a group called New Group. Select the group and chose Rename Group. Give the group the name Home Lab.
+Now both the groups should be nested inside a <u>group</u> called **`New Group`**. Right-click on the group and choose **`Rename Group`**. Give the group the name **`Home Lab`**.
 
 ![vbox-28|260](images/building-home-lab-part-3/vbox-28.png)
 
-In the end we should have the following structure. The main group will be called Home Lab. It has two sub-groups. The first sub-group is called Firewall and has the pfSense VM. The second sub-group has the name Management and has the Kali Linux VM.
+In the end, we should have the following structure:
 
-![vbox-26|540](images/building-home-lab-part-3/vbox-26.png)
+![vbox-26|300](images/building-home-lab-part-3/vbox-26.png)
 
 ## Kali Linux VM Configuration
 
-Select the Kali Linux VM and then from the toolbar select Settings.
+Select the Kali Linux VM and then from the toolbar select **`Settings`**.
 
 ![vbox-29|540](images/building-home-lab-part-3/vbox-29.png)
 
 ### System Configuration
 
-Select System from the sidebar. Under Motherboard for the Boot Order option ensure that Hard Drive in on the top followed by Optical. Uncheck Floppy.  
+Go to **`System -> Motherboard`**. For the <u>Boot Order</u> option ensure that the **`Hard Disk`** is on the top followed by **`Optical`**. Uncheck **`Floppy`**.  
 
 ![vbox-30|540](images/building-home-lab-part-3/vbox-30.png)
 
 ### Boot Image Configuration
 
-Select Storage from sidebar. Select the Empty disk that is present below Controller: IDE. Click on the small disk icon the the right side of the Optical Drive option.
+Go to the **`Storage`** tab. Select the Empty disk present below **`Controller: IDE`** then click on the small disk icon on the right side of the <u>Optical Drive</u> option.
 
 ![vbox-31|540](images/building-home-lab-part-3/vbox-31.png)
 
-Select Choose a disk file and then select the downloaded `.iso` file for Kali Linux.
+Select **`Choose a disk file`** and then select the downloaded **`.iso`** file for Kali Linux.
 
 ![vbox-32|260](images/building-home-lab-part-3/vbox-32.png)
 
-The final setting should look as follows:
+The final result should look as follows:
 
 ![vbox-33|540](images/building-home-lab-part-3/vbox-33.png)
 
 ### Network Configuration
 
-Select Network from the sidebar. Under Adapter 1 check Enable Network Adapter. For Attached to select Internal Network. For name select LAN 0. Expand the Advanced option. For Adapter Type select Paravirtualized Network (virtio-net).
+Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`Internal Network`**. For <u>Name</u> select **`LAN 0`**. Expand the <u>Advanced</u> section. For <u>Adapter Type</u> select **`Paravirtualized Network (virtio-net)`**.
 
 ![vbox-34|540](images/building-home-lab-part-3/vbox-34.png)
 
 ## Kali Linux Installation
 
-Remember to boot the pfSense VM if it was shutdown before proceeding with the Kali Linux installation.
+Remember to boot the pfSense VM if it was shut down before starting the Kali Linux installation.
 
-Select Kali Linux from the sidebar and click on Start on the toolbar.
+Select Kali Linux from the sidebar and click on **`Start`** on the toolbar.
 
 ![vbox-35|540](images/building-home-lab-part-3/vbox-35.png)
 
-From the Installer menu select Graphical Install.
+From the Installer menu select <u>Graphical Install</u>.
 
 ![kali-1|540](images/building-home-lab-part-3/kali-1.png)
 
@@ -130,79 +132,77 @@ Select your Language, location and keyboard layout.
 
 ![kali-4|540](images/building-home-lab-part-3/kali-4.png)
 
-Enter a name for the VM. You can use any name here. The hostname is used to identify the system on the network. It also shows up on the prompt on the terminal. The hostname can also be changed.
+Enter a <u>name</u> for the VM. You can use any name here. The hostname is used to identify the system on the network. The hostname can also be changed after installation.
 
 ![kali-5|540](images/building-home-lab-part-3/kali-5.png)
 
-Leave the domain name input blank and click on Continue.
+Leave the domain name input blank and click on **`Continue`**.
 
 ![kali-6|540](images/building-home-lab-part-3/kali-6.png)
 
-Enter your name. This name will be shown on the login screen.
+Enter your <u>name</u>. This name will be shown on the login screen.
 
 ![kali-7|540](images/building-home-lab-part-3/kali-7.png)
 
-The username is used to create the home directory for the user. All the user related configuration will be stored in this folder.
+The <u>username</u> is used to create the home directory for the user. All the user-related configurations are stored in this folder.
 
 ![kali-8|540](images/building-home-lab-part-3/kali-8.png)
 
-Enter a strong password for the VM. Re-enter the password in the second field and click on Continue.
+Enter a strong password. Re-enter the password in the second field and click on **`Continue`**.
 
 ![kali-9|540](images/building-home-lab-part-3/kali-9.png)
 
-Select your timezone and then click on Continue.
+Select your <u>clock</u> and then click on **`Continue`**.
 
 ![kali-10|540](images/building-home-lab-part-3/kali-10.png)
 
-Select the drive (`sda`) and click on Continue.
+Select the drive (**`sda`**) and click on **`Continue`**.
 
 ![kali-11|540](images/building-home-lab-part-3/kali-11.png)
 
-Select the option: All files in one partition and click on Continue. 
+Select the option: <u>All files in one partition</u> and click on **`Continue`**. 
 
 ![kali-12|540](images/building-home-lab-part-3/kali-12.png)
 
-Select Finish partitioning and write changes to disk and then click on Continue.
+Select <u>Finish partitioning and write changes to disk</u>. Then click on **`Continue`**.
 
 ![kali-13|540](images/building-home-lab-part-3/kali-13.png)
 
-Select Yes as the option and click on Continue.
+Select **`Yes`** and click on **`Continue`**.
 
 ![kali-14|540](images/building-home-lab-part-3/kali-14.png)
 
 ![kali-15|540](images/building-home-lab-part-3/kali-15.png)
 
-Once the base system installation is complete we need to chose the desktop environment that will be installed for Kali Linux. I like GNOME so I have selected GNOME for installation. The default is XFCE while it does not look as pretty as GNOME it is much lighter and should provide better performance. KDE Plasma is the prettiest and offers a lot of bells and whistles in the UI department. I would only recommend KDE if you can spare 2 cores and 4GB RAM for this VM. Once the desktop environment is select click on Continue.
+After the base system installation is complete we need to choose the desktop environment that will be installed. I have selected <u>GNOME</u> for installation. 
+
+The default is XFCE it does not look as pretty as GNOME it is much lighter and should have better performance. KDE Plasma is the fanciest with a lot of bells and whistles. I would only recommend KDE if you can assign <u>2 cores</u> and <u>4GB RAM</u> for this VM. Once the desktop environment is selected click on **`Continue`**.
 
 ![kali-16|540](images/building-home-lab-part-3/kali-16.png)
 
-The installation will take a long time. Once the installation is complete the GRUB menu needs to be configured. Select Yes and click on Continue. 
+The installation will take some time. Select **`Yes`** and click on **`Continue`**. 
 
 ![kali-17|540](images/building-home-lab-part-3/kali-17.png)
 
 ![kali-18|540](images/building-home-lab-part-3/kali-18.png)
 
-Click on Continue to Reboot the system.
+Click on **`Continue`** to Reboot the system.
 
 ![kali-19|540](images/building-home-lab-part-3/kali-19.png)
 
-After reboot we should see the Login screen. Click Enter to login.
-
-![kali-20|540](images/building-home-lab-part-3/kali-20.png)
-
-Enter the password that was configured during the installation.
+After reboot, we should see the Login screen. Click **`Enter`** to log in. Enter the password that was configured during the installation.
 
 ![kali-21|540](images/building-home-lab-part-3/kali-21.png)
 
 ## Post-Installation Configuration
 
-Kali Linux ISO is able to detect when its installed in a VM. When it detects that it is installed in VirtualBox it automatically installs Guest Addons. \
+Kali Linux installer can detect when it is run from a VM because of this it automatically installs <u>Guest Addons</u>.
 
-Once on the desktop. Press `Right Ctrl + F` to enter Fullscreen mode. The VM should scale to fill the entire screen. Press `Right Ctrl + F` again to exit full screen. From the dock at the bottom on the screen. Select the Terminal.
+Press **`Right Ctrl+F`** to enter Fullscreen mode. The VM should scale to fill the entire screen. Press **`Right Ctrl+F`** again to exit Fullscreen mode. From the dock at the bottom of the screen. Select the <u>Terminal</u>.
 
 ![kali-26|400](images/building-home-lab-part-3/kali-26.png)
 
-On running `ip a` we can see that the Kali VM has the IP `10.0.0.11` this is an IP on the LAN network. Without changing any firewall rules this network should be able to access the internet.
+Run the command: **`ip a`**. We can see that the Kali VM has been assigned an IP address from the LAN network range. The VM should be able to access the internet as well.
 
 ![kali-22|540](images/building-home-lab-part-3/kali-22.png)
 
@@ -212,11 +212,11 @@ Use the following command to update the system:
 sudo apt update && sudo apt full-upgrade
 ```
 
-Enter your password when prompted.
+Enter password when prompted.
 
 ![kali-23|540](images/building-home-lab-part-3/kali-23.png)
 
-Once the sources have been fetched we will be asked to confirm the update enter `Y` and press `Enter` or press `Enter` directly to start the update.
+Once the sources have been fetched we will be asked if we want to continue. Enter **`Y`** and then press **`Enter`** to start the update.
 
 ![kali-24|540](images/building-home-lab-part-3/kali-24.png)
 
@@ -228,6 +228,6 @@ sudo apt autoremove
 
 ![kali-25|440](images/building-home-lab-part-3/kali-25.png)
 
-The `.iso` file that was downloaded to create the VM can be deleted now if you do not plan to store it for future use.
+The **`.iso`** file that was downloaded to create the VM can be deleted now if you do not plan to store it for future use.
 
-In the next module we are going to look at the pfSense UI and setup firewall rules for the different network interfaces.
+In the next module, we will access the pfSense Web UI and complete the remaining configuration.

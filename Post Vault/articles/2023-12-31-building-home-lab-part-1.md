@@ -1,7 +1,7 @@
 ---
-title: "Building Your Own Home Lab: Part 1 - Network Topology"
-description: A step-by-step guide to build your very own Cybersecurity Home Lab using VirtualBox
-date: 2023-12-31 17:45:00 -0600
+title: "Building a Virtual Security Home Lab: Part 1 - Network Topology"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+date: 2023-12-31 10:40:00 -0600
 categories:
   - Security
   - Home Lab
@@ -10,22 +10,23 @@ tags:
   - home-lab
   - virtualbox
   - networking
-published: false
+published: true
 img_path: /assets/
 image: images/building-home-lab-part-1/building-home-lab-part-1-banner.png
 ---
 
-Banner Background by <a href="https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm#query=simple%20backgrounds&position=28&from_view=search&track=ais&uuid=96e36b2e-64b3-42e2-8fd8-4fd18a6e1d5d">logturnal</a> on Freepik  
-Hacker Image by <a href="https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm#page=2&query=hacker&position=28&from_view=search&track=sph&uuid=070b0d8a-d045-434d-9a51-f239e46d5f17">catalyststuff</a> on Freepik
+Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
+Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-In this guide we will be exploring how to setup an Cybersecurity Home Lab virtually on our laptop/PC. I will be using VirtualBox running on my Windows Laptop.
+In this project, we will explore how to set up a Cybersecurity Home Lab on our laptop/PC. For this project, I will be using VirtualBox running on my Windows Laptop.
 
-This guide will have multiple parts each covering a different component of the lab. If changes are introduced in a already published guide a note will be added at the start of the article to highlight the changes.
+This project will consist of multiple modules. Each module will cover a different component of the lab. If at any point in the future changes are made in the project a note will be added at the start of the respective module to highlight the changes.
 
-This guide has been heavy inspired by the following:
+This project has been heavily inspired by the following Home Lab guides:
 
 - [Building a Security Lab in VirtualBox](https://benheater.com/building-a-security-lab-in-virtualbox/)
 - [Building Blue Team Home Lab Part 1 - Introduction | facyber](https://facyber.me/posts/blue-team-lab-guide-part-1/)
+- [Building a Cybersecurity Homelab for Detection & Monitoring - Cyberwox Academy](https://cyberwoxacademy.com/building-a-cybersecurity-homelab-for-detection-monitoring/)
 
 ## Home Lab Overview
 
@@ -34,33 +35,135 @@ This guide has been heavy inspired by the following:
 - Active Directory Lab (Domain Controller & 2 Clients)
 - Malware Analysis Lab (Windows & Linux)
 - Security VMs (DFIR & SIEM)
-- Cyber Range (Subnet for Vulnerable VMs)
+- Cyber Range (Vulnerable VMs for CTF practice)
 
 ![network-diagram|560](images/building-home-lab-part-1/network-diagram.svg)
 
-> **Note**  
-> pfSense is the gateway and firewall for our lab. With it the other VMs in the lab will not be able to connect to a network. Hence, pfSense should always be the first VM that is booted when using the lab. Once pfSense has booted other VMs can be launched.
+> [!NOTE] Lab Startup
+> pfSense is the gateway (router) and firewall for the lab. pfSense should always be the first VM that is booted when using the lab. If pfSense is not booted the machines in the lab will not be able to access the internet. Once pfSense is up other VMs can be launched.
 
 ## System Requirements
 
 - 64-bit multi-threaded CPU (minimum 4 cores) with Virtualization Support
 - 16GB RAM
-- 500GB Disk Space
+- 250GB Disk Space
 
 ## Enabling Virtualization
 
-To use VirtualBox our system has to support virtualization. On a Windows system to check if virtualization is supported and enabled open Task Manager (Ctrl + Shift + Esc) and go to the Performance Tab. If like in the image below virtualization is shown as enabled then no changes need to be made. 
+To use VirtualBox our system has to support virtualization. On Windows to check if virtualization is enabled open Task Manager (**`Ctrl+Shift+Esc`**) and go to the Performance Tab. If like in the image below virtualization is shown as enabled then no changes need to be made.
 
-![task-manager|640](images/building-home-lab-part-1/task-manager.png)
+![task-manager|600](images/building-home-lab-part-1/task-manager.png)
 
-If it shows as disabled it means the CPU supports virtualization but it is disabled is the BIOS. If Virtualization is not shown as an option it means that the CPU does not support virtualization.
+If virtualization is shown as disabled it means that the CPU supports virtualization but it is disabled in the BIOS. If Virtualization is not shown as an option it means that the CPU does not support virtualization.
 
-If virtualization is shown as disabled we need to enable it in the BIOS. The process of getting to the BIOS varies from device to device. Refer the device manual and online forums for device specific instructions.
+If virtualization is shown as disabled we need to enable it in the BIOS. The process of getting to the BIOS varies from device to device. Refer to the device manual and online forums for device-specific instructions.
 
 [Enabling Virtualization in your PC BIOS](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html)
 
 ## Installing VirtualBox
 
-Follow the guide that is linked below to install VirtualBox and VirtualBox Guest Addons. As of writing of this article the latest version of VirtualBox is `7.0.12`.
+### Downloading VirtualBox
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nwjZWHou8u0?si=mdoF4IC2u89sIEtz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Go to the following URL: [Downloads – Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
+Download VirtualBox and VirtualBox Extension Pack.
+
+As of the writing of this module, the latest version of VirtualBox is **`7.0.12`**.
+
+![vbox-48|400](images/building-home-lab-part-1/vbox-48.png)
+
+![vbox-49|560](images/building-home-lab-part-1/vbox-49.png)
+
+You will have a **`.exe`** and **`.vbox-extpack`** file after the download. Double-click the **`.exe`** file to start the installer.
+
+![vbox-50|560](images/building-home-lab-part-1/vbox-50.png)
+
+You might get the following error.
+
+![vbox-51|340](images/building-home-lab-part-1/vbox-51.png)
+
+If you do not get the above error continue to the **`Installing VirtualBox`** section.
+
+### Downloading VC++ 2019 Redistributable
+
+Close the installer and go to the following URL to download VC++ 2019 Redistributable.  
+[Latest supported Visual C++ Redistributable downloads \| Microsoft Learn](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+
+![vbox-67|460](images/building-home-lab-part-1/vbox-67.png)
+
+### Installing VC++ 2019 Redistributable
+
+The download will give us an **`.exe`** file. Double-click on it to launch the installer.
+
+![vbox-52|560](images/building-home-lab-part-1/vbox-52.png)
+
+<u>Accept</u> the agreement and click on **`Install`**.
+
+![vbox-53|400](images/building-home-lab-part-1/vbox-53.png)
+
+### Installing VirtualBox
+
+Click on the VirtualBox executable to start the setup. Click on **`Next`** to continue.
+
+![vbox-55|440](images/building-home-lab-part-1/vbox-55.png)
+
+Leave all the settings on their default value and click on **`Next`**.
+
+![vbox-56|440](images/building-home-lab-part-1/vbox-56.png)
+
+Click on **`Yes`**.
+
+![vbox-57|440](images/building-home-lab-part-1/vbox-57.png)
+
+Click on **`Yes`**.
+
+![vbox-58|440](images/building-home-lab-part-1/vbox-58.png)
+
+Click on **`Install`**.
+
+![vbox-59|440](images/building-home-lab-part-1/vbox-59.png)
+
+Click on **`Finish`** to close the installer and start VirtualBox.
+
+![vbox-60|440](images/building-home-lab-part-1/vbox-60.png)
+
+### Installing Guest Additions
+
+From the File Menu bar select: **`File -> Tools -> Extension Pack Manager`**
+
+![vbox-61|450](images/building-home-lab-part-1/vbox-61.png)
+
+On the Extension Manager page click on **`Install`**.
+
+![vbox-63|560](images/building-home-lab-part-1/vbox-63.png)
+
+Select the **`.vbox-extpack`** file that we downloaded. Click on **`Open`**.
+
+![vbox-62|500](images/building-home-lab-part-1/vbox-62.png)
+
+Click on **`Install`** to confirm the selection.
+
+![vbox-64|400](images/building-home-lab-part-1/vbox-64.png)
+
+Scroll to the bottom of the License and click on **`I Agree`**.
+
+![vbox-65|460](images/building-home-lab-part-1/vbox-65.png)
+
+Once the installation is complete click on the <u>Hamburger icon</u> on the right-side of **`Tools`** and select **`Welcome`**.
+
+![vbox-66|560](images/building-home-lab-part-1/vbox-66.png)
+
+### Changing VM Storage Location
+
+From The File Menu bar select: **`File -> Preferences`**.
+
+![vbox-68|260](images/building-home-lab-part-1/vbox-68.png)
+
+From the **`General`** tab change the value of <u>Default Machine Folder</u> to change the default storage location of the VMs.
+
+![vbox-69|400](images/building-home-lab-part-1/vbox-69.png)
+
+> [!NOTE] Default Machine Folder Location
+> This step is not necessary but recommended on devices that have multiple drives.  
+> On my laptop the primary drive (`C:\`) only has 200GB of free space which will completely get filled by the end of the project. My secondary drive (`D:\`) on the other hand has 1TB of free space. In order to not fill-up my primary drive I have changed the machine folder to a folder on my secondary drive.
+
+In the next module, we will start with the installation and configuration of pfSense.

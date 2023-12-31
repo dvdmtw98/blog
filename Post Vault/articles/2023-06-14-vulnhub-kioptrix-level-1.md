@@ -9,7 +9,7 @@ img_path: /assets/
 image: images/vulnhub-kioptrix-lvl1/kioptrix-level-1-banner.png
 ---
 
-Cover Image by <a href="https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm#&position=0&from_view=search&track=ais">vector_corp</a> on Freepik
+Cover Image by [vector_corp](https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm) on Freepik
 
 ## Description
 
@@ -44,7 +44,7 @@ sudo netdiscover -P -r 10.0.2.0/24
 
 The last entry `.22` is the address of the Kioptrix machine.
 
-> **Note**:  
+> [!NOTE]
 > The `.1` and `.2` IP addresses are two interfaces of the VirtualBox virtual router. The `.3` IP belongs to the DHCP server setup by VirtualBox for the network. 
 
 
@@ -212,7 +212,7 @@ Scrolling through the list we find two offsets that match the targets OS and ver
 
 By using the `0x6b` offset we can cause a  buffer overflow and gain root access to the system. 
 
-> **Note**:  
+> [!NOTE] 
 > Metasploit also contains the `OpenFuck` exploit but similar to the code found online it does not work anymore.
 
 ### Exploiting Samba

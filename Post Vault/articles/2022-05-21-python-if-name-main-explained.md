@@ -12,7 +12,8 @@ Before we can dive into the question at hand let's look at a few examples to und
 
 One of the environment variables set by the Python interpreter at the execution of code is **`__name__`**. All the special variables start and end with double underscores and are called **Dunder** or **Magic** variables.
 
-> If anyone is wonder why they are called Dunder its because Dunder is short for **D**ouble **Under**scores :)
+> [!INFO]
+> If anyone is wonder why they are called Dunder its because Dunder is short for **D**ouble **Under**scores
 
 ## Example 1
 
@@ -130,6 +131,7 @@ As we can see all the code that is behind the guard statement in our imported mo
 
 In this way, Python gives us the flexibility to run code as standalone scripts or as a module while giving us the ability to prevent certain parts of the code from getting executed. We can also add an else statement to the guard statement to perform some other operation when a module is imported.
 
+> [!NOTE]
 > It is best practice to include the guard statement in our code even if we are not going to use it as an module. So always include a guard code your code especially now that we understand how it works.
 
 ## References

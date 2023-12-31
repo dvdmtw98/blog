@@ -46,7 +46,7 @@ Port **22** has SSH running. The target is using `OpenSSH 7.6p1`. Additionally, 
 
 Port **80** is used by the Apache webserver. The target is using `Apache 2.4.29`.
 
-> **Note**:  
+> [!NOTE]
 > Rustscan can also perform service enumeration. But on this machine with Rustscan I was having trouble detecting all the 3 services.
 
 ![WebApp 1|500](images/thm-agent-sudo/web-app-1.png)
@@ -137,7 +137,7 @@ dcfldd if=cutie.png of=secret.zip bs=1 skip=34562 count=280 status=on
 
 ![dcfldd|540](images/thm-agent-sudo/dcfldd.png)
 
-> **Note**:  
+> [!NOTE]
 > `dcfldd` is the U.S. Department of Defense Computer Forensics Lab version of the `dd` utility. `dcfldd` in addition to all the features present in `dd` has an option to show a progress bar which is quite handy for craving out data from large files.  
 >   
 > `binwalk` also has the `-e` option which will automatically extract all the embedded files that are detected in the input file.
@@ -160,7 +160,7 @@ The password for the archive is `alien`. Decompress the archive to view its cont
 
 ![Extract Archive|600](images/thm-agent-sudo/extract-archive.png)
 
-> **Note**:  
+> [!NOTE]
 > The archive cannot be decompressed using `unzip` as it is created using a newer version of Zip that is not supported by the `unzip` utility.
 
 ![Instruction 2|460](images/thm-agent-sudo/instruction-2.png)

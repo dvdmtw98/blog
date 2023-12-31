@@ -9,7 +9,7 @@ img_path: /assets/
 image: images/vulnhub-kioptrix-lvl2/kioptrix-level-2-banner.png
 ---
 
-Cover Image by <a href="https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm#&position=0&from_view=search&track=ais">vector_corp</a> on Freepik
+Cover Image by [vector_corp](https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm) on Freepik
 
 ## Description
 
@@ -46,7 +46,7 @@ sudo netdiscover -P -r 10.0.2.0/24
 
 Since there is no other device on the network the `.23` address has to be the Kioptrix VM.
 
-> **Note**:  
+> [!NOTE]  
 > The `.1` and `.2` IP addresses belong to the virtual router of the network. The `.2` address can be used to interact with the host machine. The `.3` address is the DHCP server of the network.
 
 ### Port Scanning

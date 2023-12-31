@@ -18,7 +18,8 @@ In this article, we will be covering the 3 main states that we need to know to w
 
 ![Docker Container Lifecycle](images/docker-container/docker-container-lifecycle.png)
 
-> **Note:** In the Docker CLI a container in the Running state is shown as **Up** and a container in the Stopped state is shown as **Exited.**
+> [!NOTE]
+> In the Docker CLI a container in the Running state is shown as **Up** and a container in the Stopped state is shown as **Exited.**
 
 ## Container Run Modes
 
@@ -39,7 +40,8 @@ docker image pull hello-world
 docker container run hello-world
 ```
 
-> **Note:** To run an container its not necessary to have the image downloaded locally in advance the docker run command will pull the image from Docker Hub if not found on our system
+> [!NOTE]
+> To run an container its not necessary to have the image downloaded locally in advance the docker run command will pull the image from Docker Hub if not found on our system
 
 ![Docker Container Run|550](images/docker-container/docker-container-run.png)
 
@@ -81,7 +83,8 @@ Whatever command we specify after the name of the image will override the CMD st
 
 ![Docker Container Run|460](images/docker-container/docker-container-run-3.png)
 
-> **Note:** When we use the run command to start a container Docker internally first runs the **create** command which creates a instance of the image with an modifiable layer added on top of it. At this point the container is still not started by its in a ready state i.e. the configurations to start are container are complete. After this Docker actually starts the container.
+> [!NOTE]
+> When we use the run command to start a container Docker internally first runs the **create** command which creates a instance of the image with an modifiable layer added on top of it. At this point the container is still not started by its in a ready state i.e. the configurations to start are container are complete. After this Docker actually starts the container.
 
 ## Listing Containers
 
@@ -97,7 +100,8 @@ If the `-a` flag is not used, then only the running containers will be shown.
 
 In the above image, the status of all the containers show as Exited which means they are all in the Stopped State.
 
-> For anyone wondering the names assigned automatically to containers is always an **adjective** followed by the name of an **scientist** :)
+> [!NOTE]
+> For anyone wondering the names assigned automatically to containers is always an **adjective** followed by the name of an **scientist**
 
 ## Removing Containers
 
@@ -165,6 +169,7 @@ Another way to stop a container is to use the "container kill" command, while th
 docker container kill <container-name>
 ```
 
+> [!NOTE]
 > The _docker_ **_stop_** commands issues the **SIGTERM** signal, whereas the _docker_ **_kill_** commands sends the **SIGKILL** signal
 
 SIGTERM and SIGKILL are Linux signals used to denote the occurrence of an event to processes. The key thing to understand is that SIGTERM is a tamer operation than SIGKILL. The stop command causes the container processes to be terminated gratefully (gives the process in the container few seconds to close properly) unlike the kill command that ends it immediately.
@@ -209,7 +214,8 @@ Unlike the "container run" command even after we execute a command on the contai
 
 The exec command can also be used to connect to the container in interactive mode by using the `-it` flag. The `-u` flag is used to specify the username id of the user to run the container.
 
-> **Note:** An interactive container can be converted into an detached/ daemon container using the `Ctrl + P + Q` shortcut this even works for containers that are started in interactive mode using the "start" and "run" commands.
+> [!NOTE]
+> An interactive container can be converted into an detached/ daemon container using the `Ctrl + P + Q` shortcut this even works for containers that are started in interactive mode using the "start" and "run" commands.
 
 ## Container Statistics
 

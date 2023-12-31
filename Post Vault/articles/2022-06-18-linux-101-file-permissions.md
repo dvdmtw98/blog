@@ -46,7 +46,8 @@ Three permissions can be assigned to each file or directory. These permissions a
 
 Going back to the output from before now let's focus on the first column. Notice that there are always 10 bits that are present in this column for each file and directory. The first bit is used to represent the type of file. A **d** in this position represents a directory while a hyphen (**-**) would mean a normal file.
 
-> **Note**: There are some other values that can be found in this position as well like b, c, s, p, l these are used to represent file types which are beyond the scope of this discussion. They files types will only be encountered if one goes digs through the system for them.
+> [!INFO]
+> There are some other values that can be found in this position as well like b, c, s, p, l these are used to represent file types which are beyond the scope of this discussion. They files types will only be encountered if one goes digs through the system for them.
 
 The remaining 9 bits are broken down into 3 groups of 3 bits. The first group of 3 bits represents the permission of the owner. The next group represents the permission of the group that owns the file and the last 3 bits represent the permission that applies to everyone else on the system.
 
@@ -56,7 +57,8 @@ The first position of each of the 3 groups can have the value r (Read), the seco
 
 Coming back to the image let us try to use what we have learned and try to understand the image more clearly. We can see that there are 8 directories and 1 normal file (Deduced by looking at the first bit of the permissions column). The directories have the Read, Write & Execute bits set for the owner, the Read and Execute bits set for the owner group and the same bits (Read and Execute) set for the other users. Most of the directories (7 of them) are owned by the user "david" and belong to the group "david" while one of the directories is owned by the user "root "and belongs to the group "root". As for the lone file in the image the owner has the Read and Write bits set, the owner group and other users have only the Read bit set. The file is owned by the "root "user and "root" group.
 
-> **Note**: The first & second directory are special directories. Period (.) denotes the current working directory while Double Period (..) represents the parent directory of the current directory
+> [!NOTE]
+> The first & second directory are special directories. Period (.) denotes the current working directory while Double Period (..) represents the parent directory of the current directory
 
 Permissions can be also represented in numerical form: Read (4), Write (2), Execute (1) and No Permission (0). These permissions can be added together as denote complex permissions as shown below
 

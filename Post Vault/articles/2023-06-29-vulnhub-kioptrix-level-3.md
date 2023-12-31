@@ -10,7 +10,7 @@ img_path: /assets/
 image: images/vulnhub-kioptrix-lvl3/kioptrix-level-3-banner.png
 ---
 
-Cover Image by <a href="https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm#&position=0&from_view=search&track=ais">vector_corp</a> on Freepik
+Cover Image by [vector_corp](https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm) on Freepik
 
 ## Description
 
@@ -51,8 +51,9 @@ sudo netdiscover -P -r 10.0.2.0/24
 
 Since there is no other device on the network `10.0.2.24` has to be the IP address of the Kioptrix VM.
 
-> **Note**:  
+> [!NOTE]
 > The `.1` and `.2` IP addresses belong to the virtual router of the network. The `.2` address can be used to connect to the host machine. The `.3` address is the DHCP server of the network.
+
 
 As mentioned in the description of the VM. The IP address of the Kioptrix VM should be mapped to a domain name.
 
@@ -216,7 +217,7 @@ ssh loneferret@10.0.2.24 -oHostKeyAlgorithms=+ssh-rsa
 
 [ssh - How to enable diffie-hellman-group1-sha1 key exchange? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/340844/how-to-enable-diffie-hellman-group1-sha1-key-exchange-on-debian-8-0)
 
-> **Note**:  
+> [!NOTE]
 > The target system uses an old version of SSH which uses encryption and key exchange algorithms that are no longer supported by default. To allow SSH to connect using these older protocols the `-o` flag is used.
 
 ### Approach 2: SSH Brute force
@@ -236,7 +237,7 @@ hydra -l loneferret -P /usr/share/wordlists/seclists/Passwords/xato-net-10-milli
 
 And it worked. The password of user `loneferret` is `starwars`.
 
-> **Note**:  
+> [!IMPORTANT]
 > The `-t 4` argument is important. Hydra brute forcing for SSH does not work without it.  
 > 
 > On new versions of Kali running Hydra against old versions of SSH does not work. To fix the issue the wide compatibility mode for SSH has to be enabled. This is done using the Kali Tweaks utility.
@@ -244,6 +245,7 @@ And it worked. The password of user `loneferret` is `starwars`.
 > Kali Tweaks > Hardening > SSH client
 > 
 > After using `hydra` remember to disable the wide compatibility mode for SSH as it lowers the security of Kali.
+
 
 ```bash
 # SSH Command
@@ -254,7 +256,7 @@ ssh loneferret@10.0.2.24 -oHostKeyAlgorithms=+ssh-rsa
 
 [ssh - How to enable diffie-hellman-group1-sha1 key exchange? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/340844/how-to-enable-diffie-hellman-group1-sha1-key-exchange-on-debian-8-0)
 
-> **Note**:  
+> [!NOTE]
 > The target system uses an old version of SSH which uses encryption and key exchange algorithms that are no longer supported by default. To allow SSH to connect using these older protocols the `-o` flag is used.
 
 ### Approach 3: SQL Injection
@@ -321,7 +323,7 @@ ssh loneferret@10.0.2.24 -oHostKeyAlgorithms=+ssh-rsa
 
 [ssh - How to enable diffie-hellman-group1-sha1 key exchange? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/340844/how-to-enable-diffie-hellman-group1-sha1-key-exchange-on-debian-8-0)
 
-> **Note**:  
+> [!NOTE]
 > The target system uses an old version of SSH which uses encryption and key exchange algorithms that are no longer supported by default. To allow SSH to connect using these older protocols using the `-o` flag is used.
 
 ### Bonus Approach: LFI + Reverse Shell

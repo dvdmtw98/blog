@@ -70,7 +70,7 @@ The HTML contains a link that points to `kennaroads.buzz`. When the HTML file is
 
 ![Login Page|600](images/thm-snapped-phishing-line/login-page.png)
 
-> **Converting URL to Defanged Format**  
+> [!INFO] Converting URL to Defanged Format  
 > All the periods (.) that are present in the URL along with the `://` symbol that is present after the protocol should be enclosed in square brackets. Then all the t's that are present in the protocol name (HTTP/HTTPS) has to be replaced with the letter `x`.
 > 
 > [Defang all the things! - SANS Internet Storm Center](https://isc.sans.edu/diary/Defang+all+the+things/22744)

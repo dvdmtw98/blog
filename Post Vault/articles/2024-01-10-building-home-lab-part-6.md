@@ -1,6 +1,6 @@
 ---
-title: "Building Your Own Home Lab: Part 6 - Active Directory Lab Setup - Part 1"
-description: A step-by-step guide to build your very own Cybersecurity Home Lab using VirtualBox
+title: "Building a Virtual Security Home Lab: Part 6 - Active Directory Lab Setup - Part 1"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 date: 2024-01-10 19:00:00 -0600
 categories:
   - Security
@@ -15,8 +15,8 @@ img_path: /assets/
 image: images/building-home-lab-part-6/building-home-lab-part-6-banner.png
 ---
 
-Banner Background by <a href="https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm#query=simple%20backgrounds&position=28&from_view=search&track=ais&uuid=96e36b2e-64b3-42e2-8fd8-4fd18a6e1d5d">logturnal</a> on Freepik  
-Hacker Image by <a href="https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm#page=2&query=hacker&position=28&from_view=search&track=sph&uuid=070b0d8a-d045-434d-9a51-f239e46d5f17">catalyststuff</a> on Freepik
+Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
+Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 For the Active Directory (AD) Lab we are going to configure three VMs. The first VM will be the Domain Controller (DC) of the environment. We will use Windows Server 2019 for this machine. The other two VMs are going to be the clients that use this environment. For the client VMs we will use Windows 10 Enterprise. 
 
@@ -49,9 +49,9 @@ Pay attention to the names of the downloaded files. Microsoft uses the OS build 
 
 ![win-download-3|540](images/building-home-lab-part-6/win-download-3.png)
 
-| ISO Name | OS Name |
-| :--: | :--: |
-| `17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us` | `Windows Server 2019` |
+|                                          ISO Name                                          |         OS Name         |
+| :----------------------------------------------------------------------------------------: | :---------------------: |
+|         `17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us`          |  `Windows Server 2019`  |
 | `19045.2006.220908-0225.22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us` | `Windows 10 Enterprise` |
 
 **Note:** The build number in your case can be different. A newer version of the ISO will use a different build number.
