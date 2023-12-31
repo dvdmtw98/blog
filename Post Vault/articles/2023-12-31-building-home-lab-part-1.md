@@ -25,7 +25,7 @@ This project will consist of multiple modules. Each module will cover a differen
 This project has been heavily inspired by the following Home Lab guides:
 
 - [Building a Security Lab in VirtualBox](https://benheater.com/building-a-security-lab-in-virtualbox/)
-- [Building Blue Team Home Lab Part 1 - Introduction | facyber](https://facyber.me/posts/blue-team-lab-guide-part-1/)
+- [Building Blue Team Home Lab Part 1 - Introduction \| facyber](https://facyber.me/posts/blue-team-lab-guide-part-1/)
 - [Building a Cybersecurity Homelab for Detection & Monitoring - Cyberwox Academy](https://cyberwoxacademy.com/building-a-cybersecurity-homelab-for-detection-monitoring/)
 
 ## Home Lab Overview
