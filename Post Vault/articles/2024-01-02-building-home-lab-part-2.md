@@ -10,6 +10,7 @@ tags:
   - home-lab
   - virtualbox
   - networking
+  - pfsense
 published: true
 img_path: /assets/
 image: images/building-home-lab-part-2/building-home-lab-part-2-banner.png
@@ -74,9 +75,9 @@ Once done we should see the newly created VM in the sidebar.
 
 ### Adding VM to Group
 
-![vbox-6|540](images/building-home-lab-part-2/vbox-6.png)
-
 I like to keep my VMs organized by using the Groups feature of VirtualBox. This makes it easy to store related VMs together.
+
+![vbox-6|540](images/building-home-lab-part-2/vbox-6.png)
 
 Right-click on the pfSense VM from the sidebar, select **`Move to Group -> [New]`**. The VM will now be added to a <u>Group</u> called **`New Group`**. 
 
@@ -316,3 +317,5 @@ From the dropdown select **`Remove Disk from Virtual Drive`**. Click on **`OK`**
 The **`.iso`** file along with the **`.iso.gz`** file that was downloaded to create the VM can be deleted if you do not want to store them.
 
 In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will be used to configure and manage pfSense. It will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`**.
+
+[Part 2 - pfSense Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-2/)  

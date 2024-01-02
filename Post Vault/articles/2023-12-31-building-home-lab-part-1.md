@@ -167,3 +167,7 @@ From the **`General`** tab change the value of <u>Default Machine Folder</u> to 
 > On my laptop the primary drive (`C:\`) only has 200GB of free space which will completely get filled by the end of the project. My secondary drive (`D:\`) on the other hand has 1TB of free space. In order to not fill-up my primary drive I have changed the machine folder to a folder on my secondary drive.
 
 In the next module, we will start with the installation and configuration of pfSense.
+
+## Next Steps
+
+- [Part 2 - pfSense Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-2/)
