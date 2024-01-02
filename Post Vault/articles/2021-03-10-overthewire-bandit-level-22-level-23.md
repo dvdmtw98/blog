@@ -1,6 +1,6 @@
 ---
 title: 'OverTheWire: Bandit Level 22 → Level 23'
-description: '![OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit23.html)'
+description: [OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit23.html)'
 date: '2021-03-10 05:05:42 +0530'
 categories: [Security, OverTheWire]
 tags: [overthewire, bandit, ctf, security, linux]
