@@ -34,8 +34,8 @@ runs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    - name: Install Dependencies
-      id: install-dependencies
+    - name: Install Python Dependencies
+      id: install-python-dependencies
       shell: bash
       run: cd chirpy && pip install -r scripts/requirements.txt
     - name: Run Scripts
