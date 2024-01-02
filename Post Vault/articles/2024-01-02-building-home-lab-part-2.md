@@ -317,5 +317,3 @@ From the dropdown select **`Remove Disk from Virtual Drive`**. Click on **`OK`**
 The **`.iso`** file along with the **`.iso.gz`** file that was downloaded to create the VM can be deleted if you do not want to store them.
 
 In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will be used to configure and manage pfSense. It will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`**.
-
-[Part 2 - pfSense Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-2/)  

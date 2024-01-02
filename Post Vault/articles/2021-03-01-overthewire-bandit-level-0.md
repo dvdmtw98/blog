@@ -1,6 +1,6 @@
 ---
 title: 'OverTheWire: Bandit Level 0'
-description: 'https://overthewire.org/wargames/bandit/bandit0.html'
+description: '![OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit0.html)'
 date: '2021-03-01 10:04:29 +0530'
 categories: [Security, OverTheWire]
 tags: [overthewire, bandit, ctf, security, linux]
