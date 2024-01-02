@@ -1,7 +1,7 @@
 ---
 title: "Building a Virtual Security Home Lab: Part 2 - pfSense Setup & Configuration"
 description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-date: 2024-01-02 18:00:00 -0600
+date: 2024-01-02 10:00:00 -0600
 categories:
   - Security
   - Home Lab
@@ -10,7 +10,7 @@ tags:
   - home-lab
   - virtualbox
   - networking
-published: false
+published: true
 img_path: /assets/
 image: images/building-home-lab-part-2/building-home-lab-part-2-banner.png
 ---
