@@ -1,13 +1,20 @@
 ---
-title: TryHackMe - Blaster
+categories:
+- Security
+- TryHackMe
+date: 2021-03-14 09:28:24 +0530
 description: A blast from the past!
-date: '2021-03-14 09:28:24 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, windows]
-published: true
 img_path: /assets/
-image: images/thm-blaster/thm-blaster-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- windows
+title: TryHackMe - Blaster
 ---
+
+![banner-image|640](images/thm-blaster/thm-blaster-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

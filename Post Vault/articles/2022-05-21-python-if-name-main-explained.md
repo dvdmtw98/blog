@@ -1,12 +1,18 @@
 ---
-title: Python if __name__ = '__main__' explained
-date: '2022-05-21 07:58:19 +0530'
-categories: [Programming, Python]
-tags: [programming, python, software-development]
-published: true
+categories:
+- Programming
+- Python
+date: 2022-05-21 07:58:19 +0530
 img_path: /assets/
-image: images/python-name-main/python-name-main-banner.png
+published: true
+tags:
+- programming
+- python
+- software-development
+title: Python if __name__ = '__main__' explained
 ---
+
+![banner-image|640](images/python-name-main/python-name-main-banner.png)
 
 Before we can dive into the question at hand let's look at a few examples to understand what Python does when we run code. When a Python script is executed the **Python interpreter** behind the scenes **sets some global environment variables** and then **executes all the code** that is **present in the file**. This is even true for modules that are imported into the script.
 

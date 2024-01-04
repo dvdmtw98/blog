@@ -1,13 +1,20 @@
 ---
-title: TryHackMe - Simple CTF
+categories:
+- Security
+- TryHackMe
+date: 2021-04-17 11:21:39 +0530
 description: Beginner level CTF
-date: '2021-04-17 11:21:39 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, linux]
-published: true
 img_path: /assets/
-image: images/thm-simple-ctf/thm-simple-ctf-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- linux
+title: TryHackMe - Simple CTF
 ---
+
+![banner-image|640](images/thm-simple-ctf/thm-simple-ctf-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

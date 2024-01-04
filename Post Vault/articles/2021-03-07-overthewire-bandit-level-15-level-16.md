@@ -1,13 +1,21 @@
 ---
-title: 'OverTheWire: Bandit Level 15 → Level 16'
+categories:
+- Security
+- OverTheWire
+date: 2021-03-07 15:46:41 +0530
 description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit16.html)'
-date: '2021-03-07 15:46:41 +0530'
-categories: [Security, OverTheWire]
-tags: [overthewire, bandit, ctf, security, linux]
-published: true
 img_path: /assets/
-image: images/overthewire-banner.png
+published: true
+tags:
+- overthewire
+- bandit
+- ctf
+- security
+- linux
+title: 'OverTheWire: Bandit Level 15 → Level 16'
 ---
+
+![banner-image|640](images/overthewire-banner.png)
 
 ## Level Goal
 

@@ -1,12 +1,19 @@
 ---
-title: 'Docker 101: Part 4 - Networks'
-date: '2023-01-07 19:45:33 +0530'
-categories: [DevOps, Docker]
-tags: [devops, docker, technology, software-development]
-published: true
+categories:
+- DevOps
+- Docker
+date: 2023-01-07 19:45:33 +0530
 img_path: /assets/
-image: images/docker-networks/docker-101-banner.png
+published: true
+tags:
+- devops
+- docker
+- technology
+- software-development
+title: 'Docker 101: Part 4 - Networks'
 ---
+
+![banner-image|640](images/docker-networks/docker-101-banner.png)
 
 In this post we will be looking at Docker **Networks** with its types and how to use them. The reader is expected to have a high-level understanding of Docker and Computer Networks before going through this post.
 

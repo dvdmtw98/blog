@@ -1,14 +1,21 @@
 ---
-title: 'Dynamic Host Configuration Protocol (DHCP): Explained'
-description: >-
- DHCP the protocol that enables automatic assignment of IP addresses to hosts on a network
-date: '2023-06-10 11:00:00 +0530'
-categories: [Networking, Protocol]
-tags: [networking, protocol, internet, dhcp]
-published: true
+categories:
+- Networking
+- Protocol
+date: 2023-06-10 11:00:00 +0530
+description: DHCP the protocol that enables automatic assignment of IP addresses to
+  hosts on a network
 img_path: /assets/
-image: images/dhcp-explained/dhcp-banner.png
+published: true
+tags:
+- networking
+- protocol
+- internet
+- dhcp
+title: 'Dynamic Host Configuration Protocol (DHCP): Explained'
 ---
+
+![banner-image|640](images/dhcp-explained/dhcp-banner.png)
 
 Banner graphic by [Freepik](https://www.freepik.com/free-vector/gradient-website-hosting-illustration_22112055.htm)
 

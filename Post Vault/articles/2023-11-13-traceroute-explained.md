@@ -1,20 +1,21 @@
 ---
-title: "Traceroute: Explained"
-description: The what, why and how of the network debugging tool traceroute
-date: 2023-11-13 10:00:00 -0600
 categories:
-  - Networking
-  - Utility
-tags:
-  - command-line
-  - networking
-  - operating-system
-  - internet
-  - traceroute
-published: true
+- Networking
+- Utility
+date: 2023-11-13 10:00:00 -0600
+description: The what, why and how of the network debugging tool traceroute
 img_path: /assets/
-image: images/traceroute-explained/traceroute-banner.png
+published: true
+tags:
+- command-line
+- networking
+- operating-system
+- internet
+- traceroute
+title: 'Traceroute: Explained'
 ---
+
+![banner-image|640](images/traceroute-explained/traceroute-banner.png)
 
 Image by [rawpixel.com](https://www.freepik.com/free-photo/business-network-background-connecting-dots-technology-design_21629645.htm) on Freepik
 

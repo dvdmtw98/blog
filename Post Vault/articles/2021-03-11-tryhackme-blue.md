@@ -1,14 +1,21 @@
 ---
-title: TryHackMe - Blue
-description: >-
-  Deploy & hack into a Windows machine, leveraging common misconfigurations issues
-date: '2021-03-11 09:50:15 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, windows]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2021-03-11 09:50:15 +0530
+description: Deploy & hack into a Windows machine, leveraging common misconfigurations
+  issues
 img_path: /assets/
-image: images/thm-blue/thm-blue-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- windows
+title: TryHackMe - Blue
 ---
+
+![banner-image|640](images/thm-blue/thm-blue-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

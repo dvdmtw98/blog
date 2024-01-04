@@ -1,12 +1,19 @@
 ---
-title: 'Docker 101: Part 2 - Images'
-date: '2022-07-31 06:35:57 +0530'
-categories: [DevOps, Docker]
-tags: [devops, docker, technology, software-development]
-published: true
+categories:
+- DevOps
+- Docker
+date: 2022-07-31 06:35:57 +0530
 img_path: /assets/
-image: images/docker-images/docker-101-banner.png
+published: true
+tags:
+- devops
+- docker
+- technology
+- software-development
+title: 'Docker 101: Part 2 - Images'
 ---
+
+![banner-image|640](images/docker-images/docker-101-banner.png)
 
 In the previous article, we looked at some of the basic concepts related to containers and how containers differ from VMs. In this article, we will look at Container Registries, Docker Images, and the main commands related to images.
 

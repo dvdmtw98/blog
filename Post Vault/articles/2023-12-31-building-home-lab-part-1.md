@@ -1,19 +1,21 @@
 ---
-title: "Building a Virtual Security Home Lab: Part 1 - Network Topology"
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-date: 2023-12-31 10:40:00 -0600
 categories:
-  - Security
-  - Home Lab
-tags:
-  - security
-  - home-lab
-  - virtualbox
-  - networking
-published: true
+- Security
+- Home Lab
+date: 2023-12-31 10:40:00 -0600
+description: A step-by-step guide for building your very own Cybersecurity Home Lab
+  using VirtualBox
 img_path: /assets/
-image: images/building-home-lab-part-1/building-home-lab-part-1-banner.png
+published: true
+tags:
+- security
+- home-lab
+- virtualbox
+- networking
+title: 'Building a Virtual Security Home Lab: Part 1 - Network Topology'
 ---
+
+![banner-image|640](images/building-home-lab-part-1/building-home-lab-part-1-banner.png)
 
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
@@ -171,3 +173,4 @@ In the next module, we will start with the installation and configuration of pfS
 ## Next Steps
 
 - [Part 2 - pfSense Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-2/)
+- [Part 3 - Kali Linux Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-3/)

@@ -1,19 +1,21 @@
 ---
-title: "Building a Virtual Security Home Lab: Part 7 - Active Directory Lab Setup - Part 2"
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-date: 2024-01-12 19:15:00 -0600
 categories:
   - Security
   - Home Lab
+date: 2024-01-12 19:15:00 -0600
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+img_path: /assets/
+published: false
 tags:
   - security
   - home-lab
   - virtualbox
   - networking
-published: false
-img_path: /assets/
-image: images/building-home-lab-part-7/building-home-lab-part-7-banner.png
+  - active-directory
+title: "Building a Virtual Security Home Lab: Part 7 - Active Directory Lab Setup - Part 2"
 ---
+
+![banner-image|640](images/building-home-lab-part-7/building-home-lab-part-7-banner.png)
 
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik

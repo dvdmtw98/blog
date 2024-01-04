@@ -1,13 +1,20 @@
 ---
-title: TryHackMe - Vulnversity
-description: 'Learn about active recon, web app attacks and privilege escalation'
-date: '2021-03-17 08:58:15 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, linux]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2021-03-17 08:58:15 +0530
+description: Learn about active recon, web app attacks and privilege escalation
 img_path: /assets/
-image: images/thm-vulnversity/thm-vulnversity-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- linux
+title: TryHackMe - Vulnversity
 ---
+
+![banner-image|640](images/thm-vulnversity/thm-vulnversity-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

@@ -1,12 +1,18 @@
 ---
-title: 'Linux 101: File Permissions'
-date: '2022-06-18 16:44:23 +0530'
-categories: [Operating System, Linux]
-tags: [linux, security, command-line]
-published: true
+categories:
+- Operating System
+- Linux
+date: 2022-06-18 16:44:23 +0530
 img_path: /assets/
-image: images/linux-file-permission/linux-permissions-banner.png
+published: true
+tags:
+- linux
+- security
+- command-line
+title: 'Linux 101: File Permissions'
 ---
+
+![banner-image|640](images/linux-file-permission/linux-permissions-banner.png)
 
 File permissions are an important concept to understand for anyone working with Linux. Permissions are a set of attributes (along with ownership) which is used to control the level of access the users and system processes have to files. It is a security mechanism that ensures that only authorized users and processes can access certain files and directories.
 

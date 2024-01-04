@@ -1,12 +1,19 @@
 ---
-title: 'Regex Demystified'
-date: '2023-03-19 13:05:00 +0530'
-categories: [Programming, Python]
-tags: [programming, regex, python, software-development]
-published: true
+categories:
+- Programming
+- Python
+date: 2023-03-19 13:05:00 +0530
 img_path: /assets/
-image: images/regex-demystified/regex-demystified-banner.png
+published: true
+tags:
+- programming
+- regex
+- python
+- software-development
+title: Regex Demystified
 ---
+
+![banner-image|640](images/regex-demystified/regex-demystified-banner.png)
 
 Regex (also called Regular Expression or RegExp) is a sequence of characters that can be used to find or match patterns in text. Regexes are made up of special characters that enable us to define complex patterns in a terse and concise manner.
 

@@ -1,13 +1,20 @@
 ---
-title: TryHackMe - RootMe
-description: 'A CTF for beginners, can you root me?'
-date: '2021-04-13 09:08:08 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, linux]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2021-04-13 09:08:08 +0530
+description: A CTF for beginners, can you root me?
 img_path: /assets/
-image: images/thm-rootme/thm-rootme-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- linux
+title: TryHackMe - RootMe
 ---
+
+![banner-image|640](images/thm-rootme/thm-rootme-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

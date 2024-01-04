@@ -1,14 +1,19 @@
 ---
-title: 'Linux 101: Filesystem Structure'
-description: >- 
-  An introduction to the directories that makeup the Linux Filesystem
-date: '2023-01-21 15:30:00 +0530'
-categories: [Operating System, Linux]
-tags: [linux, filesystem, operating-system]
-published: true
+categories:
+- Operating System
+- Linux
+date: 2023-01-21 15:30:00 +0530
+description: An introduction to the directories that makeup the Linux Filesystem
 img_path: /assets/
-image: images/linux-filesystem/linux-filesystem-banner.png
+published: true
+tags:
+- linux
+- filesystem
+- operating-system
+title: 'Linux 101: Filesystem Structure'
 ---
+
+![banner-image|640](images/linux-filesystem/linux-filesystem-banner.png)
 
 All devices generate data in some shape or form. The generated can have different structures, sizes and even different levels of sensitivity. To store data permanently computers make use of nonvolatile storage devices like Hard Disk Drives (HDD), Solid State Drives (SSD) and USB Sticks. Once the data is written to disk we need some method to be able to retrieve and manage the stored data, this is where filesystems (often abbreviated to fs) come into the picture. 
 

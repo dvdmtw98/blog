@@ -1,14 +1,21 @@
 ---
-title: 'TryHackMe - Agent Sudo'
-description: >-
- You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth
-date: '2023-07-10 19:30:00 +0530'
-categories: [Security, TryHackMe]
-tags: [security, tryhackme, ctf, linux]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2023-07-10 19:30:00 +0530
+description: You found a secret server located under the deep sea. Your task is to
+  hack inside the server and reveal the truth
 img_path: /assets/
-image: images/thm-agent-sudo/agent-sudo-banner.png
+published: true
+tags:
+- security
+- tryhackme
+- ctf
+- linux
+title: TryHackMe - Agent Sudo
 ---
+
+![banner-image|640](images/thm-agent-sudo/agent-sudo-banner.png)
 
 Cover Image Background by <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">BiZkettE1</a> on Freepik
 

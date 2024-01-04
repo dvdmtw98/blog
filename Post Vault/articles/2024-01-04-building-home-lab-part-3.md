@@ -1,19 +1,21 @@
 ---
-title: "Building a Virtual Security Home Lab: Part 3 - Kali Linux Setup"
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-date: 2024-01-04 18:15:00 -0600
 categories:
   - Security
   - Home Lab
+date: 2024-01-04 08:50:00 -0600
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+img_path: /assets/
+published: true
 tags:
   - security
   - home-lab
   - virtualbox
   - networking
-published: false
-img_path: /assets/
-image: images/building-home-lab-part-3/building-home-lab-part-3-banner.png
+  - linux
+title: "Building a Virtual Security Home Lab: Part 3 - Kali Linux Setup"
 ---
+
+![banner-image|640](images/building-home-lab-part-3/building-home-lab-part-3-banner.png)
 
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
@@ -159,6 +161,10 @@ Select your <u>clock</u> and then click on **`Continue`**.
 Select the drive (**`sda`**) and click on **`Continue`**.
 
 ![kali-11|540](images/building-home-lab-part-3/kali-11.png)
+
+Select <u>Guided - use entire disk</u> and then click on **`Continue`**.
+
+![kali-27|540](images/building-home-lab-part-3/kali-27.png)
 
 Select the option: <u>All files in one partition</u> and click on **`Continue`**. 
 

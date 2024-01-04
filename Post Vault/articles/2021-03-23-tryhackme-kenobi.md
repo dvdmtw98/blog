@@ -1,15 +1,22 @@
 ---
-title: TryHackMe - Kenobi
-description: >-
-  Walkthrough on exploiting a Linux machine. Enumerate Samba for shares,
-  manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation
-date: '2021-03-23 09:21:34 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, linux]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2021-03-23 09:21:34 +0530
+description: Walkthrough on exploiting a Linux machine. Enumerate Samba for shares,
+  manipulate a vulnerable version of proftpd and escalate your privileges with path
+  variable manipulation
 img_path: /assets/
-image: images/thm-kenobi/thm-kenobi-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- linux
+title: TryHackMe - Kenobi
 ---
+
+![banner-image|640](images/thm-kenobi/thm-kenobi-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

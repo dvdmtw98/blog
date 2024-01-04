@@ -1,14 +1,21 @@
 ---
-title: 'TryHackMe - Snapped Phish-ing Line'
-description: >-
- Apply learned skills to probe malicious emails and URLs, exposing a vast phishing campaign
-date: '2023-07-16 21:10:00 +0530'
-categories: [Security, TryHackMe]
-tags: [security, tryhackme, ctf, phishing]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2023-07-16 21:10:00 +0530
+description: Apply learned skills to probe malicious emails and URLs, exposing a vast
+  phishing campaign
 img_path: /assets/
-image: images/thm-snapped-phishing-line/thm-snaped-line-banner.png
+published: true
+tags:
+- security
+- tryhackme
+- ctf
+- phishing
+title: TryHackMe - Snapped Phish-ing Line
 ---
+
+![banner-image|640](images/thm-snapped-phishing-line/thm-snaped-line-banner.png)
 
 Cover Image Background by <a href="https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm#page=3&query=powerpoint%20background&position=15&from_view=search&track=ais" target="_blank" rel="noopener noreferrer">BiZkettE1</a> on Freepik
 

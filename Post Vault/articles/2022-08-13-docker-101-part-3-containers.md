@@ -1,12 +1,19 @@
 ---
-title: 'Docker 101: Part 3 - Containers'
-date: '2022-08-13 05:08:33 +0530'
-categories: [DevOps, Docker]
-tags: [devops, docker, technology, software-development]
-published: true
+categories:
+- DevOps
+- Docker
+date: 2022-08-13 05:08:33 +0530
 img_path: /assets/
-image: images/docker-container/docker-101-banner.png
+published: true
+tags:
+- devops
+- docker
+- technology
+- software-development
+title: 'Docker 101: Part 3 - Containers'
 ---
+
+![banner-image|640](images/docker-container/docker-101-banner.png)
 
 So far, we have looked at the basics related to containers and the various Docker commands for managing Images. In this article, we are going a dive deeper and look at Containers (finally) and their associated commands.
 

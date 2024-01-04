@@ -1,12 +1,19 @@
 ---
-title: 'Docker 101: Part 1 - Basics'
-date: '2022-07-09 08:20:31 +0530'
-categories: [DevOps, Docker]
-tags: [devops, docker, technology, software-development]
-published: true
+categories:
+- DevOps
+- Docker
+date: 2022-07-09 08:20:31 +0530
 img_path: /assets/
-image: images/docker-basics/docker-101-banner.png
+published: true
+tags:
+- devops
+- docker
+- technology
+- software-development
+title: 'Docker 101: Part 1 - Basics'
 ---
+
+![banner-image|640](images/docker-basics/docker-101-banner.png)
 
 In this post, we will be looking at some basic concepts that are important in understanding Docker and have a discussion along the way on how Virtual Machines differ from Containers.
 

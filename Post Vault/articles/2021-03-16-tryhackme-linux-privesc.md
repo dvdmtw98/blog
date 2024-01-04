@@ -1,15 +1,22 @@
 ---
-title: TryHackMe - Linux PrivEsc
-description: >-
-  Practice your Linux Privilege Escalation skills on an intentionally
-  misconfigured Debian VM with multiple ways to get root! SSH is available. Credentials: user:password321
-date: '2021-03-16 07:47:31 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, tutorial, security, linux]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2021-03-16 07:47:31 +0530
+description: 'Practice your Linux Privilege Escalation skills on an intentionally
+  misconfigured Debian VM with multiple ways to get root! SSH is available. Credentials:
+  user:password321'
 img_path: /assets/
-image: images/thm-linux-privesc/thm-linux-privesc-banner.png
+published: true
+tags:
+- tryhackme
+- tutorial
+- security
+- linux
+title: TryHackMe - Linux PrivEsc
 ---
+
+![banner-image|640](images/thm-linux-privesc/thm-linux-privesc-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

@@ -1,20 +1,22 @@
 ---
-title: "Building a Virtual Security Home Lab: Part 2 - pfSense Setup & Configuration"
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-date: 2024-01-02 10:00:00 -0600
 categories:
-  - Security
-  - Home Lab
-tags:
-  - security
-  - home-lab
-  - virtualbox
-  - networking
-  - pfsense
-published: true
+- Security
+- Home Lab
+date: 2024-01-02 10:00:00 -0600
+description: A step-by-step guide for building your very own Cybersecurity Home Lab
+  using VirtualBox
 img_path: /assets/
-image: images/building-home-lab-part-2/building-home-lab-part-2-banner.png
+published: true
+tags:
+- security
+- home-lab
+- virtualbox
+- networking
+- pfsense
+title: 'Building a Virtual Security Home Lab: Part 2 - pfSense Setup & Configuration'
 ---
+
+![banner-image|640](images/building-home-lab-part-2/building-home-lab-part-2-banner.png)
 
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
@@ -317,3 +319,5 @@ From the dropdown select **`Remove Disk from Virtual Drive`**. Click on **`OK`**
 The **`.iso`** file along with the **`.iso.gz`** file that was downloaded to create the VM can be deleted if you do not want to store them.
 
 In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will be used to configure and manage pfSense. It will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`**.
+
+[Part 3 - Kali Linux Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-3/)

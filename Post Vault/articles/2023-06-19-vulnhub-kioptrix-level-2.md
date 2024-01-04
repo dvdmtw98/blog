@@ -1,13 +1,21 @@
 ---
-title: 'VulnHub - Kioptrix: Level 2 (1.1) (#2)'
-description: 'Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner'
-date: '2023-06-19 21:45:00 +0530'
-categories: [Security, VulnHub]
-tags: [security, vulnhub, ctf, linux]
-published: true
+categories:
+- Security
+- VulnHub
+date: 2023-06-19 21:45:00 +0530
+description: Learn the basic tools and techniques used in vulnerability assessment
+  and exploitation in a gamified manner
 img_path: /assets/
-image: images/vulnhub-kioptrix-lvl2/kioptrix-level-2-banner.png
+published: true
+tags:
+- security
+- vulnhub
+- ctf
+- linux
+title: 'VulnHub - Kioptrix: Level 2 (1.1) (#2)'
 ---
+
+![banner-image|640](images/vulnhub-kioptrix-lvl2/kioptrix-level-2-banner.png)
 
 Cover Image by [vector_corp](https://www.freepik.com/free-vector/abstract-low-poly-triangular-background_26129667.htm) on Freepik
 

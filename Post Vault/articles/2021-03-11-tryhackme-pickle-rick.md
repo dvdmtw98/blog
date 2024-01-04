@@ -1,13 +1,20 @@
 ---
-title: TryHackMe - Pickle Rick
+categories:
+- Security
+- TryHackMe
+date: 2021-03-11 06:10:20 +0530
 description: A Rick and Morty CTF. Help turn Rick back into a human!
-date: '2021-03-11 06:10:20 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, linux]
-published: true
 img_path: /assets/
-image: images/thm-pickle-rick/thm-pickle-rick-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- linux
+title: TryHackMe - Pickle Rick
 ---
+
+![banner-image|640](images/thm-pickle-rick/thm-pickle-rick-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

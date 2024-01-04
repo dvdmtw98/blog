@@ -1,14 +1,21 @@
 ---
-title: TryHackMe - Ice
-description: >-
-  Deploy & hack into a Windows machine, exploiting a very poorly secured media server
-date: '2021-03-13 06:36:12 +0530'
-categories: [Security, TryHackMe]
-tags: [tryhackme, ctf, security, windows]
-published: true
+categories:
+- Security
+- TryHackMe
+date: 2021-03-13 06:36:12 +0530
+description: Deploy & hack into a Windows machine, exploiting a very poorly secured
+  media server
 img_path: /assets/
-image: images/thm-ice/thm-ice-banner.png
+published: true
+tags:
+- tryhackme
+- ctf
+- security
+- windows
+title: TryHackMe - Ice
 ---
+
+![banner-image|640](images/thm-ice/thm-ice-banner.png)
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 

@@ -1,13 +1,20 @@
 ---
-title: 'Domain Name System (DNS): The What, Why and How Explained'
+categories:
+- Networking
+- Protocol
+date: 2023-04-15 10:00:00 +0530
 description: Exploring DNS the phonebook of the internet
-date: '2023-04-15 10:00:00 +0530'
-categories: [Networking, Protocol]
-tags: [networking, protocol, internet, dns]
-published: true
 img_path: /assets/
-image: images/dns-explained/dns-explained-banner.png
+published: true
+tags:
+- networking
+- protocol
+- internet
+- dns
+title: 'Domain Name System (DNS): The What, Why and How Explained'
 ---
+
+![banner-image|640](images/dns-explained/dns-explained-banner.png)
 
 Banner graphic by [Vectorjuice](https://www.freepik.com/free-vector/tiny-business-people-with-digital-devices-big-globe-surfing-internet_11669276.htm) on Freepik
 
