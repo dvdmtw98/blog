@@ -237,3 +237,5 @@ sudo apt autoremove
 The **`.iso`** file that was downloaded to create the VM can be deleted now if you do not plan to store it for future use.
 
 In the next module, we will access the pfSense Web UI and complete the remaining configuration.
+
+[Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-4/)
