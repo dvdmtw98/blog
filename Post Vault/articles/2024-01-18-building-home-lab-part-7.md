@@ -2,7 +2,7 @@
 categories:
   - Security
   - Home Lab
-date: 2024-01-12 19:15:00 -0600
+date: 2024-01-18 19:15:00 -0600
 description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 img_path: /assets/
 published: false
@@ -414,7 +414,9 @@ Login using the AD credentials of the second AD user.
 
 ## Appendix
 
-With this, we have completed the setup of the Active Directory lab. To wrap up, in this module we set up 3 VMs. The 1st VM (Windows Server 2019) was configured to be the Domain Controller and the other 2 VMs (Windows 10 Enterprise) were configured as client devices. Additionally, on the DC VM, we enabled DHCP, set up DNS Forwarder and configured Policies to be applied to client devices. 
+With this, we have completed the setup of the Active Directory lab. To wrap up, in this module we set up 3 VMs. The 1st VM (Windows Server 2019) was configured to be the Domain Controller and the other 2 VMs (Windows 10 Enterprise) were configured as client devices. Additionally, on the DC VM, we enabled DHCP, set up DNS Forwarder and configured Policies to be applied to client devices.
+
+You can delete the Windows Server 2019 ISO file if you do not want to store it for future use. Do not delete the Windows 10 Enterprise ISO just yet as we will require it to setup FlareVM.  
 
 ### DNS & DHCP Verification
 

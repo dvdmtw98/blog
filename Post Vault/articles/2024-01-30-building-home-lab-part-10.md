@@ -2,7 +2,7 @@
 categories:
   - Security
   - Home Lab
-date: 2024-01-18 20:00:00 -0600
+date: 2024-01-30 20:00:00 -0600
 description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 img_path: /assets/
 published: false
@@ -11,7 +11,7 @@ tags:
   - home-lab
   - virtualbox
   - networking
-  - siem
+  - splunk
 title: "Building a Virtual Security Home Lab: Part 10 - Splunk Setup & Configuration"
 ---
 
