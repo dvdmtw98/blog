@@ -176,3 +176,4 @@ In the next module, we will start with the installation and configuration of pfS
 - [Part 3 - Kali Linux Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-3/)
 - [Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-4/)
 - [Part 5 - Cyber Range Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-5/)
+- [Part 6 - Active Directory Lab Setup - Part 1](https://blog.davidvarghese.dev/posts/building-home-lab-part-6/)

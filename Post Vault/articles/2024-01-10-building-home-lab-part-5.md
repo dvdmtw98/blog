@@ -20,7 +20,7 @@ title: "Building a Virtual Security Home Lab: Part 5 - Cyber Range Setup"
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-Virtual Machine images present online come in 2 formats - `.vmdk` (Virtual Machine Disk Image) or `.ova` (Open Virtualization Format). In this module, we will step up some vulnerable VMs on the **`CYBER_RANGE`** interface which we can then access using Kali Linux running on the **`LAN`** interface. We will also see how to import `.vmdk` and `.ova` images into VirtualBox.
+Virtual Machine images present online come in 2 formats - **`.vmdk`** (Virtual Machine Disk Image) or **`.ova`** (Open Virtualization Format). In this module, we will step up some vulnerable VMs on the **`CYBER_RANGE`** interface which we can then access using Kali Linux running on the **`LAN`** interface. We will also see how to import **`.vmdk`** and **`.ova`** images into VirtualBox.
 
 > [!INFO]
 > Boot the pfSense VM if it was turned off before proceeding with the below setup. Once pfSense is up start the Kali Linux VM as well.
@@ -75,7 +75,7 @@ You will get a <u>Warning</u> as shown in the below image. Ignore it and click o
 
 ### Adding VM to Group
 
-Right-click on the Metasploitable VM. Select `Move to Group -> [New]`.
+Right-click on the Metasploitable VM. Select **`Move to Group -> [New]`**.
 
 ![meta-10|400](images/building-home-lab-part-5/meta-10.png)
 
@@ -87,7 +87,7 @@ The output should look as follows:
 
 ![meta-11|280](images/building-home-lab-part-5/meta-11.png)
 
-Right-click on the **`Cyber Range`** group and select `Move to Group -> Home Lab`.
+Right-click on the **`Cyber Range`** group and select **`Move to Group -> Home Lab`**.
 
 ![meta-12|400](images/building-home-lab-part-5/meta-12.png)
 
@@ -254,3 +254,7 @@ ping 10.6.6.13 -c 5
 > [!INFO] Adapter Type Selection
 > You would have noticed that for the Metasploitable 2 VM we did not chose **`Paravirtualized Network`**. This VM is quite old and does not work properly on that Adapter. Windows VMs also don't work on **`Paravirtualized Network`** Adapter.  
 > From a performance point of view **`Paravirtualized Network`** is the better choice. We don't have a way to know in advance if a Linux VM will work on the Adapter. So what I recommend is to first select **`Paravirtualized Network`** booting up the VM and check if the network is working properly if not shutdown the VM and select a different Adapter.
+
+In the next module, we will begin configuring the Active Directory Lab.
+
+[Part 6 - Active Directory Lab Setup - Part 1](https://blog.davidvarghese.dev/posts/building-home-lab-part-6/)
