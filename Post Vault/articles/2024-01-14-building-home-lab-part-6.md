@@ -538,3 +538,5 @@ Select "<u>Yes, I want to activate this scope now</u>" and click on **`Next`**.
 ![dc-60|400](images/building-home-lab-part-6/dc-60.png)
 
 So far we have installed Windows Server 2019, installed Guest Additions, configured the VM to be the Domain Controller (DC), set up a DNS Forwarder and configured DHCP. We still need to create users in the DC and set up client machines to use the AD environment. We will cover these topics in part 2 of this module.
+
+[Part 7 - Active Directory Lab Setup - Part 2](https://blog.davidvarghese.dev/posts/building-home-lab-part-7/)
