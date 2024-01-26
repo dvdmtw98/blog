@@ -750,3 +750,5 @@ There any numerous attacks that can be performed against an AD environment. Refe
 * [Active Directory Methodology - HackTricks](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology)
 
 In the next module, we will begin the setup of the Malware Analysis Lab.
+
+[Part 7 - Malware Analysis Lab Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-8)

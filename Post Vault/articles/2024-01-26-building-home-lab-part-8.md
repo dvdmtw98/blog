@@ -663,5 +663,3 @@ Give the Snapshot a descriptive name. Then click on **`OK`**.
 Use the <u>Hamburger menu</u> to go back to the **`Details`** page.
 
 In the next, module we will start configuring the Security subnet. This subnet will have our DFIR VM and SIEM (Splunk).
-
-[Part 7 - Malware Analysis Lab Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-8)
