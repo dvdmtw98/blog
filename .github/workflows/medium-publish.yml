@@ -12,13 +12,13 @@ jobs:
     steps:
       - name: Checkout Medium Publisher
         id: checkout-medium-publisher
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dvdmtw98/medium-publisher
           path: medium
       - name: Checkout Repository
         id: checkout-repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
           path: main
