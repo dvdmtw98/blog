@@ -1,8 +1,7 @@
 ---
 cssclasses:
-  - wide-dataview
   - numbered-rows
-  - wide-page
+  - wide-dataview
 ---
 ### Draft Posts
 

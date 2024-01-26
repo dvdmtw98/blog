@@ -590,7 +590,7 @@ The device will be added to the AD environment. Click on **`OK`**.
 
 ![user-33|260](images/building-home-lab-part-7/user-33.png)
 
-The device needs to be rebooted to apply the domain-specific settings. Click on `OK` to continue.
+The device needs to be rebooted to apply the domain-specific settings. Click on **`OK`** to continue.
 
 ![user-34|300](images/building-home-lab-part-7/user-34.png)
 

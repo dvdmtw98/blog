@@ -2,10 +2,10 @@
 categories:
   - Security
   - Home Lab
-date: 2024-01-26 19:30:00 -0600
+date: 2024-01-26 09:20:00 -0600
 description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 img_path: /assets/
-published: false
+published: true
 tags:
   - security
   - home-lab
@@ -663,3 +663,5 @@ Give the Snapshot a descriptive name. Then click on **`OK`**.
 Use the <u>Hamburger menu</u> to go back to the **`Details`** page.
 
 In the next, module we will start configuring the Security subnet. This subnet will have our DFIR VM and SIEM (Splunk).
+
+[Part 7 - Malware Analysis Lab Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-8)
