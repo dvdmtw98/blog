@@ -198,6 +198,18 @@ In the popup click on **`Apply Changes`** to persist the new rule.
 > [!INFO]
 > Since this Interface is going to be used for Malware Analysis we are blocking network access. This will ensure that malware cannot spread to other systems using the network. 
 
+### Reboot pfSense
+
+Now we need to restart pfSense to ensure that the firewall rules are propagated properly. From the navigation bar select **`Diagnostics -> Reboot`**.
+
+![pfsense-118|600](images/building-home-lab-part-4/pfsense-118.png)
+
+Click on **`Submit`**.
+
+![pfsense-119|600](images/building-home-lab-part-4/pfsense-119.png)
+
+Once pfSense boots up you will be redirected to the login page.
+
 ## Flare VM Setup
 
 To install Flare we need a Windows machine. Flare can be set up using most versions of Windows. Since we already have the ISO for Windows 10 Enterprise I will be using it to configure Flare.
