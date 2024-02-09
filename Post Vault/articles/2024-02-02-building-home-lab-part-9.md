@@ -169,7 +169,7 @@ Change the values as follows:
 Address Family: **`IPv4+IPv6`**  
 Protocol: **`Any`**  
 Source: **`SECURITY subnets`**  
-Description: **`Block traffic to all subnets and Internet`**
+Description: **`Allow traffic to all subnets and Internet`**
 
 Scroll to the bottom and click on **`Save`**.
 
@@ -415,3 +415,5 @@ Use the Hamburger menu and click on Details to return to the main page.
 ![tsurugi-43|540](images/building-home-lab-part-9/tsurugi-43.png)
 
 In the next module, we will install **`Ubuntu`** and then download and set up **`Splunk`**. We will also install the Splunk Universal Forwarder on the Domain Controller in our Active Directory Lab. This will allow us to capture the events that are generated on the Domain Controller.
+
+[Part 10 - Splunk Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-10/)
