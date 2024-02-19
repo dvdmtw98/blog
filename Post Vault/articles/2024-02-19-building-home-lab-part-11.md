@@ -2,7 +2,7 @@
 categories:
   - Security
   - Home Lab
-date: 2024-02-19 12:55:00 -0600
+date: 2024-02-19 13:10:00 -0600
 description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 img_path: /assets/
 published: true
