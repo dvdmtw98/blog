@@ -43,7 +43,7 @@ sshkey.private
 We have an SSH private key. We can use the SSH command with the "-i" flag to use the private key
 
 ```
-bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+bandit13@bandit:~$ ssh -i sshkey.private -p 2220 bandit14@localhost
 ```
 
 (If asked for fingerprint confirmation type "yes")

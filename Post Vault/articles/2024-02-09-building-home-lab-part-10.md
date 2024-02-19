@@ -83,7 +83,7 @@ Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`Int
 
 ![ubuntu-12|540](images/building-home-lab-part-10/ubuntu-12.png)
 
-### Installing Ubuntu
+## Installing Ubuntu
 
 Select the VM and click on **`Start`**.
 
@@ -436,3 +436,5 @@ In the above command "windows" is the name I gave my index.
 > If the search does not return any value, wait for 2-3 minutes and then try again. If there is still no data go to the Windows VM and perform some simple actions (open applications, change settings, etc.) then after sometime you should see data flowing into Splunk.
 
 In the next module, we will see how we can download files/malware onto the DFIR VM and then move them over to the Malware Analysis lab using SCP.
+
+[Part 11 - Transferring Files to Malware Analysis Lab](https://blog.davidvarghese.dev/posts/building-home-lab-part-11/)

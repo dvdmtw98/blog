@@ -2,10 +2,10 @@
 categories:
   - Security
   - Home Lab
-date: 2024-02-13 20:15:00 -0600
+date: 2024-02-19 12:55:00 -0600
 description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 img_path: /assets/
-published: false
+published: true
 tags:
   - security
   - home-lab
@@ -20,13 +20,13 @@ title: "Building a Virtual Security Home Lab: Part 11 - Transferring Files to Ma
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-In module module, we will see how we can transfer files using SCP from "Tsurugi Linux" which is on the SECURITY subnet to VMs on the ISOLATED subnet. 
+In this module, we will see how we can transfer files using SCP from "Tsurugi Linux" which is on the **`SECURITY`** subnet to VMs on the **`ISOLATED`** subnet. 
 
-I recommend this approach to get Malware Samples into the Malware Analysis Lab. We can use other methods for transferring files to these VMs but since we are dealing with Malware Samples I want to keep the samples far from the Internet and the host machines filesystem.
+I recommend this approach to get Malware Samples into the Malware Analysis Lab. We can use other methods for transferring files to these VMs but since we are dealing with Malware I want to keep the samples isolated from the Internet and the host machine filesystem.
 
 ## Tsurugi Linux Static IP Assignment
 
-Start the pfSense VM if it was Shutdown. Once pfSense is up and running. Start the Tsurugi Linux VM. One the terminal and run the following command:
+Start the pfSense VM if it is shut down. Once pfSense is up and running. Start the Tsurugi Linux VM. One the terminal and run the following command:
 
 ```bash
 ip a
@@ -34,9 +34,9 @@ ip a
 
 ![malware-1|600](images/building-home-lab-part-11/malware-1.png)
 
-Tsurugi Linux has been assigned the IP Address 10.10.10.12 by the DHCP server.
+Tsurugi Linux has been assigned the IP Address **`10.10.10.12`** by the DHCP server.
 
-Start the Kali Linux VM and login into the pfSense Web UI.
+Start the Kali Linux VM and log into the pfSense Web UI.
 
 ![pfsense-27|600](images/building-home-lab-part-4/pfsense-27.png)
 
@@ -44,15 +44,15 @@ From the navigation bar select **`Status -> DHCP Leases`**.
 
 ![pfsense-53|600](images/building-home-lab-part-4/pfsense-53.png)
 
-In the Leases section find Tsurugi Linux. Click on the hollow "+" icon (Add Static IP) on the right hand side.
+In the **`Leases`** section find Tsurugi Linux. Click on the hollow "+" icon (Add Static IP) on the right-hand side.
 
 ![malware-2|580](images/building-home-lab-part-11/malware-2.png)
 
-In the IP Address field enter 10.10.10.2. Scroll to the bottom and click on Save.
+In the <u>IP Address</u> field enter **`10.10.10.2`**. Scroll to the bottom and click on **`Save`**.
 
 ![malware-3|580](images/building-home-lab-part-11/malware-3.png)
 
-A popup will appear at the top. Click on Apply Changes.
+A popup will appear at the top. Click on **`Apply Changes`**.
 
 ![malware-4|580](images/building-home-lab-part-11/malware-4.png)
 
@@ -65,7 +65,7 @@ On Tsurugi Linux from the terminal run the following command:
 sudo ip l set enp0s3 && sudo ip l set enp0s3 up
 ```
 
-Restarting the adapter will cause the dynamic IP that was assigned to the VM to be release. Run the following command to confirm the VM is using the configured static IP.
+Restarting the adapter will cause the dynamic IP that was assigned to the VM to be released. Run the following command to confirm the VM is using the configured static IP.
 
 ```bash
 ip a enp0s3
@@ -107,13 +107,13 @@ The final firewall rules will look as follows:
 
 ### Tsurugi Linux
 
-Enter the following command to check if SSH is running.
+Run the following command to check if SSH is running.
 
 ```bash
 systemctl status ssh
 ```
 
-If SSH is disabled running the following command to enable it.
+If SSH is disabled use the following command to enable it.
 
 ```bash
 sudo systemctl start ssh
@@ -127,13 +127,13 @@ Right-click on the Start menu icon. Select **`Windows PowerShell (Admin)`**.
 
 ![flare-23|240](images/building-home-lab-part-8/flare-23.png)
 
-Enter the following command to check if SSH server is running.
+Enter the following command to check if the SSH server is running.
 
 ```powershell
 Get-Service sshd
 ```
 
-Run the following to enable SSH server.
+Run the following to enable the SSH server.
 
 ```powershell
 Start-Service sshd
@@ -177,7 +177,7 @@ ip a
 
 ### Connecting to Flare VM
 
-In my case the IP address of Flare VM is **`10.99.99.11`**.
+In my case, the IP address of Flare VM is **`10.99.99.11`**.
 
 Use the following command to remote into Flare VM from Tsurugi Linux.
 
@@ -199,7 +199,7 @@ Type **`exit`** to quit the remote connection.
 
 ### Connecting to REMnux Linux
 
-In my case the IP address for REMnux is **`10.99.99.12`**.
+In my case, the IP address for REMnux is **`10.99.99.12`**.
 
 Use the following command to remote into REMnux from Tsurugi Linux.
 
@@ -219,7 +219,7 @@ Type **`exit`** to quit the remote connection.
 
 Now we know that we can connect to the Malware Analysis Lab VMs from Tsurugi Linux. 
 
-To demonstrate how to transfer files from Tsurugi Linux to the Malware Analysis Lab VMs I will use an dummy text file. To follow along run the following commands on Tsurugi Linux:
+To demonstrate how to transfer files from Tsurugi Linux to the Malware Analysis Lab VMs I will use a simple text file. To follow along run the following commands on Tsurugi Linux:
 
 ```bash
 cd Downloads

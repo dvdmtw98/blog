@@ -181,3 +181,4 @@ In the next module, we will start with the installation and configuration of pfS
 - [Part 8 - Malware Analysis Lab Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-8)
 - [Part 9 - Tsurugi Linux (DFIR) Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-9/)
 - [Part 10 - Splunk Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-10/)
+- [Part 11 - Transferring Files to Malware Analysis Lab](https://blog.davidvarghese.dev/posts/building-home-lab-part-11/)
