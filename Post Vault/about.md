@@ -6,13 +6,13 @@ order: 4
 - 🏫 Currently working towards my Masters degree in Cyber Security
 - 🌱 I am interested in learning about Cyber Security, Programming, Cloud and Networking
 - 🌍 In my free time I enjoy watching movies, reading books and learning about different cultures
-- 📝 I mainly write articles on Security, Coding, Computer Networks, DevOps and Linux
+- 📝 I mainly write articles on Security, Computer Networks, Programming and Linux
 
 ### Websites
 
-- ⚡ My blog posts are also available on [Medium](https://david-varghese.medium.com)
-- 📒 I also have a site [Digital Archive](https://notes.davidvarghese.dev) which houses notes and cheatsheets on various topics
+- ⚡ My blog posts are also available on <a href="https://david-varghese.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
+- 📒 I also have a <a href="https://notes.davidvarghese.dev" target="_blank" rel="noopener noreferrer">Digital Garden</a> where I store my notes, ideas, insights, and connections I've made throughout my life.
 
 ### Socials
 
-- 🤝 You can connect with me on [LinkedIn](https://www.linkedin.com/in/david-varghese/), [GitHub](https://github.com/dvdmtw98) and [Medium](https://david-varghese.medium.com/)
+- 🤝 You can connect with me on <a href="https://www.linkedin.com/in/david-varghese/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://github.com/dvdmtw98" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://david-varghese.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
