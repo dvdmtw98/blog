@@ -62,7 +62,7 @@ On Tsurugi Linux from the terminal run the following command:
 
 ```bash
 # Disable and then Enable the Network Adapter
-sudo ip l set enp0s3 && sudo ip l set enp0s3 up
+sudo ip l set enp0s3 down && sudo ip l set enp0s3 up
 ```
 
 Restarting the adapter will cause the dynamic IP that was assigned to the VM to be released. Run the following command to confirm the VM is using the configured static IP.
