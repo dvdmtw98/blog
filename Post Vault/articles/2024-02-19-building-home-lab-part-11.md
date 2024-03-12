@@ -1,18 +1,18 @@
 ---
+title: "Building a Virtual Security Home Lab: Part 11 - Transferring Files to Malware Analysis Lab"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+date: 2024-02-19 13:10:00 -0600
 categories:
   - Security
   - Home Lab
-date: 2024-02-19 13:10:00 -0600
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-img_path: /assets/
-published: true
 tags:
   - security
   - home-lab
   - virtualbox
   - networking
   - malware
-title: "Building a Virtual Security Home Lab: Part 11 - Transferring Files to Malware Analysis Lab"
+published: true
+img_path: /assets/
 ---
 
 ![building-home-lab-part-11-banner|640](images/building-home-lab-part-11/building-home-lab-part-11-banner.png)
