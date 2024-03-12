@@ -1,7 +1,7 @@
 ---
 title: "Character Encoding Explored - Part 1: Character Set, ASCII, Unicode, UTF-32 & More"
 description: Character Encoding concepts explained in a simple easy to understand manner
-date: 2024-03-12 14:30:00 -0600
+date: 2024-03-12 14:50:00 -0600
 categories:
   - Data Representation
   - Unicode

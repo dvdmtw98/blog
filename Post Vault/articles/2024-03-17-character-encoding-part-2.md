@@ -1,7 +1,7 @@
 ---
 title: "Character Encoding Explored - Part 2: UTF-16, UTF-8, BOM, Self-Synchronization & More"
 description: Character Encoding concepts explained in a simple easy to understand manner
-date: 2024-03-13 18:20:00 -0600
+date: 2024-03-17 18:20:00 -0600
 categories:
   - Data Representation
   - Unicode
