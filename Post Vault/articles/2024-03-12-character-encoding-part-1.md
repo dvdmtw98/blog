@@ -1,7 +1,7 @@
 ---
 title: "Character Encoding Explored - Part 1: Character Set, ASCII, Unicode, UTF-32 & More"
 description: Character Encoding concepts explained in a simple easy to understand manner
-date: 2024-03-12 14:50:00 -0600
+date: 2024-03-12 14:54:00 -0600
 categories:
   - Data Representation
   - Unicode
@@ -16,7 +16,7 @@ img_path: /assets/
 math: true
 ---
 
-![character-encoding-banner](images/character-encoding-part-1/character-encoding-part-1-banner.png)
+![character-encoding-part-1-banner|640](images/character-encoding-part-1/character-encoding-part-1-banner.png)
 
 Before diving into the various character encoding standards we first need to understand why we even need to encode characters. Computers use a system that uses 1s and 0s to represent data. Whether it's a number like `42` or a character like the letter `d` it has to be transformed into a stream of 1s and 0s for the computer to be able to understand it. For a number, it makes sense to convert it into its Base-2 (Binary) number system equivalent which a computer can understand. For example, the integer `42` would be represented as `00101010` in binary. But what about the letter d? What about letters used in Asian languages? What about emojis? How do we represent non-numeric characters on a computer? The solution - use a collectively agreed-upon mapping that assigns each character a numeric value which can then be converted to binary.
 

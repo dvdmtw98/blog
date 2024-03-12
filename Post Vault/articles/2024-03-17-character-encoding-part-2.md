@@ -16,7 +16,7 @@ img_path: /assets/
 math: true
 ---
 
-![character-encoding-banner](images/character-encoding-part-2/character-encoding-part-2-banner.png)
+![character-encoding-part-2-banner|640](images/character-encoding-part-2/character-encoding-part-2-banner.png)
 
 In is module we will continue from where we left off in the last part. We start by going over the remaining Unicode encoding schemes. We will then spend some time discussing the BOM character and Unicode-aware functions. Finally, we will conclude by covering what it means for a character encoding to be self-synchronizing.
 
