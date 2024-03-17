@@ -1,8 +1,10 @@
 ---
+title: Post Index
 cssclasses:
   - numbered-rows
   - wide-dataview
 ---
+
 ### Draft Posts
 
 ```dataview

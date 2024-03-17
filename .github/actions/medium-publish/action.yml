@@ -41,7 +41,7 @@ runs:
       shell: bash
       run: |
         cd main/.github/actions/medium-publish \
-        && python medium_rss.py "${{ github.workspace }}/main/Post Vault/articles/**/*.md"
+        && python medium_rss.py "${{ github.workspace }}/main/blog-vault/articles/**/*.md"
     - name: Check Result
       id: check-result
       shell: bash
