@@ -20,11 +20,14 @@ math: true
 
 In is module we will continue from where we left off. We will go over the UTF-16 and UTF-8 encoding scheme. We will then spend some time covering BOM and Unicode-aware functions and finally, we will cover what it means for a character encoding to be self-synchronizing.
 
+[Character Encoding Explored - Part 1: Character Set, ASCII, Unicode & UTF-32](https://blog.davidvarghese.dev/posts/character-encoding-part-1/)
+
+### UTF-16 Encoding
+
 <iframe
 	width="560" height="315" src="https://www.youtube-nocookie.com/embed/uTJoJtNYcaQ?si=v-f7SRNJyeXQ3jpu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
 
-#### UTF-16 Encoding
 UTF-16 was designed to address the space inefficiency of UTF-32. Before UTF-16, there was UCS-2. UCS-2 utilized 16 bits (2 bytes) to represent the graphemes from the Unicode character set. A stream of 16 bits is called a “word”. UCS-2 is a fixed-length encoding scheme as all the characters are encoded using 16-bit code units.
 
 [UTF-16 - Wikipedia](https://en.wikipedia.org/wiki/UTF-16)
@@ -51,7 +54,7 @@ The value of the low surrogate will always be in the range `0xDC00` - `0xDFFF`
 
 An overwhelming amount of content on the internet is written in English. Latin characters encoded using ASCII could be represented using 8 bits. The same characters encoded with UTF-16 require 16 bits. While UTF-16 in most cases used half the space of UTF-32, it still required more space than ASCII. UTF-16 is found to be a good choice for encoding text that predominately contains characters from Asian scripts.
 
-#### UTF-8 Encoding
+### UTF-8 Encoding
 UTF-8 was created to solve the shortcomings of UTF-32 and UTF-16. UTF-8 maps code points to between 1 and 4 bytes. Small code points can be represented using 1 byte, which saves a lot of space. Larger code points take anywhere from 2 to 4 bytes. Since the length of the encoding is not fixed, UTF-8 is a variable-length encoding scheme.
 
 [UTF-8 - Wikipedia](https://en.wikipedia.org/wiki/UTF-8)
