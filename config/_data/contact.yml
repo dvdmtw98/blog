@@ -16,11 +16,6 @@
   url: 'https://discordapp.com/users/757082677483536404'
   noblank: false
 -
-  type: Medium
-  icon: 'fab fa-medium'
-  url: 'https://david-varghese.medium.com/'
-  noblank: false
--
   type: rss
   icon: 'fas fa-rss'
   noblank: false

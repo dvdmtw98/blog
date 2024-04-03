@@ -15,4 +15,4 @@ order: 4
 
 ### Socials
 
-- 🤝 You can connect with me on <a href="https://www.linkedin.com/in/david-varghese/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://github.com/dvdmtw98" target="_blank" rel="noopener noreferrer">GitHub</a>, <a href="https://medium.com/@david-varghese" target="_blank" rel="noopener noreferrer">Medium</a> and <a href="https://discordapp.com/users/757082677483536404" target="_blank" rel="noopener noreferrer">Discord</a>
+- 🤝 You can connect with me on <a href="https://www.linkedin.com/in/david-varghese/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://github.com/dvdmtw98" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://discordapp.com/users/757082677483536404" target="_blank" rel="noopener noreferrer">Discord</a>
