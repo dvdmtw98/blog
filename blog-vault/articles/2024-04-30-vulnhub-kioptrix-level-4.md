@@ -24,11 +24,13 @@ Cover Image by [vector_corp](https://www.freepik.com/free-vector/abstract-low-po
 
 ### Host Discovery
 
-The Kioptrix VM is set up on my Cyber Range network which has the CDIR address of `10.6.6.0/24`. I used Nmap to find all the devices on this network. Ping scan utilizes ICMP echo packets to detect devices. On a network that filters ICMP packets, the scan will not produce any result.
+The Kioptrix Level 4 VM is set up on the network which has the CDIR address of `10.6.6.1/24`. My attack machine (Kali) is on the `10.0.0.1/24` network.
 
 [Building a Virtual Security Home Lab: Part 1 - Network Topology](https://blog.davidvarghese.dev/posts/building-home-lab-part-1/)
 
-In the prior levels, I used `netdiscover` to find the target. `netdiscover` uses ARP packets. ARP packets can only be broadcast to devices on the same subnet. This approach will not work here as the target VM is on a different subnet.
+![[network-setup.png|440]]
+
+I used Nmap to find all the devices on the `10.6.6.1/24` network. Ping scan utilizes ICMP echo packets to detect devices. On a network that filters ICMP packets, the scan will not produce any result.
 
 ```bash
 nmap -sn 10.6.6.0/24
@@ -41,6 +43,8 @@ nmap -sn 10.6.6.0/24
 The scan found two devices:  
 `10.6.6.1`: Default Gateway  
 `10.6.6.14`: Kioptrix VM
+
+In the prior levels, I used `netdiscover` to find the target. `netdiscover` uses ARP packets. ARP packets can only be broadcast to devices on the same subnet. This approach will not work here as the target VM is on a different subnet.
 
 ### Port Scanning
 
@@ -258,6 +262,13 @@ Next, I decided to access the database to look for additional details on the use
 mysql -u root -p
 ```
 
+```sql
+SHOW databases;
+USE members;
+SHOW tables;
+SELECT * FROM members;
+```
+
 ![[sql-2.png|420]]
 
 The `members` table contained credentials for John and Robert. These are the values I was able to collect using the SQL Injection vulnerability.
@@ -266,7 +277,11 @@ Since I had root access to MySQL I checked online to see if there is any way to 
 
 [Exploiting User-Defined Functions - Steflan's Security Blog](https://steflan-security.com/linux-privilege-escalation-exploiting-user-defined-functions/)
 
-There is an UDF for MySQL called `sys_exec` which allows MySQL to execute system commands. UDFs are executed with the evoking user's permissions. If an UDF is executed by `root` the command that is executed will also be performed as root. 
+There is an UDF for MySQL called `sys_exec` which allows MySQL to execute system commands. UDFs are executed with the evoking user's permissions. If an UDF is executed by `root` the command that is executed will also be performed as root.
+
+```sql
+SELECT * FROM mysql.func;
+```
 
 ![[sql-3.png|440]]
 
@@ -324,7 +339,7 @@ Once I had root access I accessed the `/root` directory which contained the `con
 
 ![[flag.png|500]]
 
-## Alternative Solutions
+### Alternative Solutions
 
 [Hacking Kioptrix Level 4 – NandTech](https://nandtech.co/2017/07/16/penetration-testing-practice-hacking-kioptrix-l4/)
 
