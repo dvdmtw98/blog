@@ -63,7 +63,7 @@ runs:
       shell: bash
       run: |
         cp main/scripts/modify_links.py main/blog-vault \
-        && cd main/blog-vault \ 
+        && cd main/blog-vault \
         && python modify_links.py -b "articles" -s "medium"
     - name: Upload Posts
       id: upload-posts
