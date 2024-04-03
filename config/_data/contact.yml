@@ -11,6 +11,11 @@
   url:  'https://www.linkedin.com/in/david-varghese/'
   noblank: false
 -
+  type: Discord
+  icon: 'fab fa-discord'
+  url: 'https://discordapp.com/users/757082677483536404'
+  noblank: false
+-
   type: Medium
   icon: 'fab fa-medium'
   url: 'https://david-varghese.medium.com/'
