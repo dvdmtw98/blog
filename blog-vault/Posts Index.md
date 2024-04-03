@@ -5,36 +5,33 @@ cssclasses:
   - wide-dataview
 ---
 
-### Draft Posts
+```dataviewjs
+const groupedArticles = dv.pages('"articles"').groupBy(p => p.published);
+// console.log(groupedArticles);
 
-```dataview
-TABLE WITHOUT ID
-	"" AS "No.",
-	link(file.link, title) AS "Title",
-	dateformat(
-		date(replace(substring(date, 0, 19), " ", "T")), 
-		"MM/dd/yyyy hh:mm a"
-	) AS "Published Date",
-	categories AS Categories,
-	tags AS Tags
-FROM "articles"
-WHERE published = false
-SORT date DESC
-```
+const tableHeaders = ["No.", "Title", "Publish Date", "Category", "Tags"];
 
-### Published Posts
+for (let group of groupedArticles) {
+	let headerName = group.key ? "Published Articles" : "Draft Articles";
+	let articleCount = group.rows.length;
+    dv.header(3, `${headerName} (${articleCount})`);
 
-```dataview
-TABLE WITHOUT ID
-	"" AS "No.",
-	link(file.link, title) AS "Title",
-	dateformat(
-		date(replace(substring(date, 0, 19), " ", "T")), 
-		"MM/dd/yyyy hh:mm a"
-	) AS "Published Date",
-	categories AS Categories,
-	tags AS Tags
-FROM "articles"
-WHERE published = true
-SORT date DESC
+	dv.table(
+	    tableHeaders,
+        group.rows
+            .sort(k => k.date, 'desc')
+            .map(k => [
+		            "",
+					dv.func.link(k.file.link, k.title),
+					dv.func.dateformat(dv.func.date(
+						dv.func.replace(
+							dv.func.substring(k.date, 0, 19), " ", "T")
+						), "MM/dd/yyyy hh:mm a"
+					),
+					k.categories.map((category) => `&thinsp;• ${category}`), 
+					k.tags.map((tag) => `&thinsp;• ${tag}`), 
+				]
+			)
+	);
+}
 ```

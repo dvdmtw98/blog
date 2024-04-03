@@ -25,10 +25,6 @@ runs:
         cp -a main/blog-vault/articles/. chirpy/_posts \
         && mv main/blog-vault/about.md chirpy/_tabs \
         && rm chirpy/_posts/.placeholder
-    - name: Copy Images
-      id: copy-images
-      shell: bash
-      run: cp -a chirpy/_posts/images chirpy/assets
     - name: Setup Python
       id: setup-python
       uses: actions/setup-python@v5
@@ -42,6 +38,10 @@ runs:
       id: run-scripts
       shell: bash
       run: cd chirpy && python scripts/modify_links.py
+    - name: Copy Images
+      id: copy-images
+      shell: bash
+      run: cp -a chirpy/_posts/images chirpy/assets
     - name: Setup Google Analytics
       uses: TomaszKandula/variable-substitution@v1.0.2
       with:

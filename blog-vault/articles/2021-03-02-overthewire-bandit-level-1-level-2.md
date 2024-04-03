@@ -1,21 +1,21 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 1 → Level 2"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit2.html)"
 date: 2021-03-02 04:14:02 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit2.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 1 → Level 2'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
-![banner-image|640](images/overthewire-banner.png)
+![banner-image|640](overthewire-banner.png)
 
 ## Level Goal
 
@@ -51,13 +51,13 @@ find (1)        - search for files in a directory hierarchy
 
 [Linux - How to open a "-" dashed filename using terminal? - Stack Overflow](https://stackoverflow.com/questions/42187323/how-to-open-a-dashed-filename-using-terminal)
 
-[Input Output & Error Redirection in Linux [Beginner's Guide]](https://linuxhandbook.com/redirection-linux/)
+[Input Output & Error Redirection in Linux - Beginner's Guide](https://linuxhandbook.com/redirection-linux/)
 
 ## Solution
 
 View the files that are present in the current working directory using the `ls` command
 
-```
+```bash
 bandit1@bandit:~$ ls  
 -
 ```
@@ -66,7 +66,7 @@ We can view the content of the file named `-` using the `cat` command
 
 **Note:** Directly specifying the filename as shown in the previous level is not going to work as `-` is a special character on Linux that is used to denote Standard Input/ Standard Output (STDIN/ STDOUT). We have to use the concept of redirection or specify the absolute path to the file to access it.
 
-```
+```bash
 bandit1@bandit:~$ cat < -  
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
@@ -80,7 +80,7 @@ To access the next level log out of the current session. This can be done by typ
 
 Use the password found above of user bandit2 to access the next level
 
-```
+```bash
 > ssh bandit2@bandit.labs.overthewire.org -p 2220  
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 

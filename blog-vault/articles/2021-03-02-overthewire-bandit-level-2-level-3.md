@@ -1,21 +1,21 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 2 → Level 3"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit3.html)"
 date: 2021-03-02 12:32:00 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit3.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 2 → Level 3'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
-![banner-image|640](images/overthewire-banner.png)
+![banner-image|640](overthewire-banner.png)
 
 ## Level Goal
 
@@ -57,7 +57,7 @@ find (1)        - search for files in a directory hierarchy
 
 View the files that are present in the current working directory using the `ls` command
 
-```
+```bash
 bandit2@bandit:~$ ls  
 spaces in this filename
 ```
@@ -68,7 +68,7 @@ View the content of the file named `spaces in this filename` using the `cat` com
 
 **Note:** The name of any file on the system can be auto-completed using the `Tab` key.
 
-```
+```bash
 bandit2@bandit:~$ cat spaces\ in\ this\ filename  
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
@@ -76,11 +76,9 @@ bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 
-We have found the password for the next level !!
+We have found the password for the next level. Logout of the current session and use the password of user bandit3 to access the next level
 
-Logout of the current session and use the password of user bandit3 to access the next level
-
-```
+```bash
 > ssh bandit3@bandit.labs.overthewire.org -p 2220  
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 

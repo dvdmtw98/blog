@@ -1,21 +1,21 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 3 → Level 4"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit4.html)"
 date: 2021-03-02 16:53:43 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit4.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 3 → Level 4'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
-![banner-image|640](images/overthewire-banner.png)
+![banner-image|640](overthewire-banner.png)
 
 ## Level Goal
 
@@ -55,14 +55,14 @@ find (1)        - search for files in a directory hierarchy
 
 View the files that are present in the current working directory using the `ls` command
 
-```
+```bash
 bandit3@bandit:~$ ls  
 inhere
 ```
 
 Move into the `inhere/` directory. This can be done using the `cd` command
 
-```
+```bash
 bandit3@bandit:~$ cd inhere/
 ```
 
@@ -70,14 +70,14 @@ View files that are in the directory using the `ls` command. Since we know the f
 
 (For more information on the `ls` command and its various flags refer to `man ls` or `ls --help` )
 
-```
+```bash
 bandit3@bandit:~/inhere$ ls -a  
 .  ..  .hidden
 ```
 
 View the content of the `.hidden` file using the `cat` command
 
-```
+```bash
 bandit3@bandit:~/inhere$ cat .hidden  
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
@@ -86,7 +86,7 @@ We have found the password for the next level !!
 
 Logout of the current session and use the password of user bandit4 to access the next level
 
-```
+```bash
 > ssh bandit4@bandit.labs.overthewire.org -p 2220  
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 

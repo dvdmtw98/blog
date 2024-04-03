@@ -15,7 +15,7 @@ tags:
 title: 'OverTheWire: Bandit Level 12 → Level 13'
 ---
 
-![banner-image|640](images/overthewire-banner.png)
+![banner-image|640](overthewire-banner.png)
 
 ## Level Goal
 

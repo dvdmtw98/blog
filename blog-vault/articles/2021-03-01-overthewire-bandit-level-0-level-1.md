@@ -1,21 +1,21 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 0 → Level 1"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit1.html)"
 date: 2021-03-01 12:31:28 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit1.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 0 → Level 1'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
-![banner-image|640](images/overthewire-banner.png)
+![banner-image|640](overthewire-banner.png)
 
 ## Level Goal
 
@@ -60,14 +60,14 @@ find (1)        - search for files in a directory hierarchy
 View the files that are present in the current working directory using the `ls` command  
 (The "pwd" command can be used to view the current working directory)
 
-```
+```bash
 bandit0@bandit:~$ ls  
 readme
 ```
 
 We see there is a file named `readme` to view the contents of this file we can use the `cat` command.
 
-```
+```bash
 bandit0@bandit:~$ cat readme   
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 ```
@@ -77,7 +77,7 @@ We have found the password for the next level !!
 
 Use the password found above to log in as bandit1 and access the next level
 
-```
+```bash
 > ssh bandit1@bandit.labs.overthewire.org -p 2220  
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 

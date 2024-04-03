@@ -77,7 +77,7 @@ There is a web server that is using ports 80 (HTTP) and 443 (HTTPS). The web ser
 
 The Samba service is running on port 139. Port 111 is running `rpcbind` which is the port mapper service used by Samba to map calls from remote devices to local device ports.
 
-### Enumeration OpenSSH
+### Enumeration SSH
 
 The SSH service is generally not vulnerable to attacks. And the vulnerabilities that do exist require user authentication.
 

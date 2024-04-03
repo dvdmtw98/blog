@@ -1,21 +1,21 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 0"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit0.html)"
 date: 2021-03-01 10:04:29 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit0.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 0'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
-![banner-image|640](images/overthewire-banner.png)
+![banner-image|640](overthewire-banner.png)
 
 ## Level Goal
 
@@ -55,7 +55,7 @@ SSH Command: `ssh <username>@<hostname> -p <port>`
 
 When asked for a password type **bandit0** and press Enter
 
-```
+```bash
 > ssh bandit0@bandit.labs.overthewire.org -p 2220   
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
