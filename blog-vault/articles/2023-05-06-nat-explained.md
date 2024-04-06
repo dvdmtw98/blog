@@ -1,18 +1,18 @@
 ---
-categories:
-- Networking
-- Protocol
-date: 2023-05-06 22:20:00 +0530
+title: "Network Address Translation (NAT): The What, Why and How Explained"
 description: Overview of NAT the private IP to public IP translator
+date: 2023-05-06 22:20:00 +0530
+categories:
+  - Networking
+  - Protocol
+tags:
+  - networking
+  - protocol
+  - internet
+  - nat
+published: true
 img_path: /assets/
 math: true
-published: true
-tags:
-- networking
-- protocol
-- internet
-- nat
-title: 'Network Address Translation (NAT): The What, Why and How Explained'
 ---
 
 ![banner-image|640](images/nat-explained/nat-explained-banner.png)

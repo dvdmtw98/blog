@@ -337,7 +337,7 @@ Yet another alternative is to use `sys_exec` to invoke `netcat` and set up a rev
 
 Once I had root access I accessed the `/root` directory which contained the `congrats.txt` flag.
 
-![[flag.png|500]]
+![[kioptrix-lvl-4-flag.png|500]]
 
 ### Alternative Solutions
 

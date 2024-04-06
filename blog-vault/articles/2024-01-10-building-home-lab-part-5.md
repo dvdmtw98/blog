@@ -1,18 +1,18 @@
 ---
+title: "Building a Virtual Security Home Lab: Part 5 - Cyber Range Setup"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+date: 2024-01-10 09:35:00 -0600
 categories:
   - Security
   - Home Lab
-date: 2024-01-10 09:35:00 -0600
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-img_path: /assets/
-published: true
 tags:
   - security
   - home-lab
   - virtualbox
   - networking
   - ctf
-title: "Building a Virtual Security Home Lab: Part 5 - Cyber Range Setup"
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-5/building-home-lab-part-5-banner.png)

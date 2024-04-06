@@ -1,18 +1,18 @@
 ---
+title: "Building a Virtual Security Home Lab: Part 6 - Active Directory Lab Setup - Part 1"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+date: 2024-01-14 09:40:00 -0600
 categories:
   - Security
   - Home Lab
-date: 2024-01-14 09:40:00 -0600
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-img_path: /assets/
-published: true
 tags:
   - security
   - home-lab
   - virtualbox
   - networking
   - active-directory
-title: "Building a Virtual Security Home Lab: Part 6 - Active Directory Lab Setup - Part 1"
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-6/building-home-lab-part-6-banner.png)

@@ -1,18 +1,18 @@
 ---
-categories:
-- Networking
-- Utility
-date: 2023-11-13 10:00:00 -0600
+title: "Traceroute: Explained"
 description: The what, why and how of the network debugging tool traceroute
-img_path: /assets/
-published: true
+date: 2023-11-13 10:00:00 -0600
+categories:
+  - Networking
+  - Utility
 tags:
-- command-line
-- networking
-- operating-system
-- internet
-- traceroute
-title: 'Traceroute: Explained'
+  - command-line
+  - networking
+  - operating-system
+  - internet
+  - traceroute
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/traceroute-explained/traceroute-banner.png)

@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2023-07-10 19:30:00 +0530
-description: You found a secret server located under the deep sea. Your task is to
-  hack inside the server and reveal the truth
-img_path: /assets/
-published: true
-tags:
-- security
-- tryhackme
-- ctf
-- linux
 title: TryHackMe - Agent Sudo
+description: You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth
+date: 2023-07-10 19:30:00 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - security
+  - tryhackme
+  - ctf
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-agent-sudo/agent-sudo-banner.png)

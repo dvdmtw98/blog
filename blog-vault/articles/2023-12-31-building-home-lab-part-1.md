@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- Home Lab
+title: "Building a Virtual Security Home Lab: Part 1 - Network Topology"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
 date: 2023-12-31 10:40:00 -0600
-description: A step-by-step guide for building your very own Cybersecurity Home Lab
-  using VirtualBox
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - Home Lab
 tags:
-- security
-- home-lab
-- virtualbox
-- networking
-title: 'Building a Virtual Security Home Lab: Part 1 - Network Topology'
+  - security
+  - home-lab
+  - virtualbox
+  - networking
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-1/building-home-lab-part-1-banner.png)

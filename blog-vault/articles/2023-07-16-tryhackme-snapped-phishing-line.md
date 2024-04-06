@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2023-07-16 21:10:00 +0530
-description: Apply learned skills to probe malicious emails and URLs, exposing a vast
-  phishing campaign
-img_path: /assets/
-published: true
-tags:
-- security
-- tryhackme
-- ctf
-- phishing
 title: TryHackMe - Snapped Phish-ing Line
+description: Apply learned skills to probe malicious emails and URLs, exposing a vast phishing campaign
+date: 2023-07-16 21:10:00 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - security
+  - tryhackme
+  - ctf
+  - phishing
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-snapped-phishing-line/thm-snaped-line-banner.png)

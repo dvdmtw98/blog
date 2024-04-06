@@ -1,18 +1,18 @@
 ---
+title: "Building a Virtual Security Home Lab: Part 3 - Kali Linux Setup"
+description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
+date: 2024-01-04 08:50:00 -0600
 categories:
   - Security
   - Home Lab
-date: 2024-01-04 08:50:00 -0600
-description: A step-by-step guide for building your very own Cybersecurity Home Lab using VirtualBox
-img_path: /assets/
-published: true
 tags:
   - security
   - home-lab
   - virtualbox
   - networking
   - linux
-title: "Building a Virtual Security Home Lab: Part 3 - Kali Linux Setup"
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-3/building-home-lab-part-3-banner.png)

@@ -1,17 +1,17 @@
 ---
-categories:
-- Networking
-- Protocol
-date: 2023-04-15 10:00:00 +0530
+title: "Domain Name System (DNS): The What, Why and How Explained"
 description: Exploring DNS the phonebook of the internet
-img_path: /assets/
-published: true
+date: 2023-04-15 10:00:00 +0530
+categories:
+  - Networking
+  - Protocol
 tags:
-- networking
-- protocol
-- internet
-- dns
-title: 'Domain Name System (DNS): The What, Why and How Explained'
+  - networking
+  - protocol
+  - internet
+  - dns
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/dns-explained/dns-explained-banner.png)

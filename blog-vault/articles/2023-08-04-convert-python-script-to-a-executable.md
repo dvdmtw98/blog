@@ -1,18 +1,17 @@
 ---
-categories:
-- Programming
-- Python
-date: 2023-08-04 20:15:00 +0530
-description: Create executables from Python code easily using a simple and intuitive
-  GUI
-img_path: /assets/
-published: true
-tags:
-- programming
-- python
-- executable
-- software-development
 title: How to Convert Python Script to an Executable (.exe)
+description: Create executables from Python code easily using a simple and intuitive GUI
+date: 2023-08-04 20:15:00 +0530
+categories:
+  - Programming
+  - Python
+tags:
+  - programming
+  - python
+  - executable
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/python-convert-to-exe/python-to-exe-banner.png)

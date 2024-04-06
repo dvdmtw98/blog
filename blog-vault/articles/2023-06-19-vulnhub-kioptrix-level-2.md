@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- VulnHub
+title: "VulnHub - Kioptrix: Level 2 (1.1) (#2)"
+description: Learn the basic tools and techniques used in vulnerability assessment and exploitation in a gamified manner
 date: 2023-06-19 21:45:00 +0530
-description: Learn the basic tools and techniques used in vulnerability assessment
-  and exploitation in a gamified manner
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - VulnHub
 tags:
-- security
-- vulnhub
-- ctf
-- linux
-title: 'VulnHub - Kioptrix: Level 2 (1.1) (#2)'
+  - security
+  - vulnhub
+  - ctf
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/vulnhub-kioptrix-lvl2/kioptrix-level-2-banner.png)
