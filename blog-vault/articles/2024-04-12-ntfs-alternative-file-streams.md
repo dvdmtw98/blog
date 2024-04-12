@@ -23,7 +23,7 @@ In this article, we will start by briefly discussing how data is stored on hard 
 
 It is the hardware component that allows us to store and retrieve information from our computer. HDDs, SSDs and Thumb drives are all examples of storage devices.
 
-![[hdd-platter.webp|380]]
+![[hdd-platter.png|380]]
 
 To understand how data is stored on storage devices we need to first understand some of the terms that are used to represent data on a disk. The below image represents a hard drive platter.
 
@@ -130,7 +130,7 @@ streams -nobanner -s .
 
 ![[streams-list-ads.png|560]]
 
-[Streams - Sysinternals | Microsoft Learn](https://learn.microsoft.com/en-us/sysinternals/downloads/streams)
+[Streams - Sysinternals \| Microsoft Learn](https://learn.microsoft.com/en-us/sysinternals/downloads/streams)
 
 #### Zone Identifier
 
@@ -146,8 +146,7 @@ Zone Identifier is an evolution of the URL Security Zone feature that was introd
 
 All modern browsers add zone data to downloaded files. Files downloaded using 3rd party download managers do not contain Zone Identifier data.
 
-Applications can programmed to handle files differently based on the existence of zone data. Microsoft Office will open files with zone data in Protected Mode. If we enable editing for the file the Zone Identifier stream is deleted.
-
+Applications can be programmed to handle files differently based on the existence of zone data. Microsoft Office will open files with zone data in Protected Mode. If we enable editing for the file the Zone Identifier stream is deleted.
 
 ![[office-protected-view.png|640]]
 
