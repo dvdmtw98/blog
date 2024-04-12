@@ -1,17 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-03-17 08:58:15 +0530
-description: Learn about active recon, web app attacks and privilege escalation
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- linux
 title: TryHackMe - Vulnversity
+description: Learn about active recon, web app attacks and privilege escalation
+date: 2021-03-17 08:58:15 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-vulnversity/thm-vulnversity-banner.png)

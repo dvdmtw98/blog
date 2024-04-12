@@ -1,17 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-03-11 06:10:20 +0530
-description: A Rick and Morty CTF. Help turn Rick back into a human!
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- linux
 title: TryHackMe - Pickle Rick
+description: A Rick and Morty CTF. Help turn Rick back into a human!
+date: 2021-03-11 06:10:20 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-pickle-rick/thm-pickle-rick-banner.png)

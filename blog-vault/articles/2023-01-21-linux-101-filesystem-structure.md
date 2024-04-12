@@ -1,16 +1,16 @@
 ---
-categories:
-- Operating System
-- Linux
-date: 2023-01-21 15:30:00 +0530
+title: "Linux 101: Filesystem Structure"
 description: An introduction to the directories that makeup the Linux Filesystem
-img_path: /assets/
-published: true
+date: 2023-01-21 15:30:00 +0530
+categories:
+  - Operating System
+  - Linux
 tags:
-- linux
-- filesystem
-- operating-system
-title: 'Linux 101: Filesystem Structure'
+  - linux
+  - filesystem
+  - operating-system
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/linux-filesystem/linux-filesystem-banner.png)

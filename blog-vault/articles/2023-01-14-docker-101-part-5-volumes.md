@@ -1,16 +1,16 @@
 ---
-categories:
-- DevOps
-- Docker
+title: "Docker 101: Part 5 - Volumes"
 date: 2023-01-14 16:00:00 +0530
-img_path: /assets/
-published: true
+categories:
+  - DevOps
+  - Docker
 tags:
-- devops
-- docker
-- technology
-- software-development
-title: 'Docker 101: Part 5 - Volumes'
+  - devops
+  - docker
+  - technology
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/docker-volumes/docker-101-banner.png)

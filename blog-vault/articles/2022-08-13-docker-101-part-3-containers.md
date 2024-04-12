@@ -1,16 +1,16 @@
 ---
-categories:
-- DevOps
-- Docker
+title: "Docker 101: Part 3 - Containers"
 date: 2022-08-13 05:08:33 +0530
-img_path: /assets/
-published: true
+categories:
+  - DevOps
+  - Docker
 tags:
-- devops
-- docker
-- technology
-- software-development
-title: 'Docker 101: Part 3 - Containers'
+  - devops
+  - docker
+  - technology
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/docker-container/docker-101-banner.png)

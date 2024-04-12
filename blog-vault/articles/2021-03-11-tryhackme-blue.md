@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-03-11 09:50:15 +0530
-description: Deploy & hack into a Windows machine, leveraging common misconfigurations
-  issues
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- windows
 title: TryHackMe - Blue
+description: Deploy & hack into a Windows machine, leveraging common misconfigurations issues
+date: 2021-03-11 09:50:15 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - windows
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-blue/thm-blue-banner.png)

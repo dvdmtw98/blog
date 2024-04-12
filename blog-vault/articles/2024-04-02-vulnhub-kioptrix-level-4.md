@@ -339,6 +339,8 @@ Once I had root access I accessed the `/root` directory which contained the `con
 
 ![[kioptrix-lvl-4-flag.png|500]]
 
+Next Level: [VulnHub - Kioptrix: Level 5 (2014) (#5)](https://blog.davidvarghese.dev/posts/vulnhub-kioptrix-level-5/)
+
 ### Alternative Solutions
 
 [Hacking Kioptrix Level 4 – NandTech](https://nandtech.co/2017/07/16/penetration-testing-practice-hacking-kioptrix-l4/)

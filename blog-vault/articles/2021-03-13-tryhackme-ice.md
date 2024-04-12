@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-03-13 06:36:12 +0530
-description: Deploy & hack into a Windows machine, exploiting a very poorly secured
-  media server
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- windows
 title: TryHackMe - Ice
+description: Deploy & hack into a Windows machine, exploiting a very poorly secured media server
+date: 2021-03-13 06:36:12 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - windows
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-ice/thm-ice-banner.png)

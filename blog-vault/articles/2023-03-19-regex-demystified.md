@@ -1,16 +1,16 @@
 ---
-categories:
-- Programming
-- Python
-date: 2023-03-19 13:05:00 +0530
-img_path: /assets/
-published: true
-tags:
-- programming
-- regex
-- python
-- software-development
 title: Regex Demystified
+date: 2023-03-19 13:05:00 +0530
+categories:
+  - Programming
+  - Python
+tags:
+  - programming
+  - regex
+  - python
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/regex-demystified/regex-demystified-banner.png)

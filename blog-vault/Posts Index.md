@@ -28,8 +28,8 @@ for (let group of groupedArticles) {
 							dv.func.substring(k.date, 0, 19), " ", "T")
 						), "MM/dd/yyyy hh:mm a"
 					),
-					k.categories.map((category) => `&thinsp;• ${category}`), 
-					k.tags.map((tag) => `&thinsp;• ${tag}`), 
+					k.categories.map((category) => `• ${category}`), 
+					k.tags.map((tag) => `• ${tag}`), 
 				]
 			)
 	);

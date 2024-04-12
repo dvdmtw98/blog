@@ -1,18 +1,18 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 21 → Level 22"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit22.html)"
 date: 2021-03-10 05:04:40 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit22.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 21 → Level 22'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](overthewire-banner.png)

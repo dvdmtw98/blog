@@ -1,18 +1,18 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 19 → Level 20"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit20.html)"
 date: 2021-03-09 03:49:59 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit20.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 19 → Level 20'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](overthewire-banner.png)

@@ -272,3 +272,5 @@ set payload 29
 ![Samba Exploit 6](images/vulnhub-kioptrix-lvl1/samba-exploit-6.png)
 
 On using the new payload we can establish a connection. On running `whoami` we can see that we have got root access.
+
+Next Level: [VulnHub - Kioptrix: Level 2 (1.1) (#2)](https://blog.davidvarghese.dev/posts/vulnhub-kioptrix-level-2/)

@@ -498,3 +498,5 @@ cat /root/Congrats.txt
 ![Root|540](images/vulnhub-kioptrix-lvl3/root-2.png)
 
 Overall this level was quite challenging compared to the previous levels. But it was a fun exercise that presented multiple varied approaches for compromising a system.
+
+Next Level: [VulnHub - Kioptrix: Level 4 (1.3) (#4)](https://blog.davidvarghese.dev/posts/vulnhub-kioptrix-level-4/)

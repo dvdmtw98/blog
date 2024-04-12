@@ -1,18 +1,18 @@
 ---
-categories:
-- Security
-- OverTheWire
+title: "OverTheWire: Bandit Level 8 → Level 9"
+description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit9.html)"
 date: 2021-03-05 05:00:25 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit9.html)'
-img_path: /assets/
-published: true
+categories:
+  - Security
+  - OverTheWire
 tags:
-- overthewire
-- bandit
-- ctf
-- security
-- linux
-title: 'OverTheWire: Bandit Level 8 → Level 9'
+  - overthewire
+  - bandit
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](overthewire-banner.png)

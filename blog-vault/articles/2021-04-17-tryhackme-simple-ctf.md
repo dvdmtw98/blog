@@ -1,17 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-04-17 11:21:39 +0530
-description: Beginner level CTF
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- linux
 title: TryHackMe - Simple CTF
+description: Beginner level CTF
+date: 2021-04-17 11:21:39 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-simple-ctf/thm-simple-ctf-banner.png)

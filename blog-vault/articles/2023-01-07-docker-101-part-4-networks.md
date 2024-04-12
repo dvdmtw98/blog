@@ -1,16 +1,16 @@
 ---
-categories:
-- DevOps
-- Docker
+title: "Docker 101: Part 4 - Networks"
 date: 2023-01-07 19:45:33 +0530
-img_path: /assets/
-published: true
+categories:
+  - DevOps
+  - Docker
 tags:
-- devops
-- docker
-- technology
-- software-development
-title: 'Docker 101: Part 4 - Networks'
+  - devops
+  - docker
+  - technology
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/docker-networks/docker-101-banner.png)

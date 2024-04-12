@@ -1,18 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-04-24 13:30:26 +0530
-description: You talked a big game about being the most elite hacker in the solar
-  system. Prove it and claim your right to the status of Elite Bounty Hacker!
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- linux
 title: TryHackMe - Bounty Hacker
+description: You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!
+date: 2021-04-24 13:30:26 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - linux
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-bounty-hacker/thm-bounty-hacker-banner.png)

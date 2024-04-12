@@ -1,17 +1,17 @@
 ---
-categories:
-- Security
-- TryHackMe
-date: 2021-03-14 09:28:24 +0530
-description: A blast from the past!
-img_path: /assets/
-published: true
-tags:
-- tryhackme
-- ctf
-- security
-- windows
 title: TryHackMe - Blaster
+description: A blast from the past!
+date: 2021-03-14 09:28:24 +0530
+categories:
+  - Security
+  - TryHackMe
+tags:
+  - tryhackme
+  - ctf
+  - security
+  - windows
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/thm-blaster/thm-blaster-banner.png)

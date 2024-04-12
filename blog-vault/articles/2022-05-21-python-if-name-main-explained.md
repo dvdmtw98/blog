@@ -1,15 +1,15 @@
 ---
-categories:
-- Programming
-- Python
-date: 2022-05-21 07:58:19 +0530
-img_path: /assets/
-published: true
-tags:
-- programming
-- python
-- software-development
 title: Python if __name__ = '__main__' explained
+date: 2022-05-21 07:58:19 +0530
+categories:
+  - Programming
+  - Python
+tags:
+  - programming
+  - python
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/python-name-main/python-name-main-banner.png)

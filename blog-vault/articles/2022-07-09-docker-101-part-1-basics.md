@@ -1,16 +1,16 @@
 ---
-categories:
-- DevOps
-- Docker
+title: "Docker 101: Part 1 - Basics"
 date: 2022-07-09 08:20:31 +0530
-img_path: /assets/
-published: true
+categories:
+  - DevOps
+  - Docker
 tags:
-- devops
-- docker
-- technology
-- software-development
-title: 'Docker 101: Part 1 - Basics'
+  - devops
+  - docker
+  - technology
+  - software-development
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/docker-basics/docker-101-banner.png)

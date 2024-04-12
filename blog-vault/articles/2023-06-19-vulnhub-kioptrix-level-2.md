@@ -255,3 +255,5 @@ id
 ![Netcat|560](images/vulnhub-kioptrix-lvl2/netcat-5.png)
 
 That's it, using SQL injection and a kernel exploit the target system was compromised. By checking the `/home` directory we see that there are two accounts set up, `john` and `harold`. There does not appear to be anything else that's interesting on the system.
+
+Next Level: [VulnHub - Kioptrix: Level 3 (1.2) (#3)](https://blog.davidvarghese.dev/posts/vulnhub-kioptrix-level-3/)

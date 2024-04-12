@@ -1,15 +1,15 @@
 ---
-categories:
-- Operating System
-- Linux
+title: "Linux 101: File Permissions"
 date: 2022-06-18 16:44:23 +0530
-img_path: /assets/
-published: true
+categories:
+  - Operating System
+  - Linux
 tags:
-- linux
-- security
-- command-line
-title: 'Linux 101: File Permissions'
+  - linux
+  - security
+  - command-line
+published: true
+img_path: /assets/
 ---
 
 ![banner-image|640](images/linux-file-permission/linux-permissions-banner.png)
