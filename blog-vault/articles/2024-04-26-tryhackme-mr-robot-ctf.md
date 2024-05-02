@@ -91,6 +91,14 @@ If we select `join` we are shown a prompt to provide our email address
 
 These commands did not reveal anything about the target system. I decided to brute force the website using `gobuster` for hidden directories.
 
+```bash
+gobuster dir --url http://10.10.84.69:80/ -w /usr/share/wordlists/dirb/common.txt | tee gobuster
+```
+
+`dir`: Perform Directory Traversal  
+`--url`: Target URL  
+`-w`: Wordlist for brute forcing the directories  
+
 ![[gobuster-result.png|460]]
 
 The `/0` route loads a blog.

