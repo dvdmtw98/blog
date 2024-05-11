@@ -1,6 +1,6 @@
 ---
 title: "OverTheWire: Bandit Level 11 → Level 12"
-description: "[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit12.html)"
+description: "The Bandit wargames are aimed at absolute beginners. It will teach the basics needed to be able to play other wargames."
 date: 2021-03-06 09:14:17 +0530
 categories:
   - Security
@@ -15,7 +15,7 @@ published: true
 media_subpath: /assets/
 ---
 
-![banner-image|640](overthewire-banner.png)
+![banner-image|640](images/bandit-0/overthewire-banner.png)
 
 ## Level Goal
 

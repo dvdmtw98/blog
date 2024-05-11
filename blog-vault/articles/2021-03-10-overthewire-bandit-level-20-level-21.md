@@ -3,7 +3,7 @@ categories:
 - Security
 - OverTheWire
 date: 2021-03-10 05:03:33 +0530
-description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit21.html)'
+description: 'The Bandit wargames are aimed at absolute beginners. It will teach the basics needed to be able to play other wargames.'
 media_subpath: /assets/
 published: true
 tags:
@@ -15,7 +15,7 @@ tags:
 title: 'OverTheWire: Bandit Level 20 → Level 21'
 ---
 
-![banner-image|640](overthewire-banner.png)
+![banner-image|640](images/bandit-0/overthewire-banner.png)
 
 ## Level Goal
 
