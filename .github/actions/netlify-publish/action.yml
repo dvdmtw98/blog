@@ -47,12 +47,12 @@ runs:
       with:
         files: 'chirpy/_config.yml'
       env:
-        google_analytics.id: ${{ inputs.MEASUREMENT_ID }}
+        analytics.google.id: ${{ inputs.MEASUREMENT_ID }}
     - name: Setup Ruby
       id: setup-ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2'
+        ruby-version: '3.3'
     - name: Install Dependencies
       id: install-dependencies
       shell: bash

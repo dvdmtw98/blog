@@ -1,60 +1,161 @@
-# SEO Tags
-# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# The Site Configuration
 
-title: Source Code
-tagline: A blog by David Varghese
-description: >- 
-  Source Code is your one stop destination to articles and discussions on varied subjects from across Information Technology
-url: https://blog.davidvarghese.dev
-
-social:
-  name: David Varghese
-  links:
-    - https://github.com/dvdmtw98/
-    - https://www.linkedin.com/in/david-varghese/
-    - https://david-varghese.medium.com/
-
-# End of SEO Tags
-
+# Import the theme
 theme: jekyll-theme-chirpy
 
-baseurl: ""
-
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
 lang: en
+
+# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: America/Chicago
 
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Source Code # the main title
+
+tagline: A blog by David Varghese # it will display as the sub-title
+
+description: >- # used by seo meta and the atom feed
+  Source Code is your one stop destination to articles and discussions on varied subjects from across Information Technology.
+
+# Fill in the protocol & hostname for your site.
+# e.g. 'https://username.github.io', note that it does not end with a '/'.
+url: "https://blog.davidvarghese.dev"
+
+github:
+  username: dvdmtw98 # change to your github username
+
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: David Varghese
+  email: dvdmtw99@gmail.com # change to your email address
+  links:
+    # The first element serves as the copyright owner's link
+    - https://www.linkedin.com/in/david-varghese
+    - https://github.com/dvdmtw98 # change to your github homepage
+    - https://david-varghese.medium.com
+    # Uncomment below to add more social links
+    # - https://twitter.com/username
+    # - https://www.facebook.com/username
+
+# Site Verification Settings
+webmaster_verifications:
+  google: # fill in your Google verification code
+  bing: # fill in your Bing verification code
+  alexa: # fill in your Alexa verification code
+  yandex: # fill in your Yandex verification code
+  baidu: # fill in your Baidu verification code
+  facebook: # fill in your Facebook verification code
+
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
+
+# Web Analytics Settings
+analytics:
+  google:
+    id: G-XXXXXXXXXX # fill in your Google Analytics ID
+  goatcounter:
+    id: # fill in your GoatCounter ID
+  umami:
+    id: # fill in your Umami ID
+    domain: # fill in your Umami domain
+  matomo:
+    id: # fill in your Matomo ID
+    domain: # fill in your Matomo domain
+  cloudflare:
+    id: # fill in your Cloudflare Web Analytics token
+
+# Pageviews settings
+pageviews:
+  provider: # now only supports 'goatcounter'
+
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
+#
+#     light  - Use the light color scheme
+#     dark   - Use the dark color scheme
+#
+theme_mode: # [light | dark]
+
+# The CDN endpoint for media resources.
+# Notice that once it is assigned, the CDN url
+# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+cdn:
+
+# the avatar on sidebar, support local or CORS resources
 avatar: assets/img/avatar.png
 
+# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
+# It can be overridden by a customized `page.image` in front matter.
+social_preview_image: assets/img/rich-preview.png # string, local or CORS resources
+
+# boolean type, the global switch for TOC in posts.
 toc: true
 
 comments:
-  active: giscus
+  # Global switch for the post comment system. Keeping it empty means disabled.
+  provider: giscus # [disqus | utterances | giscus]
+  # The provider options are as follows:
+  disqus:
+    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # utterances settings › https://utteranc.es/
+  utterances:
+    repo: # <gh-username>/<repo>
+    issue_term: # < url | pathname | title | ...>
+  # Giscus options › https://giscus.app
   giscus:
-    repo: dvdmtw98/blog
+    repo: dvdmtw98/blog # <gh-username>/<repo>
     repo_id: R_kgDOItAOGg
     category: Comments
     category_id: DIC_kwDOItAOGs4CT6ao
-    mapping: pathname
-    input_position: bottom
-    reactions_enabled: 1
+    mapping: pathname # optional, default to 'pathname'
+    strict: 1 # optional, default to '0'
+    input_position: bottom # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: 1 # optional, default to the value of `1`
 
-google_analytics:
-  id: G-XXXXXXXXXX
-  pv:
-    proxy_endpoint:
-    cache_path:
+# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    # specify the Jekyll environment, empty means both
+    # only works if `assets.self_host.enabled` is 'true'
+    env: # [development | production]
 
 pwa:
-  enabled: true
+  enabled: true # the option for PWA feature (installable)
+  cache:
+    enabled: true # the option for PWA offline cache
+    # Paths defined here will be excluded from the PWA cache.
+    # Usually its value is the `baseurl` of another website that
+    # shares the same domain name as the current website.
+    deny_paths:
+      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
 paginate: 15
+
+# The base URL of your site
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
+  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: highlight
+    # default_lang: console
     span:
       line_numbers: false
     block:
@@ -68,12 +169,14 @@ collections:
 
 defaults:
   - scope:
-      path: ""
+      path: "" # An empty string here means all files in the project
       type: posts
     values:
       layout: post
-      comments: true
-      toc: true
+      comments: true # Enable comments in posts.
+      toc: true # Display TOC column in posts.
+      # DO NOT modify the following parameter unless you are confident enough
+      # to update the code of all other post links in this project.
       permalink: /posts/:title/
   - scope:
       path: _drafts
@@ -81,14 +184,10 @@ defaults:
       comments: false
   - scope:
       path: ""
-      type: tabs
+      type: tabs # see `site.collections`
     values:
       layout: page
-      permalink: /:title
-  - scope:
-      path: assets/img/favicons
-    values:
-      swcache: true
+      permalink: /:title/
   - scope:
       path: assets/js/dist
     values:
@@ -109,12 +208,11 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - docs
   - tools
   - README.md
-  - CHANGELOG.md
   - LICENSE
-  - gulpfile.js
-  - node_modules
+  - "*.config.js"
   - package*.json
   - scripts
 
@@ -126,5 +224,3 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-
-# ---------------------------------------------------------------------------
