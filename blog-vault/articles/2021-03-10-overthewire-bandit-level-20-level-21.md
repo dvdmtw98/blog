@@ -4,7 +4,7 @@ categories:
 - OverTheWire
 date: 2021-03-10 05:03:33 +0530
 description: '[OverTheWire - Bandit](https://overthewire.org/wargames/bandit/bandit21.html)'
-img_path: /assets/
+media_subpath: /assets/
 published: true
 tags:
 - overthewire

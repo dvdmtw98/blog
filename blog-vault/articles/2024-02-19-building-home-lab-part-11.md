@@ -12,7 +12,7 @@ tags:
   - networking
   - malware
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![building-home-lab-part-11-banner|640](images/building-home-lab-part-11/building-home-lab-part-11-banner.png)

@@ -11,7 +11,7 @@ tags:
   - ctf
   - freebsd
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![[kioptrix-level-5-banner.png|640]]

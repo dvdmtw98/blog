@@ -11,7 +11,7 @@ tags:
   - security
   - windows
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/thm-ice/thm-ice-banner.png)

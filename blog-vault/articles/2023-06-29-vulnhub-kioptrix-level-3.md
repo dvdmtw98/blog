@@ -11,7 +11,7 @@ tags:
   - linux
 date: 2023-06-29 12:40:00 +0530
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/vulnhub-kioptrix-lvl3/kioptrix-level-3-banner.png)

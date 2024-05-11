@@ -11,7 +11,7 @@ tags:
   - ctf
   - linux
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![[thm-wonderland-banner.png|640]]

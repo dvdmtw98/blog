@@ -12,7 +12,7 @@ tags:
   - networking
   - splunk
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-10/building-home-lab-part-10-banner.png)

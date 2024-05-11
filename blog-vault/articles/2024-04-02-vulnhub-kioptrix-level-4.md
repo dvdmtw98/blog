@@ -11,7 +11,7 @@ tags:
   - ctf
   - linux
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![[kioptrix-level-4-banner.png|640]]

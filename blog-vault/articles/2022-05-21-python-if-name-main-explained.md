@@ -9,7 +9,7 @@ tags:
   - python
   - software-development
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/python-name-main/python-name-main-banner.png)

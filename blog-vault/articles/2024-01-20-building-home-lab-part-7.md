@@ -12,7 +12,7 @@ tags:
   - networking
   - active-directory
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-7/building-home-lab-part-7-banner.png)

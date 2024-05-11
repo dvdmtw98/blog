@@ -11,7 +11,7 @@ tags:
   - internet
   - dhcp
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/dhcp-explained/dhcp-banner.png)

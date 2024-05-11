@@ -11,7 +11,7 @@ tags:
   - executable
   - software-development
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/python-convert-to-exe/python-to-exe-banner.png)

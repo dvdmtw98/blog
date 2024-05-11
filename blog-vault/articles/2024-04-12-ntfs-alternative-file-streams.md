@@ -12,7 +12,7 @@ tags:
   - security
   - forensics
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![[ntfs-alternate-streams-banner.png|640]]

@@ -12,7 +12,7 @@ tags:
   - internet
   - traceroute
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/traceroute-explained/traceroute-banner.png)

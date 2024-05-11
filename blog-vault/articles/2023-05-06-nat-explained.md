@@ -11,7 +11,7 @@ tags:
   - internet
   - nat
 published: true
-img_path: /assets/
+media_subpath: /assets/
 math: true
 ---
 

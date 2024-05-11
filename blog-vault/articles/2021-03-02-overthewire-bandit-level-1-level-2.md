@@ -12,7 +12,7 @@ tags:
   - security
   - linux
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](overthewire-banner.png)

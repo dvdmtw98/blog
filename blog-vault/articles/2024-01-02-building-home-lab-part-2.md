@@ -12,7 +12,7 @@ tags:
   - networking
   - pfsense
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-2/building-home-lab-part-2-banner.png)

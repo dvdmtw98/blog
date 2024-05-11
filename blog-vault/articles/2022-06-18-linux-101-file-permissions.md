@@ -9,7 +9,7 @@ tags:
   - security
   - command-line
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/linux-file-permission/linux-permissions-banner.png)

@@ -12,7 +12,7 @@ tags:
   - networking
   - linux
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-3/building-home-lab-part-3-banner.png)

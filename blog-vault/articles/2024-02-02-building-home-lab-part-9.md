@@ -12,7 +12,7 @@ tags:
   - networking
   - dfir
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-9/building-home-lab-part-9-banner.png)

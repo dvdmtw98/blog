@@ -11,7 +11,7 @@ tags:
   - virtualbox
   - networking
 published: true
-img_path: /assets/
+media_subpath: /assets/
 ---
 
 ![banner-image|640](images/building-home-lab-part-1/building-home-lab-part-1-banner.png)
