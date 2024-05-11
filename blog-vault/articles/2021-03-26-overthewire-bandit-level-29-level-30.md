@@ -89,7 +89,7 @@ We can view all the branches present in git using the `branch -a` option.
 
 We see that there is a branch called "dev". Let us have a look at this branch and see if we can find the password.
 
-![Checkout Dev Branch|540](images/bandit-29-30/checkout-branch.png)
+![Checkout Dev Branch|520](images/bandit-29-30/checkout-branch.png)
 
 And there we go we have found the password for the next level !!!
 

@@ -168,7 +168,7 @@ Looking around the control panel I could not find anything that looked like it c
 
 On looking around I found a file called "user.txt" which is the first flag we require.
 
-![Viewing Flag File 1](images/thm-simple-ctf/flag-file-1.png)
+![Viewing Flag File 1|300](images/thm-simple-ctf/flag-file-1.png)
 
 7. **What's the user flag?**
 
@@ -182,7 +182,7 @@ Now that I had got a foothold on the system my next task was to find a way to el
 
 I run the "sudo -l" command to see if there are any commands on the system that I can run without root privileges.
 
-![Sudoers File Content](images/thm-simple-ctf/sudoers-file-content.png)
+![Sudoers File Content|460](images/thm-simple-ctf/sudoers-file-content.png)
 
 I found that on the system Vim could be run without root privileges
 
@@ -198,7 +198,7 @@ Whenever we have a system binary that could be exploited the first place to visi
 
 If we search for Vim and look under the Sudo session we see multiple approaches that could be used to evaluate our privileges. I used the first one to get root access and find the root flag.
 
-![Flag File Content](images/thm-simple-ctf/flag-file-2.png)
+![Flag File Content|340](images/thm-simple-ctf/flag-file-2.png)
 
 10. **What's the root flag?**
 

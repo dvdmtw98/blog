@@ -92,7 +92,7 @@ Now that we have downloaded the share let's look at the "log.txt" file and see w
 
 ![Log File Content|460](images/thm-kenobi/log-file-content-1.png)
 
-![Log File Content](images/thm-kenobi/log-file-content-2.png)
+![Log File Content|300](images/thm-kenobi/log-file-content-2.png)
 
 ![Log File Content|520](images/thm-kenobi/log-file-content-3.png)
 

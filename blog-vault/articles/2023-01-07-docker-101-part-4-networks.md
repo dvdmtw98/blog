@@ -27,7 +27,7 @@ To view the networks present in Docker run the following command
 docker network ls
 ```
 
-![Listing Docker Networks](images/docker-networks/docker-network-list.png)
+![Listing Docker Networks|360](images/docker-networks/docker-network-list.png)
 
 Three networks are present by default in all Docker Installations - **Bridge**, **Host** and **None**. The network types are also referred to as **Network Drivers**.
 

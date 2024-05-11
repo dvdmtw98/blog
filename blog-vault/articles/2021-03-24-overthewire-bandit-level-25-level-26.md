@@ -114,25 +114,25 @@ We need to open more in the interactive mode so let us make the size of our term
 ssh bandit26@localhost -i bandit26.sshkey
 ```
 
-![Shell Output](images/bandit-25-26/shell-output.png)
+![Shell Output|640](images/bandit-25-26/shell-output.png)
 
 As expected we are in more and since the content could not fit in our terminal more has entered the interactive mode. Now the next step for us is to somehow spawn a "/bin/bash" shell.
 
 If we look at the man pages of more we see that by pressing the "v" key while in interactive mode it will open the current line in an editor that is defined by the VISUAL and EDITOR environment variables. If both the variables are not set then Vim will be used. Let us see by pressing "v" which editor we get.
 
-![Opening Editor from More](images/bandit-25-26/opening-editor.png)
+![Opening Editor from More|640](images/bandit-25-26/opening-editor.png)
 
 Looking at the output looks like it opened the Vim editor. This is great anyone who has used Vim knows that Vim has a command mode that can execute system commands. By performing a quick Google search we can gather that using the "set shell" command we can change the shell of a user and by invoking "shell" the user should be loaded into the specified shell. The ":" operator is used to enter command mode in Vim.
 
-![Set Default Shell via Vim](images/bandit-25-26/default-shell-via-vim.png)
+![Set Default Shell via Vim|420](images/bandit-25-26/default-shell-via-vim.png)
 
 **Note:** Once this command is entered we will be put in insert mode so press "Esc" to exit insert mode and enter the next command.
 
-![Launch Shell](images/bandit-25-26/launch-shell.png)
+![Launch Shell|420](images/bandit-25-26/launch-shell.png)
 
 And as we will see we have launched the bash shell and are logged in as bandit26. Let us capture the password for bandit26 so that we can use it later if required.
 
-![Bandit26 Password](images/bandit-25-26/bandit26-password.png)
+![Bandit26 Password|380](images/bandit-25-26/bandit26-password.png)
 
 **Note 1:** It is recommended to complete the next level right after this as you are already logged in as bandit26 plus if log out now then you will have to repeat the same steps as above to log in once more into bandit26.
 

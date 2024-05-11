@@ -62,9 +62,9 @@ runs:
       if: steps.find-new-posts.outputs.output_filepath != ''
       shell: bash
       run: |
-        cp main/scripts/modify_links.py main/blog-vault \
+        cp main/scripts/edit_markdown.py main/blog-vault \
         && cd main/blog-vault \
-        && python modify_links.py -b articles -s medium
+        && python edit_markdown.py -b articles -s medium
     - name: Upload Posts
       id: upload-posts
       if: steps.find-new-posts.outputs.output_filepath != ''

@@ -125,7 +125,7 @@ MTR does not come installed natively on Windows and Linux. Similar to traceroute
 mtr google.com
 ```
 
-![MTR Output|600](images/traceroute-explained/mtr-output.png)
+![MTR Output|640](images/traceroute-explained/mtr-output.png)
 
 ## References
 

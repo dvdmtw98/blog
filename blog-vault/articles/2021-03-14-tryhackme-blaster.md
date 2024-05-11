@@ -100,13 +100,13 @@ On searching online we come across two links that show us how we can use the exe
 
 1. **Now that we've spawned a terminal, let's go ahead and run the command 'whoami'. What is the output of running this?**
 
-![User Privilege Level](images/thm-blaster/user-privilege.png)
+![User Privilege Level|250](images/thm-blaster/user-privilege.png)
 
 > NT AUTHORITY\SYSTEM
 
 5. **Now that we've confirmed that we have an elevated prompt, read the contents of root.txt on the Administrator's desktop. What are the contents? Keep your terminal up after exploitation so we can use it in task four!**
 
-![Flag File Content](images/thm-blaster/flag-file.png)
+![Flag File Content|420](images/thm-blaster/flag-file.png)
 
 > THM{COIN_OPERATED_EXPLOITATION}
 

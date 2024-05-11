@@ -154,7 +154,7 @@ Doing this testing manually is going to be a tedious process so for automating t
 
 Let's create a file that consists of all the formats that we are going to test the upload function against.
 
-![List of Extensions to Test](images/thm-vulnversity/extensions-to-test.png)
+![List of Extensions to Test|240](images/thm-vulnversity/extensions-to-test.png)
 
 Open Burpsuite enable the Burp Proxy in the browser, upload a file and capture this request in Burp. Forward the captured request to Intruder where we can fuzz the various file extensions.
 

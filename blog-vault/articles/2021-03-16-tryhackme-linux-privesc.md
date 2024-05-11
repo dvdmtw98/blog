@@ -124,15 +124,15 @@ The "/etc/passwd" file on Linux consists of information regarding the various us
 
 Let's create a new password using the "openssl" command
 
-![Password File Permissions](images/thm-linux-privesc/password-file.png)
+![Password File Permissions|400](images/thm-linux-privesc/password-file.png)
 
 Now let's create a new entry in the "/etc/passwd" file that is the same as the line for the root user and replace the name "root" with "newroot". Finally, in place of the "x" (The "x" that is present between the 1st and 2nd ":" sign) let's use the hash that we just generated.
 
-![Saving Hash directly in the Password File](images/thm-linux-privesc/write-hash-to-password-file.png)
+![Saving Hash directly in the Password File|400](images/thm-linux-privesc/write-hash-to-password-file.png)
 
 Now let's see if we can log in as the user "newroot" which should have the same permissions as the root user.
 
-![Login as Root User](images/thm-linux-privesc/root-login.png)
+![Login as Root User|240](images/thm-linux-privesc/root-login.png)
 
 1. **Run the "id" command as the newroot user. What is the result?**
 
@@ -154,7 +154,7 @@ Let's see if using Vim if we can spawn a root user shell. In the section for Vim
 
 Let's use the first command and see if we can get a root shell. If we look through GTOBins for the other applications that we have permission to run without passwords we can see that all of them (except Apache2) can be exploited to get a root shell.
 
-![Login as Root User](images/thm-linux-privesc/root-login-2.png)
+![Login as Root User|300](images/thm-linux-privesc/root-login-2.png)
 
 1. **How many programs is the "user" allowed to run via sudo?**
 
@@ -258,7 +258,7 @@ Now whenever cron wants to run overwrite.sh it will run our code (as our code is
 
 Let's view the content of the other scheduled script.
 
-![List file Content](images/thm-linux-privesc/file-content.png)
+![List file Content|380](images/thm-linux-privesc/file-content.png)
 
 We can see that the code periodically is making a backup of the entire "/home/user" folder. The important point to note here is the "\*" that is used to represent any file. This can be exploited if not used correctly.
 
@@ -392,7 +392,7 @@ cat ~/.*history | less
 
 And as we can see the password for the root user is present in plain text in the history file.
 
-![Using Password](images/thm-linux-privesc/using-password.png)
+![Using Password|340](images/thm-linux-privesc/using-password.png)
 
 1. **What is the full mysql command the user executed?**
 
@@ -408,7 +408,7 @@ Let's have a look at the content of the home directory. We can see an OpenVPN co
 
 When we view the contents of that file we see that the password and username are present in plaintext.
 
-![Using Password](images/thm-linux-privesc/using-password.png)
+![Using Password|340](images/thm-linux-privesc/using-password.png)
 
 1. **What file did you find the root user's credentials in?**
 

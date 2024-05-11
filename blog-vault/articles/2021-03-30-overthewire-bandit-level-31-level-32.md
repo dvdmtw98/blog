@@ -76,7 +76,7 @@ There is a file called ".gitignore" as well. This file is used to tell git which
 
 We see that this time we have been instructed to add a file to the remote repository. We are given a filename and the content that needed to be added to the file as well as the branch to which the file needs to be pushed. Let us follow these instructions and create a new file.
 
-![Writing Data to File|500](images/bandit-31-32/write_data_to_file.png)
+![Writing Data to File|460](images/bandit-31-32/write_data_to_file.png)
 
 We have created the file as specified to us in the instructions. Now let us have a look at the ".gitignore" file that is present in the repository.
 
@@ -87,7 +87,7 @@ bandit31@bandit:/tmp/git_level31/repo$ cat .gitignore
 
 We see a line in the file that says `*.txt` this means that if any file with the extension ".txt" is made in the repository folder it should not be considered part of the repository. So if we try to add the new file that we created it will not be pushed to the remote repository. So let us delete this file and then push the file.
 
-![Removing .gitignore File|440](images/bandit-31-32/removing_git_ignore.png)
+![Removing .gitignore File|420](images/bandit-31-32/removing_git_ignore.png)
 
 Now that we have deleted ".gitignore" let us commit the changes and push the changes to the remote repository.
 

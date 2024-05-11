@@ -37,7 +37,7 @@ runs:
     - name: Run Scripts
       id: run-scripts
       shell: bash
-      run: cd chirpy && python scripts/modify_links.py
+      run: cd chirpy && python scripts/edit_markdown.py
     - name: Copy Images
       id: copy-images
       shell: bash

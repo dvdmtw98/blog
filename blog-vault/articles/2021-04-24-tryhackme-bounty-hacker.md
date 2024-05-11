@@ -107,7 +107,7 @@ From the results, we can see that we have succeeded in finding the password for 
 
 Let us list the files that are present in the current directory and see if any flags are present.
 
-![Flag File 1](images/thm-bounty-hacker/flag-file-1.png)
+![Flag File 1|340](images/thm-bounty-hacker/flag-file-1.png)
 
 6. **user.txt**
 

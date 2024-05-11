@@ -41,7 +41,7 @@ We see that we are required to submit the password for bandit24 and PIN for auth
 
 Now we know the format that the data has to be submitted to the service let's write a simple brute forcer using loops that tried all numbers lying between 0000 and 9999 both inclusive (All the 4-digit numbers that possibly lie in this range). Let's look at a code snippet for "for loop".
 
-![Bash For Loop](images/bandit-24-25/bash-for-loop.png)
+![Bash For Loop|200](images/bandit-24-25/bash-for-loop.png)
 
 In the above code snippet, we are iterating through a series of numbers starting at 1 and ending at 10. In each iteration, we are printing the value of the variable "i" using the "echo" statement. The {n1..n2} syntax is used to create a series of numbers that start from n1 and end at n2.
 
