@@ -10,7 +10,7 @@ tags:
   - tryhackme
   - walkthrough
   - networking
-  - protocol
+  - ctf
 published: true
 media_subpath: /assets/
 ---
