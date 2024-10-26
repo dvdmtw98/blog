@@ -2,11 +2,6 @@ name: Source Code Builder
 author: David Varghese
 description: Action to build Jekyll based Blog using Markdown files
 
-inputs:
-  MEASUREMENT_ID:
-    description: Token to link site with Google Analytics Property
-    required: true
-
 runs:
   using: composite
   steps:
@@ -42,12 +37,6 @@ runs:
       id: copy-images
       shell: bash
       run: cp -a chirpy/_posts/images chirpy/assets
-    - name: Setup Google Analytics
-      uses: TomaszKandula/variable-substitution@v1.0.2
-      with:
-        files: "chirpy/_config.yml"
-      env:
-        analytics.google.id: ${{ inputs.MEASUREMENT_ID }}
     - name: Setup Ruby
       id: setup-ruby
       uses: ruby/setup-ruby@v1
