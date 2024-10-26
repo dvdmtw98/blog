@@ -29,7 +29,7 @@ runs:
       id: setup-python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: "3.11"
     - name: Install Python Dependencies
       id: install-python-dependencies
       shell: bash
@@ -45,14 +45,14 @@ runs:
     - name: Setup Google Analytics
       uses: TomaszKandula/variable-substitution@v1.0.2
       with:
-        files: 'chirpy/_config.yml'
+        files: "chirpy/_config.yml"
       env:
         analytics.google.id: ${{ inputs.MEASUREMENT_ID }}
     - name: Setup Ruby
       id: setup-ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.3'
+        ruby-version: "3.3"
     - name: Install Dependencies
       id: install-dependencies
       shell: bash
@@ -61,7 +61,3 @@ runs:
       id: build-blog
       shell: bash
       run: cd chirpy && JEKYLL_ENV=production bundle exec jekyll build
-    - name: Add Netlify Redirect
-      id: netlify-redirect
-      shell: bash
-      run: mv chirpy/netlify.toml _site

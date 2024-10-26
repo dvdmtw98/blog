@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "https://davidvarghese.dev/*"
-  to = "https://blog.davidvarghese.dev/:splat"
-  status = 301
-  force = true

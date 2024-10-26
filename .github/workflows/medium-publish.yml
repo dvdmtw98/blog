@@ -3,7 +3,7 @@ run-name: Publish to Medium by @${{ github.actor }}
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   medium-publish:
