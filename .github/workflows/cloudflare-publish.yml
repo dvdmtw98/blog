@@ -25,6 +25,8 @@ jobs:
       - name: Build Source Code
         id: build-source-code
         uses: ./main/.github/actions/cloudflare-publish
+        with:
+          MEASUREMENT_ID: ${{ secrets.MEASUREMENT_ID }}
       - name: Cloudflare Deploy
         id: cloudflare-deploy
         uses: cloudflare/wrangler-action@v3
