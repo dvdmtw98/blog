@@ -20,6 +20,11 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+
+> [!IMPORTANT] Changelog
+> - **Oct. 31, 2024**
+> 	- Updated instructions to reflect additonal step required to install Tsurugi Linux 2024.1+
+
 In this module, we are going to set up Tsurugi Linux which is an OS that comes pre-configured with many of the commonly used Digital Forensics & Incident Response tools. Before deploying the VM we will create a new Interface in pfSense called Security that will have our DFIR VM and in the future other security tools.
 
 ## Creating New Interface
@@ -264,6 +269,11 @@ Select the VM and then from the toolbar select "<u>Settings</u>".
 Go to **`System -> Motherboard`**. In <u>Boot Order</u> ensure that Hard Disk is on top followed by Optical. Uncheck Floppy.
 
 ![tsurugi-13|540](images/building-home-lab-part-9/tsurugi-13.png)
+
+> [!ATTENTION] Tsurugi Linux 2024.1+ Additional Step  
+> Tsurugi Linux 2024.1 onwards it is necessary to also enabled the “Enable EFI” option in VirtualBox. If this option is not enabled the OS installation will fail.  
+> 
+> ![[tsurugi-47.png|360]]
 
 Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> option select **`Internal Network`**. For <u>name</u> select **`LAN 4`**. Click on **`OK`** to save the changes.
 

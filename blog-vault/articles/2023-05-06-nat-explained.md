@@ -17,6 +17,11 @@ math: true
 
 ![banner-image|640](images/nat-explained/nat-explained-banner.png)
 
+> [!IMPORTANT] Changelog
+> - **Oct. 31, 2024**
+> 	- Fixed graphic containing incorrect Public IP address range
+> 	- Added information on Special IP Address ranges
+
 ## What is NAT?
 
 NAT stands for Network Address Translation. It is a protocol that is used to map a private IPv4 address to a public IPv4 address. The translation process is performed by a traffic-routing device like a router. NAT was a short-term solution that was introduced to solve the scarcity of IPv4 addresses by allowing multiple devices to share the same IP address.
@@ -45,7 +50,13 @@ The permanent long-term solution for this issue was to create a larger address s
 
 **Public IP Addresses** on the other hand are routable (global) IP addresses. A public IP address is required if a host wants to access the Internet. All public IP addresses on the internet are unique to their host or server and cannot be duplicated. The assignment of public addresses for home users is managed by ISPs. Public IP addresses by design are not provided for free. Public IP addresses are tracked and managed by IANA (International Authority of Assigned Numbers) to ensure no organization inadvertently uses duplicate public IP addresses.
 
-![Public IPv4 Address Space|400](images/nat-explained/public-ip-address-space.jpg)
+![Public IPv4 Address Space|400](images/nat-explained/public-ip-address-space.png)
+
+**Special IP Addresses** are addresses that are neither public nor private. Each special IP address has been reserved for a specific purpose. Just like private IP addresses these addresses are non-routable.
+
+![[special-ip-address-space.png|450]]
+
+[Reserved IP addresses - Wikipedia](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
 
 Once the IPv4 address Space was separated into public and private addresses, a protocol was required that would allow a device that is using a private IP address to access the internet using a public IP address. This is why NAT was created. NAT is responsible for mapping private IP addresses to public IP addresses. 
 
@@ -133,8 +144,8 @@ Since each device requires a different public IP address for accessing the inter
 
 ## References
 
-- [Network address translation - Wikipedia](https://en.wikipedia.org/wiki/Network_address_translation)
-- [Why NAT? – NAT Series – Practical Networking](https://www.practicalnetworking.net/series/nat/why-nat/)
-- [Network Address Translation Definition \| How NAT Works \| Computer Networks \| CompTIA](https://www.comptia.org/content/guides/what-is-network-address-translation)
-- [NAT (Network Address Translation) - Digital Archive](https://notes.davidvarghese.dev/Computer%20Networks/Layer-wise%20Concepts/Network%20%28Internet%29%20Layer%20Concepts/NAT%20%28Network%20Address%20Translation%29/)
 - [What is the difference between a public and private IP address? – Keenetic](https://help.keenetic.com/hc/en-us/articles/213965789-What-is-the-difference-between-a-public-and-private-IP-address)
+- [Network Address Translation - Wikipedia](https://en.wikipedia.org/wiki/Network_address_translation)
+- [Why NAT? – NAT Series – Practical Networking](https://www.practicalnetworking.net/series/nat/why-nat/)
+- [NAT (Network Address Translation) - Digital Archive](https://notes.davidvarghese.dev/computer-networks/layer-wise-concepts/network-layer-concepts/network-address-translation-nat)
+- [Network Address Translation Definition \| How NAT Works \| CompTIA](https://www.comptia.org/content/guides/what-is-network-address-translation)

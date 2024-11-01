@@ -19,6 +19,10 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+> [!IMPORTANT] Changelog
+> - **Oct. 31, 2024**
+> 	- Updated Part 9 to reflect additional steps required to install Tsurugi Linux 2024.1+
+
 In this project, we will explore how to set up a Cybersecurity Home Lab on our laptop/PC. For this project, I will be using VirtualBox running on my Windows Laptop.
 
 This project will consist of multiple modules. Each module will cover a different component of the lab. If at any point in the future changes are made in the project a note will be added at the start of the respective module to highlight the changes.
