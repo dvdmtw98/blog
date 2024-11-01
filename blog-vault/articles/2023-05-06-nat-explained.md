@@ -54,7 +54,7 @@ The permanent long-term solution for this issue was to create a larger address s
 
 **Special IP Addresses** are addresses that are neither public nor private. Each special IP address has been reserved for a specific purpose. Just like private IP addresses these addresses are non-routable.
 
-![[special-ip-address-space.png|450]]
+![[special-ip-address-space.png|440]]
 
 [Reserved IP addresses - Wikipedia](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
 
@@ -144,7 +144,7 @@ Since each device requires a different public IP address for accessing the inter
 
 ## References
 
-- [What is the difference between a public and private IP address? – Keenetic](https://help.keenetic.com/hc/en-us/articles/213965789-What-is-the-difference-between-a-public-and-private-IP-address)
+- [Public vs. Private IP Address: What's the Difference \| phoenixNAP](https://phoenixnap.com/kb/public-vs-private-ip-address)
 - [Network Address Translation - Wikipedia](https://en.wikipedia.org/wiki/Network_address_translation)
 - [Why NAT? – NAT Series – Practical Networking](https://www.practicalnetworking.net/series/nat/why-nat/)
 - [NAT (Network Address Translation) - Digital Archive](https://notes.davidvarghese.dev/computer-networks/layer-wise-concepts/network-layer-concepts/network-address-translation-nat)
