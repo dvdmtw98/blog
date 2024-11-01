@@ -20,8 +20,11 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog
+>  - **Nov. 01, 2024**
+> 	 - Updated pfSense download link in Part 2 to point to the pfSense mirror which contains the CE ISO image.
+> 	 - Updated the instruction in Part 1 and Part 2 to reference the Expert Mode option that was introduced with Virtual Box 7.1.
 > - **Oct. 31, 2024**
-> 	- Updated Part 9 to reflect additional steps required to install Tsurugi Linux 2024.1+
+> 	- Updated Tsurugi Linux installation in Part 9 to reflect the additional step required for Tsurugi Linux 2024.1+
 
 In this project, we will explore how to set up a Cybersecurity Home Lab on our laptop/PC. For this project, I will be using VirtualBox running on my Windows Laptop.
 
@@ -29,9 +32,9 @@ This project will consist of multiple modules. Each module will cover a differen
 
 This project has been heavily inspired by the following Home Lab guides:
 
-- [Building a Security Lab in VirtualBox](https://benheater.com/building-a-security-lab-in-virtualbox/)
+- [Building a Security Lab in VirtualBox \| Ben Heater](https://benheater.com/building-a-security-lab-in-virtualbox/)
 - [Building Blue Team Home Lab Part 1 - Introduction \| facyber](https://facyber.me/posts/blue-team-lab-guide-part-1/)
-- [Building a Cybersecurity Homelab for Detection & Monitoring - Cyberwox Academy](https://cyberwoxacademy.com/building-a-cybersecurity-homelab-for-detection-monitoring/)
+- [Cybersecurity Homelab for Detection & Monitoring \| Cyberwox Academy](https://cyberwoxacademy.com/building-a-cybersecurity-homelab-for-detection-monitoring/)
 
 ## Home Lab Overview
 
@@ -159,17 +162,22 @@ Once the installation is complete click on the <u>Hamburger icon</u> on the righ
 
 ### Changing VM Storage Location
 
+This step is not necessary but recommended on devices that have multiple drives.  
+
+On my laptop the primary drive (`C:\`) only has 200GB of free space which will completely get filled by the end of the project. My secondary drive (`E:\`) on the other hand has 1TB of free space. In order to not fill-up my primary drive I have changed the machine folder to a folder on my secondary drive.
+
 From The File Menu bar select: **`File -> Preferences`**.
 
 ![vbox-68|260](images/building-home-lab-part-1/vbox-68.png)
 
+> [!INFO] UI Changes
+> With the release of v7.1, Oracle has given Virtual Box GUI a makeover. Make sure to select “Expert” mode by using the toggle at the top left corner. Once in Expert mode all the options will be identical to the options found in the previous versions of Virtual Box.
+> 
+> ![[vbox-72.png|420]]
+
 From the **`General`** tab change the value of <u>Default Machine Folder</u> to change the default storage location of the VMs.
 
-![vbox-69|400](images/building-home-lab-part-1/vbox-69.png)
-
-> [!NOTE] Default Machine Folder Location
-> This step is not necessary but recommended on devices that have multiple drives.  
-> On my laptop the primary drive (`C:\`) only has 200GB of free space which will completely get filled by the end of the project. My secondary drive (`D:\`) on the other hand has 1TB of free space. In order to not fill-up my primary drive I have changed the machine folder to a folder on my secondary drive.
+![vbox-69|450](images/building-home-lab-part-1/vbox-69.png)
 
 In the next module, we will start with the installation and configuration of pfSense.
 

@@ -19,8 +19,9 @@ math: true
 
 > [!IMPORTANT] Changelog
 > - **Oct. 31, 2024**
-> 	- Fixed graphic containing incorrect Public IP address range
+> 	- Fixed the public IP address range image showing incorrect ranges
 > 	- Added information on Special IP Address ranges
+> 	- Updated all IP range images to be more consist with the theme
 
 ## What is NAT?
 
@@ -52,9 +53,11 @@ The permanent long-term solution for this issue was to create a larger address s
 
 ![Public IPv4 Address Space|400](images/nat-explained/public-ip-address-space.png)
 
-**Special IP Addresses** are addresses that are neither public nor private. Each special IP address has been reserved for a specific purpose. Just like private IP addresses these addresses are non-routable.
+**Special IP Addresses** are addresses that are neither public nor private. Each special IP address has been reserved for a specific purpose. Just like private IP addresses these addresses are non-routable. Some articles will also refer to Class D and Class E as special IP addresses as they are also reserved for a specific purpose.
 
 ![[special-ip-address-space.png|440]]
+
+There are even more special purpose IP addresses range. These ranges are used by ISPs and other organizations to perform various purposes.
 
 [Reserved IP addresses - Wikipedia](https://en.wikipedia.org/wiki/Reserved_IP_addresses)
 

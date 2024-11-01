@@ -20,6 +20,11 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+> [!IMPORTANT] Changelog
+> - **Nov. 01, 2024**
+> 	- Updated the article to indicate pfSense download from the official website now requires an account
+> 	- Updated the pfSense download link to point to pfSense official mirror from where the ISO can be downloaded without an account
+
 In this module, we will go over the installation of pfSense. Additionally, we will also complete the initial configuration required to onboard the subnets that make up our lab into pfSense.  
 
 > [!INFO] Lab Startup
@@ -27,15 +32,17 @@ In this module, we will go over the installation of pfSense. Additionally, we wi
 
 ## Download pfSense
 
-Go to the following link: [Download pfSense Community Edition](https://www.pfsense.org/download)  
-As of writing the latest version of pfSense is **`2.7.2`**.
+Go to the following link: [pfSense CE Download](https://atxfiles.netgate.com/mirror/downloads/)  
+As of writing the latest version of pfSense is **`2.7.2`**  
+Download the `amd64` version `ISO` of the latest version available  
 
-Select the following:  
-Architecture: **`AMD64 (64-bit)`**  
-Installer: **`DVD Image (ISO) Installer`**   
-Mirror: **`Location closest to you`**
+> [!INFO] pfSense Download
+> Downloads from the pfSense official website now require registration. The download from the website has also been changed to use Netgate which is not the same as CE edition. Make sure to use the link provided above to download the ISO redirect from their mirror.
+> 
+> [Is Netgate requiring a login to download CE now? : r/PFSENSE](https://www.reddit.com/r/PFSENSE/comments/1chzp1n/is_netgate_requiring_a_login_to_download_ce_now/)  
+> [PFSense ISO Download Requires an Account and Billing Address : r/PFSENSE](https://www.reddit.com/r/PFSENSE/comments/1co8f1o/pfsense_iso_download_requires_an_account_and/)
 
-![pfsense-download|380](images/building-home-lab-part-2/pfsense-download.png)
+![pfsense-download|540](images/building-home-lab-part-2/pfsense-download.png)
 
 The downloaded file will have the extension **`.iso.gz`**. Use a decompression software like **`7-Zip`** to extract the image.
 
@@ -99,6 +106,11 @@ Before we boot the VM we need to configure some settings related to VirtualBox. 
 ![vbox-10|580](images/building-home-lab-part-2/vbox-10.png)
 
 ### System Configuration
+
+> [!INFO] UI Changes
+> Make sure “Expert" Mode is selected using the toggle at the top left corner of the menu. Some of the options that are required to setup this lab will not show up in “Basic” mode.
+> 
+> ![[vbox-73.png|460]]
 
 Select **`System -> Motherboard`** in the <u>Boot Order</u> section use the arrows to move the **`Hard Disk`** to the top, **`Optical`** should be next. Ensure that **`Floppy`** is unchecked. 
 
