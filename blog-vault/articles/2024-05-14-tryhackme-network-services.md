@@ -19,6 +19,10 @@ media_subpath: /assets/
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 
+> [!IMPORTANT] Changelog
+> - **Nov. 05, 2024**
+> 	- Fixed incorrect answer in Task 2 - Question 4.
+
 [TryHackMe - Network Services](https://tryhackme.com/r/room/networkservices)
 
 In this room, we will learn about SMB, Telnet and FTP. We will also explore how we can enumerate these services and exploit them in CTFs.
@@ -48,7 +52,7 @@ In this room, we will learn about SMB, Telnet and FTP. We will also explore how 
 
 **4. What systems does Samba run on?**
 
-> Samba
+> Unix
 
 ### Task 3: Enumerating SMB
 

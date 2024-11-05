@@ -22,8 +22,9 @@ Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-opera
 
 > [!IMPORTANT] Changelog
 > - **Nov. 01, 2024**
-> 	- Updated the article to indicate pfSense download from the official website now requires an account
-> 	- Updated the pfSense download link to point to pfSense official mirror from where the ISO can be downloaded without an account
+> 	- Updated the article to indicate pfSense download from the official website now requires an account.
+> 	- Updated the pfSense download link to point to pfSense official mirror from where the ISO can be downloaded without an account.
+> 	- Updated Virtual Box instructions to reference the “Expert” mode option.
 
 In this module, we will go over the installation of pfSense. Additionally, we will also complete the initial configuration required to onboard the subnets that make up our lab into pfSense.  
 
@@ -37,7 +38,7 @@ As of writing the latest version of pfSense is **`2.7.2`**
 Download the `amd64` version `ISO` of the latest version available  
 
 > [!INFO] pfSense Download
-> Downloads from the pfSense official website now require registration. The download from the website has also been changed to use Netgate which is not the same as CE edition. Make sure to use the link provided above to download the ISO redirect from their mirror.
+> Downloads from the pfSense official website now require registration. The download from the website has also been changed to use Netgate which is not the same as CE edition. Make sure to use the link provided above to download the ISO directly from their mirror.
 > 
 > [Is Netgate requiring a login to download CE now? : r/PFSENSE](https://www.reddit.com/r/PFSENSE/comments/1chzp1n/is_netgate_requiring_a_login_to_download_ce_now/)  
 > [PFSense ISO Download Requires an Account and Billing Address : r/PFSENSE](https://www.reddit.com/r/PFSENSE/comments/1co8f1o/pfsense_iso_download_requires_an_account_and/)
