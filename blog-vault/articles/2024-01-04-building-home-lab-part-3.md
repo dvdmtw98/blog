@@ -23,6 +23,7 @@ Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-opera
 > [!IMPORTANT] Changelog
 > - **Nov. 10, 2024**
 > 	- Added note about settings that could fix the “black screen on boot” problem that occurs on certain machines.
+> 	- Updated Kali Linux VM setup steps to include configuration that is recommended by Offensive Security.
 
 In this module, we are going to install Kali Linux. We will use this VM in the next module also to complete the pfSense setup. 
 
@@ -72,7 +73,7 @@ Right-click on the Kali Linux VM from the sidebar, select **`Move to Group -> [N
 
 The VM will now be added to a <u>Group</u> called **`New Group`**. Right-click on the group name and select **`Rename Group`**. Name the group **`Management`**.
 
-![vbox-8|240](images/building-home-lab-part-2/vbox-8.png)
+![vbox-8|240](vbox-08.png)
 
 Select the <u>Firewall</u> and <u>Management</u> group (**`Ctrl+Click`**). Right-click on the name of one of the groups. From the menu select **`Move to Group -> [New]`**.
 
@@ -97,6 +98,14 @@ Select the Kali Linux VM and then from the toolbar select **`Settings`**.
 Go to **`System -> Motherboard`**. For the <u>Boot Order</u> option ensure that the **`Hard Disk`** is on the top followed by **`Optical`**. Uncheck **`Floppy`**.  
 
 ![vbox-30|540](images/building-home-lab-part-3/vbox-30.png)
+
+Go to **`System -> Processor`**. From Extended Features list select **`Enable PAE/NX`**.
+
+![[vbox-74.png|540]]
+
+Go to **`Display -> Screen`** and increase the <u>Video Memory</u> to **`128 MB`**.
+
+![[vbox-75.png|540]]
 
 ### Boot Image Configuration
 
@@ -241,15 +250,11 @@ sudo apt autoremove
 The **`.iso`** file that was downloaded to create the VM can be deleted now if you do not plan to store it for future use.
 
 > [!IMPORTANT] Black Screen on Boot
-> On certain machines starting the Kali VM results in a black screen. This issue occurs randomly (usually after updating the VM). There isn’t a definitive solution for this problem. The issue could popup randomly from time to time.  
+> On certain machines starting the Kali VM results in a black screen. This issue occurs usually after updating the VM. There isn’t a definitive solution to this problem. The issue may popup from time to time.  
 > 
-> The following options should help fix the problem: 
-> - Increasing the “Video Memory” to `128 MB`.
-> - Changing the “Graphics Controller” to `VBoxSVGA`.
->    
-> Both these options are located under `Settings` → `Display` → `Screen`. Try them individually and if that does not work then use them together. 
+> Some users have reported that changing the “Graphics Controller” to `VBoxSVGA` seems to resolve the problem for them. This option is located under `Settings → Display → Screen`.
 > 
-> Forcefully powering off the VM and starting it back up also fixes the issue. This is not a permanently fix. Sometimes the VM might need to be restarted 2-3 times before the login page loads.
+> Forcefully powering off the VM and starting it back up also seems to fix the issue. The VM might need to be restarted 2-3 times before the VM loads properly.
 
 In the next module, we will access the pfSense Web UI and complete the remaining configuration.
 

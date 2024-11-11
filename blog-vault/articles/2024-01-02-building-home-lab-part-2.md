@@ -57,25 +57,25 @@ After extraction, we will have a file that has the **`.iso`** extension.
 
 Launch VirtualBox. Check on **`Tools`** from the sidebar and then Select **`New`** from the Toolbar.
 
-![vbox-1|500](images/building-home-lab-part-2/vbox-1.png)
+![[vbox-01.png|500]]
 
 For <u>Name</u>, you can enter anything that makes sense. The <u>Folder</u> option defines the location where the VM will be saved. From the <u>ISO Image</u> dropdown select Others and select the **`.iso`** file that we just downloaded. Select <u>Type</u> as **`BSD`** and <u>Version</u> as **`FreeBSD (64-bit)`** and then click on **`Next`**.
 
-![vbox-2|540](images/building-home-lab-part-2/vbox-2.png)
+![[vbox-02.png|540]]
 
 Here we select the amount of RAM and CPU that the VM can use. No need to change anything. Click on **`Next`** to continue.
 
-![vbox-3|540](images/building-home-lab-part-2/vbox-3.png)
+![[vbox-03.png|540]]
 
 On this page, we choose the amount of storage space to reserve for the VM. Enter **`20GB`** in the input field.
 
-![vbox-4|540](images/building-home-lab-part-2/vbox-4.png)
+![[vbox-04.png|540]]
 
 [10.2. Understanding Virtual Disks](https://rhv.bradmin.org/ovirt-engine/docs/Administration_Guide/Understanding_virtual_disks.html)
 
 Confirm that everything looks right and then click on **`Finish`**.
 
-![vbox-5|540](images/building-home-lab-part-2/vbox-5.png)
+![[vbox-05.png|540]]
 
 Once done we should see the newly created VM in the sidebar.
 
@@ -86,19 +86,19 @@ Once done we should see the newly created VM in the sidebar.
 
 I like to keep my VMs organized by using the Groups feature of VirtualBox. This makes it easy to store related VMs together.
 
-![vbox-6|540](images/building-home-lab-part-2/vbox-6.png)
+![[vbox-06.png|540]]
 
 Right-click on the pfSense VM from the sidebar, select **`Move to Group -> [New]`**. The VM will now be added to a <u>Group</u> called **`New Group`**. 
 
-![vbox-7|400](images/building-home-lab-part-2/vbox-7.png)
+![[vbox-07.png|400]]
 
 Right-click on the Group, and select **`Rename Group`**. Name the Group **`Firewall`**.
 
-![vbox-8|240](images/building-home-lab-part-2/vbox-8.png)
+![[vbox-08.png|240]]
 
 The final result should match the following:
 
-![vbox-9|300](images/building-home-lab-part-2/vbox-9.png)
+![[vbox-09.png|300]]
 
 ## pfSense VM Configuration
 

@@ -81,7 +81,7 @@ Right-click on the Metasploitable VM. Select **`Move to Group -> [New]`**.
 
 Right-click on the group that is created and select **`Rename Group`**. Call the group **`Cyber Range`**.
 
-![vbox-8|240](images/building-home-lab-part-2/vbox-8.png)
+![[vbox-08.png|240]]
 
 The output should look as follows:
 
