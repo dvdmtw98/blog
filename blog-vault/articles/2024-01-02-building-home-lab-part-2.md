@@ -332,4 +332,4 @@ The **`.iso`** file along with the **`.iso.gz`** file that was downloaded to cre
 
 In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will be used to configure and manage pfSense. It will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`**.
 
-[Part 3 - Kali Linux Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-3/)
+[Part 3 - Kali Linux Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-3/)

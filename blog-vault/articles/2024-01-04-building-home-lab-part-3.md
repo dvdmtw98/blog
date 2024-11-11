@@ -20,6 +20,10 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+> [!IMPORTANT] Changelog
+> - **Nov. 10, 2024**
+> 	- Added note about settings that could fix the “black screen on boot” problem that occurs on certain machines.
+
 In this module, we are going to install Kali Linux. We will use this VM in the next module also to complete the pfSense setup. 
 
 ## Download Kali Linux
@@ -236,6 +240,17 @@ sudo apt autoremove
 
 The **`.iso`** file that was downloaded to create the VM can be deleted now if you do not plan to store it for future use.
 
+> [!IMPORTANT] Black Screen on Boot
+> On certain machines starting the Kali VM results in a black screen. This issue occurs randomly (usually after updating the VM). There isn’t a definitive solution for this problem. The issue could popup randomly from time to time.  
+> 
+> The following options should help fix the problem: 
+> - Increasing the “Video Memory” to `128 MB`.
+> - Changing the “Graphics Controller” to `VBoxSVGA`.
+>    
+> Both these options are located under `Settings` → `Display` → `Screen`. Try them individually and if that does not work then use them together. 
+> 
+> Forcefully powering off the VM and starting it back up also fixes the issue. This is not a permanently fix. Sometimes the VM might need to be restarted 2-3 times before the login page loads.
+
 In the next module, we will access the pfSense Web UI and complete the remaining configuration.
 
-[Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-4/)
+[Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.net/posts/building-home-lab-part-4/)

@@ -392,4 +392,4 @@ Once pfSense boots up you will be redirected to the login page.
 
 In the next module, we will add some vulnerable VMs to the **`CYBER_RANGE`** interface and then we will test our connectivity to them from the Kali Linux VM.
 
-[Part 5 - Cyber Range Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-5/)
+[Part 5 - Cyber Range Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-5/)

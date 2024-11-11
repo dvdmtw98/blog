@@ -93,7 +93,7 @@ This command will need to be provided every time the VM is booted.
 
 The Kioptrix VM is set up on a `10.6.6.1/24` network. My Kali machine is on the `10.0.0.1/24` network.
 
-[Building a Virtual Security Home Lab: Part 1 - Network Topology](https://blog.davidvarghese.dev/posts/building-home-lab-part-1/)
+[Building a Virtual Security Home Lab: Part 1 - Network Topology](https://blog.davidvarghese.net/posts/building-home-lab-part-1/)
 
 ![[lab-network-setup.png|440]]
 

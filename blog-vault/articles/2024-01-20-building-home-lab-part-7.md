@@ -751,4 +751,4 @@ There any numerous attacks that can be performed against an AD environment. Refe
 
 In the next module, we will begin the setup of the Malware Analysis Lab.
 
-[Part 7 - Malware Analysis Lab Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-8)
+[Part 7 - Malware Analysis Lab Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-8)

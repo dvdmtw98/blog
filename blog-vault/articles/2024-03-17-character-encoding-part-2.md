@@ -20,7 +20,7 @@ math: true
 
 In is module we will continue from where we left off. We will go over the UTF-16 and UTF-8 encoding scheme. We will then spend some time covering BOM and Unicode-aware functions and finally, we will cover what it means for a character encoding to be self-synchronizing.
 
-[Character Encoding Explored - Part 1: Character Set, ASCII, Unicode & UTF-32](https://blog.davidvarghese.dev/posts/character-encoding-part-1/)
+[Character Encoding Explored - Part 1: Character Set, ASCII, Unicode & UTF-32](https://blog.davidvarghese.net/posts/character-encoding-part-1/)
 
 ### UTF-16 Encoding
 

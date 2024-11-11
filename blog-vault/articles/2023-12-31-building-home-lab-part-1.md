@@ -20,6 +20,8 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog
+> - **Nov. 10, 2024** 
+> 	- Updated Part 3 with settings that could fix the “black screen” problem faced by some users.
 >  - **Nov. 01, 2024**
 > 	 - Updated pfSense download link in Part 2 to point to the pfSense mirror which contains the CE ISO image.
 > 	 - Updated the instruction in Part 1 and Part 2 to reference the Expert Mode option that was introduced with Virtual Box 7.1.
@@ -183,13 +185,13 @@ In the next module, we will start with the installation and configuration of pfS
 
 ## Next Steps
 
-- [Part 2 - pfSense Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-2)
-- [Part 3 - Kali Linux Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-3)
-- [Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-4)
-- [Part 5 - Cyber Range Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-5)
-- [Part 6 - Active Directory Lab Setup - Part 1](https://blog.davidvarghese.dev/posts/building-home-lab-part-6)
-- [Part 7 - Active Directory Lab Setup - Part 2](https://blog.davidvarghese.dev/posts/building-home-lab-part-7)
-- [Part 8 - Malware Analysis Lab Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-8)
-- [Part 9 - Tsurugi Linux (DFIR) Setup](https://blog.davidvarghese.dev/posts/building-home-lab-part-9/)
-- [Part 10 - Splunk Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-10/)
-- [Part 11 - Transferring Files to Malware Analysis Lab](https://blog.davidvarghese.dev/posts/building-home-lab-part-11/)
+- [Part 2 - pfSense Setup & Configuration](https://blog.davidvarghese.net/posts/building-home-lab-part-2)
+- [Part 3 - Kali Linux Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-3)
+- [Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.net/posts/building-home-lab-part-4)
+- [Part 5 - Cyber Range Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-5)
+- [Part 6 - Active Directory Lab Setup - Part 1](https://blog.davidvarghese.net/posts/building-home-lab-part-6)
+- [Part 7 - Active Directory Lab Setup - Part 2](https://blog.davidvarghese.net/posts/building-home-lab-part-7)
+- [Part 8 - Malware Analysis Lab Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-8)
+- [Part 9 - Tsurugi Linux (DFIR) Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-9/)
+- [Part 10 - Splunk Setup & Configuration](https://blog.davidvarghese.net/posts/building-home-lab-part-10/)
+- [Part 11 - Transferring Files to Malware Analysis Lab](https://blog.davidvarghese.net/posts/building-home-lab-part-11/)

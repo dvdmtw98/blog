@@ -150,5 +150,5 @@ Since each device requires a different public IP address for accessing the inter
 - [Public vs. Private IP Address: What's the Difference \| phoenixNAP](https://phoenixnap.com/kb/public-vs-private-ip-address)
 - [Network Address Translation - Wikipedia](https://en.wikipedia.org/wiki/Network_address_translation)
 - [Why NAT? – NAT Series – Practical Networking](https://www.practicalnetworking.net/series/nat/why-nat/)
-- [NAT (Network Address Translation) - Digital Archive](https://notes.davidvarghese.dev/computer-networks/layer-wise-concepts/network-layer-concepts/network-address-translation-nat)
+- [NAT (Network Address Translation) - Digital Archive](https://notes.davidvarghese.net/computer-networks/layer-wise-concepts/network-layer-concepts/network-address-translation-nat)
 - [Network Address Translation Definition \| How NAT Works \| CompTIA](https://www.comptia.org/content/guides/what-is-network-address-translation)

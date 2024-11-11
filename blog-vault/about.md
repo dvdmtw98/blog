@@ -11,7 +11,7 @@ order: 4
 ### Websites
 
 - ⚡ My blog posts are also available on <a href="https://david-varghese.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
-- 📒 I also have a <a href="https://notes.davidvarghese.dev" target="_blank" rel="noopener noreferrer">Digital Garden</a> where I store my notes, ideas, insights, and connections I've made throughout my life.
+- 📒 I also have a <a href="https://notes.davidvarghese.net" target="_blank" rel="noopener noreferrer">Digital Garden</a> where I store my notes, ideas, insights, and connections I've made throughout my life.
 
 ### Socials
 

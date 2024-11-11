@@ -426,4 +426,4 @@ Use the Hamburger menu and click on Details to return to the main page.
 
 In the next module, we will install **`Ubuntu`** and then download and set up **`Splunk`**. We will also install the Splunk Universal Forwarder on the Domain Controller in our Active Directory Lab. This will allow us to capture the events that are generated on the Domain Controller.
 
-[Part 10 - Splunk Setup & Configuration](https://blog.davidvarghese.dev/posts/building-home-lab-part-10/)
+[Part 10 - Splunk Setup & Configuration](https://blog.davidvarghese.net/posts/building-home-lab-part-10/)

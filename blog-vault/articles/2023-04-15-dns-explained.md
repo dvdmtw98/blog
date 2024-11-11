@@ -125,7 +125,7 @@ Now if we enter this IP Address in our browser we should be taken to google.com'
 ## References
 
 - [What is DNS? \| How DNS Works \| Cloudflare](https://www.cloudflare.com/learning/dns/what-is-dns/)
-- [DNS \| DNS Zones \| DNS Records - Digitial Archive](https://notes.davidvarghese.dev/computer%20networks/network%20devices/dns%20server/dns%20server/)
+- [DNS \| DNS Zones \| DNS Records - Digital Archive](https://notes.davidvarghese.net/computer-networks/network-infrastructure/dns-server/domain-name-system-dns)
 - [What is DNS? How Domain Name System Works](https://www.techtarget.com/searchnetworking/definition/domain-name-system)
 - [DNS server types \| Cloudflare](https://www.cloudflare.com/learning/dns/dns-server-types/)
 - [Domain Name System - Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)

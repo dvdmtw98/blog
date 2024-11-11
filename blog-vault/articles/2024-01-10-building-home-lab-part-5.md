@@ -257,4 +257,4 @@ ping 10.6.6.13 -c 5
 
 In the next module, we will begin configuring the Active Directory Lab.
 
-[Part 6 - Active Directory Lab Setup - Part 1](https://blog.davidvarghese.dev/posts/building-home-lab-part-6/)
+[Part 6 - Active Directory Lab Setup - Part 1](https://blog.davidvarghese.net/posts/building-home-lab-part-6/)

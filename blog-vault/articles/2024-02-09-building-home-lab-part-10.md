@@ -437,4 +437,4 @@ In the above command "windows" is the name I gave my index.
 
 In the next module, we will see how we can download files/malware onto the DFIR VM and then move them over to the Malware Analysis lab using SCP.
 
-[Part 11 - Transferring Files to Malware Analysis Lab](https://blog.davidvarghese.dev/posts/building-home-lab-part-11/)
+[Part 11 - Transferring Files to Malware Analysis Lab](https://blog.davidvarghese.net/posts/building-home-lab-part-11/)

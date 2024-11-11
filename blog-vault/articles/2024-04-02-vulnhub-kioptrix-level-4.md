@@ -26,7 +26,7 @@ Cover Image by [vector_corp](https://www.freepik.com/free-vector/abstract-low-po
 
 The Kioptrix Level 4 VM is set up on the network which has the CDIR address of `10.6.6.1/24`. My attack machine (Kali) is on the `10.0.0.1/24` network.
 
-[Building a Virtual Security Home Lab: Part 1 - Network Topology](https://blog.davidvarghese.dev/posts/building-home-lab-part-1/)
+[Building a Virtual Security Home Lab: Part 1 - Network Topology](https://blog.davidvarghese.net/posts/building-home-lab-part-1/)
 
 ![[network-setup.png|440]]
 
@@ -73,7 +73,7 @@ Port 22: SSH
 Port 139, 445: SMB (Samba)  
 Port 80: HTTP  
 
-[Common Network Ports - Digital Archive](https://notes.davidvarghese.dev/computer-networks/layer-wise-concepts/transport-layer-concepts/network-ports#common-protocol-ports)
+[Common Network Ports - Digital Archive](https://notes.davidvarghese.net/computer-networks/layer-wise-concepts/transport-layer-concepts/network-ports#common-protocol-ports)
 
 From the scan we can also identify that the target running Linux (Ubuntu).
 
@@ -339,7 +339,7 @@ Once I had root access I accessed the `/root` directory which contained the `con
 
 ![[kioptrix-lvl-4-flag.png|500]]
 
-Next Level: [VulnHub - Kioptrix: Level 5 (2014) (#5)](https://blog.davidvarghese.dev/posts/vulnhub-kioptrix-level-5/)
+Next Level: [VulnHub - Kioptrix: Level 5 (2014) (#5)](https://blog.davidvarghese.net/posts/vulnhub-kioptrix-level-5/)
 
 ### Alternative Solutions
 
