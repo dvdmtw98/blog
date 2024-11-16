@@ -35,7 +35,7 @@ PCAP files can be analyzed using Wireshark.
 wireshark capture.pcap &
 ```
 
-The ‘&’ after the command will open Wireshark in the background. This leave the terminal free to run other commands.
+The ‘&’ after the command will open Wireshark in the background. This leaves the terminal free to run other commands.
 
 ![[st-wireshark-3.png|500]]
 
