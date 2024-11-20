@@ -3,15 +3,15 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-- 🏫 Currently working towards my Masters degree in Cyber Security
-- 🌱 I am interested in learning about Cyber Security, Programming, Cloud and Networking
-- 🌍 In my free time I enjoy watching movies, reading books and learning about different cultures
-- 📝 I mainly write articles on Security, Computer Networks, Programming and Linux
+- 🏫 Currently working towards a Masters degree in Cyber Security
+- 🌱 Passionate about Information Security, Programming and Operating Systems
+- 🌍 I enjoy watching movies, reading books and learning about different cultures
+- 📝 I mainly write articles about Information Security, Computer Networks and Programming
 
 ### Websites
 
 - ⚡ My blog posts are also available on <a href="https://david-varghese.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
-- 📒 I also have a <a href="https://notes.davidvarghese.net" target="_blank" rel="noopener noreferrer">Digital Garden</a> where I store my notes, ideas, insights, and connections I've made throughout my life.
+- 📒 I also have a <a href="https://notes.davidvarghese.net" target="_blank" rel="noopener noreferrer">Digital Garden</a> where I share information pertaining to topics that interest me
 
 ### Socials
 

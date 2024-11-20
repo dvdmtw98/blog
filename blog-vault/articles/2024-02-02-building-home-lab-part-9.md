@@ -302,7 +302,7 @@ Click on "<u>Keep This Configuration</u>" to confirm the changes.
 > [!NOTE]
 > Without changing the resolution of the screen you will not be able to see the buttons that are present at the bottom of the Installer.
 
-![tsurugi-19|460](images/building-home-lab-part-9/tsurugi-19.jpg)
+![tsurugi-19|460](images/building-home-lab-part-9/tsurugi-19.png)
 
 Double-click on the "<u>Install Tsurugi Linux 2023.2</u>" icon to start the installer.
 
@@ -336,7 +336,7 @@ Provide a username, computer name and password then click on **`Continue`**.
 
 ![tsurugi-27|540](images/building-home-lab-part-9/tsurugi-27.png)
 
-![tsurugi-28|540](images/building-home-lab-part-9/tsurugi-28.jpg)
+![tsurugi-28|540](images/building-home-lab-part-9/tsurugi-28.png)
 
 After the installation is complete click on "<u>Restart Now</u>".
 

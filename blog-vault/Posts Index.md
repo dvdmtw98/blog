@@ -2,7 +2,6 @@
 title: Post Index
 cssclasses:
   - table-wide
-  - rable-nowrap
 ---
 
 ```dataviewjs

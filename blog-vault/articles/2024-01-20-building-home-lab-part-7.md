@@ -136,7 +136,7 @@ Open the <u>Start</u> menu and then click on the <u>user logo</u> and then selec
 
 From the login screen select "<u>Other user</u>". Then enter the <u>login name</u> and <u>password</u> that was configured for your domain administrator.
 
-![dc-74|600](images/building-home-lab-part-7/dc-74.jpg)
+![dc-74|600](images/building-home-lab-part-7/dc-74.png)
 
 #### AD User 1 Setup
 
@@ -600,7 +600,7 @@ Click on "<u>Restart Now</u>".
 
 Once on the login screen. Click on "<u>Other user</u>". Enter the <u>login name</u> and <u>password</u> of the AD user that will use this device and press **`Enter`**. 
 
-![user-36|600](images/building-home-lab-part-7/user-36.jpg)
+![user-36|600](images/building-home-lab-part-7/user-36.png)
 
 Now we are logged into the system as the AD user. To confirm this we can open PowerShell and run **`whoami`**.
 
@@ -684,7 +684,7 @@ Use the First Name of the second user that was configured in AD.
 
 Login using the AD credentials of the second AD user.
 
-![user-42|600](images/building-home-lab-part-7/user-42.jpg)
+![user-42|600](images/building-home-lab-part-7/user-42.png)
 
 ![user-43|540](images/building-home-lab-part-7/user-43.png)
 

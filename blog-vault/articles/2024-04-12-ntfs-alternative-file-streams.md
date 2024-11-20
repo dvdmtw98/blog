@@ -27,7 +27,7 @@ It is the hardware component that allows us to store and retrieve information fr
 
 To understand how data is stored on storage devices we need to first understand some of the terms that are used to represent data on a disk. The below image represents a hard drive platter.
 
-![[disk-structure.jpg|320]]
+![[disk-structure.png|320]]
 
 [Hard Disk Drive Basics - NTFS.com](https://www.ntfs.com/hard-disk-basics.htm)
 

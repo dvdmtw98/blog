@@ -416,7 +416,7 @@ Once the install process is complete the machine will need to restart. Click on 
 
 On restart, you will notice that the name that is shown on the login page has changed. The first part of the domain name is prepended to the username. This means the machine has successfully been configured as the domain controller. Log in using the Administrator password.
 
-![dc-45|600](images/building-home-lab-part-6/dc-45.jpg)
+![dc-45|600](images/building-home-lab-part-6/dc-45.png)
 
 #### DNS Configuration
 

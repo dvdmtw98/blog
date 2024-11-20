@@ -102,7 +102,7 @@ From the scan results we see on port 3333, there is a service (Apache httpd) tha
 
 Since we know that there is a web server running on the system let's open the link in the browser and see what we get.
 
-![Site Landing Page](images/thm-vulnversity/webapp-landing-page.jpeg)
+![Site Landing Page](images/thm-vulnversity/webapp-landing-page.png)
 
 We see a website for "Vuln University". We could see if the website has a robots.txt file (which it doesn't) and look through the CSS styles sheets that are loaded to look for other pages that might be available on the website (found nothing).
 

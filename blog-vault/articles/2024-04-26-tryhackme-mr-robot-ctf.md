@@ -79,7 +79,7 @@ If we select `inform` we are shown some news articles
 
 If we select `question` we are shown some images
 
-![[website-4.jpg|600]]
+![[website-4.png|600]]
 
 If we select `wakeup` we are shown a video
 

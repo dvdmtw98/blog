@@ -1,6 +1,6 @@
 ---
 title: "Sofia Santos: OSINT Exercise #002"
-description: Test your OSINT skills with this challenge, uncover hidden details through investigative techniques
+description: Test your OSINT skills with this challenge, uncover hidden details through your investigative skills
 date: 2024-11-16 09:50:00 -0600
 categories:
   - Security
@@ -17,7 +17,7 @@ media_subpath: /assets/
 
 ![[sofia-osint-002-banner.png|640]]
 
-Background by  <a href="https://www.freepik.com/free-photo/modern-background-with-lines_19314522.htm">BiZkettE1</a> on Freepik
+Background Image by <a href="https://www.freepik.com/free-photo/modern-background-with-lines_19314522.htm">BiZkettE1</a> on Freepik
 
 In this write-up I will be going over OSINT Exercise #002 by [Sofia Santos](https://www.linkedin.com/in/sofia-santos-).
 
@@ -53,14 +53,14 @@ In the photo that we are given we can see that there are 6 buildings in the back
 
 [Flinders Street Railway Station - Google Maps](https://www.google.com/maps/@-37.8184246,144.9652116,360m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D)
 
-![[flinders-street-4.jpg|640]]
+![[flinders-street-4.png|640]]
 
 Use photo sphere’s that face **Yarra River** to see the buildings from the photo.
 
 > [!IMPORTANT] Google Photo Sphere
 > When you drag the yellow person (pegman) located at bottom left onto the map all the photo sphere’s that are available in the location will be shown. Drop pegman onto a sphere to view the image captured from that location.
 
-![[flinders-street-5.jpg|640]]
+![[flinders-street-5.png|640]]
 
 [Yarra River Walk Path - Photo Sphere - Google Maps](https://www.google.com/maps/@-37.818175,144.9649698,3a,75y,106.45h,96.99t/data=!3m8!1e1!3m6!1sAF1QipOzElhVVhzvUNWnBkbh2oJlDVXu1nu7k3VbRXeX!2e10!3e11!6s%2F%2Flh5.ggpht.com%2Fp%2FAF1QipOzElhVVhzvUNWnBkbh2oJlDVXu1nu7k3VbRXeX%3Dw900-h600-k-no-pi-6.992928877791371-ya0.45323326200886527-ro0-fo100!7i7168!8i3584?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D)
 
@@ -76,17 +76,17 @@ We cannot guess the height by just looking at the photo. The angle at which the 
 
 Hover mouse over the Layers button, choose “More” and then select “Global view”. This should help us gauge the heights of the buildings more accurately. 
 
-![[google-maps-3.jpg|640]]
+![[google-maps-3.png|640]]
 
 We can easily identify the first 5 buildings but the 6th (blue) building is a little challenging as there are multiple blue buildings in the same location. If we look closely at the photo that is provided we see that there are 2 red banners on the top floor of the blue building.
 
-![[google-maps-4.jpg|600]]
+![[google-maps-4.png|600]]
 
 This building matches the description of the building we need. It is blue, tall and has red signs on the top floor. The signs have “**Central Equity**” written on them.
 
-![[google-maps-5.jpg|640]]
+![[google-maps-5.png|640]]
 
-![[google-maps-6.jpg|640]]
+![[google-maps-6.png|640]]
 
 If we look at the buildings from different directions it becomes clear only buildings 1 “**Arts Centre**”, 4 “**IBM Building**” and 6 “**Central Equity**” have to be considered. The other 3 buildings are shorter than the IBM building.
 
@@ -122,7 +122,7 @@ If we look at the address of the Arts Centre and IBM Building we will notice tha
 
 On Google Maps in 2D view if we zoom onto the building we can see that the building is indeed called Focus.
 
-![[focus-3.jpg|640]]
+![[focus-3.png|640]]
 
 We can also use Pegman and drop into Street View in front of the building. You will see that the entrance states the name of the apartment as Focus.
 
