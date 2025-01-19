@@ -1,9 +1,11 @@
 name: Deploy Source Code to Cloudflare
-run-name: Deploy to Cloudflare by @${{ github.actor }}
+run-name: Build on ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
+    paths-ignore:
+      - "blog-vault/.obsidian/**"
 
 jobs:
   source-code:
@@ -33,4 +35,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy chirpy/_site --project-name=my-source-code
+          command: pages deploy chirpy/_site --project-name=my-source-code --branch=${{ github.ref_name }}

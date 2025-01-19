@@ -1,9 +1,11 @@
 name: Publish New Posts to Medium
-run-name: Publish to Medium by @${{ github.actor }}
+run-name: Publish to Medium on ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
+    paths-ignore:
+      - "blog-vault/.obsidian/**"
 
 jobs:
   medium-publish:
