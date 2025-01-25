@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - RootMe
+title: "TryHackMe: RootMe"
 description: A CTF for beginners, can you root me?
 date: 2021-04-13 09:08:08 +0530
 categories:

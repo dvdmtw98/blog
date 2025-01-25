@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Advent of Cyber 2023 (Day 5 - 8)
+title: "TryHackMe: Advent of Cyber 2023 (Day 5 - 8)"
 description: Get started with Cyber Security in 24 Days - Learn the basics by doing a new, beginner-friendly security challenge every day leading up to Christmas.
 date: 2023-12-08 11:45:00 -0600
 categories:

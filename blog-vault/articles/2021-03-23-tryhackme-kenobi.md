@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Kenobi
+title: "TryHackMe: Kenobi"
 description: Walkthrough on exploiting a Linux machine. Enumerate Samba for shares, manipulate a vulnerable version of proftpd and escalate your privileges with path variable manipulation
 date: 2021-03-23 09:21:34 +0530
 categories:

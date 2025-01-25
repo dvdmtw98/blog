@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Wonderland
+title: "TryHackMe: Wonderland"
 description: Fall down the rabbit hole and enter wonderland
 date: 2024-05-03 13:55:00 -0500
 categories:

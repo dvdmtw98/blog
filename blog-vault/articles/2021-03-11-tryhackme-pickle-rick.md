@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Pickle Rick
+title: "TryHackMe: Pickle Rick"
 description: A Rick and Morty CTF. Help turn Rick back into a human!
 date: 2021-03-11 06:10:20 +0530
 categories:

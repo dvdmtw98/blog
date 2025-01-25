@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Vulnversity
+title: "TryHackMe: Vulnversity"
 description: Learn about active recon, web app attacks and privilege escalation
 date: 2021-03-17 08:58:15 +0530
 categories:

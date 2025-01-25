@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Linux PrivEsc
+title: "TryHackMe: Linux PrivEsc"
 description: "Practice your Linux Privilege Escalation skills on an intentionally misconfigured Debian VM with multiple ways to get root! SSH is available. Credentials: user:password321"
 date: 2021-03-16 07:47:31 +0530
 categories:

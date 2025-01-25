@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Mr. Robot CTF
+title: "TryHackMe: Mr. Robot CTF"
 description: Based on the Mr. Robot show, can you root this box?
 date: 2024-04-26 12:10:00 -0500
 categories:

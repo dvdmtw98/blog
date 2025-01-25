@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Blue
+title: "TryHackMe: Blue"
 description: Deploy & hack into a Windows machine, leveraging common misconfigurations issues
 date: 2021-03-11 09:50:15 +0530
 categories:

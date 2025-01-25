@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Simple CTF
+title: "TryHackMe: Simple CTF"
 description: Beginner level CTF
 date: 2021-04-17 11:21:39 +0530
 categories:

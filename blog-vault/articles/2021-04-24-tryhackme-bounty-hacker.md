@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Bounty Hacker
+title: "TryHackMe: Bounty Hacker"
 description: You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!
 date: 2021-04-24 13:30:26 +0530
 categories:

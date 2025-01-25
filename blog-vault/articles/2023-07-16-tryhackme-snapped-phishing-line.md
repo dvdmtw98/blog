@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Snapped Phish-ing Line
+title: "TryHackMe: Snapped Phish-ing Line"
 description: Apply learned skills to probe malicious emails and URLs, exposing a vast phishing campaign
 date: 2023-07-16 21:10:00 +0530
 categories:

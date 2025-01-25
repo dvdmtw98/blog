@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - SeeTwo
+title: "TryHackMe: SeeTwo"
 description: Can you see who is in command and control?
 date: 2024-11-13 10:45:00 -0600
 categories:

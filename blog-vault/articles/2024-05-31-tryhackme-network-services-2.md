@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Network Services 2
+title: "TryHackMe: Network Services 2"
 description: Enumerating and Exploiting More Common Network Services & Misconfigurations
 date: 2024-05-31 22:50:00 -0500
 categories:

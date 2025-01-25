@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Blaster
+title: "TryHackMe: Blaster"
 description: A blast from the past!
 date: 2021-03-14 09:28:24 +0530
 categories:

@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Agent Sudo
+title: "TryHackMe: Agent Sudo"
 description: You found a secret server located under the deep sea. Your task is to hack inside the server and reveal the truth
 date: 2023-07-10 19:30:00 +0530
 categories:

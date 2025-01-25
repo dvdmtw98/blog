@@ -1,5 +1,5 @@
 ---
-title: TryHackMe - Ice
+title: "TryHackMe: Ice"
 description: Deploy & hack into a Windows machine, exploiting a very poorly secured media server
 date: 2021-03-13 06:36:12 +0530
 categories:
