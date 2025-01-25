@@ -1,7 +1,7 @@
 ---
 title: "TryHackMe: MBR and GPT Analysis"
 description: Learn how MBR and GPT forensics are carried out to identify attacks during the boot process.
-date: 2025-01-25 18:55:00 -0600
+date: 2025-01-24 18:55:00 -0600
 categories:
   - Security
   - TryHackMe
