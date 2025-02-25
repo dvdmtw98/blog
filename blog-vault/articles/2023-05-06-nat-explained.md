@@ -8,8 +8,8 @@ categories:
 tags:
   - networking
   - protocol
-  - internet
   - nat
+  - ip-address
 published: true
 media_subpath: /assets/
 math: true

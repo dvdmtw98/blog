@@ -8,8 +8,8 @@ categories:
 tags:
   - networking
   - protocol
-  - internet
   - dhcp
+  - ip-address
 published: true
 media_subpath: /assets/
 ---

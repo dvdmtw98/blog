@@ -20,7 +20,7 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-> [!IMPORTANT] Changelog
+> [!IMPORTANT] Changelog  
 > - **Nov. 10, 2024**
 > 	- Added note about settings that could fix the “black screen on boot” problem that occurs on certain machines.
 > 	- Updated Kali Linux VM setup steps to include configuration that is recommended by Offensive Security.

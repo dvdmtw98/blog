@@ -8,8 +8,8 @@ categories:
 tags:
   - networking
   - protocol
-  - internet
   - dns
+  - ip-address
 published: true
 media_subpath: /assets/
 ---

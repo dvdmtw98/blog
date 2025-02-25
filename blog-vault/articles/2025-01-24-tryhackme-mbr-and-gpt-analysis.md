@@ -44,7 +44,7 @@ Banner background by [BiZkettE1](https://www.freepik.com/free-vector/modern-bus
 
 ![[thm-soln-3.png|640]]
 
-> Power-Nn-Self-Test
+> Power-On-Self-Test
 
 **2. Which firmware supports a GPT partitioning scheme?**
 

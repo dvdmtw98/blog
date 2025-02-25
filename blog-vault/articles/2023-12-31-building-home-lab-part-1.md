@@ -19,7 +19,11 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-> [!IMPORTANT] Changelog
+> [!IMPORTANT] Changelog  
+> - **Feb. 23, 2025**
+> 	- Updated Part 2 and Part 4 with instructions on disabling DHCPv6 on the WAN interface.
+> - **Feb. 15, 2025**
+> 	- Updated the requirements section to include pre-requisite concepts that the user is expected to know to setup the lab.
 > - **Nov. 10, 2024** 
 > 	- Updated Part 3 with settings that could fix the “black screen” problem faced by some users.
 >  - **Nov. 01, 2024**
@@ -52,11 +56,19 @@ This project has been heavily inspired by the following Home Lab guides:
 > [!NOTE] Lab Startup
 > pfSense is the gateway (router) and firewall for the lab. pfSense should always be the first VM that is booted when using the lab. If pfSense is not booted the machines in the lab will not be able to access the internet. Once pfSense is up other VMs can be launched.
 
-## System Requirements
+## Requirements
+
+### System
 
 - 64-bit multi-threaded CPU (minimum 4 cores) with Virtualization Support
 - 16GB RAM
 - 250GB Disk Space
+
+### Concepts
+
+- Basic familiarity using VirtualBox (or other virtualization software)
+- Basic understanding of networking concepts (NAT, DHCP, IP Address, LAN, Routing, Firewall, etc.)
+- Familiarly with Linux and Windows (installing software, troubleshooting, etc.) 
 
 ## Enabling Virtualization
 

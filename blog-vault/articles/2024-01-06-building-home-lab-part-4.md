@@ -20,6 +20,11 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+
+> [!IMPORTANT] Changelog  
+> - **Feb. 23, 2025**
+> 	- Added instructions to disable DHCPv6 on the WAN interface.
+
 In this module, we will finish the pending pfSense setup. After that, we will define firewall rules for the subnets we defined for our home lab. 
 
 ## pfSense General Configuration
@@ -125,6 +130,24 @@ Scroll down to the **`Advanced Resolver Options`** section and enable the highli
 A popup will appear at the top of the page. Click on **`Apply Changes`**.
 
 ![pfsense-47|600](images/building-home-lab-part-4/pfsense-47.png)
+
+### Disabling DHCPv6
+
+Newer versions of VirtualBox/pfSense seem to prefer IPv6 for dynamic IP address assignment. You can disable DHCPv6 to prevent IPv6 addresses from being assigned to the WAN interface.
+
+From the navigation bar select **`Interfaces -> WAN`**.
+
+![[pfsense-121.png|600]]
+
+Set <u>IPv6 Configuration Type</u> to **`None`**. Scroll to the bottom and click on **`Save`**.
+
+![[pfsense-120.png|600]]
+
+At the top of the page, a new popup will appear. Click on **`Apply Changes`**.
+
+![[pfsense-122.png|600]]
+
+Restart the pfSense VM. Now, the WAN interface should have an IPv4 address.
 
 ### Advanced Configuration
 

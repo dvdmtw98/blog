@@ -20,7 +20,9 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-> [!IMPORTANT] Changelog
+> [!IMPORTANT] Changelog  
+> - **Feb. 23, 2025**
+> 	- Added note to clarify the confusion around IPv6 address on the WAN interface.
 > - **Nov. 01, 2024**
 > 	- Updated the article to indicate pfSense download from the official website now requires an account.
 > 	- Updated the pfSense download link to point to pfSense official mirror from where the ISO can be downloaded without an account.
@@ -214,10 +216,14 @@ Do you want to proceed?: **`y`**
 
 Since the **`WAN`** interface of pfSense is managed by VirtualBox it has been assigned an IPv4 address by the VirtualBox DHCP server. pfSense has also assigned an IPv4 address to the **`LAN`** interface using its DHCP service. The **`OPT1`** and **`OPT2`** interfaces have not been assigned any IP address. We do not want the IP addresses of the interfaces to change on boot so we will assign static IPv4 addresses to the **`LAN`**, **`OPT1`** and **`OPT2`** interfaces.
 
+> [!INFO]
+> The `WAN` interface IP address will be different in your case. The IP assignment is performed by the VirtualBox DHCP server.  
+
 ![pfsense-13|520](images/building-home-lab-part-2/pfsense-13.png)
 
-> [!INFO]
-> The IP address of the `WAN` interface can be different in your case since it is assignment randomly by the VirtualBox DHCP server.
+> [!IMPORTANT] WAN Interface  
+> - Some readers have observed that VirtualBox assigns their WAN interface an IPv6 address, while some others receive an IPv4 and IPv6 address. This shouldn’t be a problem. The VMs should still be able to connect to the internet.  
+> - In Part 3, I will show how DHCPv6 can be disabled on the WAN interface. You could also follow the steps used to configure the LAN interfaces to change the settings on the WAN interface.  
 
 #### Configuring LAN (vtnet1)
 
