@@ -112,7 +112,7 @@ BPDUs contain a field called Bridge ID (BID), which consists of the switch's pri
 
 Switches, by default, have the priority number set to 32768. The priority number can be changed by a network administrator. Priority number is updated in increments of 4096. If all switches use the same priority number, the MAC address is used as a tiebreaker. The switch with the lowest MAC address would then become the root bridge. Since MAC addresses are unique, it's guaranteed that only a single switch will become the root bridge.
 
-#### Designed Ports
+#### Designated Ports
 
 ![[network-with-mac.png|640]]
 
