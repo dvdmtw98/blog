@@ -39,7 +39,7 @@ For the 1st question we are given the solution directly. There are multiple sign
 
 ![[flinders-street-1.png|640]]
 
-We can perform a Google search to find where this train station is located.
+We can perform a Google Search to find where this train station is located.
 
 ![[flinders-street-2.png|400]]
 

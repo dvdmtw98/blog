@@ -5,7 +5,7 @@ await tp.file.rename(title);
 ---
 title: "<% title %>"
 description:
-date: <% tp.file.creation_date('YYYY-MM-DD HH:mm:ss ZZ') %>
+date: <% tp.date.now('YYYY-MM-DD HH:mm:ss ZZ') %>
 categories:
 tags:
 published: false
