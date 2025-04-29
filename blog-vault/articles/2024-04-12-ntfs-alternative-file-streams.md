@@ -3,8 +3,8 @@ title: "NTFS Filesystem: Alternate Data Stream (ADS)"
 description: A deep dive into concepts related to the NTFS Filesystem
 date: 2024-04-08 14:05:00 -0500
 categories:
+  - Operating System
   - Windows
-  - Filesystem
 tags:
   - windows
   - filesystem
