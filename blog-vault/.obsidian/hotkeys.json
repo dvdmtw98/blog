@@ -169,5 +169,11 @@
       ],
       "key": "O"
     }
+  ],
+  "templater-obsidian:templates/reload-page.md": [
+    {
+      "modifiers": [],
+      "key": "F5"
+    }
   ]
 }

@@ -7,6 +7,7 @@ cssclasses:
 ```dataviewjs
 const groupedArticles = dv.pages('"articles"').groupBy(p => p.published);
 // console.log(groupedArticles);
+// Key -> false: Unpublished, true: Published
 
 const tableHeaders = ["No.", "Title", "Publish Date", "Category", "Tags"];
 
