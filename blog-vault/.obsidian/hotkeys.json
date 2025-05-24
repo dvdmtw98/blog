@@ -175,5 +175,13 @@
       "modifiers": [],
       "key": "F5"
     }
+  ],
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "S"
+    }
   ]
 }

@@ -1,10 +1,10 @@
 ---
-title: "Symbolic Links Demystified – Part 1: A Deep Dive into Linux Symlinks"
-description: Explore the intricacies of symbolic links, hard links and shortcuts on Linux.
+title: "Linux Links Demystified: Symbolic Links and Hard Links Explored"
+description: Explore the intricacies of symbolic links, hard links, and shortcuts on Linux.
 date: 2025-05-10 21:00:00 -0500
 categories:
   - Operating System
-  - Command Line
+  - Linux
 tags:
   - filesystem
   - operating-system
@@ -17,6 +17,12 @@ media_subpath: /assets/
 ![[symbolic-links-linux-banner.png|640]]
 _Banner icon created using ChatGPT_
 
+> [!IMPORTANT] Changelog  
+> - **May. 24, 2025**
+> 	- Added a summary table at the end of the article.
+> 	- Renamed the article to accurately capture the full scope of the article.
+> 	- Updated cover image to align with the name change.
+
 Symbolic links are special constructs that allow us to efficiently manage files. People commonly use them to create shortcuts, manage configurations, and organize files. While symlinks are the most prevalent link type, they're not the only option. This article explores the nuances of symlinks in Linux and briefly compares them to other link types: hard links and shortcuts.
 
 ### Symbolic Links
@@ -24,6 +30,8 @@ Symbolic links are special constructs that allow us to efficiently manage files.
 A symbolic link is a filesystem object that stores the path to another filesystem object (file/directory), also called “target.” When a symlink is accessed, the OS transparently resolves the path and moves us to that location. They are like a portal that teleports us to a different location on the system. Symlinks allow us to access the same file at multiple locations without duplicating its content.
 
 A symbolic link is a filesystem abstraction. Symlinks can be used by all types of applications (e.g., GUI, CLI, scripts). To every application, the symlink will look and function like the target file/directory.
+
+Symlinks can span filesystems (point to files on a different filesystem) and can also point to files on network shares. You do not have to be a root user to create them.
 
 <iframe 
 	width="560" height="315" 
@@ -40,7 +48,7 @@ Most Unix-based systems (Linux, MacOS, FreeBSD) support symbolic links natively,
 ![[linux-create-symlink-1.png|240]]
 _Fig. 1: Files & Directories used in example_
 
-For the Linux examples, I will be using the files and directories shown in Fig. 1. `Source` and `Destination` are both in my home directory.
+For the examples, I will be using the files and directories shown in Fig. 1. “Source” and “Destination” are both in my home directory.
 
 #### Creating Symlink
 
@@ -173,6 +181,8 @@ A hard link is an alternative name (alias) for a file. It is a label that points
 
 While symbolic links are considered a filesystem abstraction, the OS plays a huge role in making them work. The OS has to redirect all the operations performed on the link to the real file/directory. Hard links, on the other hand, do not need any special handling from the OS. It is a pure filesystem abstraction. Hard link is a feature in the data structure used to represent files that allows multiple labels to be created that point to the same data on disk.
 
+Hard links cannot span filesystems. Also, they cannot be used to point to files on network shares. They can be created without root permissions.
+
 #### Creating Hard Link
 
 Hard links are created using the `ln` command without the `-s` option. In Fig. 17, observe how the attributes of `linked.txt` are the same as `original.txt`. Compare that with Fig. 3 from the symbolic link section. Also observe how, for hard links, the inode numbers (1st column in output) are the same. This is not true in the case of symlink.
@@ -202,7 +212,7 @@ The `-links +1` option of the `find` command will list files that have hard link
 ![[linux-hardlink-3.png|500]]
 _Fig. 19: Finding hard links_
 
-Hard links do not become invalid/broken. Since they point to an inode they can be moved freely without any side effect.  
+Hard links do not become invalid/broken. Since they point to an inode they can be moved freely without any side effect.
 
 #### Deleting Hark Link
 
@@ -244,11 +254,28 @@ _Fig. 25: Launching shortcut from terminal_
 
 Third-party programs like `dex` can be downloaded that parse shortcuts and launching them from the terminal.
 
+### Summary Table
+
+To wrap things up, I have created a table that compares and contrasts the different link objects.
+
+| Feature                             | **Symbolic Link**           | **Hard Link**                | **Shortcut (.desktop file)** |
+| :---------------------------------- | :-------------------------- | :--------------------------- | :--------------------------- |
+| **Target Type**                     | File or Directory           | File                         | File or Directory            |
+| **Span Network Drives**             | Yes                         | No                           | Yes                          |
+| **Span Filesystems**                | Yes                         | No                           | Yes                          |
+| **Requires Admin to Create**        | No (just write permission)  | No (just write permission)   | No                           |
+| **Transparent to User**             | Yes (fully)                 | Yes (fully)                  | No (requires desktop env.)   |
+| **Breaks if Source Moved/Deleted?** | Yes (becomes dangling)      | No (last link removed)       | Yes (link broken)            |
+| **Internal Path Type**              | Absolute or Relative        | N/A (same inode)             | Absolute (usually)           |
+| **Implementation**                  | Special Inode (stores path) | Directory Entry (same Inode) | Plain text file              |
+
 ### Conclusion
 
 Mastering symbolic links enhances your ability to manage files and directories efficiently. Understanding the distinctions between symlinks, hard links, and shortcuts is crucial for understanding when each should be used. As we've seen, each one tries to solve the same problem but achieves it in different ways.
 
 In Part 2, we'll explore how these concepts translate into the Windows operating system. These articles combined should provide you with a comprehensive cross-platform perspective on this topic.
+
+[Windows Links Demystified: Symbolic Links, Hard Links, and Junctions Explored](https://blog.davidvarghese.net/posts/windows-links-demystified)
 
 ### Further Reading
 

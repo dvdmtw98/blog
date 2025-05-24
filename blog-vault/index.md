@@ -1,5 +1,8 @@
 ---
 title: Post Index
+tags:
+  - posts
+  - index
 cssclasses:
   - table-wide
 ---
