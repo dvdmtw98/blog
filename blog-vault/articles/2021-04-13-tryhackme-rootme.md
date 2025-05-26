@@ -14,7 +14,7 @@ published: true
 media_subpath: /assets/
 ---
 
-![banner-image|640](images/thm-rootme/thm-rootme-banner.png)
+![[thm-rootme-banner.png|640]]
 
 Cover Image by [BiZkettE1](https://www.freepik.com/free-vector/modern-business-background-with-geometric-shapes_5287944.htm) on Freepik
 
