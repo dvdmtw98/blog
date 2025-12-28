@@ -213,6 +213,7 @@ In 2004, IEEE merged RSTP into the 802.1d standard, which made original STP obso
 
 ### References
 
+- [Introduction to Spanning Tree Protocol](https://pingmynetwork.com/network/ccna-200-301/spanning-tree-protocol)
 - [Introduction to Spanning Tree \| NetworkLessons.com](https://networklessons.com/spanning-tree/introduction-to-spanning-tree)
 - [About STP : r/networking \| Reddit](https://www.reddit.com/r/networking/comments/7rguqi/about_stp/)
 - [How Spanning-Tree works? \| NetworkAcademy.io](https://www.networkacademy.io/ccna/spanning-tree/how-stp-works)

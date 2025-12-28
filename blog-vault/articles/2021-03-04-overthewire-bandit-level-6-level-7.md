@@ -56,7 +56,7 @@ find (1)        - search for files in a directory hierarchy
 
 [An Introduction to Linux I/O Redirection \| DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection)
 
-[Site Unreachable](https://linuxhint.com/what_is_dev_null/)
+[What Is /Dev/Null – Linux Hint](https://linuxhint.com/what_is_dev_null/)
 
 ## Solution
 
