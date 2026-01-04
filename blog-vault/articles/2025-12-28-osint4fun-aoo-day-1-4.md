@@ -24,7 +24,7 @@ _Image Background by [vector_corp](https://www.freepik.com/free-vector/yellow-gr
 
 **Q) Who was driving this car in this picture?**
 
-![[aoo-2025-day1-image.jpg|460]]
+![[aoo-2025-day1-image.png|460]]
 _Formula 1 Car_
 
 We are given a picture so we can use Google Image Search (Google Lens) to find images with similar characteristics.
@@ -124,7 +124,7 @@ Christmas is approaching, and you’re feeling nostalgic for your **summer** hol
 You come across this photo of one of the iconic places from your trip.  
 One of the members of your group, who particularly enjoyed the visit, shared **her** thoughts in **August 2025** as well as other photos online, including one picture showing the **chandelier under the entrance porch**.
 
-![[aoo-2025-day2-image.jpg|400]]
+![[aoo-2025-day2-image.png|400]]
 _Location with Ceiling with Flags_
 
 **Q) What is this person’s first name and what is the green and red object hanging from the chandelier?**
@@ -159,24 +159,24 @@ _TripAdvisor Rating Filter_
 This review did not have an image with a chandelier.
 
 ![[aoo-2025-16.png|600]]
-_Tripadvisor Review_
+_TripAdvisor Review_
 
 However, this review had an image that showed the same globe that was present in the image from the question.
 
 ![[aoo-2025-17.png|600]]
-_Tripadvisor Review_
+_TripAdvisor Review_
 
 Next, I decided to browse through the images that were posted for this location, and sure enough, I found other images that contained posters and flags, which are also visible in the original image.
 
 ![[aoo-2025-18.png|600]]
-_Tripadvisor Review_
+_TripAdvisor Review_
 
 ![[aoo-2025-19.png|600]]
-_Tripadvisor Review Image Zoom_
+_TripAdvisor Review Image Zoom_
 
 I was now confident that I had the correct place. The location visited during the summer trip was **Baghdad Cafe** in Newberry Springs, California.
 
-![[aoo-2025-20.jpg|400]]
+![[aoo-2025-20.png|400]]
 _Original Image with Highlighted Items of Interest_
 
 I looked up Baghdad Cafe on Google. Google also has an option to review places. Clicking the Opinion/Review button will open a new page.
@@ -205,7 +205,7 @@ _Baghdad Cafe Google Review Image_
 
 [Advent of OSINT 2025 - Day 3 \| OSINT4Fun](https://www.osint4fun.eu/advent2025/20251203153000)
 
-![[aoo-2025-day3-image.jpg|640]]
+![[aoo-2025-day3-image.png|640]]
 _The Street Image_
 
 **Q) A little further down this street, on a day in November 2022, there stood a rather unusual character. Who was it?**
