@@ -1,0 +1,65 @@
+name: Image Optimizer
+author: David Varghese
+description: Action to Optimize Images
+
+inputs:
+  IMG_PATH:
+    description: Path to the directory that contains the images
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Install Optimize Tools
+      id: install-optimize-tools
+      shell: bash
+      run: |
+        sudo apt-get update \
+        && sudo apt-get install -y pngquant jpegoptim
+
+        URL=$(
+          curl -s https://api.github.com/repos/oxipng/oxipng/releases/latest \
+          | grep browser_download_url \
+          | grep 'amd64.deb"' \
+          | cut -d '"' -f 4
+        )
+        curl -L "$URL" -o oxipng.deb
+        sudo dpkg -i oxipng.deb
+
+    - name: Optimize PNG using Pngquant
+      id: pngquant-optimize
+      shell: bash
+      run: |
+        SRC="${{ inputs.IMG_PATH }}"
+        find "$SRC" -type f -iname "*.png" ! -iname "*banner*" -print0 | \
+        xargs -0 -P 1 -I{} sh -c '
+          file="$1"
+          echo "[pngquant] $file"
+          pngquant --quality=75-90 --output "$file" --force "$file" \
+          || { echo "[ERROR] $file"; exit 0; }
+        ' _ {}
+
+    - name: Optimize PNG using Oxipng
+      id: oxipng-optimize
+      shell: bash
+      run: |
+        SRC="${{ inputs.IMG_PATH }}"
+        find "$SRC" -type f -iname "*.png" ! -iname "*banner*" -print0 | \
+        xargs -0 -P 4 -I{} sh -c '
+          file="$1"
+          echo "[oxipng] $file"
+          oxipng -o 3 --strip safe "$file" \
+          || { echo "[ERROR] $file"; exit 0; }
+        ' _ {}
+
+    - name: Optimize JPG using Jpegoptim
+      id: jpg-optimize
+      shell: bash
+      run: |
+        SRC="${{ inputs.IMG_PATH }}"
+        find "$SRC" -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -print0 | \
+        xargs -0 -P 4 -I{} sh -c '
+          file="$1"
+          echo "[jpegoptim] $file"
+          jpegoptim --strip-all --all-progressive "$file"
+        ' _ {}

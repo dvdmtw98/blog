@@ -21,6 +21,8 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog  
+> - **Mar. 28, 2026**
+> 	- Updated the Kali VM network configuration details.
 > - **Nov. 10, 2024**
 > 	- Added note about settings that could fix the “black screen on boot” problem that occurs on certain machines.
 > 	- Updated Kali Linux VM setup steps to include configuration that is recommended by Offensive Security.
@@ -123,7 +125,7 @@ The final result should look as follows:
 
 ### Network Configuration
 
-Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`Internal Network`**. For <u>Name</u> select **`LAN 0`**. Expand the <u>Advanced</u> section. For <u>Adapter Type</u> select **`Paravirtualized Network (virtio-net)`**.
+Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`Internal Network`**. For <u>Name</u> select **`LAN 0`**. Expand the <u>Advanced</u> section. For <u>Adapter Type</u> select **`Intel PRO/1000 MT Desktop (82540EM)`**.
 
 ![vbox-34|540](images/building-home-lab-part-3/vbox-34.png)
 
@@ -248,13 +250,6 @@ sudo apt autoremove
 ![kali-25|440](images/building-home-lab-part-3/kali-25.png)
 
 The **`.iso`** file that was downloaded to create the VM can be deleted now if you do not plan to store it for future use.
-
-> [!IMPORTANT] Black Screen on Boot
-> On certain machines starting the Kali VM results in a black screen. This issue occurs usually after updating the VM. There isn’t a definitive solution to this problem. The issue may popup from time to time.  
-> 
-> Some users have reported that changing the “Graphics Controller” to `VBoxSVGA` seems to resolve the problem for them. This option is located under `Settings → Display → Screen`.
-> 
-> Forcefully powering off the VM and starting it back up also seems to fix the issue. The VM might need to be restarted 2-3 times before the VM loads properly.
 
 In the next module, we will access the pfSense Web UI and complete the remaining configuration.
 

@@ -19,9 +19,9 @@ Regex (also called Regular Expression or RegExp) is a sequence of characters tha
 
 Regular Expressions has a broad range of real-world applications such as user input validation, parsing long structured files for important information, web scrapping, transforming text from one format to another as well as find and replace operations.
 
-To a user that comes across regex for the first time, it will feel like they are trying to read incomprehensible garbled text, but once they start understanding the characters that make up the madness they will soon realize that they have just unlocked a superpower that can save the day. This feeling is summed up perfectly by xkcd.
+To a user that comes across regex for the first time, it will feel like they are trying to read incomprehensible garbled text. But once they start understanding the characters that make up the madness they will soon realize that they have just unlocked a superpower that could save the day. This feeling is summed up perfectly by in the following xkcd comic.
 
-![Regex Saves the Day|420](images/regex-demystified/regular_expression_xkcd.png)
+![Regex Saves the Day|420](regular-expression-xkcd.png)
 
 One nice thing about regex is that once we learn its syntax we can pretty much use it in any programming language (Python, JavaScript, Perl, Rust, PowerShell, etc.) with little to no modification.
 

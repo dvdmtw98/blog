@@ -21,6 +21,8 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog  
+> -  **Mar. 27, 2026**
+> 	- Major overhaul of pfSense installation steps to make it compatible with new versions of VirtualBox.
 > - **Feb. 23, 2025**
 > 	- Added note to clarify the confusion around IPv6 address on the WAN interface.
 > - **Nov. 01, 2024**
@@ -37,15 +39,15 @@ In this module, we will go over the installation of pfSense. Additionally, we wi
 
 Go to the following link: [pfSense CE Download](https://atxfiles.netgate.com/mirror/downloads/)  
 As of writing the latest version of pfSense is **`2.7.2`**  
-Download the `amd64` version `ISO` of the latest version available  
+Download the `amd64` version `ISO` of the latest version available.  
 
 > [!INFO] pfSense Download
-> Downloads from the pfSense official website now require registration. The download from the website has also been changed to use Netgate which is not the same as CE edition. Make sure to use the link provided above to download the ISO directly from their mirror.
+> Downloads from pfSense (Netgate) website now requires registration. Netgate  has also removed the option to download pfSense CE directly. Currently, the only option is to get the Netgate installer and install the CE edition from it. To avoid all this hassle use the link provided above to download the ISO directly from a mirror.
 > 
 > [Is Netgate requiring a login to download CE now? : r/PFSENSE](https://www.reddit.com/r/PFSENSE/comments/1chzp1n/is_netgate_requiring_a_login_to_download_ce_now/)  
 > [PFSense ISO Download Requires an Account and Billing Address : r/PFSENSE](https://www.reddit.com/r/PFSENSE/comments/1co8f1o/pfsense_iso_download_requires_an_account_and/)
 
-![pfsense-download|540](images/building-home-lab-part-2/pfsense-download.png)
+![pfsense-download|560](images/building-home-lab-part-2/pfsense-download.png)
 
 The downloaded file will have the extension **`.iso.gz`**. Use a decompression software like **`7-Zip`** to extract the image.
 
@@ -63,21 +65,21 @@ Launch VirtualBox. Check on **`Tools`** from the sidebar and then Select **`New`
 
 For <u>Name</u>, you can enter anything that makes sense. The <u>Folder</u> option defines the location where the VM will be saved. From the <u>ISO Image</u> dropdown select Others and select the **`.iso`** file that we just downloaded. Select <u>Type</u> as **`BSD`** and <u>Version</u> as **`FreeBSD (64-bit)`** and then click on **`Next`**.
 
-![[vbox-02.png|540]]
+![[vbox-02.png|560]]
 
 Here we select the amount of RAM and CPU that the VM can use. No need to change anything. Click on **`Next`** to continue.
 
-![[vbox-03.png|540]]
+![[vbox-03.png|560]]
 
 On this page, we choose the amount of storage space to reserve for the VM. Enter **`20GB`** in the input field.
 
-![[vbox-04.png|540]]
+![[vbox-04.png|560]]
 
 [10.2. Understanding Virtual Disks](https://rhv.bradmin.org/ovirt-engine/docs/Administration_Guide/Understanding_virtual_disks.html)
 
 Confirm that everything looks right and then click on **`Finish`**.
 
-![[vbox-05.png|540]]
+![[vbox-05.png|560]]
 
 Once done we should see the newly created VM in the sidebar.
 
@@ -88,7 +90,7 @@ Once done we should see the newly created VM in the sidebar.
 
 I like to keep my VMs organized by using the Groups feature of VirtualBox. This makes it easy to store related VMs together.
 
-![[vbox-06.png|540]]
+![[vbox-06.png|560]]
 
 Right-click on the pfSense VM from the sidebar, select **`Move to Group -> [New]`**. The VM will now be added to a <u>Group</u> called **`New Group`**. 
 
@@ -117,37 +119,33 @@ Before we boot the VM we need to configure some settings related to VirtualBox. 
 
 Select **`System -> Motherboard`** in the <u>Boot Order</u> section use the arrows to move the **`Hard Disk`** to the top, **`Optical`** should be next. Ensure that **`Floppy`** is unchecked. 
 
-![vbox-11|540](images/building-home-lab-part-2/vbox-11.png)
+![vbox-11|560](images/building-home-lab-part-2/vbox-11.png)
 
-### Audio & USB Configuration
-
-Go to the **`Audio`** tab and uncheck the **`Enable Audio`** option. Since the VM we are configuring is a router we do not need audio.
-
-![vbox-12|540](images/building-home-lab-part-2/vbox-12.png)
+### USB Configuration
 
 Go to the **`USB`** tab and uncheck the **`Enable USB Controller`** option. Since the VM we are configuring is a router we do not need USB support.
 
-![vbox-13|540](images/building-home-lab-part-2/vbox-13.png)
+![vbox-13|560](images/building-home-lab-part-2/vbox-13.png)
 
 ### Network Configuration
 
-Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`NAT`**. Expand the **`Advanced`** section and for <u>Adaptor Type</u> select **`Paravirtualized Network (virtio-net)`**.
+Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`NAT`**. Expand the **`Advanced`** section and for <u>Adaptor Type</u> select **`Intel PRO/1000 MT Desktop (82540EM)`**.
 
-![vbox-14|540](images/building-home-lab-part-2/vbox-14.png)
+![vbox-14|560](images/building-home-lab-part-2/vbox-14.png)
 
-Select **`Adapter 2`**. Tick the **`Enable Network Adapter`** option. For the <u>Attached to</u> option select **`Internal Network`**. For <u>Name</u> enter **`LAN 0`**. Expand the **`Advanced`** section. For <u>Adapter Type</u> select **`Paravirtualized Network (virtio-net)`**.
+Select **`Adapter 2`**. Tick the **`Enable Network Adapter`** option. For the <u>Attached to</u> option select **`Internal Network`**. For <u>Name</u> enter **`LAN 0`**. Expand the **`Advanced`** section. For <u>Adapter Type</u> select **`Intel PRO/1000 MT Desktop (82540EM)`**.
 
-![vbox-15|540](images/building-home-lab-part-2/vbox-15.png)
+![vbox-15|560](images/building-home-lab-part-2/vbox-15.png)
 
-Select **`Adapter 3`**. Tick the **`Enable Network Adapter`** option. For the <u>Attached to</u> option select **`Internal Network`**. For <u>Name</u> enter **`LAN 1`**. Expand the **`Advanced`** section. For <u>Adapter Type</u> select **`Paravirtualized Network (virtio-net)`**.
+Select **`Adapter 3`**. Tick the **`Enable Network Adapter`** option. For the <u>Attached to</u> option select **`Internal Network`**. For <u>Name</u> enter **`LAN 1`**. Expand the **`Advanced`** section. For <u>Adapter Type</u> select **`Intel PRO/1000 MT Desktop (82540EM)`**.
 
-![vbox-16|540](images/building-home-lab-part-2/vbox-16.png)
+![vbox-16|560](images/building-home-lab-part-2/vbox-16.png)
 
-Select **`Adapter 4`**. Tick the **`Enable Network Adapter`** option. For the <u>Attached to</u> option select **`Internal Network`**. For <u>Name</u> enter **`LAN 2`**. Expand the **`Advanced`** section. For <u>Adapter Type</u> select **`Paravirtualized Network (virtio-net)`**. 
+Select **`Adapter 4`**. Tick the **`Enable Network Adapter`** option. For the <u>Attached to</u> option select **`Internal Network`**. For <u>Name</u> enter **`LAN 2`**. Expand the **`Advanced`** section. For <u>Adapter Type</u> select **`Intel PRO/1000 MT Desktop (82540EM)`**. 
 
 Once done click on **`OK`** to save the changes and close the configuration menu.
 
-![vbox-17|540](images/building-home-lab-part-2/vbox-17.png)
+![vbox-17|560](images/building-home-lab-part-2/vbox-17.png)
 
 [VirtualBox Network Settings: All You Need to Know](https://www.nakivo.com/blog/virtualbox-network-setting-guide/)
 
@@ -162,70 +160,94 @@ Select the pfSense VM from the sidebar and click on **`Start`** from the toolbar
 
 On boot, a banner will be shown followed by a lot of text. Wait for the below screen to appear. Press **`Enter`** to Accept the agreement. 
 
-![pfsense-2|520](images/building-home-lab-part-2/pfsense-2.png)
+![pfsense-2|560](images/building-home-lab-part-2/pfsense-2.png)
 
 Press **`Enter`** to start the Installation.
 
-![pfsense-3|520](images/building-home-lab-part-2/pfsense-3.png)
+> [!INFO] pfSense Display Size    
+> The display for pfSense is generally small, making it quite hard to read. You can go to `View -> Virtual Screen 1` and use any of the options listed to make the display larger.
+> 
+> ![[vbox-76.png|280]]
 
-Press **`Enter`** to select the <u>Auto (ZFS)</u> partition option.
+![pfsense-3|560](images/building-home-lab-part-2/pfsense-3.png)
 
-![pfsense-4|520](images/building-home-lab-part-2/pfsense-4.png)
+Press **`Enter`** to select the <u>Auto (UFS)</u> partition option.
 
-Press **`Enter`** to select <u>Proceed with Installation</u>.
+![pfsense-4|560](images/building-home-lab-part-2/pfsense-4.png)
 
-![pfsense-5|520](images/building-home-lab-part-2/pfsense-5.png)
+Press **`Enter`** to partition the <u>Enter Disk</u>.
 
-Press **`Enter`** to select <u>Stripe - No Redundancy</u>.
+![pfsense-5|560](images/building-home-lab-part-2/pfsense-5.png)
 
-![pfsense-6|520](images/building-home-lab-part-2/pfsense-6.png)
+Select <u>GPT</u> as the Partition Scheme.
 
-Use the **`Spacebar`** key to select the Hard Drive (**`ada0`**) then press **`Enter`** to continue.
+![pfsense-6|560](images/building-home-lab-part-2/pfsense-6.png)
 
-![pfsense-7|520](images/building-home-lab-part-2/pfsense-7.png)
+Press `Enter` to finalize/confirm the partitions that will be created.
 
-Use the Left Arrow to select **`YES`** and then press **`Enter`** to continue.
+![pfsense-7|560](images/building-home-lab-part-2/pfsense-7.png)
 
-![pfsense-8|520](images/building-home-lab-part-2/pfsense-8.png)
+Select <u>Commit</u> to begin the partitioning and installation.
+
+![pfsense-8|560](images/building-home-lab-part-2/pfsense-8.png)
 
 Wait for the installation to complete.
 
-![pfsense-9|520](images/building-home-lab-part-2/pfsense-9.png)
+![pfsense-9|560](images/building-home-lab-part-2/pfsense-9.png)
 
 Press **`Enter`** to Reboot the VM.
 
-![pfsense-10|520](images/building-home-lab-part-2/pfsense-10.png)
+![pfsense-10|560](images/building-home-lab-part-2/pfsense-10.png)
+
+On reboot the VM will again start the installation wizard. Use the close button to shut down the VM.
+
+![[pfsense-123.png|500]]
+
+## Post-Installation Cleanup
+
+Once the VM shuts down click on <u>Settings</u> from the top bar. 
+
+In the settings menu navigate to <u>Storage</u>. Select the CD drive (usually the 2nd one) the and then click on the little blue disk icon on the right side of the <u>Optical Drive</u> option. Select <u>Remove Disk from Virtual Drive</u> to remove the ISO.
+
+Click on `OK` to save the changes. 
+
+![[pfsense-124.png|640]]
 
 ## pfSense Configuration
 
-Once pfSense reboots the first order of business is to onboard the adapters we configured in the VM settings. 
+Start the pfSense VM. The VM can take a few minutes to boot completely. Let us now onboard the interfaces we configured in the VM settings. 
+
+Press **`2`** to start the Interface Assignment wizard.
+
+The `WAN` interface IP address assignment is managed by VirtualBox. The IP assignment for the LAN interfaces is managed by pfSense. An IP address is automatically assigned by pfSense to the **`LAN`** interface. 
+
+VirtualBox can assign the WAN interface an IPv4 or IPv6 address (sometimes both like in the image below). This is okay and will not cause any issues. In Part 3, I will show how IPv6 and DHCPv6 can be disabled.
+
+![[pfsense-126.png|560]]
+
+Sometimes the above screen is skipped entirely and the interface assignment wizard is loaded directly. If that happens just continue with the below steps.  
 
 Should VLANs be set up now? **`n`**  
 In the next step, we will configure the interfaces manually.
 
-![pfsense-11|520](images/building-home-lab-part-2/pfsense-11.png)
+![pfsense-11|560](images/building-home-lab-part-2/pfsense-11.png)
 
-Enter the WAN interface name: **`vtnet0`**  
-Enter the LAN interface name: **`vtnet1`**  
-Enter the Optional 1 interface name: **`vtnet2`**  
-Enter the Optional 2 interface name: **`vtnet3`**  
+Enter the WAN interface name: **`em0`**  
+Enter the LAN interface name: **`em1`**  
+Enter the Optional 1 interface name: **`em2`**  
+Enter the Optional 2 interface name: **`em3`**  
+
+![pfsense-12|560](images/building-home-lab-part-2/pfsense-12.png)
 
 Do you want to proceed?: **`y`**
 
-![pfsense-12|520](images/building-home-lab-part-2/pfsense-12.png)
+![pfsense-13|560](images/building-home-lab-part-2/pfsense-13.png)
 
-Since the **`WAN`** interface of pfSense is managed by VirtualBox it has been assigned an IPv4 address by the VirtualBox DHCP server. pfSense has also assigned an IPv4 address to the **`LAN`** interface using its DHCP service. The **`OPT1`** and **`OPT2`** interfaces have not been assigned any IP address. We do not want the IP addresses of the interfaces to change on boot so we will assign static IPv4 addresses to the **`LAN`**, **`OPT1`** and **`OPT2`** interfaces.
+As stated earlier, the IP assignment for all the LAN interfaces (LAN, OPT1, OPT2, etc.) is managed by pfSense. The **`OPT1`** and **`OPT2`** interfaces are not in the up state so they are not assigned an IP.
 
-> [!INFO]
-> The `WAN` interface IP address will be different in your case. The IP assignment is performed by the VirtualBox DHCP server.  
+![[pfsense-125.png|560]]
 
-![pfsense-13|520](images/building-home-lab-part-2/pfsense-13.png)
-
-> [!IMPORTANT] WAN Interface  
-> - Some readers have observed that VirtualBox assigns their WAN interface an IPv6 address, while some others receive an IPv4 and IPv6 address. This shouldn’t be a problem. The VMs should still be able to connect to the internet.  
-> - In Part 3, I will show how DHCPv6 can be disabled on the WAN interface. You could also follow the steps used to configure the LAN interfaces to change the settings on the WAN interface.  
-
-#### Configuring LAN (vtnet1)
+#### Configuring LAN (em1)
 
 Enter **`2`** to select "Set interface(s) IP address". Enter **`2`** to select the **`LAN`** interface.
 
@@ -233,29 +255,29 @@ Configure IPv4 address LAN interface via DHCP?: **`n`**
 Enter the new LAN IPv4 address: **`10.0.0.1`**  
 Enter the new LAN IPv4 subnet bit count: **`24`**  
 
-![pfsense-14|520](images/building-home-lab-part-2/pfsense-14.png)
+![pfsense-14|560](images/building-home-lab-part-2/pfsense-14.png)
 
 For the next question directly press **`Enter`**. Since this is a **`LAN`** interface we do not have to worry about configuring the upstream gateway.
 
 Configure IPv6 address LAN interface via DHCP6: **`n`**  
 For the new LAN IPv6 address question press **`Enter`**  
+
 Do you want to enable the DHCP server on LAN?: **`y`**  
-Enter the start address of the IPv4 client address range: **`10.0.0.11`**  
-Enter the end address of the IPv4 client address range: **`10.0.0.243`**  
+Enter the start address of the IPv4 client address range: **`10.0.0.100`**  
+Enter the end address of the IPv4 client address range: **`10.0.0.199`**  
+
 Do you want to revert to HTTP as the webConfigurator protocol?: **`n`**
 
-![pfsense-15|520](images/building-home-lab-part-2/pfsense-15.png)
+![pfsense-15|560](images/building-home-lab-part-2/pfsense-15.png)
 
 pfSense will use the inputs we provided and configure the interface.  
 Press **`Enter`** to complete the **`LAN`** interface configuration.
 
-![pfsense-16|520](images/building-home-lab-part-2/pfsense-16.png)
-
 Once the changes apply we see that the IP address of the **`LAN`** interface has changed to the IP address that we provided.
 
-![pfsense-17|520](images/building-home-lab-part-2/pfsense-17.png)
+![pfsense-16|560](images/building-home-lab-part-2/pfsense-16.png)
 
-### Configuring OPT1 (vtnet2)
+### Configuring OPT1 (em2)
 
 Enter **`2`** to select "Set interface(s) IP address". Enter **`3`** to select the **`OPT1`** interface.
 
@@ -263,22 +285,28 @@ Configure IPv4 address OPT1 interface via DHCP?: **`n`**
 Enter the new OPT1 IPv4 address: **`10.6.6.1`**  
 Enter the new OPT1 IPv4 subnet bit count: **`24`**  
 
-![pfsense-18|520](images/building-home-lab-part-2/pfsense-18.png)
+![[pfsense-17.png|560]]
 
 For the next question directly press **`Enter`**. Since **`OPT1`** is a **`LAN`** interface we do not have to worry about configuring the upstream gateway.
 
 Configure IPv6 address OPT1 interface via DHCP6: **`n`**  
 For the new OPT1 IPv6 address question press **`Enter`**  
+
 Do you want to enable the DHCP server on OPT1?: **`y`**  
-Enter the start address of the IPv4 client address range: **`10.6.6.11`**  
-Enter the end address of the IPv4 client address range: **`10.6.6.243`**  
+Enter the start address of the IPv4 client address range: **`10.6.6.100`**  
+Enter the end address of the IPv4 client address range: **`10.6.6.199`**  
+
 Do you want to revert to HTTP as the webConfigurator protocol?: **`n`**
 
-![pfsense-19|520](images/building-home-lab-part-2/pfsense-19.png)
+![pfsense-18|560](images/building-home-lab-part-2/pfsense-18.png)
 
 Press **`Enter`** to save the changes and return to the main menu.
 
-### Configuring OPT2 (vtnet3)
+![pfsense-19|560](images/building-home-lab-part-2/pfsense-19.png)
+
+Once the changes apply, we see that the IP address of the **`OPT1`** interface has changed to the IP address that we provided.
+
+### Configuring OPT2 (em3)
 
 Enter **`2`** to select "Set interface(s) IP address". Enter **`4`** to select the **`OPT2`** interface.
 
@@ -286,56 +314,60 @@ Configure IPv4 address OPT2 interface via DHCP?: **`n`**
 Enter the new OPT2 IPv4 address: **`10.80.80.1`**  
 Enter the new OPT2 IPv4 subnet bit count: **`24`**  
 
-![pfsense-20|520](images/building-home-lab-part-2/pfsense-20.png)
+![pfsense-20|560](images/building-home-lab-part-2/pfsense-20.png)
 
 For the next question directly press **`Enter`**. Since **`OPT2`** is a **`LAN`** interface we do not have to worry about configuring the upstream gateway.
 
 Configure IPv6 address OPT2 interface via DHCP6: **`n`**  
 For the new OPT2 IPv6 address question press **`Enter`**  
+
 Do you want to enable the DHCP server on OPT2?: **`n`**  
 Do you want to revert to HTTP as the webConfigurator protocol?: **`n`**
 
-![pfsense-21|520](images/building-home-lab-part-2/pfsense-21.png)
+![pfsense-21|560](images/building-home-lab-part-2/pfsense-21.png)
 
 > [!INFO]
-> **`OPT2`** will be used to setup the Active Directory (AD) Lab. The Domain Controller (DC) in the lab will act as the DHCP server. Since the DC will perform DHCP we have disabled DHCP-based IP address assignment for this interface in pfSense.  
+> **`OPT2`** will be used to setup the Active Directory (AD) Lab. The Domain Controller (DC) in the lab will act as the DHCP server. Since DC will perform DHCP operations we have not enabled DHCP IP address assignment for this interface in pfSense.  
 
 Press **`Enter`** to save the changes and return to the main menu.
 
-The IP addresses for the **`LAN`**, **`OPT1`** and **`OPT2`** interfaces should be as follows:
+The IP ranges for the **`LAN`**, **`OPT1`** and **`OPT2`** interfaces should be as follows:
 
-![pfsense-22|520](images/building-home-lab-part-2/pfsense-22.png)
+![pfsense-22|560](images/building-home-lab-part-2/pfsense-22.png)
 
-With this, we have completed the onboarding of the interfaces in pfSense. There are additional settings that need to be configured. We will change these settings once we set up Kali Linux in the next module. From Kali Linux, we will access the pfSense Web Interface and proceed with the setup. 
+With this, we have completed the onboarding of the interfaces in pfSense. However, there is still a lot of things that has to be configured in pfSense. Once we set up Kali Linux in the next module we will use the pfSense GUI to make the necessary changes. 
 
 > [!INFO]
-> pfSense Web Interface can be accessible for all the **`LAN`** interfaces in our LAN. 
+> pfSense Web Interface is accessible on all the **`LAN`** interfaces (LAN, OPT1, OPT2, etc.) by default. 
 
 ## Shutdown pfSense
 
 When we start the lab pfSense is the first VM that has to be booted. When we shut down the lab pfSense will be the last VM that is stopped.
 
-Enter a option: **`6`** (Halt system)
+Enter an option: **`6`** (Halt system)
 Do you want to process?: **`y`**
 
 This will initiate the shutdown sequence.
 
-![pfsense-23|520](images/building-home-lab-part-2/pfsense-23.png)
+![pfsense-23|560](images/building-home-lab-part-2/pfsense-23.png)
 
-## Post-Installation Cleanup
+## Backup pfSense
+At this point you can take a snapshot/backup of the pfSense VM. The snapshot will allow us to return to the current state of the VM if something goes wrong down the line.
 
-After the VM is shut down. Click on **`Settings`** from the toolbar.
+Power off the VM and click on the **`Snapshots`** tab.
 
-![vbox-10|580](images/building-home-lab-part-2/vbox-10.png)
+![[vbox-77.png|600]]
 
-Go to the **`Storage`** tab. In the <u>Storage Devices</u> section click on the pfSense **`.iso`** image then click on the small disk image on the right side of the <u>Optical Drive</u> option.
+Click on <u>Take</u> from the toolbar.
 
-From the dropdown select **`Remove Disk from Virtual Drive`**. Click on **`OK`** to save the changes and close the configuration menu.
+Give the snapshot a descriptive name and description. Click on <u>Ok</u>.
 
-![pfsense-24|540](images/building-home-lab-part-2/pfsense-24.png)
+![[vbox-78.png|450]]
 
-The **`.iso`** file along with the **`.iso.gz`** file that was downloaded to create the VM can be deleted if you do not want to store them.
+Now we have a snapshot/backup of the current state of the VM.
 
-In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will be used to configure and manage pfSense. It will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`**.
+![[vbox-79.png|600]]
+
+In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`** interface.
 
 [Part 3 - Kali Linux Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-3/)

@@ -20,8 +20,10 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-
 > [!IMPORTANT] Changelog
+> - **Mar. 28, 2026**
+> 	- Updated images and descriptions to reflect the changes that were introduced in Part 2.
+> 	- Added steps to configure pfSense interface using the GUI. 
 > - **Oct. 31, 2024**
 > 	- Updated instructions to reflect additonal step required to install Tsurugi Linux 2024.1+
 
@@ -31,11 +33,9 @@ In this module, we are going to set up Tsurugi Linux which is an OS that comes p
 
 As discussed in the last module using VirtualBox GUI we cannot create more than 4 interfaces but using the CLI we can create up to 8 Interfaces.
 
-### Creating new Interface
+### Creating New Interface
 
-Before creating the interface we need the name of the pfSense VM. In my case, the VM is called "<u>pfSense</u>". Also, ensure the VM is "Powered Off" before running the commands. 
-
-The last Adapter we created is called <u>Adapter 5</u>.
+We will be using the exact same steps as Part 9 to create <u>Adapter 6</u>.
 
 ![vbox-45|420](images/building-home-lab-part-8/vbox-45.png)
 
@@ -46,7 +46,7 @@ Launch PowerShell and run the following commands:
 VBoxManage modifyvm "pfSense" --nic6 intnet
 
 # Use the Paravirtualized Adapter
-VBoxManage modifyvm "pfSense" --nictype6 virtio
+VBoxManage modifyvm "pfSense" --nictype6 82540EM
 
 # Give it the name LAN 3
 VBoxManage modifyvm "pfSense" --intnet6 "LAN 4"
@@ -59,78 +59,70 @@ VBoxManage modifyvm "pfSense" --cableconnected6 on
 > In the above commands "pfSense" is the name of my VM.  
 > In the 3rd command in place of "LAN 3" you can use a different name that matches your network name convention.
 
-![vbox-46|400](images/building-home-lab-part-9/vbox-46.png)
+![vbox-46|450](images/building-home-lab-part-9/vbox-46.png)
 
 The pfSense VM will now have an Adapter 6.
 
-![vbox-47|540](images/building-home-lab-part-9/vbox-47.png)
+![vbox-47|500](images/building-home-lab-part-9/vbox-47.png)
 
 ### Enabling the Interface
 
 Start the pfSense VM. pfSense will not detect the new interface. We need to onboard the interface before it shows up.
 
-![pfsense-100|540](images/building-home-lab-part-9/pfsense-100.png)
+For this interface I will be performing the entire configuration using the GUI. You can follow the steps from Part 2 to do the same thing using the CLI. Open the GUI in the Kali VM. Go to **`Interfaces -> Assignments`**.
 
-Enter **`1`** to select "Assign Interfaces".  
-Should VLANs be set up now? **`n`**
+![pfsense-100|640](images/building-home-lab-part-9/pfsense-100.png)
 
-![pfsense-101|540](images/building-home-lab-part-9/pfsense-101.png)
+On the page all the interfaces that are currently active and interfaces than can be onboarded are listed. The last entry **`em5`** is the interface we want to configure. Click on the green <u>Add</u> button beside the interface to add it.
 
-Enter the WAN interface name: **`vtnet0`**  
-Enter the LAN interface name: **`vtnet1`**  
-Enter the Optional 1 interface name: **`vtnet2`**  
-Enter the Optional 2 interface name: **`vtnet3`**  
-Enter the Optional 3 interface name: **`vtnet4`**  
-Enter the Optional 4 interface name: **`vtnet5`**
+![pfsense-101|600](images/building-home-lab-part-9/pfsense-101.png)
 
-![pfsense-102|540](images/building-home-lab-part-9/pfsense-102.png)
+You will see a message in green at the top of the page showing that the interface has been onboarded. We can see that the new interface has been assigned the name **`OPT4`**.
 
-Do you want to proceed?: **`y`**
+![pfsense-102|600](images/building-home-lab-part-9/pfsense-102.png)
 
-![pfsense-103|540](images/building-home-lab-part-9/pfsense-103.png)
+### Interface Naming & IP Assignment
 
-The new interface is onboarded. Now we need to assign it an IP address.
+Now we need to assign the interface an IP address. Go to **`Interfaces -> OPTT4`**.  
 
-![pfsense-104|540](images/building-home-lab-part-9/pfsense-104.png)
+![pfsense-103|600](images/building-home-lab-part-9/pfsense-103.png)
 
-Enter **`2`** to select "<u>Set interface(s) IP address</u>". Enter **`6`** to select the OPT4 interface.
+Make sure the interface is enabled.  
+In the <u>Description</u> field enter **`SECURITY`**.  
+Verify that <u>IPv4 Configuration Type</u> is set to **`Static IPv4`**.  
+Ensure that <u>IPv6 Configuration Type</u> is set to **`None`**.  
 
-![pfsense-105|540](images/building-home-lab-part-9/pfsense-105.png)
+![pfsense-104|600](images/building-home-lab-part-9/pfsense-104.png)
 
-Configure IPv4 address OPT3 interface via DHCP?: **`n`**  
-Enter the new OPT4 IPv4 address: **`10.10.10.1`**  
-Enter the new OPT4 IPv4 subnet bit count: **`24`**  
+Scroll to the <u>Static IPv4 Configuration</u> section.  
+In the <u>IPv4 Address</u> field enter **`10.10.10.1`** and set the subnet to **`24`**.  
+Click on **`Save`** to save the changes.  
 
-For the next question directly press **`Enter`**. Since this is an **`LAN`** interface we do not have to worry about configuring the upstream gateway.
-
-![pfsense-106|540](images/building-home-lab-part-9/pfsense-106.png)
-
-Configure IPv6 address OPT4 interface via DHCP6: **`n`**  
-For the new OPT4 IPv6 address question press **`Enter`**.  
-Do you want to enable the DHCP server on OPT4?: **`y`**  
-Enter the start address of the IPv4 client address range: **`10.10.10.11`**  
-Enter the end address of the IPv4 client address range: **`10.10.10.243`**  
-Do you want to revert to HTTP as the webConfigurator protocol?: **`n`**
-
-![pfsense-107|540](images/building-home-lab-part-9/pfsense-107.png)
-
-Now interface OPT4 will have an IP address.
-
-![pfsense-108|540](images/building-home-lab-part-9/pfsense-108.png)
-
-### Renaming the Interface
-
-Launch the Kali Linux VM. Login to the pfSense web portal. From the navigation bar select **`Interfaces -> OPT4`**. 
-
-![pfsense-109|580](images/building-home-lab-part-9/pfsense-109.png)
-
-In the description field enter **`SECURITY`**. Scroll to the bottom and click on **`Save`**.
-
-![pfsense-110|580](images/building-home-lab-part-9/pfsense-110.png)
+![pfsense-105|600](images/building-home-lab-part-9/pfsense-105.png)
 
 Click on **`Apply Changes`** in the popup that appears to persist the changes.
 
-![pfsense-111|580](images/building-home-lab-part-9/pfsense-111.png)
+![pfsense-111|600](images/building-home-lab-part-9/pfsense-111.png)
+
+### Interface DHCP Configuration
+
+Next we have to configure DHCP on the interface. Go to **`Services -> DHCP Server`**.  
+
+![pfsense-106|600](images/building-home-lab-part-9/pfsense-106.png)
+
+Select the **`SECURITY`** tab.  
+Enable DHCP by click on <u>Enable DHCP server on SECURITY interface</u>.  
+
+Now we need to configure the DHCP <u>Address Pool Range</u>.  
+I selected **`10.10.10.100`** as the pool start address and **`10.10.10.199`** as the pool end address.  
+
+Scroll to the bottom of the page and click on <u>Save</u>. Click on **`Apply Changes`** in the popup that appears to finalize the changes.
+
+![pfsense-107|600](images/building-home-lab-part-9/pfsense-107.png)
+
+Now if you go to the pfSense VM and refresh the display by press <u>Enter</u> you will see that OPT4 has been renamed and assigned an IP address.
+
+![pfsense-108|580](images/building-home-lab-part-9/pfsense-108.png)
 
 ### Interface Firewall Configuration
 

@@ -20,6 +20,12 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog  
+> -  **Mar., 28 2026**
+> 	- Updated Part 3, 4, 5, 8, 9 and 11 with new images and descriptions to reflect the changes introduced in Part 2.
+> 	- Added steps in Part 8 and 9 to configure pfSense interface using the GUI.
+> -  **Mar., 27 2026**
+> 	- Updated Part 1 to add steps to disable Hyper-V.  
+> 	- Updated Part 2 with the overhauled pfSense installation steps.
 > - **Feb. 23, 2025**
 > 	- Updated Part 2 and Part 4 with instructions on disabling DHCPv6 on the WAN interface.
 > - **Feb. 15, 2025**
@@ -53,16 +59,13 @@ This project has been heavily inspired by the following Home Lab guides:
 
 ![network-diagram|560](images/building-home-lab-part-1/network-diagram.svg)
 
-> [!NOTE] Lab Startup
-> pfSense is the gateway (router) and firewall for the lab. pfSense should always be the first VM that is booted when using the lab. If pfSense is not booted the machines in the lab will not be able to access the internet. Once pfSense is up other VMs can be launched.
-
 ## Requirements
 
 ### System
 
-- 64-bit multi-threaded CPU (minimum 4 cores) with Virtualization Support
+- 64-bit CPU (with 4+ cores) and Virtualization Support
 - 16GB RAM
-- 250GB Disk Space
+- 300GB Disk Space
 
 ### Concepts
 
@@ -81,6 +84,42 @@ If virtualization is shown as disabled it means that the CPU supports virtualiza
 If virtualization is shown as disabled we need to enable it in the BIOS. The process of getting to the BIOS varies from device to device. Refer to the device manual and online forums for device-specific instructions.
 
 [Enabling Virtualization in your PC BIOS](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html)
+
+### Disabling Hyper-V
+If you are using WSL 2, Windows Sandbox or Docker Desktop you have Hyper-V enabled on your system. Hyper-V is Microsoft’s virtualization platform that allows you to run virtual machines on Windows. It is a Type-1 (bare-metal) hypervisor. It runs directly on the hardware and manages all virtual machines at a low level.
+
+When Hyper-V is enabled, Windows itself effectively runs on top of this hypervisor layer, and all virtualization features are controlled by it. Tools like VirtualBox are Type-2 hypervisors (they run as applications on top of the OS). They need access to virtualization features exposed by the CPU (Intel VT-x / AMD-V) to run at their max performance.
+
+However, when Hyper-V is enabled, it takes exclusive control of virtualization meaning no other tool can access VT-x/AMD-V. Because of this VirtualBox/VMware will run in a degraded mode leading to significantly slower performance.
+
+You can check if Hyper-V is enabled on your system using the following command in an administrative PowerShell prompt:
+
+```cmd
+bcdedit | findstr /i hypervisorlaunchtype
+```
+
+If you see `Off` in the output it means that Hyper-V is disabled on your system. It the result shows `Auto` it means Hyper-V is active on the system.
+
+![[win-system-1.png|450]]
+
+> [!INFO] Admin Prompt
+> You can open an admin prompt by using the Quick Link menu. Use `Win + X` to open the menu and then select the option Terminal/PowerShell (Admin).
+> 
+> ![[win-system-2.png|200]]
+
+Hyper-V can be disabled by running the following command from an elevated PowerShell prompt.
+
+```cmd
+bcdedit /set hypervisorlaunchtype off
+```
+
+A system reboot is required for the changes to take effect.
+
+When Hyper-V is disabled features like WSL 2, Windows Sandbox and Docker Desktop cannot be used. Hyper-V can be re-enabled using the following command:
+
+```cmd
+bcdedit /set hypervisorlaunchtype auto
+```
 
 ## Installing VirtualBox
 

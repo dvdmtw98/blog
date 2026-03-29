@@ -20,10 +20,13 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
-Virtual Machine images present online come in 2 formats - **`.vmdk`** (Virtual Machine Disk Image) or **`.ova`** (Open Virtualization Format). In this module, we will step up some vulnerable VMs on the **`CYBER_RANGE`** interface which we can then access using Kali Linux running on the **`LAN`** interface. We will also see how to import **`.vmdk`** and **`.ova`** images into VirtualBox.
+> [!IMPORTANT] Changelog  
+> -  **Mar., 28 2026**
+> 	- Updated the images and description in to reflect the changes introduced in Part 2.
 
-> [!INFO]
-> Boot the pfSense VM if it was turned off before proceeding with the below setup. Once pfSense is up start the Kali Linux VM as well.
+In this module, we will step up some vulnerable VMs on the **`CYBER_RANGE`** interface which we can then access using Kali Linux running on the **`LAN`** interface. We will also see how to import **`.vmdk`** and **`.ova`** images into VirtualBox.
+
+Boot the pfSense VM if it was turned off before proceeding with the below setup. Once pfSense is up start the Kali Linux VM.
 
 ## VM 1: Metasploitable 2
 
@@ -144,10 +147,10 @@ Password: **`msfadmin`**
 After login use the following command to check if we have an IP address:
 
 ```bash
-ip a l eth0
+ifconfig
 ```
 
-We can see that we have been assigned the IP **`10.6.6.12`** (IP may be different in your case) which we know is inside the DHCP address range for the **`CYBER_RANGE`** interface.
+We can see that we have been assigned the IP **`10.6.6.100`** (IP may be different in your case) which we know is inside the DHCP address range for the **`CYBER_RANGE`** interface.
 
 ![meta-22|520](images/building-home-lab-part-5/meta-22.png)
 
@@ -162,7 +165,7 @@ ping google.com -c 5
 We can do a similar test to check connectivity to the Kali Linux.
 
 ```bash
-ping 10.0.0.2 -c 5
+ping 10.0.0.10 -c 4
 ```
 
 ![meta-24|520](images/building-home-lab-part-5/meta-24.png)
@@ -170,10 +173,10 @@ ping 10.0.0.2 -c 5
 We can also try to reach the Metasploitable 2 VM from Kali Linux.
 
 ```bash
-ping 10.6.6.12 -c 5
+ping 10.6.6.100 -c 4
 ```
 
-![meta-25|400](images/building-home-lab-part-5/meta-25.png)
+![meta-25|460](images/building-home-lab-part-5/meta-25.png)
 
 ## VM 2: Chronos
 
@@ -225,7 +228,7 @@ Go to **`System -> Motherboard`**. For <u>Boot Order</u> ensure that **`Hard Dis
 
 ![chronos-9|540](images/building-home-lab-part-5/chronos-9.png)
 
-Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`Internal Network`**, for <u>name</u> select **`LAN 1`**. Expand the <u>Advanced</u> settings option. From <u>Adapter Type</u> select **`Paravirtualized Network (virtio-net)`**. Click **`OK`** to save the changes.
+Go to **`Network -> Adapter 1`**. For the <u>Attached to</u> field select **`Internal Network`**, for <u>name</u> select **`LAN 1`**. Expand the <u>Advanced</u> settings option. From <u>Adapter Type</u> select **`Intel PRO/1000 MT Desktop (82540EM)`**. Click **`OK`** to save the changes.
 
 ![chronos-10|540](images/building-home-lab-part-5/chronos-10.png)
 
@@ -239,21 +242,17 @@ On the Kali Linux VM open the pfSense Web Portal. From the navigation bar select
 
 ![chronos-12|580](images/building-home-lab-part-5/chronos-12.png)
 
-Under the Leases section, there should be an entry for Chronos. We can see that it has been assigned the IP **`10.6.6.13`**.
+Under the Leases section, there should be an entry for Chronos. We can see that it has been assigned the IP **`10.6.6.101`**.
 
 ![chronos-13|580](images/building-home-lab-part-5/chronos-13.png)
 
-From Kali, we can ping the VM to test if we can connect to it.
+From Kali, ping Chronos to verify we can connect to it.
 
 ```bash
-ping 10.6.6.13 -c 5
+ping 10.6.6.101 -c 4
 ```
 
-![chronos-14|400](images/building-home-lab-part-5/chronos-14.png)
-
-> [!INFO] Adapter Type Selection
-> You would have noticed that for the Metasploitable 2 VM we did not chose **`Paravirtualized Network`**. This VM is quite old and does not work properly on that Adapter. Windows VMs also don't work on **`Paravirtualized Network`** Adapter.  
-> From a performance point of view **`Paravirtualized Network`** is the better choice. We don't have a way to know in advance if a Linux VM will work on the Adapter. So what I recommend is to first select **`Paravirtualized Network`** booting up the VM and check if the network is working properly if not shutdown the VM and select a different Adapter.
+![chronos-14|450](images/building-home-lab-part-5/chronos-14.png)
 
 In the next module, we will begin configuring the Active Directory Lab.
 

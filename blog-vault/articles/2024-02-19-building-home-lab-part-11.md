@@ -20,6 +20,10 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+> [!IMPORTANT] Changelog  
+> -  **Mar., 28 2026**
+> 	- Updated images to reflect the changes introduced in Part 2.
+
 In this module, we will see how we can transfer files using SCP from "Tsurugi Linux" which is on the **`SECURITY`** subnet to VMs on the **`ISOLATED`** subnet. 
 
 I recommend this approach to get Malware Samples into the Malware Analysis Lab. We can use other methods for transferring files to these VMs but since we are dealing with Malware I want to keep the samples isolated from the Internet and the host machine filesystem.
@@ -34,7 +38,7 @@ ip a
 
 ![malware-1|600](images/building-home-lab-part-11/malware-1.png)
 
-Tsurugi Linux has been assigned the IP Address **`10.10.10.12`** by the DHCP server.
+Tsurugi Linux has been assigned the IP Address **`10.10.10.100`** by the DHCP server. The interface has access to the internet via **`enp0s3`**.  
 
 Start the Kali Linux VM and log into the pfSense Web UI.
 
@@ -46,11 +50,11 @@ From the navigation bar select **`Status -> DHCP Leases`**.
 
 In the **`Leases`** section find Tsurugi Linux. Click on the hollow "+" icon (Add Static IP) on the right-hand side.
 
-![malware-2|580](images/building-home-lab-part-11/malware-2.png)
+![malware-2|600](images/building-home-lab-part-11/malware-2.png)
 
-In the <u>IP Address</u> field enter **`10.10.10.2`**. Scroll to the bottom and click on **`Save`**.
+In the <u>IP Address</u> field enter **`10.10.10.10`**. Scroll to the bottom and click on **`Save`**.
 
-![malware-3|580](images/building-home-lab-part-11/malware-3.png)
+![malware-3|600](images/building-home-lab-part-11/malware-3.png)
 
 A popup will appear at the top. Click on **`Apply Changes`**.
 
@@ -75,7 +79,7 @@ ip a enp0s3
 
 Refresh the DHCP Leases page and we should see that Tsurugi Linux is now using the IP address that we configured. 
 
-![malware-6|580](images/building-home-lab-part-11/malware-6.png)
+![malware-6|600](images/building-home-lab-part-11/malware-6.png)
 
 ## pfSense Firewall Configuration
 
@@ -89,11 +93,11 @@ Go to the **`ISOLATED`** subnet tab. Click on the "<u>Add rule to the top of the
 
 Enter the details as shown below:  
 Source: **`ISOLATED subnets`**  
-Destination: **`Address or Alias - 10.10.10.2`**  
+Destination: **`Address or Alias - 10.10.10.10`**  
 Destination Port Range: **`SSH (22)`**  
 Description: **`Allows SSH access to DFIR VM`**
 
-![malware-7|580](images/building-home-lab-part-11/malware-7.png)
+![malware-7|600](images/building-home-lab-part-11/malware-7.png)
 
 A popup will appear at the top of the page. Click on **`Apply Changes`**.
 
@@ -101,7 +105,13 @@ A popup will appear at the top of the page. Click on **`Apply Changes`**.
 
 The final firewall rules will look as follows:
 
-![malware-8|580](images/building-home-lab-part-11/malware-8.png)
+![malware-8|600](images/building-home-lab-part-11/malware-8.png)
+
+We are done with all the firewall related configuration for this lab. 
+
+I would recommend creating a snapshot of pfSense at this point to capture all the changes that were made throughout the guide.
+
+![[vbox-82.png|420]]
 
 ## Enabling SSH
 
@@ -121,7 +131,7 @@ sudo systemctl start ssh
 
 ![malware-10|560](images/building-home-lab-part-11/malware-10.png)
 
-### Flare VM (Windows)
+### Flare VM
 
 Right-click on the Start menu icon. Select **`Windows PowerShell (Admin)`**.
 
@@ -275,7 +285,7 @@ sudo systemctl stop ssh
 
 ![malware-22|580](images/building-home-lab-part-11/malware-22.png)
 
-### Flare VM (Windows)
+### Flare VM
 
 ```powershell
 Stop-Service sshd

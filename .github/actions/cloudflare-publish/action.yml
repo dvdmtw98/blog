@@ -14,10 +14,12 @@ runs:
       id: copy-config
       shell: bash
       run: cp -a main/config/. chirpy
+
     - name: Copy Scripts
       id: copy-scripts
       shell: bash
       run: cp -a main/scripts chirpy
+
     - name: Copy Markdown
       id: copy-markdown
       shell: bash
@@ -25,38 +27,46 @@ runs:
         cp -a main/blog-vault/articles/. chirpy/_posts \
         && mv main/blog-vault/about.md chirpy/_tabs \
         && rm chirpy/_posts/.placeholder
+
     - name: Setup Python
       id: setup-python
       uses: actions/setup-python@v5
       with:
         python-version: "3.11"
+
     - name: Install Python Dependencies
       id: install-python-dependencies
       shell: bash
       run: cd chirpy && pip install -r scripts/requirements.txt
+
     - name: Run Scripts
       id: run-scripts
       shell: bash
       run: cd chirpy && python scripts/edit_markdown.py
+
     - name: Copy Images
       id: copy-images
       shell: bash
       run: cp -a chirpy/_posts/images chirpy/assets
+
     - name: Setup Cloudflare Analytics
       uses: TomaszKandula/variable-substitution@v1.0.2
       with:
         files: "chirpy/_config.yml"
       env:
         analytics.cloudflare.id: ${{ inputs.MEASUREMENT_ID }}
+
     - name: Setup Ruby
       id: setup-ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: "3.3"
+
     - name: Install Dependencies
       id: install-dependencies
       shell: bash
       run: cd chirpy && bundle install
+      
     - name: Build Blog
       id: build-blog
       shell: bash

@@ -276,7 +276,7 @@ Next, I searched on Google for Amsterdamoya and noticed that there is a Wikipedi
 ![[aoo-2025-34.png|640]]
 _Amsterdamoya Google Search_
 
-[Amsterdamoya - Google Search](www.google.com/search?q=amsterdamoya)
+[Amsterdamoya - Google Search](https://www.google.com/search?q=amsterdamoya)
 
 The article tells us that in the 1600s there was a town called **Smeerenburg** that was constructed for whaling on the southeastern side of this island. This could be our town.
 

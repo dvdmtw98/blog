@@ -22,6 +22,8 @@ Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-opera
 
 
 > [!IMPORTANT] Changelog  
+> - **Mar. 28, 2025**
+> 	- Updated the images pfSense images to reflect the changes that were made in Part 2.
 > - **Feb. 23, 2025**
 > 	- Added instructions to disable DHCPv6 on the WAN interface.
 
@@ -93,7 +95,7 @@ From the navigation bar select **`Interfaces -> OPT1`**.
 
 ![pfsense-38|600](images/building-home-lab-part-4/pfsense-38.png)
 
-In the <u>Description</u> field enter **`CYBER_RANGE`**. Scroll to the bottom and click on **`Save`**. 
+In the <u>Description</u> field enter **`CYBER_RANGE`**. Make sure that <u>IPv6 Configuration Type</u> is set to **`None`** else the interface could be assigned an IPv6 address. Scroll to the bottom and click on **`Save`**.
 
 ![pfsense-39|600](images/building-home-lab-part-4/pfsense-39.png)
 
@@ -105,7 +107,10 @@ From the navigation bar select **`Interfaces -> OPT2`**.
 
 ![pfsense-41|600](images/building-home-lab-part-4/pfsense-41.png)
 
-In the <u>Description</u> field enter **`AD_LAB`**. Scroll to the bottom of the page and click on **`Save`**. A popup will appear at the top of the page click on **`Apply Changes`**.
+In the <u>Description</u> field enter **`AD_LAB`**. Make sure that <u>IPv6 Configuration Type</u> is set to **`None`**.
+
+Scroll to the bottom of the page and click on **`Save`**.  
+A popup will appear at the top of the page click on **`Apply Changes`**.
 
 ![pfsense-42|600](images/building-home-lab-part-4/pfsense-42.png)
 
@@ -159,7 +164,9 @@ Go to the **`Networking`** tab
 
 ![pfsense-49|600](images/building-home-lab-part-4/pfsense-49.png)
 
-Scroll to the end in the **`Network Interfaces`** section and enable the highlighted option. This option should improve the performance of pfSense. Click on **`Save`**.
+Scroll to the **`IPv6 Options`** section. Disable the 1st 2 options (Allow IPv6, IPv6 over IPv4 tunneling) and enable the next 2 options (Prefer IPv4 or IPv6, IPv6 DNS entry). These setings to disable IPv6 related operations.
+
+In the **`Network Interfaces`** section. Enable the highlighted option (Hardware Checksum Offloading). Scroll to the bottom and click on **`Save`**.
 
 ![pfsense-50|600](images/building-home-lab-part-4/pfsense-50.png)
 
@@ -181,11 +188,29 @@ From the navigation bar select **`Status -> DHCP Leases`**.
 
 ![pfsense-53|600](images/building-home-lab-part-4/pfsense-53.png)
 
-In the **`Leases`** section, we should see the Kali Linux VM with its current IP address. Click on the highlighted **`+`** icon to assign a static IP to Kali Linux. The static IP will make it easier for us to apply firewall rules to interfaces that should only be able to reach the Kali VM. 
+In the **`Leases`** section, the Kali Linux VM with its current IP address will be listed. 
+
+Check the `Lease Utilization` section and ensure the DHCP range listed matches what was provided during the configuration of the LAN interface using CLI in Part 2. In my case, the range listed were was incorrect.
 
 ![pfsense-54|600](images/building-home-lab-part-4/pfsense-54.png)
 
-In the <u>IP Address</u> input enter **`10.0.0.2`**. Scroll to the bottom and click on **`Save`**.
+If this is the case for you as well, go to **`Services -> DHCP Serer`**.
+
+![[pfsense-127.png|640]]
+
+Select the LAN interface and change the pool range in the <u>Address Pool Range</u> section. I have the DHCP pool set to start at `10.0.0.100` and end at `10.0.0.199`. This range determines the IPs that can be assigned by DHCP to the VMs that have joined the network.
+
+Scroll to the button of the page and click on **`Save`**. When the popup appears click on <u>Apply Changes</u> to finalize the change.
+
+![[pfsense-128.png|640]]
+
+Now navigate back to **`Status -> DHCP Leases`**.
+
+Click on the highlighted **`+`** icon to assign a static IP to Kali Linux. The static IP will make it easier for us to apply firewall rules to allow certain traffic to reach the Kali VM.
+
+![[pfsense-129.png|640]]
+
+In the <u>IP Address</u> input enter **`10.0.0.10`**. Scroll to the bottom and click on **`Save`**.
 
 ![pfsense-55|600](images/building-home-lab-part-4/pfsense-55.png)
 
@@ -227,6 +252,10 @@ Go to the **`LAN`** tab. The LAN tab will have some predefined rules.
 
 ![pfsense-59|600](images/building-home-lab-part-4/pfsense-59.png)
 
+For the rule with the description: “Default allow LAN IPv6 any rule” click on the cancel button (highlighted in the image). Since we have disabled IPv6 on our interfaces there is no need for this rule.
+
+A popup to <u>Apply Changes</u> will show up at the top of the page. Ignore it for now, we will save all the changes for this interface together.
+
 Click on the "<u>Add rule to top</u>" button to create a new rule. 
 
 ![pfsense-60|400](images/building-home-lab-part-4/pfsense-60.png)
@@ -243,7 +272,7 @@ Scroll to the bottom and click on **`Save`**.
 
 ![pfsense-61|600](images/building-home-lab-part-4/pfsense-61.png)
 
-A popup will appear at the top of the page. Click on **`Apply Changes`**.
+Now click on the **`Apply Changes`** button in the popup at the top of the page. 
 
 ![pfsense-62|600](images/building-home-lab-part-4/pfsense-62.png)
 
@@ -309,7 +338,7 @@ A popup will appear at the top to save the changes, no need to click on that jus
 The rule has the following details:  
 Protocol: **`Any`**  
 Source: **`CYBER_RANGE subnets`**  
-Destination: **`Address or Alias - 10.0.0.2`**  
+Destination: **`Address or Alias - 10.0.0.10`**  
 Description: **`Allow traffic to Kali Linux VM`**
 
 Scroll to the bottom and click on **`Save`**.
@@ -412,6 +441,13 @@ Click on **`Submit`**.
 ![pfsense-119|600](images/building-home-lab-part-4/pfsense-119.png)
 
 Once pfSense boots up you will be redirected to the login page.
+
+> [!INFO] VM Snapshot/Backups
+> At this point you can shut down the Kali and pfSense VM and create snapshots for them. Here I am taking a 2nd snapshot of pfSense which will contain the changes that were made since the 1st snapshot.
+> 
+> ![[vbox-80.png|400]]
+> 
+> ![[vbox-81.png|600]]
 
 In the next module, we will add some vulnerable VMs to the **`CYBER_RANGE`** interface and then we will test our connectivity to them from the Kali Linux VM.
 
