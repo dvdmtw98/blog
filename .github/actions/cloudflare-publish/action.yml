@@ -28,6 +28,11 @@ runs:
         && mv main/blog-vault/about.md chirpy/_tabs \
         && rm chirpy/_posts/.placeholder
 
+    - name: Copy Optimized Images
+      id: copy-optimized-images
+      shell: bash
+      run: cp -a assets/source-code/images/. chirpy/_posts/images
+
     - name: Setup Python
       id: setup-python
       uses: actions/setup-python@v5

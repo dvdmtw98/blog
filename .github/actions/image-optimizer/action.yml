@@ -6,6 +6,9 @@ inputs:
   IMG_PATH:
     description: Path to the directory that contains the images
     required: true
+  ASSETS_BASE_PATH:
+    description: Base path to the directory that stores the optimized images
+    required: true
 
 runs:
   using: composite
@@ -26,40 +29,12 @@ runs:
         curl -L "$URL" -o oxipng.deb
         sudo dpkg -i oxipng.deb
 
-    - name: Optimize PNG using Pngquant
-      id: pngquant-optimize
+    - name: Run Optimize Script
+      id: run-optimize-script
       shell: bash
-      run: |
-        SRC="${{ inputs.IMG_PATH }}"
-        find "$SRC" -type f -iname "*.png" ! -iname "*banner*" -print0 | \
-        xargs -0 -P 1 -I{} sh -c '
-          file="$1"
-          echo "[pngquant] $file"
-          pngquant --quality=75-90 --output "$file" --force "$file" \
-          || { echo "[ERROR] $file"; exit 0; }
-        ' _ {}
+      run: ${{ github.action_path }}/optimize.sh "${{ inputs.IMG_PATH }}" "${{ inputs.ASSETS_BASE_PATH }}"
 
-    - name: Optimize PNG using Oxipng
-      id: oxipng-optimize
+    - name: Run Reconcile Script
+      id: run-reconcile-script
       shell: bash
-      run: |
-        SRC="${{ inputs.IMG_PATH }}"
-        find "$SRC" -type f -iname "*.png" ! -iname "*banner*" -print0 | \
-        xargs -0 -P 4 -I{} sh -c '
-          file="$1"
-          echo "[oxipng] $file"
-          oxipng -o 3 --strip safe "$file" \
-          || { echo "[ERROR] $file"; exit 0; }
-        ' _ {}
-
-    - name: Optimize JPG using Jpegoptim
-      id: jpg-optimize
-      shell: bash
-      run: |
-        SRC="${{ inputs.IMG_PATH }}"
-        find "$SRC" -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -print0 | \
-        xargs -0 -P 4 -I{} sh -c '
-          file="$1"
-          echo "[jpegoptim] $file"
-          jpegoptim --strip-all --all-progressive "$file"
-        ' _ {}
+      run: ${{ github.action_path }}/reconcile.sh "${{ inputs.IMG_PATH }}" "${{ inputs.ASSETS_BASE_PATH }}"

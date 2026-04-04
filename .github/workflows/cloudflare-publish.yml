@@ -1,5 +1,5 @@
 name: Deploy Source Code to Cloudflare
-run-name: Publish to Cloudflare on ${{ github.ref_name }} by @${{ github.actor }}
+run-name: Publish to Cloudflare from ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
@@ -11,25 +11,38 @@ jobs:
   source-code:
     name: Source Code Deployment
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Current Repo
-        id: checkout-current-repo
+      - name: Checkout Blog
+        id: checkout-blog
         uses: actions/checkout@v4
         with:
           submodules: true
+          fetch-depth: 2
           path: main
+
+      - name: Checkout Assets
+        id: checkout-assets
+        uses: actions/checkout@v4
+        with:
+          repository: dvdmtw98/assets-cache
+          ssh-key: ${{ secrets.ASSETS_SSH_KEY }}
+          fetch-depth: 1
+          path: assets
 
       - name: Optimize Images
         id: optimize-images
         uses: ./main/.github/actions/image-optimizer
         with:
           IMG_PATH: main/blog-vault/articles/images
+          ASSETS_BASE_PATH: assets/source-code/images
 
       - name: Checkout Chirpy
         id: checkout-chirpy
         uses: actions/checkout@v4
         with:
           repository: cotes2020/chirpy-starter
+          fetch-depth: 1
           path: chirpy
 
       - name: Build Source Code
@@ -45,3 +58,15 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy chirpy/_site --project-name=my-source-code --branch=${{ github.ref_name }}
+
+      - name: Commit Optimized
+        id: commit-optimized
+        shell: bash
+        run: |
+          cd assets
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "action: Optimized Images $(date +"%Y-%m-%d %H:%M")"
+          git push

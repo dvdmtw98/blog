@@ -1,5 +1,5 @@
 name: Publish New Posts to Medium
-run-name: Publish to Medium on ${{ github.ref_name }} by @${{ github.actor }}
+run-name: Publish to Medium from ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:

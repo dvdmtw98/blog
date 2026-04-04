@@ -9,6 +9,7 @@ tags:
   - linux
   - filesystem
   - operating-system
+  - computer-science
 published: true
 media_subpath: /assets/
 ---
@@ -179,7 +180,7 @@ This directory is the home directory of the root user. Root user does not get a 
 
 ### /srv Directory
 
-The Service directory is used to house data that will be accessed by external users from services running on the system i.e. data that can be accessed by users over the internet. If we had a HTTP server running on the device by convention the data for the site being hosted should be stored in this directory.
+The Service directory is used to house data that will be accessed by external users from services running on the system i.e. data that can be accessed by users over the internet. If we had an HTTP server running on the device by convention the data for the site being hosted should be stored in this directory.
 
 ## Further Reading
 
