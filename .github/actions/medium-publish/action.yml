@@ -23,6 +23,7 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: "3.11"
+
     - name: Install Dependencies
       id: install-dependencies
       shell: bash
@@ -30,6 +31,7 @@ runs:
         pip install -r main/.github/actions/medium-publish/requirements.txt \
         && pip install -r medium/requirements.txt \
         && pip install -r main/scripts/requirements.txt
+
     - name: Setup Medium Token
       id: setup-medium-token
       shell: bash
@@ -37,12 +39,14 @@ runs:
         mkdir -p medium/config \
         && touch medium/config/token.config \
         && echo "MEDIUM_AUTH_TOKEN='${{ inputs.MEDIUM_AUTH_TOKEN }}'" >> medium/config/token.config
+
     - name: Find New Posts
       id: find-new-posts
       shell: bash
       run: |
         cd main/.github/actions/medium-publish \
         && python medium_rss.py "${{ github.workspace }}/main/blog-vault/articles/**/*.md"
+
     - name: Check Result
       id: check-result
       shell: bash
@@ -57,6 +61,7 @@ runs:
         else
           echo "Found Post(s) to Upload";
         fi
+
     - name: Modify Posts
       id: modify-posts
       if: steps.find-new-posts.outputs.output_filepath != ''
@@ -65,6 +70,7 @@ runs:
         cp main/scripts/edit_markdown.py main/blog-vault \
         && cd main/blog-vault \
         && python edit_markdown.py -b articles -s medium
+        
     - name: Upload Posts
       id: upload-posts
       if: steps.find-new-posts.outputs.output_filepath != ''

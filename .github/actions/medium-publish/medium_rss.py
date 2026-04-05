@@ -1,5 +1,5 @@
 '''
-Script to get list of articles to be published to Medium
+Script to get list of articles to be published on Medium
 
 References:
 https://docs.python.org/3/library/xml.etree.elementtree.html

@@ -1,0 +1,10 @@
+[tool.pylint.format]
+max-module-lines = 1000
+
+[tool.pylint.messages_control]
+max-line-length = 110
+disable = [
+    'unused-argument', 
+    'unused-import', 
+    'line-too-long'
+]

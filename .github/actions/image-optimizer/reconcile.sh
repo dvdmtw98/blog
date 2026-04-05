@@ -13,6 +13,13 @@ process_image() {
     || { echo "[SKIPPED oxipng] $destination_file"; return; }
 }
 
+delete_image() {
+  local destination_file="$1"
+
+  echo "[DELETE] $destination_file"
+  rm -f "$destination_file"
+}
+
 source_path_segment="$1"
 destination_path_segment="$2"
 
@@ -20,12 +27,28 @@ find "$source_path_segment" -type f \( -iname "*.png" -o -iname "*.jpg" -o -inam
 | while IFS= read -r source_file; do
 
   destination_file="${source_file/$source_path_segment/$destination_path_segment}"
+
   destination_file_full="${GITHUB_WORKSPACE}/$destination_file"
   source_file_full="${GITHUB_WORKSPACE}/$source_file"
 
   if [ -f "$source_file_full" ] && [ ! -f "$destination_file_full" ]; then
     echo "[MISSING → PROCESS] $source_file_full"
     process_image "$source_file_full" "$destination_file_full"
+  fi
+
+done
+
+find "$destination_path_segment" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) \
+| while IFS= read -r destination_file; do
+
+  source_file="${destination_file/$destination_path_segment/$source_path_segment}"
+
+  source_file_full="${GITHUB_WORKSPACE}/$source_file"
+  destination_file_full="${GITHUB_WORKSPACE}/$destination_file"
+
+  if [ ! -f "$source_file_full" ] && [ -f "$destination_file_full" ]; then
+    echo "[EXTRA → DELETE] $destination_file_full"
+    delete_image "$destination_file_full"
   fi
 
 done

@@ -6,24 +6,29 @@ on:
     branches: [main, dev]
     paths-ignore:
       - "blog-vault/.obsidian/**"
+      - "scripts/**"
 
 jobs:
   medium-publish:
     name: Publish to Medium
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Medium Publisher
         id: checkout-medium-publisher
         uses: actions/checkout@v4
         with:
           repository: dvdmtw98/medium-publisher
+          fetch-depth: 1
           path: medium
+
       - name: Checkout Repository
         id: checkout-repository
         uses: actions/checkout@v4
         with:
-          submodules: true
+          fetch-depth: 1
           path: main
+
       - name: Publish to Medium
         id: publish-to-medium
         uses: ./main/.github/actions/medium-publish
