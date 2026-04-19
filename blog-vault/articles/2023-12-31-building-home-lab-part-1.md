@@ -20,6 +20,8 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog  
+> - **Apr., 04 2026**
+> 	- Removed the Windows 10 Enterprise link from Part 6 and 8 as it's been removed from Microsoft’s website.
 > -  **Mar., 28 2026**
 > 	- Updated Part 3, 4, 5, 8, 9 and 11 with new images and descriptions to reflect the changes introduced in Part 2.
 > 	- Added steps in Part 8 and 9 to configure pfSense interface using the GUI.
@@ -72,6 +74,9 @@ This project has been heavily inspired by the following Home Lab guides:
 - Basic familiarity using VirtualBox (or other virtualization software)
 - Basic understanding of networking concepts (NAT, DHCP, IP Address, LAN, Routing, Firewall, etc.)
 - Familiarly with Linux and Windows (installing software, troubleshooting, etc.) 
+
+> [!IMPORTANT] Windows ISO Download
+> Whenever a version of Windows reaches End-of-Life (EOL) Microsoft removes the link to download that version from their website. This guide uses Windows 10 Enterprise in the AD section which cannot be downloaded from their website anymore. The user is expected to bring there own ISO to use in this section.
 
 ## Enabling Virtualization
 

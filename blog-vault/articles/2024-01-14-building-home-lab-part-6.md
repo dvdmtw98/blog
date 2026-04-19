@@ -20,6 +20,10 @@ media_subpath: /assets/
 Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-white-color-background-abstract-modern_34010189.htm) on Freepik  
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
+> [!IMPORTANT] Changelog  
+> -  **Apr., 04 2026**
+> 	- Removed the link to Windows 10 Enterprise ISO as it's been removed from Microsoft’s website. The user now needs to find a source for the image on their own.
+
 For the Active Directory (AD) Lab we are going to configure three VMs. The first VM will be the Domain Controller (DC) of the environment. We will use Windows Server 2019 for this machine. The other two VMs will be the clients that use this environment. For the client VMs, we will use Windows 10 Enterprise. 
 
 Microsoft provided Evaluation copies for both of them. Windows Server 2019 has a license of 180 days while Windows 10 Enterprise has a license of 90 days. They should function just fine even after the evaluation period expires. After setting up the lab we will create snapshots for the VMs. The snapshots can also be used to roll back to the start of the evaluation period once it expires.  
@@ -39,27 +43,11 @@ Click on the **`64-bit edition`** download. The ISO file is ~5GB.
 
 ### Windows 10 Enterprise
 
-Go to the following URL: [Windows 10 Enterprise \| Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise)
+With Windows 10 reaching End-of-Life (EOL) and the push to move users to Windows 11, Microsoft has started limiting access to direct download links for Windows 10 ISOs from their website.
 
-Click on the **`64-bit edition`** Enterprise ISO download option. The ISO file is ~5GB.
+Windows 10 images can still be found on various sites across the internet. However, due to the nature of these sources, I cannot provide direct links. It is now up to the user to find a source to obtain the Windows 10 Enterprise image used in this guide.
 
-![win-download-2|560](images/building-home-lab-part-6/win-download-2.png)
-
-### ISO File Names
-
-Pay attention to the names of the downloaded files. Microsoft uses the OS build number as the filename. You can rename the files to avoid confusion.
-
-![win-download-3|540](images/building-home-lab-part-6/win-download-3.png)
-
-|                                          ISO Name                                          |         OS Name         |
-| :----------------------------------------------------------------------------------------: | :---------------------: |
-|         `17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us`          |  `Windows Server 2019`  |
-| `19045.2006.220908-0225.22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us` | `Windows 10 Enterprise` |
-
-> [!INFO]
-> The build number maybe different when you download the images. These are the latest versions that are available as for writing of this module (Dec, 2023).
-
-![win-download-4|560](images/building-home-lab-part-6/win-download-4.png)
+Make sure to get the `64-bit` version of Windows 10 Enterprise.
 
 ## Creating the VMs
 

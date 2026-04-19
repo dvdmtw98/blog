@@ -70,11 +70,6 @@ def perform_file_transformation(
 
     file_content = source_file.content
 
-    # Adding Description
-    # file_description = source_file.metadata.get('description')
-    # if file_description and file_content.find(file_description):
-    #     file_content = f'{file_description}\n\n{file_content}'
-
     # Process Links
     links_from_file = re.finditer(link_regex_pattern, file_content, flags=re.I)
     for link in links_from_file:
@@ -109,9 +104,16 @@ def perform_file_transformation(
         'danger': ['danger', 'error']
     }
 
+    emoji_mapping = {
+        'tip': '💡',
+        'info': 'ℹ️',
+        'warning': '⚠️',
+        'danger': '💀'
+    }
+
     callouts_from_file = re.finditer(callout_regex_pattern, file_content, flags=re.I | re.M)
     for callout in callouts_from_file:
-        file_content = process_callouts(file_content, callout, callout_mapping)
+        file_content = process_callouts(file_content, callout, callout_mapping, emoji_mapping, blog_type)
 
     # Remove consecutive empty lines
     source_file.content = re.sub(r'\n\s*\n', '\n\n', file_content)
@@ -124,7 +126,8 @@ def perform_file_transformation(
 
 
 def process_callouts(
-    file_content: str, callout_match: re.Match, callout_mapping: dict[str, list[str]]
+    file_content: str, callout_match: re.Match, callout_mapping: dict[str, list[str]],
+    emoji_mapping: dict[str, str], blog_type: str
 ) -> str:
     """
     Function to modify callouts
@@ -137,17 +140,23 @@ def process_callouts(
     callout_title = callout_match.group(3).strip() if callout_match.group(3).strip() else ''
     callout_body = callout_match.group(4)
 
-    kramdown_type = None
-    for chirpy_type, obsidian_types in callout_mapping.items():
+    modified_callout_type = None
+    for target_type, obsidian_types in callout_mapping.items():
         if callout_type in obsidian_types:
-            kramdown_type = chirpy_type
-    kramdown_type = kramdown_type if kramdown_type else 'info'
-    kramdown_attributes = f'{{: .prompt-{kramdown_type} }}'
+            modified_callout_type = target_type
+    modified_callout_type = modified_callout_type if modified_callout_type else 'info'
 
-    if callout_title:
-        modified_callout = f'> **{callout_title}**  \n{callout_body}\n{kramdown_attributes}'
+    if blog_type == 'jekyll':
+        kramdown_attributes = f'{{: .prompt-{modified_callout_type} }}'
+        if callout_title:
+            modified_callout = f'> **{callout_title}**  \n{callout_body}\n{kramdown_attributes}'
+        else:
+            modified_callout = f'{callout_body}\n{kramdown_attributes}'
     else:
-        modified_callout = f'{callout_body}\n{kramdown_attributes}'
+        emoji_type = emoji_mapping[modified_callout_type]
+        callout_title = callout_title if callout_title else modified_callout_type.title()
+        callout_body = re.sub(r'^\s*>\s*(?:[-*]|\d+\.)\s+', '> ', callout_body, flags=re.MULTILINE)
+        modified_callout = f'> {emoji_type} **{callout_title}**  \n{callout_body}\n'
 
     original_callout = callout_match.group(1)
     file_content = file_content.replace(original_callout, modified_callout)

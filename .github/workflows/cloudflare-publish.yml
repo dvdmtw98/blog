@@ -16,15 +16,14 @@ jobs:
     steps:
       - name: Checkout Blog
         id: checkout-blog
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          submodules: true
           fetch-depth: 1
           path: main
 
       - name: Checkout Assets
         id: checkout-assets
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: dvdmtw98/assets-cache
           ssh-key: ${{ secrets.ASSETS_SSH_KEY }}
@@ -40,7 +39,7 @@ jobs:
 
       - name: Checkout Chirpy
         id: checkout-chirpy
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: cotes2020/chirpy-starter
           fetch-depth: 1

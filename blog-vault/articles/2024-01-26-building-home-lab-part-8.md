@@ -21,6 +21,8 @@ Banner Background by [logturnal](https://www.freepik.com/free-vector/gradient-wh
 Hacker Image by [catalyststuff](https://www.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_11602236.htm) on Freepik
 
 > [!IMPORTANT] Changelog  
+> -  **Apr., 04 2026**
+> 	- Removed the link to Windows 10 Enterprise ISO as it's been removed from Microsoft’s website. The user now needs to find a source for the image on their own.
 > -  **Mar., 28 2026**
 > 	- Updated the images and descriptions in this section to reflect the changes made in Part 2.
 
@@ -229,11 +231,9 @@ To install Flare we need a Windows machine. Flare can be set up using most versi
 
 ### Windows ISO Download
 
-Go to the following URL: [Windows 10 Enterprise \| Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise)
+With Windows 10 reaching End-of-Life (EOL) and the push to move users to Windows 11, Microsoft has started limiting access to direct download links for Windows 10 ISOs from their website.
 
-Click on the <u>64-bit edition</u> Enterprise ISO download option. The ISO file is ~5GB.
-
-![win-download-2|560](images/building-home-lab-part-6/win-download-2.png)
+It is now up to the user to find a source to obtain the Windows 10 Enterprise image used in this guide. Make sure to get the `64-bit` version of Windows 10 Enterprise.
 
 ### Creating the VM
 

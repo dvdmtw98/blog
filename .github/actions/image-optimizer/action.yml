@@ -29,7 +29,7 @@ runs:
         curl -L "$URL" -o oxipng.deb
         sudo dpkg -i oxipng.deb
 
-    - name: Run Reconcile Script
-      id: run-reconcile-script
+    - name: Run Optimize Script
+      id: run-optimize-script
       shell: bash
-      run: ${{ github.action_path }}/reconcile.sh "${{ inputs.IMG_PATH }}" "${{ inputs.ASSETS_BASE_PATH }}"
+      run: ${{ github.action_path }}/optimize.sh "${{ inputs.IMG_PATH }}" "${{ inputs.ASSETS_BASE_PATH }}"
