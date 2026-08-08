@@ -73,7 +73,7 @@ def perform_file_transformation(
     # Process Links
     links_from_file = re.finditer(link_regex_pattern, file_content, flags=re.I)
     for link in links_from_file:
-        # print(link.groups())
+        print(f"{link.group(0)!r}")
 
         # Don't process links if Kramdown syntax is found
         if link.groups()[-1]:
@@ -82,7 +82,7 @@ def perform_file_transformation(
         image_link_condition = (
             (
                 link.group(0).startswith("![[") and link.group(0).endswith("]]") and
-                link.group(2).rsplit("|", maxsplit=1)[0].endswith(image_extensions)
+                link.group(3).rsplit("|", maxsplit=1)[0].endswith(image_extensions)
             )
             or
             (
@@ -173,13 +173,17 @@ def process_outgoing_links(file_content: str, link_match: re.Match, blog_type: s
     if blog_type == "medium":
         return file_content
 
-    if not link_match.group(6).startswith(("http", "https")):
+    outgoing_link = link_match.group(6)
+
+    if not outgoing_link:
+        return file_content
+
+    if not outgoing_link.startswith(("http", "https")):
         return file_content
 
     kramdown_attributes = '{: target="_blank" rel="noopener noreferrer" }'
 
     description = link_match.group(5)
-    outgoing_link = link_match.group(6)
 
     modified_link = f'[{description}]({outgoing_link}){kramdown_attributes}'
 
@@ -268,7 +272,7 @@ def main() -> None:
     # print(image_paths)
 
     for filepath in glob.iglob(source_file_path, recursive=True):
-        print(filepath)
+        print(f"\n{filepath}")
         perform_file_transformation(
             filepath, links_regex_pattern, callout_regex_pattern,
             image_extensions, image_paths, user_arguments.site
