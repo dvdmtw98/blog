@@ -31,7 +31,7 @@ runs:
     - name: Copy Optimized Images
       id: copy-optimized-images
       shell: bash
-      run: cp -a assets/source-code/images/. chirpy/_posts/images
+      run: rsync -a --exclude='*.hash' assets/source-code/images/ chirpy/_posts/images/
 
     - name: Setup Python
       id: setup-python

@@ -67,7 +67,7 @@ _Fig. 2: Creating symbolic link (for File)_
 
 The file/directory to which the symlink is connected can be viewed by using the `-l` option of the `ls` command. Link files will always have their type bit (the 1st bit in the permission string) set to `l`.
 
-[Linux File Permissions \| Digital Archive](https://notes.davidvarghese.net/operating-system/linux/commands/linux-file-permissions)
+[Linux File Permissions \| Digital Archive](https://notes.davidvarghese.com/operating-system/linux/commands/linux-file-permissions)
 
 #### Modifying Symlink
 
@@ -275,7 +275,7 @@ Mastering symbolic links enhances your ability to manage files and directories e
 
 In Part 2, we'll explore how these concepts translate into the Windows operating system. These articles combined should provide you with a comprehensive cross-platform perspective on this topic.
 
-[Windows Links Demystified: Symbolic Links, Hard Links, and Junctions Explored](https://blog.davidvarghese.net/posts/windows-links-demystified)
+[Windows Links Demystified: Symbolic Links, Hard Links, and Junctions Explored](https://blog.davidvarghese.com/posts/windows-links-demystified)
 
 ### Further Reading
 

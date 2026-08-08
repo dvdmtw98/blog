@@ -517,7 +517,7 @@ To wrap things up, I have created a table that compares and contrasts the differ
 
 Understanding the differences between symbolic links, hard links, junctions, and shortcuts in Windows can help you manage your files more effectively. Each method offers distinct advantages. By choosing the appropriate linking method, you can enhance your workflow and file organization within the Windows environment.
 
-[Linux Links Demystified: Symbolic Links and Hard Links Explored](https://blog.davidvarghese.net/posts/linux-links-demystified/)
+[Linux Links Demystified: Symbolic Links and Hard Links Explored](https://blog.davidvarghese.com/posts/linux-links-demystified/)
 
 ### Further Reading
 

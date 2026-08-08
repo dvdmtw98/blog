@@ -370,4 +370,4 @@ Now we have a snapshot/backup of the current state of the VM.
 
 In the next module, we will set up Kali Linux on the **`LAN`** interface. This VM will also be used as the attack VM to target the vulnerable systems on the **`OPT1 (CYBER_RANGE)`** interface.
 
-[Part 3 - Kali Linux Setup](https://blog.davidvarghese.net/posts/building-home-lab-part-3/)
+[Part 3 - Kali Linux Setup](https://blog.davidvarghese.com/posts/building-home-lab-part-3/)

@@ -253,4 +253,4 @@ The **`.iso`** file that was downloaded to create the VM can be deleted now if y
 
 In the next module, we will access the pfSense Web UI and complete the remaining configuration.
 
-[Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.net/posts/building-home-lab-part-4/)
+[Part 4 - pfSense Firewall Configuration](https://blog.davidvarghese.com/posts/building-home-lab-part-4/)
