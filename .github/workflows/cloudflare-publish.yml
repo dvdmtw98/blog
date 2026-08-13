@@ -60,6 +60,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add .
+
+          if git diff --cached --quiet; then
+            echo "None of the images changed. Nothing to commit."
+            exit 0
+          fi
+
           git commit -m "Optimized Images: $(date +"%Y-%m-%d %H:%M")"
           git push
 
