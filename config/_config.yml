@@ -106,7 +106,7 @@ toc: true
 actions:
   # Display "Edit this post" action on each post page to encourage contributions.
   edit_post:
-    enabled: true # set to true to display the "Edit this post" action.
+    enabled: false # set to true to display the "Edit this post" action.
     url: "https://github.com/dvdmtw98/blog/tree/main/blog-vault" # repository base URL
     # Use dynamic or static URL for the edit link.
     # If `static_url` is false, the post's path will be appended to the `url` above as the final edit link.

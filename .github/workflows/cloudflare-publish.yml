@@ -16,14 +16,14 @@ jobs:
     steps:
       - name: Checkout Blog
         id: checkout-blog
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 1
           path: main
 
       - name: Checkout Assets
         id: checkout-assets
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: dvdmtw98/assets-cache
           ssh-key: ${{ secrets.ASSETS_SSH_KEY }}
@@ -39,7 +39,7 @@ jobs:
 
       - name: Checkout Chirpy
         id: checkout-chirpy
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: cotes2020/chirpy-starter
           fetch-depth: 1
@@ -71,7 +71,7 @@ jobs:
 
       - name: Cloudflare Deploy
         id: cloudflare-deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
