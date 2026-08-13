@@ -8,7 +8,7 @@ cssclasses:
 ---
 
 ```dataviewjs
-const groupedArticles = dv.pages('"articles"').groupBy(p => p.published);
+const groupedArticles = dv.pages('"posts"').groupBy(p => p.published);
 // console.log(groupedArticles);
 // Key -> false: Unpublished, true: Published
 

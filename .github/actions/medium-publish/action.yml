@@ -45,7 +45,7 @@ runs:
       shell: bash
       run: |
         cd main/.github/actions/medium-publish \
-        && python medium_rss.py "${{ github.workspace }}/main/blog-vault/articles/**/*.md"
+        && python medium_rss.py "${{ github.workspace }}/main/blog-vault/posts/**/*.md"
 
     - name: Check Result
       id: check-result
@@ -69,7 +69,7 @@ runs:
       run: |
         cp main/scripts/edit_markdown.py main/blog-vault \
         && cd main/blog-vault \
-        && python edit_markdown.py -b articles -s medium
+        && python edit_markdown.py -b posts -s medium
         
     - name: Upload Posts
       id: upload-posts

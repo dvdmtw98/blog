@@ -34,7 +34,7 @@ jobs:
         id: optimize-images
         uses: ./main/.github/actions/image-optimizer
         with:
-          IMG_PATH: main/blog-vault/articles/images
+          IMG_PATH: main/blog-vault/posts/images
           ASSETS_BASE_PATH: assets/source-code/images
 
       - name: Checkout Chirpy

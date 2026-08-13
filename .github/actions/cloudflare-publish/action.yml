@@ -24,7 +24,7 @@ runs:
       id: copy-markdown
       shell: bash
       run: |
-        cp -a main/blog-vault/articles/. chirpy/_posts \
+        cp -a main/blog-vault/posts/. chirpy/_posts \
         && mv main/blog-vault/about.md chirpy/_tabs \
         && rm chirpy/_posts/.placeholder
 
