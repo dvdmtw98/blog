@@ -82,12 +82,12 @@ def perform_file_transformation(
         image_link_condition = (
             (
                 link.group(0).startswith("![[") and link.group(0).endswith("]]") and
-                link.group(3).rsplit("|", maxsplit=1)[0].endswith(image_extensions)
+                link.group(3).rsplit("|", maxsplit=1)[0].lower().endswith(image_extensions)
             )
             or
             (
                 link.group(0).startswith("![") and link.group(0).endswith(")") and
-                link.group(6).endswith(image_extensions)
+                link.group(6).lower().endswith(image_extensions)
             )
         )
 
@@ -173,17 +173,13 @@ def process_outgoing_links(file_content: str, link_match: re.Match, blog_type: s
     if blog_type == "medium":
         return file_content
 
-    outgoing_link = link_match.group(6)
-
-    if not outgoing_link:
-        return file_content
-
-    if not outgoing_link.startswith(("http", "https")):
+    if not link_match.group(6).startswith(("http", "https")):
         return file_content
 
     kramdown_attributes = '{: target="_blank" rel="noopener noreferrer" }'
 
     description = link_match.group(5)
+    outgoing_link = link_match.group(6)
 
     modified_link = f'[{description}]({outgoing_link}){kramdown_attributes}'
 
@@ -211,6 +207,11 @@ def process_images(
     else:
         image_name = image_match.group(5).rsplit('|', maxsplit=1)
         image_link = image_match.group(6)
+
+        if not image_link.startswith(("http://", "https://")):
+            resolved_image_link = fetch_image_path(image_link, image_paths)
+            if resolved_image_link is not None:
+                image_link = resolved_image_link
 
     # Move Banner to Frontmatter
     if blog_type == "jekyll" and "banner" in image_link and not source_file.metadata.get('image'):

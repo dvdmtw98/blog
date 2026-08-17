@@ -191,5 +191,24 @@
       ],
       "key": "V"
     }
+  ],
+  "templater-obsidian:templates/insert-next-image.md": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "I"
+    }
+  ],
+  "templater-obsidian:templates/change-image-prefix.md": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod",
+        "Shift"
+      ],
+      "key": "I"
+    }
   ]
 }
